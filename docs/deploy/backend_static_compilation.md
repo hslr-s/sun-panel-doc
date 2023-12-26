@@ -6,7 +6,7 @@
 
 ### 1. 安装
 ** 注意：`...`必须带上 **
-```ssh
+```sh
 go get github.com/go-bindata/go-bindata/...
 go get github.com/elazarl/go-bindata-assetfs/...
 
@@ -21,7 +21,7 @@ go install -a -v github.com/elazarl/go-bindata-assetfs/...@latest
 
 ### 3. 压缩静态文件 到 asset目录
 以下命令在Windows的`powershell`可能会报错，可使用`cmd`执行
-```ssh
+```sh
 # 开发环境，并非真实将所有文件编译，修改静态文件可以及时生效
 go-bindata-assetfs -debug -o=assets/bindata.go -pkg=assets static/... view/... # 多个
 go-bindata-assetfs -debug -o=assets/bindata.go -pkg=assets assets/... 

@@ -13,7 +13,7 @@ pnpm build
 
 1.正式编译程序前先进入`service`
 
-2.按照[静态资源编译教程](/backend_static_compilation)编译后端静态文件
+2.按照[静态资源编译教程](./backend_static_compilation)编译后端静态文件
 
 3.正式编译
 ```sh

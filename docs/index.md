@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 快速部署
-      link: /quick_deploy
+      link: /deploy/quick_deploy
     - theme: alt
       text: 项目介绍
-      link: /introduce
+      link: /introduce/index
   image:
     src: /favicon.ico
     alt: ico
