@@ -1,4 +1,5 @@
 import { defineConfig,DefaultTheme } from 'vitepress'
+import markdownItTaskList from 'markdown-it-task-lists'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -19,16 +20,25 @@ export default defineConfig({
       // themeConfig:getEnglishThemeConfig()
     },
   },
+  markdown:{
+    config: (md) => {
+      md.use(markdownItTaskList)
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/hslr-s/sun-panel' }
     ],
 
     search: { 
       provider: 'local',
+    }, 
+
+    //页脚
+    footer: { 
+      message: 'Released under the MIT License.', 
+      copyright: 'Copyright © 2023-present Sun-Panel', 
     }, 
     
   },
@@ -40,6 +50,15 @@ export default defineConfig({
 
 function getChineseThemeConfig():DefaultTheme.Config {
   return {
+    outlineTitle: '本页目录',
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    },
+    darkModeSwitchLabel: '外观',
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '返回顶部',
+
     nav: [
       { text: '首页', link: '/' },
     ],
@@ -48,15 +67,29 @@ function getChineseThemeConfig():DefaultTheme.Config {
       '/':[
         {
           text: '介绍',
-          link: '/introduce',
+          items: [
+            { text: '项目介绍', link: '/introduce'},
+            { text: '演示站点', link: '/demo_site'},
+          ]
         },
 
         {
           text: '部署',
           items: [
             { text: '快速部署', link: '/quick_deploy'},
+            { text: '编译运行', link: '/compile'},
+            { text: '重置密码', link: '/reset_password'},
           ]
         },
+
+        {
+          text: '其他',
+          items: [
+            { text: '壁纸-图标网站推荐', link: '/icon_wallpaper_recommend_sites'},
+          ]
+        },
+
+        
       ]
     },
 
@@ -83,11 +116,13 @@ function getChineseThemeConfig():DefaultTheme.Config {
         },
       },
     }, 
-
-    //页脚
-    footer: { 
-      message: 'Released under the MIT License.', 
-      copyright: 'Copyright © 2023-present Sun-Panel', 
-    }, 
+    editLink: {
+      pattern: 'https://github.com/hslr-s/sun-panel-doc/edit/master/docs/:path',
+      text:'在Github编辑此页面'
+    },
+    lastUpdated:{
+      text:'最后编辑时间'
+    }
+   
   };
 }

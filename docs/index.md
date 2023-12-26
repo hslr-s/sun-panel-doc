@@ -11,7 +11,7 @@ hero:
       text: 快速部署
       link: /quick_deploy
     - theme: alt
-      text: 关于软件
+      text: 项目介绍
       link: /introduce
   image:
     src: /favicon.ico

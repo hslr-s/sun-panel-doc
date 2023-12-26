@@ -23,24 +23,12 @@
 - 支持网页内置小窗口打开（部分网站屏蔽此功能）
 - 占用资源小
 
-## 🎨 演示（demo）
-
-演示站说明：
-1. 服务器资源有限请不要上传特大图片文件
-2. 方便他人访问，请不要修改主账号密码
-3. 数据不定期清理，请不要作为主力导航页使用
-4. 请不要放违规内容
-
-演示地址：[点此跳转](http://sunpaneldemo.enianteam.com/#/)
-
-账号：admin@sun.cc 密码：12345678
-
 ## 🐳 联系作者&交流群
 开发者：**[红烧猎人](https://blog.enianteam.com/u/sun/content/11)**
 
 新建的QQ交流群，进不去可以点上方连接联系作者
 
-<img src="/images/qq_group_qr.jpg"  height="350" />
+<img src="/images/qq_group_qr.jpg"  style="height:300px"/>
 
 ## 🍵 后面想做的事
 
