@@ -12,7 +12,10 @@ hero:
       link: /deploy/quick_deploy
     - theme: alt
       text: 项目介绍
-      link: /introduce/index
+      link: /introduce/project
+    - theme: alt
+      text: Github
+      link: https://github.com/hslr-s/sun-panel
   image:
     src: /favicon.ico
     alt: ico
