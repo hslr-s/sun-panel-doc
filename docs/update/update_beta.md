@@ -27,7 +27,7 @@ docker pull hslr/sun-panel:1.1.0-beta23-11-24
 
 ### 4. 命令行运行（挂载目录与正式版一致）
 建议新建容器运行，如遇问题可以及时恢复,
-```
+```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
 -v ~/docker_data/sun-panel/uploads:/app/uploads \

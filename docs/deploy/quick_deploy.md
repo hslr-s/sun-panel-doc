@@ -28,12 +28,12 @@ DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel)
 |/app/runtime|运行日志(不推荐挂载)|
 
 1. 拉取镜像
-```
+```sh
 docker pull hslr/sun-panel
 ```
 
 2. 直接下载运行
-```
+```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
 -v ~/docker_data/sun-panel/uploads:/app/uploads \

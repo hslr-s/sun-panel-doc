@@ -39,6 +39,14 @@ export function getChineseThemeConfig():DefaultTheme.Config {
         },
 
         {
+          text: '高级',
+          items: [
+            { text: '配置文件', link: '/advanced/config'},
+            { text: '使用mysql/redis', link: '/advanced/mysql_redis'},
+          ]
+        },
+
+        {
           text: '更新',
           items: [
             { text: '更新日志', link: '/update/update_log'},
