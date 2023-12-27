@@ -22,6 +22,7 @@ export default defineConfig({
     },
   },
   markdown:{
+    lineNumbers: true,
     config: (md) => {
       md.use(markdownItTaskList)
     }
@@ -29,7 +30,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/hslr-s/sun-panel' }
+      { icon: 'github', link: 'https://github.com/hslr-s/sun-panel' },
     ],
 
     search: { 

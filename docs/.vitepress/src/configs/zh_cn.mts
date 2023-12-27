@@ -13,6 +13,7 @@ export function getChineseThemeConfig():DefaultTheme.Config {
 
     nav: [
       { text: '首页', link: '/' },
+      { text: '更新日志', link: '/update/update_log'},
     ],
     
     sidebar: {
@@ -20,8 +21,11 @@ export function getChineseThemeConfig():DefaultTheme.Config {
         {
           text: '介绍',
           items: [
-            { text: '项目介绍', link: '/introduce/index'},
+            { text: '项目介绍', link: '/introduce/project'},
             { text: '演示站点', link: '/introduce/demo_site'},
+            { text: '联系作者&交流群', link: '/introduce/author_groups'},
+            { text: '打赏🧧', link: '/introduce/donate'},
+            
           ]
         },
 
@@ -35,9 +39,27 @@ export function getChineseThemeConfig():DefaultTheme.Config {
         },
 
         {
+          text: '高级',
+          items: [
+            { text: '配置文件', link: '/advanced/config'},
+            { text: '使用mysql/redis', link: '/advanced/mysql_redis'},
+          ]
+        },
+
+        {
+          text: '更新',
+          items: [
+            { text: '更新日志', link: '/update/update_log'},
+            { text: 'Beta更新教程', link: '/update/update_beta'},
+          ]
+        },
+
+        {
           text: '其他',
           items: [
-            { text: '壁纸-图标网站推荐', link: '/icon_wallpaper_recommend_sites'},
+            { text: '壁纸-图标网站推荐', link: '/other/icon_wallpaper_recommend_sites'},
+            { text: '浏览器书签转换', link: 'https://hslr-s.github.io/sun-panel-tool-page/'},
+            
           ]
         },
 
