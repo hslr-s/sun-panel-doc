@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "medium-zoom": "^1.1.0",
     "vitepress": "1.0.0-rc.32",
     "vitepress-plugin-google-analytics": "^1.0.2"
   },
