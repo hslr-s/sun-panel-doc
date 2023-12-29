@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import markdownItTaskList from 'markdown-it-task-lists'
 import { getChineseThemeConfig } from "./src/configs/zh_cn.mts";
+import timeline from "vitepress-markdown-timeline"; 
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -25,6 +26,7 @@ export default defineConfig({
     lineNumbers: true,
     config: (md) => {
       md.use(markdownItTaskList)
+      md.use(timeline)
     }
   },
   themeConfig: {
