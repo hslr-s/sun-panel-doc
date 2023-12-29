@@ -13,6 +13,9 @@ devDependencies:
   vitepress:
     specifier: 1.0.0-rc.32
     version: 1.0.0-rc.32(@algolia/client-search@4.22.0)(search-insights@2.13.0)
+  vitepress-plugin-google-analytics:
+    specifier: ^1.0.2
+    version: 1.0.2
 
 packages:
 
@@ -1193,6 +1196,10 @@ packages:
       rollup: 4.9.1
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
+
+  /vitepress-plugin-google-analytics@1.0.2:
+    resolution: {integrity: sha512-ri8bFUAmt3c/DtPrALauGBIUr2gIJ11c1qNRhwd3/+aiuYZBfQpOosSxcO1AswgwRxP9FwBS6Z7jgdDVyXb2hA==, tarball: https://registry.npmmirror.com/vitepress-plugin-google-analytics/-/vitepress-plugin-google-analytics-1.0.2.tgz}
     dev: true
 
   /vitepress@1.0.0-rc.32(@algolia/client-search@4.22.0)(search-insights@2.13.0):
