@@ -8,9 +8,13 @@
 由于[Sun-Proxy](https://github.com/hslr-s/sun-proxy)程序刚开发出来，程序稳定性有待测试，请谨慎使用
 :::
 
+图解
+
+![](/images/advanced/use_reverse_proxy/diagram.jpg)
+
 ## 实现目标
 
-本教程只针对家里没有公网ip的用户，在外通过域名（二级域名或者路径）访问NAS搭建的网站。并且支持自动输入`basic auth`认证和对公开网站加一层`basic auth`认证
+本教程只针对家里没有公网ip的用户，在外通过域名（二级域名或者路径）访问NAS搭建的网站，ssl认证。并且支持自动输入`basic auth`认证和对公开网站加一层`basic auth`认证，
 
 ## 前提
 
@@ -26,7 +30,7 @@
 > 创建一个文件夹`sun-panel-proxy`，里面创建3个文件，分别为`sun-proxy.yml`，`fprc.toml`，`docker-compose.yml`
 
 
-1. 提前编辑好配置文件 `sun-proxy.yml` (下面文件是示例，根据自己需求修改)
+1. `sun-proxy.yml` (下面文件是示例，根据自己需求修改)完整可以参考[Sun-Proxy文档](https://github.com/hslr-s/sun-proxy)
 
 ```yml 
 name: sun-proxy
@@ -34,27 +38,32 @@ port:
   http: 8080
   https: 8081
 rules:
-  - domain: "example.com" # 域名（不可以带端口）
-    path: "/" # 地址 /example/other/path
+  - domain: "sun.panel.com" # sun-panel
+    path: "/" 
+    target_url: "http://192.168.3.100:3002" 
+    cert: # 证书地址
+      key:
+        ./cert/privkey.key
+      pem:
+        ./cert/fullchain.pem
+  - domain: "example.com" # 代理域名（不可以带端口）
+    path: "/" # 代理地址 /example/other/path
     target_url: "http://google.com/" # 目标地址 http://example.sun.sun
     cert: # 证书地址
       key:
         ./cert/privkey.key
       pem:
         ./cert/fullchain.pem
-
     auth: # 验证信息
       username:
         admin
       password:
         123456
-
-    target_auth: # 目标验证信息（自动输入）
+    target_basic_auth: # 目标验证信息（自动输入）
       username:
         admin
       password:
         123456
-
 ```
 
 2. 提前编辑好配置文件 `fprc.toml` (下面文件是示例，如果无特殊需求的只需要更改加深部分参数)
@@ -124,7 +133,7 @@ services:
 
 进入目录打开命令行
 ```sh
-# 运行（-d 后台）
+# 运行（-d 后台运行）
 docker-compose up -d
 
 # 关闭
