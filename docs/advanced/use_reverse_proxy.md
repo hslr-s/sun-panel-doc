@@ -8,9 +8,7 @@
 由于[Sun-Proxy](https://github.com/hslr-s/sun-proxy)程序刚开发出来，程序稳定性有待测试，请谨慎使用
 :::
 
-图解
 
-![](/images/advanced/use_reverse_proxy/diagram.jpg)
 
 ## 实现目标
 
@@ -21,6 +19,10 @@
 - 有一台有公网ip的（云）服务器
 - 域名
 - 已经在服务器内搭建了frp服务端[安装教程](https://gofrp.org/zh-cn/docs/setup/)
+
+图解
+
+![](/images/advanced/use_reverse_proxy/diagram.jpg)
 
 ## 域名解析和安全组
 将你的（二级）域名解析到你要使用的ip上，如果是云服务器需要提前到安全组提前开放2个端口，一个是`http`另一个是`https`，如果需要ssl，需要自行提前申请证书
