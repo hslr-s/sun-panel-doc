@@ -1,4 +1,4 @@
-# 使用反向代理
+# 使用反向代理+外网访问
 
 [Sun-Proxy](https://github.com/hslr-s/sun-proxy)是作者使用go开发的，简单实现了基本的反向代理功能。目的是为 [Sun-Panel](https://github.com/hslr-s/sun-panel)插件打造（后期会想办法结合到一起，可以在sun-panel中配置，真正的做到插件化）。除了它我们还要使用到[frp](https://github.com/fatedier/frp)来实现内网穿透。
 
