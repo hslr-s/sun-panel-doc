@@ -29,6 +29,14 @@ features:
     details: 丰富图标自由搭配，部分网站屏蔽此功能
 ---
 
+
+
+<div style="max-width:1152px;margin:20px auto">
+The author's native language is Chinese. Translations in other languages in the documentation are provided by ChatGPT. If there are any inaccuracies, please forgive.
+</div>
+
+
+
 <style>
 :root {
   --vp-home-hero-name-color: transparent;

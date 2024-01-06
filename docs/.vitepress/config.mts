@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import markdownItTaskList from 'markdown-it-task-lists'
 import { getChineseThemeConfig } from "./src/configs/zh_cn.mts";
+import { getEnglishThemeConfig } from "./src/configs/en.mts";
 import timeline from "vitepress-markdown-timeline"; 
 
 // https://vitepress.dev/reference/site-config
@@ -19,7 +20,7 @@ export default defineConfig({
       label: 'English',
       lang: 'en',
       link: '/en/',
-      // themeConfig:getEnglishThemeConfig()
+      themeConfig:getEnglishThemeConfig()
     },
   },
   markdown:{
