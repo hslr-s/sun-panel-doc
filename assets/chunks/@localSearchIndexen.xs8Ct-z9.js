@@ -1,1 +1,0 @@
-const e='{"documentCount":1,"nextId":1,"documentIds":{"0":"/en/#coming-soon"},"fieldIds":{"title":0,"titles":1,"text":2},"fieldLength":{"0":[3,1,1]},"averageFieldLength":[3,1,1],"storedFields":{"0":{"title":"Coming soon...","titles":[]}},"dirtCount":0,"index":[["soon",{"0":{"0":1}}],["coming",{"0":{"0":1}}]],"serializationVersion":2}';export{e as default};
