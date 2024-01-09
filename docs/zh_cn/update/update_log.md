@@ -11,7 +11,7 @@ outline: [2,3]
 ### v1.3.0-beta24-01-09 <Badge type="warning" text="beta" />
 
 - [新增] 系统状态模块（支持CPU、内存、磁盘）
-- [新增] 自定义footer [备案号示例](/usage/custom_footer)
+- [新增] 自定义footer [备案号示例](../usage/custom_footer.md)
 - [新增] 自定义壁纸的图片地址
 - [新增] 国际化适配（新增英语）
 
