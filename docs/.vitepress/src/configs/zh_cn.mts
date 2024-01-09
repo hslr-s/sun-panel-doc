@@ -36,8 +36,8 @@ export function getChineseThemeConfig():DefaultTheme.Config {
           items: [
             { text: '快速部署', link: '/zh_cn/usage/quick_deploy'},
             { text: '编译运行', link: '/zh_cn/usage/compile'},
-            { text: '自定义页脚', link: '/zh_cn/usage/custom_footer'},
             { text: '重置密码', link: '/zh_cn/usage/reset_password'},
+            { text: '自定义页脚', link: '/zh_cn/usage/custom_footer'},
           ]
         },
 
