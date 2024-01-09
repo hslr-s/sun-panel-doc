@@ -1,8 +1,8 @@
-# Donate
+# 打赏
 
 
 ::: tip
-Open source development is not easy. If you feel that my project has been helpful to you, please feel free to buy me a cup of coffee ☕ (If possible, leave your nickname, name, or email in the note). Your support is my motivation. Thank you.
+ 开源开发不易，如果觉得我的项目有帮到你，欢迎请我喝个咖啡☕（如果可以备注下您的昵称、名字或者邮箱），您的支持就是我的动力，谢谢。
 :::
 
 

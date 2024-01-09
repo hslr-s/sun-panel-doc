@@ -3,52 +3,57 @@ import type { DefaultTheme } from "vitepress";
 export function getEnglishThemeConfig(): DefaultTheme.Config {
   return {
     nav: [
-      { text: 'Home', link: '/en/' },
-      { text: 'Release Notes', link: '/update/update_log'},
+      { text: 'Home', link: '/' },
+      { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases'},
     ],
     
     sidebar: {
       '/': [
         {
           text: 'Introduction',
+          collapsed: false,
           items: [
-            { text: 'Project Introduction', link: '/en/introduce/project'},
-            { text: 'Demo Site', link: '/en/introduce/demo_site'},
-            { text: 'Contact the Author & Community', link: '/en/introduce/author_groups'},
-            { text: 'Donate🧧', link: '/en/introduce/donate'},
+            { text: 'Project Introduction', link: '/introduce/project'},
+            { text: 'Demo Site', link: '/introduce/demo_site'},
+            { text: 'Contact the Author & Community', link: '/introduce/author_groups'},
+            { text: 'Donate🧧', link: '/introduce/donate'},
           ]
         },
 
         {
-          text: 'Deployment',
+          text: 'Usage',
+          collapsed: false,
           items: [
-            { text: 'Quick Deployment', link: '/en/deploy/quick_deploy'},
-            { text: 'Compile and Run', link: '/en/deploy/compile'},
-            { text: 'Reset Password', link: '/en/deploy/reset_password'},
+            { text: 'Quick Deployment', link: '/usage/quick_deploy'},
+            { text: 'Compile and Run', link: '/usage/compile'},
+            { text: 'Reset Password', link: '/usage/reset_password'},
           ]
         },
 
         {
           text: 'Advanced',
+          collapsed: false,
           items: [
-            { text: 'Configuration File', link: '/en/advanced/config'},
-            { text: 'Using MySQL/Redis', link: '/en/advanced/mysql_redis'},
-            { text: 'Using Reverse Proxy + External Access', link: '/en/advanced/use_reverse_proxy'},
+            { text: 'Configuration File', link: '/advanced/config'},
+            { text: 'Using MySQL/Redis', link: '/advanced/mysql_redis'},
+            { text: 'Using Reverse Proxy + External Access', link: '/advanced/use_reverse_proxy'},
           ]
         },
 
         {
           text: 'Updates',
+          collapsed: false,
           items: [
-            { text: 'Release Notes', link: '/en/update/update_log'},
-            { text: 'Beta Update Tutorial', link: '/en/update/update_beta'},
+            { text: 'Release Notes', link: '/update/update_log'},
+            { text: 'Beta Update Tutorial', link: '/update/update_beta'},
           ]
         },
 
         {
           text: 'Other',
+          collapsed: false,
           items: [
-            { text: 'Recommended Wallpaper and Icon Websites', link: '/en/other/icon_wallpaper_recommend_sites'},
+            { text: 'Recommended Wallpaper and Icon Websites', link: '/other/icon_wallpaper_recommend_sites'},
             { text: 'Browser Bookmark Conversion', link: 'https://hslr-s.github.io/sun-panel-tool-page/'},
           ]
         },

@@ -1,6 +1,6 @@
-# 配置文件
+# Configuration file
 
-所在目录：`conf/conf.ini`
+path：`conf/conf.ini`
 
 ```ini
 # ======================

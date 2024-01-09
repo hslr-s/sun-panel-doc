@@ -1,32 +1,32 @@
-::: danger 谨慎更新
-Beta版本是正式版本前的测试版本，极有可能有严重的bug，请谨慎升级！
+::: danger Proceed with Caution
+The beta version is a testing version before the official release and may contain serious bugs. Please upgrade with caution!
 
-目前beta版本只发布docker版本，不单独发布二进制文件。其中beta版本是测试版本，docker里面`latest`标签是正式版本或者稳定的beta版本，不会更新不稳定的beta版本。
+Currently, the beta version is only released as a Docker version, and binary files are not separately released. The `latest` tag inside the Docker image represents the official version or a stable beta version and will not be updated with unstable beta versions.
 
-beta的标签命名`[主版本号]-beta日期`示例：`1.1.0-beta23-11-24`组成。
+The beta tag is named `[major version]-beta[date]`, for example, `1.1.0-beta23-11-24`.
 
-更新完成如果没有任何效果记得[清除浏览器缓存](https://blog.csdn.net/m0_46156566/article/details/108519629)）
+After updating, if you see no changes, remember to [clear your browser cache](https://blog.csdn.net/m0_46156566/article/details/108519629).
+
 :::
 
+## Docker Version
 
-## docker 版本
-
-### 1. 进入到DockerHub的 [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel/tags)，beta版本在标签行会有beta标识+日期
+### 1. Visit the [Sun-Panel project page on DockerHub](https://hub.docker.com/r/hslr/sun-panel/tags), and beta versions will have the beta label + date in the tags section.
 
 ![](/images/update_log/docker_hub_beta.png)
 
-### 2. 复制指令下载（请注意不是latest）
+### 2. Copy the command to download (ensure it's not the latest version)
 
-示例
-```
+Example:
+```sh
 docker pull hslr/sun-panel:1.1.0-beta23-11-24
 ```
 
-### 3. 群晖或者其他可视化操作的
-直接选择带有`beta+日期`的标签拉取，新建容器运行，不支持筛选标签按下面命令行方式运行
+### 3. For Synology NAS or other graphical interfaces
+Select the tag with `beta + date` directly for pulling. Create a new container and run it. If you cannot filter tags, use the command-line method below.
 
-### 4. 命令行运行（挂载目录与正式版一致）
-建议新建容器运行，如遇问题可以及时恢复,
+### 4. Run via Command Line (Mount directories same as the official version)
+It is recommended to create a new container for running. In case of issues, you can quickly revert.
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
@@ -35,6 +35,6 @@ docker run -d --restart=always -p 3002:3002 \
 --name sun-panel \
 hslr/sun-panel:1.1.0-beta23-11-24
 ```
-将上面命令中`hslr/sun-panel:1.1.0-beta23-11-24`替换成最新beta版本的标签即可，其他参数按自身需求修改
+Replace `hslr/sun-panel:1.1.0-beta23-11-24` in the above command with the latest beta version tag. Modify other parameters according to your requirements.
 
-完整运行参考：<a href="/deploy/quick_deploy">部署教程</a> | <a href="https://www.bilibili.com/video/BV1ke411y7B5" target="_blank">B站Beta更新视频教程</a>
+For a complete deployment guide, refer to: <a href="/deploy/quick_deploy">Deployment Tutorial</a> | <a href="https://www.bilibili.com/video/BV1ke411y7B5" target="_blank">Bilibili Beta Update Video Tutorial</a>

@@ -7,9 +7,17 @@ outline: [2,3]
 
 > [Github Releases](https://github.com/hslr-s/sun-panel/releases)
 
-## v1.2.1 
 
-`2023-12-28`
+### v1.3.0-beta24-01-09 <Badge type="warning" text="beta" />
+
+- [新增] 系统状态模块（支持CPU、内存、磁盘）
+- [新增] 自定义footer [备案号示例](/instruction_for_use/custom_footer)
+- [新增] 自定义壁纸的图片地址
+- [新增] 国际化适配（新增英语）
+
+
+
+## v1.2.1 <Badge type="tip" text="2023-12-28" />
 
 - [新增] 增加最大宽度设置、左右边距设置
 - [优化] 上传文件管理空白增加提示
@@ -18,9 +26,8 @@ outline: [2,3]
 - [修复] 无法获取图标部分网站图标
 
 
-## v1.2.0 
+## v1.2.0 <Badge type="tip" text="2023-12-28" />
 
-`2023-12-28`
 > 包含`1.2.0-beta*`版本更新内容，支持上个正式版本直接升级无需特殊处理
 
 **(从v1.1.0升级的登录后刷新后掉登录的，需要手动退出一下，再次登录恢复正常)**
