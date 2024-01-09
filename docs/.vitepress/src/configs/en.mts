@@ -27,6 +27,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
             { text: 'Quick Deployment', link: '/usage/quick_deploy'},
             { text: 'Compile and Run', link: '/usage/compile'},
             { text: 'Reset Password', link: '/usage/reset_password'},
+            { text: 'Custom footer', link: '/usage/custom_footer'},
           ]
         },
 
