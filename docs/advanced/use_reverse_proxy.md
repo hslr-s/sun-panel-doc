@@ -30,67 +30,7 @@ Resolve your (sub)domain to the IP you want to use. If using a cloud server, ope
 
 > Create a folder named `sun-panel-proxy`. Inside it, create three files: `sun-proxy.yml`, `fprc.toml`, and `docker-compose.yml`.
 
-1. `sun-proxy.yml` (The following file is an example; modify it according to your needs. Refer to the [Sun-Proxy documentation](https://github.com/hslr-s/sun-proxy) for complete details.)
-
-```yml 
-name: sun-proxy
-port:
-  http: 8080
-  https: 8081
-rules:
-  - domain: "sun.panel.com" # sun-panel
-    path: "/" 
-    target_url: "http://192.168.3.100:3002" 
-    cert: # Certificate address
-      key:
-        ./cert/privkey.key
-      pem:
-        ./cert/fullchain.pem
-  - domain: "example.com" # Proxy domain (should not include port)
-    path: "/" # Proxy address /example/other/path
-    target_url: "http://google.com/" # Target address http://example.sun.sun
-    cert: # Certificate address
-      key:
-        ./cert/privkey.key
-      pem:
-        ./cert/fullchain.pem
-    auth: # Authentication information
-      username:
-        admin
-      password:
-        123456
-    target_basic_auth: # Target authentication information (automatically input)
-      username:
-        admin
-      password:
-        123456
-```
-
-2. Edit the configuration file in advance `fprc.toml` (The following file is an example; modify only if necessary.)
-
-```toml {1,2,11-12,18-19}
-serverAddr = "x.x.x.x" # Public IP of the server
-serverPort = 8004 
-
-# Set a password consistent with the server, remove "#" at the beginning of the line if you want to set it
-# auth.token = "12345678"  
-
-[[proxies]]
-name = "http"
-type = "tcp"
-localIP = "sun-proxy"
-localPort = 8080    # Should correspond to post.http in reverse_proxys.yml on the NAS side
-remotePort = 8080   # Open port on the server 
-
-[[proxies]]
-name = "https"
-type = "tcp"
-localIP = "sun-proxy"
-localPort = 8081    # Should correspond to post.https in reverse_proxys.yml on the NAS side
-remotePort = 8081   # Open port on the server 
-```
-
-3. Edit the configuration file in advance `docker-compose.yml`
+1. Edit the configuration file in advance `docker-compose.yml`
 
 ```yml
 version: "3.2"
@@ -112,10 +52,7 @@ services:
         container_name: sun-proxy
         volumes:
             - ./sun-proxy.yml:/app/sun-proxy.yml
-            - ./cert:/app/cert
-        ports:
-            - 8080:8080 # http
-            - 8081:8081 # https
+            - ./cert:/app/cert # cert path
         restart: always
         command: ['./sun-proxy', '-c', './sun-proxy.yml']
     frpc:
@@ -126,6 +63,64 @@ services:
         restart: always
 
 ```
+
+2. `sun-proxy.yml` (The following file is an example; modify it according to your needs. Refer to the [Sun-Proxy documentation](https://github.com/hslr-s/sun-proxy) for complete details.)
+
+```yml 
+name: sun-proxy
+port:
+  http: 8080
+  https: 8081
+rules:
+  - domain: "sun.panel.com" # sun-panel
+    path: "/" 
+    target_url: "http://192.168.3.100:3002" 
+
+  - domain: "example.com" # Proxy domain (should not include port)
+    path: "/" # Proxy address /example/other/path
+    target_url: "http://google.com/" # Target address http://example.sun.sun
+    cert: # Certificate address
+      key:
+        ./cert/privkey.key
+      pem:
+        ./cert/fullchain.pem
+    auth: # Authentication information
+      username:
+        admin
+      password:
+        123456
+    target_basic_auth: # Target authentication information (automatically input)
+      username:
+        admin
+      password:
+        123456
+```
+
+3. Edit the configuration file in advance `fprc.toml` (The following file is an example; modify only if necessary.)
+
+```toml {1,2,11-12,18-19}
+serverAddr = "x.x.x.x" # Public IP of the server
+serverPort = 8004 
+
+# Set a password consistent with the server, remove "#" at the beginning of the line if you want to set it
+# auth.token = "12345678"  
+
+[[proxies]]
+name = "http"
+type = "tcp"
+localIP = "sun-proxy" # Need to correspond to the name of the sun-proxy container
+localPort = 8080    # Should correspond to port.http in sun-proxy.yml on the NAS side
+remotePort = 8080   # Open port on the server 
+
+[[proxies]]
+name = "https"
+type = "tcp"
+localIP = "sun-proxy" # Need to correspond to the name of the sun-proxy container
+localPort = 8081    # Should correspond to port.https in sun-proxy.yml on the NAS side
+remotePort = 8081   # Open port on the server 
+```
+
+
 
 4. Start and Stop
 

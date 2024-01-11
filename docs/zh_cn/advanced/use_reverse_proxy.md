@@ -29,72 +29,9 @@
 
 ## docker compose 运行
 
-> 创建一个文件夹`sun-panel-proxy`，里面创建3个文件，分别为`sun-proxy.yml`，`fprc.toml`，`docker-compose.yml`
+> 创建一个文件夹`sun-panel-proxy`，里面创建3个文件，分别为`docker-compose.yml`，`sun-proxy.yml`，`fprc.toml`，
 
-
-1. `sun-proxy.yml` (下面文件是示例，根据自己需求修改)完整可以参考[Sun-Proxy文档](https://github.com/hslr-s/sun-proxy)
-
-```yml 
-name: sun-proxy
-port:
-  http: 8080
-  https: 8081
-rules:
-  - domain: "sun.panel.com" # sun-panel
-    path: "/" 
-    target_url: "http://192.168.3.100:3002" 
-    cert: # 证书地址
-      key:
-        ./cert/privkey.key
-      pem:
-        ./cert/fullchain.pem
-  - domain: "example.com" # 代理域名（不可以带端口）
-    path: "/" # 代理地址 /example/other/path
-    target_url: "http://google.com/" # 目标地址 http://example.sun.sun
-    cert: # 证书地址
-      key:
-        ./cert/privkey.key
-      pem:
-        ./cert/fullchain.pem
-    auth: # 验证信息
-      username:
-        admin
-      password:
-        123456
-    target_basic_auth: # 目标验证信息（自动输入）
-      username:
-        admin
-      password:
-        123456
-```
-
-2. 提前编辑好配置文件 `fprc.toml` (下面文件是示例，如果无特殊需求的只需要更改加深部分参数)
-
-```toml {1,2,11-12,18-19}
-serverAddr = "x.x.x.x" # 服务器的公网ip 
-serverPort = 8004 
-
-# 自己设置密码与服务端保持一致，如需设置需要删除下面行开头的"#" 
-# auth.token = "12345678"  
-
-[[proxies]]
-name = "http"
-type = "tcp"
-localIP = "sun-proxy"
-localPort = 8080    # NAS端需要与 reverse_proxys.yml 中的 post.http 对应 
-remotePort = 8080   # 服务器开放端口 
-
-[[proxies]]
-name = "https"
-type = "tcp"
-localIP = "sun-proxy"
-localPort = 8081    # NAS端需要与 reverse_proxys.yml 中的 post.https 对应 
-remotePort = 8081   # 服务器开放端口 
-```
-
-
-
-3. 提前编辑好配置文件 `docker-compose.yml`
+1. 提前编辑好配置文件 `docker-compose.yml`
 
 ```yml
 version: "3.2"
@@ -116,10 +53,7 @@ services:
         container_name: sun-proxy
         volumes:
             - ./sun-proxy.yml:/app/sun-proxy.yml
-            - ./cert:/app/cert
-        ports:
-            - 8080:8080 # http
-            - 8081:8081 # https
+            - ./cert:/app/cert # 证书目录
         restart: always
         command: ['./sun-proxy', '-c', './sun-proxy.yml']
     frpc:
@@ -130,6 +64,67 @@ services:
         restart: always
 
 ```
+
+
+2. `sun-proxy.yml` (下面文件是示例，根据自己需求修改)完整可以参考[Sun-Proxy文档](https://github.com/hslr-s/sun-proxy)
+
+```yml 
+name: sun-proxy
+port:
+  http: 8080
+  https: 8081
+rules:
+  - domain: "sun.panel.com" # sun-panel
+    path: "/" 
+    target_url: "http://192.168.3.100:3002" 
+
+  - domain: "example.com" # 代理域名（不可以带端口）
+    path: "/" # 代理地址 /example/other/path
+    target_url: "http://google.com/" # 目标地址 http://example.sun.sun
+    cert: # 证书地址
+      key:
+        ./cert/privkey.key
+      pem:
+        ./cert/fullchain.pem
+    auth: # 验证信息
+      username:
+        admin
+      password:
+        123456
+    target_basic_auth: # 目标验证信息（自动输入）
+      username:
+        admin
+      password:
+        123456
+```
+
+3. 提前编辑好配置文件 `fprc.toml` (下面文件是示例，如果无特殊需求的只需要更改加深部分参数)
+
+```toml {1,2,11-12,18-19}
+serverAddr = "x.x.x.x" # 服务器的公网ip 
+serverPort = 8004 
+
+# 自己设置密码与服务端保持一致，如需设置需要删除下面行开头的"#" 
+# auth.token = "12345678"  
+
+[[proxies]]
+name = "http"
+type = "tcp"
+localIP = "sun-proxy" # 需对应 sun-proxy 容器的名称
+localPort = 8080    # NAS端需要与 sun-proxy.yml 中的 port.http 对应 
+remotePort = 8080   # 服务器开放端口 
+
+[[proxies]]
+name = "https"
+type = "tcp"
+localIP = "sun-proxy" # 需对应 sun-proxy 容器的名称
+localPort = 8081    # NAS端需要与 sun-proxy.yml 中的 port.https 对应 
+remotePort = 8081   # 服务器开放端口 
+```
+
+
+
+
 
 4. 启动与停止
 
