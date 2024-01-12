@@ -29,7 +29,7 @@
 
 ## docker compose 运行
 
-> 创建一个文件夹`sun-panel-proxy`，里面创建3个文件，分别为`docker-compose.yml`，`sun-proxy.yml`，`fprc.toml`，
+> 创建一个文件夹`sun-panel-proxy`，里面创建3个文件，分别为`docker-compose.yml`，`sun-proxy.yml`，`frpc.toml`，
 
 1. 提前编辑好配置文件 `docker-compose.yml`
 
@@ -98,7 +98,7 @@ rules:
         123456
 ```
 
-3. 提前编辑好配置文件 `fprc.toml` (下面文件是示例，如果无特殊需求的只需要更改加深部分参数)
+3. 提前编辑好配置文件 `frpc.toml` (下面文件是示例，如果无特殊需求的只需要更改加深部分参数)
 
 ```toml {1,2,11-12,18-19}
 serverAddr = "x.x.x.x" # 服务器的公网ip 

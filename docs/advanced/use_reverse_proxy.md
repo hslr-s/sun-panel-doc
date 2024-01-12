@@ -28,7 +28,7 @@ Resolve your (sub)domain to the IP you want to use. If using a cloud server, ope
 
 ## Docker Compose Execution
 
-> Create a folder named `sun-panel-proxy`. Inside it, create three files: `sun-proxy.yml`, `fprc.toml`, and `docker-compose.yml`.
+> Create a folder named `sun-panel-proxy`. Inside it, create three files: `sun-proxy.yml`, `frpc.toml`, and `docker-compose.yml`.
 
 1. Edit the configuration file in advance `docker-compose.yml`
 
@@ -96,7 +96,7 @@ rules:
         123456
 ```
 
-3. Edit the configuration file in advance `fprc.toml` (The following file is an example; modify only if necessary.)
+3. Edit the configuration file in advance `frpc.toml` (The following file is an example; modify only if necessary.)
 
 ```toml {1,2,11-12,18-19}
 serverAddr = "x.x.x.x" # Public IP of the server
