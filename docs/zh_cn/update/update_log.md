@@ -7,7 +7,7 @@ outline: [2,3]
 
 > [Github Releases](https://github.com/hslr-s/sun-panel/releases)
 
-### v1.3.0-beta24-01-17 <Badge type="warning" text="beta" />
+### v1.3.0-beta24-01-17-19 <Badge type="warning" text="beta" />
 
 - [新增] 深色模式适配
 - [新增] 自定义css和js（实验性功能，后期可能调整）[参考说明](../advanced/custom_js_css.md)
