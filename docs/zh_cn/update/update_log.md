@@ -2,10 +2,20 @@
 outline: [2,3]
 ---
 ::: tip
-版本号带有`beta`+`日期`的为测试版本，测试版本更新请先看[beta说明](./update_beta.md)
+版本号带有`beta`+`日期`的为测试版本，测试版本更新请先看[beta说明](./update_beta.md)，并且务必提前备份❗❗❗
 :::
 
 > [Github Releases](https://github.com/hslr-s/sun-panel/releases)
+
+### v1.3.0-beta24-01-17 <Badge type="warning" text="beta" />
+
+- [新增] 深色模式适配
+- [新增] 自定义css和js（实验性功能，后期可能调整）[参考说明](../advanced/custom_js_css.md)
+- [优化] 优化搜索框样式(增加css hover效果，改善翻译) [#62](https://github.com/hslr-s/sun-panel/pull/62)
+- [优化] 系统状态磁盘和内存限制内容为 [已使用/未使用]
+- [优化] 优化部分设置和启动器标题
+- [修复] docker下 [系统状态] - [内存] 未使用数据显示错误
+- [其他] 去除后端返回提示信息，全部改用前端并适配多语言
 
 
 ### v1.3.0-beta24-01-09 <Badge type="warning" text="beta" />

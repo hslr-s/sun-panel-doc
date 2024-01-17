@@ -48,6 +48,7 @@ export function getChineseThemeConfig():DefaultTheme.Config {
             { text: '配置文件', link: '/zh_cn/advanced/config'},
             { text: '使用mysql/redis', link: '/zh_cn/advanced/mysql_redis'},
             { text: '使用反向代理+外网访问', link: '/zh_cn/advanced/use_reverse_proxy'},
+            { text: '自定义js、css', link: '/zh_cn/advanced/custom_js_css'},
             
           ]
         },
