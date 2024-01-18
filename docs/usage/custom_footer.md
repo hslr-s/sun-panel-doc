@@ -9,3 +9,44 @@ Added in v1.3.0, we can customize the footer code through `App Launchers` -> `Ba
 :::
 
 ## Some Examples
+
+### Dynamic Gradient Background
+
+<div class="tip custom-block">
+
+This configuration can also be used directly in [custom CSS](../advanced/custom_js_css.md). If used in CSS, please remove the `<style></style>` tags from the code. **Please note that using this code will override the default background settings. If it causes lag, consider discontinuing its use.**
+
+</div>
+
+The GIF size is too large, so no image is provided. The crucial part of the code is the last three parameters, which you can modify to achieve the desired colors.
+
+```html {20}
+<style>
+@keyframes hueRotate {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+.sun-main .cover {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+}
+
+.sun-main .cover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(30deg, #ffcc00, deeppink, #9c27b0);
+    -webkit-animation: hueRotate 5s infinite alternate;
+    animation: hueRotate 5s infinite alternate;
+}
+
+.sun-main .cover[style*="filter"]::before {
+    filter: none;
+}
+</style>
+```
