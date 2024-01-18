@@ -46,7 +46,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
           text: 'Updates',
           collapsed: false,
           items: [
-            { text: 'Release Notes', link: '/update/update_log'},
+            { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases'},
             { text: 'Beta Update Tutorial', link: '/update/update_beta'},
           ]
         },
