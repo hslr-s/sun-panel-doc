@@ -24,7 +24,7 @@ export function getChineseThemeConfig():DefaultTheme.Config {
           items: [
             { text: '项目介绍', link: '/zh_cn/introduce/project'},
             { text: '演示站点', link: '/zh_cn/introduce/demo_site'},
-            { text: '联系作者&交流群', link: '/zh_cn/introduce/author_groups'},
+            { text: '作者&交流群&社区', link: '/zh_cn/introduce/author_groups'},
             { text: '打赏🧧', link: '/zh_cn/introduce/donate'},
             
           ]

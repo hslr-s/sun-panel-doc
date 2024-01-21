@@ -15,7 +15,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
           items: [
             { text: 'Project Introduction', link: '/introduce/project'},
             { text: 'Demo Site', link: '/introduce/demo_site'},
-            { text: 'Contact the Author & Community', link: '/introduce/author_groups'},
+            { text: 'Author & Community', link: '/introduce/author_groups'},
             { text: 'Donate☕', link: '/introduce/donate'},
           ]
         },
