@@ -5,6 +5,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases'},
+      { text: 'Discussions', link: 'https://github.com/hslr-s/sun-panel/discussions'},
     ],
     
     sidebar: {

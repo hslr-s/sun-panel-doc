@@ -14,6 +14,7 @@ export function getChineseThemeConfig():DefaultTheme.Config {
     nav: [
       { text: '首页', link: '/zh_cn/' },
       { text: '更新日志', link: '/zh_cn/update/update_log'},
+      { text: '社区', link: 'https://github.com/hslr-s/sun-panel/discussions'},
     ],
     
     sidebar: {

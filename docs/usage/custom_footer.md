@@ -5,9 +5,8 @@ outline: [2,3]
 # Custom footer
 
 ::: tip 
-Added in v1.3.0, we can customize the footer code through `App Launchers` -> `Basic Settings` -> `Custom Footer`. This feature requires basic HTML coding skills. **If you don't understand, do not fill in code from unknown sources**. If the page becomes distorted after entering code, you can click the clear button next to the input box or `Reset`. If you have great ideas and a spirit of contribution, you can click `Edit this page on GitHub` at the bottom of the page to add your ideas.
+New in v1.3.0, we can customize the footer code through `App Launchers` -> `Basic Settings` -> `Custom Footer`. This feature requires basic HTML coding skills. **If you don't understand, do not fill in code from unknown sources**. If the page becomes distorted after entering code, you can click the clear button next to the input box or `Reset`. If you have great ideas and a spirit of contribution, you can add your ideas in the [GitHub community](https://github.com/hslr-s/sun-panel/discussions). This footer only takes effect for the account and is not global. If you want it to be effective globally, you can use [Custom JS/CSS](../advanced/custom_js_css.md).
 :::
-
 ## Some Examples
 
 ### Dynamic Gradient Background
