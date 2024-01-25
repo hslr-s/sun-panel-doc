@@ -5,7 +5,24 @@ outline: [2,3]
 版本号带有`beta`+`日期`的为测试版本，测试版本更新请先看[beta说明](./update_beta.md)，并且务必提前备份❗❗❗
 :::
 
-> [Github Releases](https://github.com/hslr-s/sun-panel/releases)
+[Github Releases](https://github.com/hslr-s/sun-panel/releases)
+
+---
+
+<!-- 
+快捷连接
+https://github.com/hslr-s/sun-panel/pull/xx
+
+-->
+
+### v1.3.0-beta24-01-25 <Badge type="warning" text="beta" />
+
+- [新增] 网络模式切换按钮显示开关
+- [修复] 部分错误不能正确显示的问题
+- [其他] 优化dom结构并增加一些重要标签的class类名（方便自定义css使用）
+- [其他] 后端命令行指令及所有输出内容为英文
+- [其他] dockerfile声明端口号
+
 
 ### v1.3.0-beta24-01-17-19 <Badge type="warning" text="beta" />
 
