@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"name": "EN_ROOT",
+			"path": "docs"
+		},
+		{
+			"name": "ZH_CN",
+			"path": "docs/zh_cn"
+		},
+		{
+			"name": "config",
+			"path": "docs/.vitepress/src/configs"
+		},
+		{
+			"name": "PUBLIC",
+			"path": "docs/public"
+		},
+		{
+			"name": "root",
+			"path": "."
+		}
+	],
+	"settings": {
+		"i18n-ally.localesPaths": []
+	}
+}
