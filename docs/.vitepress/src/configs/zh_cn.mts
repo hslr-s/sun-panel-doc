@@ -14,6 +14,7 @@ export function getChineseThemeConfig():DefaultTheme.Config {
     nav: [
       { text: '首页', link: '/zh_cn/' },
       { text: '更新日志', link: '/zh_cn/update/update_log'},
+      { text: '赞助', link: '/zh_cn/introduce/donate'},
       { text: '社区', link: 'https://github.com/hslr-s/sun-panel/discussions'},
     ],
     
@@ -38,6 +39,7 @@ export function getChineseThemeConfig():DefaultTheme.Config {
             { text: '快速部署', link: '/zh_cn/usage/quick_deploy'},
             { text: '编译运行', link: '/zh_cn/usage/compile'},
             { text: '重置密码', link: '/zh_cn/usage/reset_password'},
+            { text: '公开访问（访客模式）', link: '/zh_cn/usage/public_visit'},
             { text: '自定义页脚', link: '/zh_cn/usage/custom_footer'},
           ]
         },

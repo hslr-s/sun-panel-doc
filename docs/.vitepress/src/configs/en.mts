@@ -5,6 +5,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases'},
+      { text: 'Sponsor', link: '/introduce/donate'},
       { text: 'Discussions', link: 'https://github.com/hslr-s/sun-panel/discussions'},
     ],
     
@@ -28,6 +29,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
             { text: 'Quick Deployment', link: '/usage/quick_deploy'},
             { text: 'Compile and Run', link: '/usage/compile'},
             { text: 'Reset Password', link: '/usage/reset_password'},
+            { text: 'Public visit (visitor mode)', link: '/usage/public_visit'},
             { text: 'Custom footer', link: '/usage/custom_footer'},
           ]
         },
