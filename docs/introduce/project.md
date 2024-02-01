@@ -1,4 +1,4 @@
-<div align=center>
+<div align=center style="width:100%">
 
 <img src="/images/logo.png" width="100" height="100" />
 
@@ -21,40 +21,47 @@
 
 </div>
 
-Server, NAS navigation panel, Homepage, Browser homepage.
+A server, NAS navigation panel, Homepage, Browser homepage.
 
 </div>
 
-![](/images/icon-info-new.png)
+![](/images/introduce/main-dark.png)
 
 ## Features
 
-- Simple and clean design
-- Switch between LAN and WAN connections
-- Docker deployment with support for ARM systems
-- Easy to use without code modification
-- No need to connect to an external database
-- Rich icons for customization (text icons, SVG icons, built-in third-party icon libraries)
-- Supports opening web pages in embedded windows (some websites may block this feature)
-- Minimal resource usage
+- 🍉 Clean interface, powerful functionality, low resource consumption
+- 🍊 Easy to use, visual operation, zero-code usage
+- 🍠 One-click switch between internal and external network modes
+- 🍵 Supports Docker deployment (compatible with Arm systems)
+- 🎪 Supports multi-account isolation
+- 🎏 Supports viewing system status
+- 🫙 Supports custom JS, CSS
+- 🍻 Simple usage without the need to connect to an external database
+- 🍾 Rich icon styles for free combination, supports [Iconify icon library](https://icon-sets.iconify.design/)
+- 🚁 Supports opening small windows in the webpage (some third-party websites may block this feature)
+
 
 ## TODO
 
-- [x] Grouping and drag-and-drop sorting
+- [x] Drag-and-drop sorting
 - [x] Import and export functionality
-- [x] Add guest account
-- [x] Remove email restrictions for accounts
-- [x] Manage uploaded files (enhance reuse for accounts and save space)
-- [ ] User-defined search engine for the search box
-- [ ] Custom styling for the search box (background color, text color)
-- [ ] Multilingual support
-- [ ] Server monitoring
-- [ ] Docker manager
+- [x] Add guest accounts
+- [x] File management for uploaded files (enhances reuse for accounts, saves space)
+- [x] Multi-language support
+- [x] Server monitoring
+- [x] Custom JS, CSS
+- [x] Custom footer
+- [ ] User-customized search box search engine
+- [ ] Customization of search box style (background color, text color)
 - [ ] Scheduled tasks
+- [ ] Integration of Docker container status, management
+- [ ] Integration of third-party application APIs
+
+
 
 ## Preview Screenshots
 
-**Various styles for free combination**
+**Various styles, freely combined**
 
 ![](/images/icon-small-new.png)
 ![](/images/transparent-info.png)
@@ -62,7 +69,7 @@ Server, NAS navigation panel, Homepage, Browser homepage.
 ![](/images/solid-color-info.png)
 ![](/images/full-color-small.jpg)
 
-**Embedded Windows**
+**Built-in small windows**
 
 ![](/images/window-ssh.png)
 ![](/images/window-xunlei.png)
