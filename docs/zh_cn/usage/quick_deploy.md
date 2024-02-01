@@ -10,7 +10,7 @@
 |---|---|
 |-h|查看命令说明|
 |-config|生成配置文件（conf/conf.ini）|
-|-password-reset|重置第一个用户的密码|
+|-password-reset|重置第一个管理账号的密码|
 
 
 ## docker 运行
@@ -19,13 +19,14 @@
 DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel) 
 :::
 
-目录挂载 `-v`，根据自己的需求选择：
+目录挂载 `-v`，全部可选，根据自己的需求选择：
 |容器目录|说明|
 |---|---|
 |/app/conf|配置文件|
 |/app/uploads|上传的文件|
 |/app/database|数据库文件|
 |/app/runtime|运行日志(不推荐挂载)|
+|/app/web/custom|自定义（js,css等）`v1.3.0+`|
 
 1. 拉取镜像
 ```sh

@@ -10,7 +10,7 @@ Password: 12345678
 | --- | --- |
 | -h | View command instructions |
 | -config | Generate the configuration file (conf/conf.ini) |
-| -password-reset | Reset the password for the first user |
+| -password-reset | Reset the password of the first management account |
 
 ## Docker Run
 
@@ -18,13 +18,14 @@ Password: 12345678
 DockerHub [Sun-Panel Project Page](https://hub.docker.com/r/hslr/sun-panel) 
 :::
 
-Directory mounting `-v`, choose according to your needs:
+Directory mounting `-v`,all optional, choose according to your own needs:
 | Container Directory | Description |
 | --- | --- |
 | /app/conf | Configuration file |
 | /app/uploads | Uploaded files |
 | /app/database | Database files |
 | /app/runtime | Runtime logs (not recommended for mounting) |
+|/app/web/custom|Custom (JS, CSS, ...)`v1.3.0+`|
 
 1. Pull the image
 ```sh
