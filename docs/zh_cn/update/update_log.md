@@ -7,13 +7,30 @@ outline: [2,3]
 
 [Github Releases](https://github.com/hslr-s/sun-panel/releases)
 
----
 
 <!-- 
 快捷连接
 https://github.com/hslr-s/sun-panel/pull/xx
 
 -->
+
+## v1.3.0 <Badge type="tip" text="2024-01-30" />
+
+> 支持上个正式版本直接升级无需特殊处理
+
+- [新增] 国际化适配（增加英文支持）
+- [新增] 系统状态模块（支持CPU、内存、磁盘）
+- [新增] 深色模式适配
+- [新增] 网络模式切换按钮显示开关
+- [新增] **全局** 自定义JS和CSS（实验性功能，后期可能调整）[参考说明](../advanced/custom_js_css.md)
+- [新增] **账号** 自定义页脚 [备案号示例](../usage/custom_footer.md)
+- [新增] 自定义壁纸的图片地址
+- [优化] 优化搜索框样式(增加css hover效果，改善翻译) [#62](https://github.com/hslr-s/sun-panel/pull/62) (By[Tang Jing Hang](https://github.com/keyboardreamer))
+- [优化] 获取站点图标缓存到服务器，可以在上传文件中管理 [#74](https://github.com/hslr-s/sun-panel/issues/74)
+- [优化] 登录过期提示消息过多的问题
+- [优化] 搜索栏支持快捷键 `Esc` 清空关键字
+- [其他] 更多可以参考之前 **v1.3.0-beta\*** 版本更新日志
+
 
 ### v1.3.0-beta24-01-25 <Badge type="warning" text="beta" />
 
@@ -81,7 +98,6 @@ https://github.com/hslr-s/sun-panel/pull/xx
 - [优化] 手机端时钟样式
 - [修复] 退出排序模式有进入提示
 - [其他] 浏览器书签换工具[快速进入](https://hslr-s.github.io/sun-panel-tool-page/#/)
-
 
 ### v1.2.0-beta23-12-10
 - [新增] 导入导出图标（浏览器书签转换工具请期待后续更新）
