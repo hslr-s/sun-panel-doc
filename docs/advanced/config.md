@@ -1,6 +1,10 @@
 # Configuration file
 
-path：`conf/conf.ini`
+Configuration file: `conf/conf.ini`
+
+The file `./conf/conf.example.ini` is the complete configuration for the current version of the software. It gets overwritten and updated every time the software is launched. If the configuration file is damaged, you can simply rename it to `conf.ini`.
+
+For reference on the configuration file, please consider the `./conf/conf.ini` in your program.
 
 ```ini
 # ======================
