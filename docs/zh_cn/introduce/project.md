@@ -15,6 +15,7 @@
 </div>
 <div class="badge-box">
 
+[![GitHub Release](https://img.shields.io/github/v/release/hslr-s/sun-panel?color=4fb3bb)](https://github.com/hslr-s/sun-panel/releases)
 [![GitHub User's stars](https://img.shields.io/github/stars/hslr-s%2Fsun-panel?style=flat&logo=github)](https://github.com/hslr-s/sun-panel)
 [![github downloads](https://img.shields.io/github/downloads/hslr-s/sun-panel/total.svg?logo=github)](https://github.com/hslr-s/sun-panel/releases)
 [![docker pulls](https://img.shields.io/docker/pulls/hslr/sun-panel.svg?logo=docker)](https://hub.docker.com/r/hslr/sun-panel)
