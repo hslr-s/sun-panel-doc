@@ -15,6 +15,10 @@ https://github.com/hslr-s/sun-panel/pull/xx
 -->
 ### v1.4.0-beta24-02-20 <Badge type="warning" text="beta" />
 
+::: danger
+温馨提示：升级此版本前请**认真备份**你的数据❗❗❗,docker版本务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)（文章下面有中文版本说明）
+:::
+
 - [新增] 配置文件新增目录配置
     - 自定义web目录
     - 自定义css,js目录 （旧版本升级需要手动增加此配置项，否则默认：`./web/custom`）
