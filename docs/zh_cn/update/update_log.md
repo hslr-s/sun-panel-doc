@@ -13,6 +13,14 @@ outline: [2,3]
 https://github.com/hslr-s/sun-panel/pull/xx
 
 -->
+### v1.4.0-beta24-02-20 <Badge type="warning" text="beta" />
+
+- [新增] 配置文件新增目录配置
+    - 自定义web目录
+    - 自定义css,js目录 （旧版本升级需要手动增加此配置项，否则默认：`./web/custom`）
+- [优化] 系统应用加载失败的提示
+- [优化] 修改系统状态[详情图标]显示格式，包含硬盘和内存的信息格式[已使用量/总量]
+- [其他] docker版本精简挂载目录为一个`./conf`具体参考（[说明](https://github.com/hslr-s/sun-panel/discussions/98)）
 
 ## v1.3.0 <Badge type="tip" text="2024-01-30" />
 
