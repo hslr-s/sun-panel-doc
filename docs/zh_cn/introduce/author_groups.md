@@ -24,6 +24,9 @@
 
 [Discussions](https://github.com/hslr-s/sun-panel/discussions)
 
+## Telegram
+
+[TG交流群](https://t.me/+bwOFXt6zXf43Njk1)
 
 ## QQ交流群
 请扫码或者点击[此连接](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=yWCyKgcs2ybPwx-SyVWRX3bQgSEw9Sll&authKey=yMgOqKG9jao5KHmbrjaccXeLewSTBP%2BBPJBcxymjIMGc6H5dq7H9EMnMXtJXugr4&noverify=0&group_code=831615449)。进不去可以点上方连接联系作者
