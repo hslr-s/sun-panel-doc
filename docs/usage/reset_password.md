@@ -9,13 +9,19 @@ If you have forgotten the administrator password, you can reset the password for
 
 2. Execute the following command:
     ```sh
+    ./sun-panel -pwdReset
+    ```
+    
+    ::: details Click here to view versions `v1.4.0-beta24-02-20` and earlier
+    ```sh
     ./sun-panel -password-reset
     ```
+    :::
 
     Output:
 
     ```text
-    Password reset successful. Here are the account details:
-    Username: admin
-    Password: 12345678
+    The password has been successfully reset. Here is the account information
+    Username  admin@sun.cc
+    Password  12345678
     ```
