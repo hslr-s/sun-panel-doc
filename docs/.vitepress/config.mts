@@ -30,6 +30,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
+    logo: { src: '/favicon.ico', width: 24, height: 24 },
     // https://vitepress.dev/reference/default-theme-config
     socialLinks: [
       { icon: 'github', link: 'https://github.com/hslr-s/sun-panel' },
