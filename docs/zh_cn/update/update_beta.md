@@ -3,7 +3,7 @@ Beta版本是正式版本前的测试版本，极有可能有严重的bug，请�
 
 目前beta版本只发布docker版本，不单独发布二进制文件。其中beta版本是测试版本，docker里面`latest`标签是正式版本或者稳定的beta版本，不会更新不稳定的beta版本。
 
-beta的标签命名`[主版本号]-beta日期`示例：`1.1.0-beta23-11-24`组成。
+beta的标签命名`[主版本号]-beta日期`示例：`1.4.0-beta24-02-20`组成。
 
 更新完成如果没有任何效果记得[清除浏览器缓存](https://blog.csdn.net/m0_46156566/article/details/108519629)）
 :::
@@ -19,7 +19,7 @@ beta的标签命名`[主版本号]-beta日期`示例：`1.1.0-beta23-11-24`组�
 
 示例
 ```
-docker pull hslr/sun-panel:1.1.0-beta23-11-24
+docker pull hslr/sun-panel:1.4.0-beta24-02-20
 ```
 
 ### 3. 群晖或者其他可视化操作的
@@ -30,11 +30,9 @@ docker pull hslr/sun-panel:1.1.0-beta23-11-24
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
--v ~/docker_data/sun-panel/uploads:/app/uploads \
--v ~/docker_data/sun-panel/database:/app/database \
 --name sun-panel \
-hslr/sun-panel:1.1.0-beta23-11-24
+hslr/sun-panel:1.4.0-beta24-02-20
 ```
-将上面命令中`hslr/sun-panel:1.1.0-beta23-11-24`替换成最新beta版本的标签即可，其他参数按自身需求修改
+将上面命令中`hslr/sun-panel:1.4.0-beta24-02-20`替换成最新beta版本的标签即可，其他参数按自身需求修改
 
 完整运行参考：<a href="/deploy/quick_deploy">部署教程</a> | <a href="https://www.bilibili.com/video/BV1ke411y7B5" target="_blank">B站Beta更新视频教程</a>
