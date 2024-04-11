@@ -13,6 +13,21 @@ outline: [2,3]
 https://github.com/hslr-s/sun-panel/pull/xx
 
 -->
+### v1.4.0-beta24-04-11 <Badge type="warning" text="beta" />
+
+::: danger
+温馨提示：从v1.3.0及之前升级到此版本前请**认真备份**数据❗❗❗docker版本务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)（文章下面有中文版本说明）
+:::
+
+- [新增] 全局站点设置
+    - 自定义站点标题 `PRO`
+    - 自定义网站图标 `PRO`
+    - 自定义登录页面背景图
+- [新增] 在线编辑全局自定义 index.js 和 index.css 文件`PRO`（非PRO用户依旧可以从软件安装目录中修改）
+- [优化] 获取三方网站图标（可以获取99.999...%的网站图标，除非网站未设置图标😉）
+- [优化] 编辑项目图标时网址不带http或者https提示
+- [其他] 
+
 ### v1.4.0-beta24-02-20 <Badge type="warning" text="beta" />
 
 ::: danger
