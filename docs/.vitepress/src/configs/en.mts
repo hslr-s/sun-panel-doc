@@ -2,67 +2,11 @@ import type { DefaultTheme } from "vitepress";
 
 export function getEnglishThemeConfig(): DefaultTheme.Config {
   return {
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases'},
-      { text: 'Sponsor', link: '/introduce/donate'},
-      { text: 'Discussions', link: 'https://github.com/hslr-s/sun-panel/discussions'},
-    ],
-    
+    nav: nav(),
+
     sidebar: {
-      '/': [
-        {
-          text: 'Introduction',
-          collapsed: false,
-          items: [
-            { text: 'Project Introduction', link: '/introduce/project'},
-            { text: 'Demo Site', link: '/introduce/demo_site'},
-            { text: 'Author & Community', link: '/introduce/author_groups'},
-            { text: 'Donate☕', link: '/introduce/donate'},
-          ]
-        },
-
-        {
-          text: 'Usage',
-          collapsed: false,
-          items: [
-            { text: 'Quick Deployment', link: '/usage/quick_deploy'},
-            { text: 'Compile and Run', link: '/usage/compile'},
-            { text: 'Reset Password', link: '/usage/reset_password'},
-            { text: 'Public visit (visitor mode)', link: '/usage/public_visit'},
-            { text: 'Custom footer', link: '/usage/custom_footer'},
-          ]
-        },
-
-        {
-          text: 'Advanced',
-          collapsed: false,
-          items: [
-            { text: 'Configuration File', link: '/advanced/config'},
-            { text: 'Using MySQL/Redis', link: '/advanced/mysql_redis'},
-            { text: 'Using Reverse Proxy + External Access', link: '/advanced/use_reverse_proxy'},
-            { text: 'Custom CSS and JS', link: '/advanced/custom_js_css'},
-          ]
-        },
-
-        {
-          text: 'Updates',
-          collapsed: false,
-          items: [
-            { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases'},
-            { text: 'Beta Update Tutorial', link: '/update/update_beta'},
-          ]
-        },
-
-        {
-          text: 'Other',
-          collapsed: false,
-          items: [
-            { text: 'Recommended Wallpaper and Icon Websites', link: '/other/icon_wallpaper_recommend_sites'},
-            { text: 'Browser Bookmark Conversion', link: 'https://hslr-s.github.io/sun-panel-tool-page/'},
-          ]
-        },
-      ],
+      '/': sidebarRoot(),
+      '/openapi/':sidebarOpenapi(),
     },
 
     socialLinks: [
@@ -84,4 +28,85 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
       text: 'Last Edited Time'
     }
   };
+}
+
+function nav(): DefaultTheme.NavItem[] {
+  return [
+    { text: 'Home', link: '/' },
+    { text: 'OpenAPI', link: '/openapi/v1/apis' },
+    { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
+    { text: 'Sponsor', link: '/introduce/donate' },
+    { text: 'Discussions', link: 'https://github.com/hslr-s/sun-panel/discussions' },
+  ]
+}
+
+function sidebarRoot(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'Introduction',
+      collapsed: false,
+      items: [
+        { text: 'Project Introduction', link: '/introduce/project' },
+        { text: 'Demo Site', link: '/introduce/demo_site' },
+        { text: 'Author & Community', link: '/introduce/author_groups' },
+        { text: 'Donate☕', link: '/introduce/donate' },
+      ]
+    },
+
+    {
+      text: 'Usage',
+      collapsed: false,
+      items: [
+        { text: 'Quick Deployment', link: '/usage/quick_deploy' },
+        { text: 'Compile and Run', link: '/usage/compile' },
+        { text: 'Reset Password', link: '/usage/reset_password' },
+        { text: 'Public visit (visitor mode)', link: '/usage/public_visit' },
+        { text: 'Custom footer', link: '/usage/custom_footer' },
+      ]
+    },
+
+    {
+      text: 'Advanced',
+      collapsed: false,
+      items: [
+        { text: 'Configuration File', link: '/advanced/config' },
+        { text: 'Using MySQL/Redis', link: '/advanced/mysql_redis' },
+        { text: 'Using Reverse Proxy + External Access', link: '/advanced/use_reverse_proxy' },
+        { text: 'Custom CSS and JS', link: '/advanced/custom_js_css' },
+      ]
+    },
+
+    {
+      text: 'Updates',
+      collapsed: false,
+      items: [
+        { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
+        { text: 'Beta Update Tutorial', link: '/update/update_beta' },
+      ]
+    },
+
+    {
+      text: 'Other',
+      collapsed: false,
+      items: [
+        { text: 'Recommended Wallpaper and Icon Websites', link: '/other/icon_wallpaper_recommend_sites' },
+        { text: 'Browser Bookmark Conversion', link: 'https://hslr-s.github.io/sun-panel-tool-page/' },
+      ]
+    },
+  ]
+}
+
+
+function sidebarOpenapi(): DefaultTheme.SidebarItem[] {
+  // return []
+  return [
+    {
+      text: 'OpenAPI v1',
+      collapsed: false,
+      items: [
+        { text: 'API Description', link: '/openapi/v1/apis' },
+        { text: 'Error Code Description', link: '/openapi/v1/error_code' },
+      ]
+    },
+  ]
 }
