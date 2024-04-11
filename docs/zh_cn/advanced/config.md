@@ -1,10 +1,16 @@
 # 配置文件
 
-配置文件所在：`./conf/conf.ini`。
+> [!note] 默认的配置目录为 ./conf
+> ```
+> .
+> ├── conf
+> |   ├── conf.ini
+> |   └── conf.example.ini
+> └── ...
+> ```
+> 其中`./conf/conf.example.ini` 为当前软件版本完整的配置，每次启动都会覆盖更新，如果配置文件有损坏，可以将它直接重命名为 `conf.ini`
 
-`./conf/conf.example.ini`为当前软件版本完整的配置，每次启动都会覆盖更新，如果配置文件有损坏，可以将它直接重命名为`conf.ini`
-
-配置文件参考，请以你的程序中`./conf/conf.ini`为准：
+每个版本的配置文件可能略有差异，请以您的程序中`conf.ini`为准，下面内容仅供参考：
 ```ini
 # ======================
 # Basic configuration

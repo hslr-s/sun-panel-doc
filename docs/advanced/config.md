@@ -1,10 +1,16 @@
 # Configuration file
 
-Configuration file: `conf/conf.ini`
+> [!note] The default configuration directory is ./conf
+> ```
+> .
+> ├── conf
+> |   ├── conf.ini
+> |   └── conf.example.ini
+> └── ...
+> ```
+> Where `./conf/conf.example.ini` is the complete configuration for the current software version. It will be overwritten and updated every time you start. If the configuration file is damaged, you can directly rename it to `conf.ini`.
 
-The file `./conf/conf.example.ini` is the complete configuration for the current version of the software. It gets overwritten and updated every time the software is launched. If the configuration file is damaged, you can simply rename it to `conf.ini`.
-
-For reference on the configuration file, please consider the `./conf/conf.ini` in your program.
+Each version's configuration file may have slight differences. Please refer to the `conf.ini` in your program. The following content is for reference only:
 
 ```ini
 # ======================

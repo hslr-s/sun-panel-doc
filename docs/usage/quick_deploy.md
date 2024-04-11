@@ -1,9 +1,9 @@
 # Deployment Tutorial
 
 ## Default Account and Password
-Username: admin@sun.cc
+Username: **admin@sun.cc**
 
-Password: 12345678
+Password: **12345678**
 
 
 ## Command Parameters
@@ -19,13 +19,13 @@ Password: 12345678
 
 :::
 
-Versions `v1.3.0` and earlier
+::: info Versions `v1.3.0` and earlier
 | Parameter | Description |
 |---|---|
 | -h | View command instructions |
 | -config | Generate configuration file (conf/conf.ini) |
 | -password-reset | Reset the password of the first admin account |
-
+:::
 
 ## Docker Run
 
@@ -43,7 +43,7 @@ Directory mounts `-v`, all optional, choose according to your needs:
 | /app/runtime | Runtime logs (not recommended to mount) |
 :::
 
-**Versions `v1.3.0` and earlier**
+::: info **Versions `v1.3.0` and earlier**
 Directory mounts `-v`, all optional, choose according to your needs:
 | Container Directory | Description |
 |---|---|
@@ -52,6 +52,7 @@ Directory mounts `-v`, all optional, choose according to your needs:
 | /app/database | Database files |
 | /app/runtime | Runtime logs (not recommended to mount) |
 | /app/web/custom | Custom (js, css, etc.) `v1.3.0+` |
+:::
 
 1. Pull the image
 ```sh
@@ -70,7 +71,7 @@ hslr/sun-panel:1.4.0-beta24-02-20
 ```
 :::
 
-**Versions `v1.3.0` and earlier**
+::: info **Versions `v1.3.0` and earlier**
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
@@ -78,6 +79,7 @@ docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/database:/app/database \
 --name sun-panel \
 hslr/sun-panel
+:::
 
 
 ## Binary File Run

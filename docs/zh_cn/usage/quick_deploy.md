@@ -1,9 +1,9 @@
 # 部署教程
 
 ## 默认账号密码
-账号：admin@sun.cc
+账号：**admin@sun.cc**
 
-密码：12345678
+密码：**12345678**
 
 ## 命令参数
 
@@ -18,13 +18,13 @@
 
 :::
 
-`v1.3.0` 及之前版本
+::: info `v1.3.0` 及之前版本
 |参数|说明|
 |---|---|
 |-h|查看命令说明|
 |-config|生成配置文件（conf/conf.ini）|
 |-password-reset|重置第一个管理账号的密码|
-
+:::
 
 ## docker 运行
 
@@ -42,7 +42,7 @@ DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel)
 |/app/runtime|运行日志(不推荐挂载)|
 :::
 
-**`v1.3.0` 及之前版本**
+::: info **`v1.3.0` 及之前版本**
 目录挂载 `-v`，全部可选，根据自己的需求选择：
 |容器目录|说明|
 |---|---|
@@ -51,6 +51,7 @@ DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel)
 |/app/database|数据库文件|
 |/app/runtime|运行日志(不推荐挂载)|
 |/app/web/custom|自定义（js,css等）`v1.3.0+`|
+:::
 
 1. 拉取镜像
 ```sh
@@ -70,7 +71,7 @@ hslr/sun-panel:1.4.0-beta24-02-20
 ```
 :::
 
-**`v1.3.0` 及之前版本**
+::: info **`v1.3.0` 及之前版本**
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
@@ -79,6 +80,7 @@ docker run -d --restart=always -p 3002:3002 \
 --name sun-panel \
 hslr/sun-panel
 ```
+:::
 
 ## 二进制文件运行
 
