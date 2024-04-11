@@ -1,44 +1,22 @@
 # Custom CSS and JS
 
-(Experimental feature, subject to potential adjustments in future releases. Please stay tuned for further update information.)
-
-Supported versions: `1.3.0-beta24-01-17` and later. If you find the current interface unsatisfactory, want to customize global elements, or add some fun features, you can choose to customize CSS and JS **(This operation takes effect global and for all accounts)**.You can also go to the [**Discussions**](https://github.com/hslr-s/sun-panel/discussions) to publish your tutorials and let more people use them.
-
 :::danger 
-Do not add JavaScript code from unknown sources to avoid security risks!!!
+Please do not add js code from unknown sources to avoid being attacked!!!
 :::
 
-Custom files are located in the `web/custom` directory. **If the files do not exist, you can manually create `index.js` and `index.css` in this directory.**
+## Versions `v1.3.0` and earlier or upgrades
 
-<div class="tip custom-block">
+**For versions `v1.3.0` and earlier [please refer here](./custom_js_css_old.md). If you are using the Docker version and have upgraded from `v1.3.0` or earlier, [please refer here](https://github.com/hslr-s/sun-panel/discussions/98)**
 
-**For Docker, you need to mount the directory during `docker run` by adding `-v ~/docker_data/sun-panel/custom:/app/web/custom` (this is just an example, modify the path before the colon based on your environment).**
 
-</div>
+## Installation of `v1.4.0-beta24-02-20+` without upgrade
 
-The directory structure looks like this:
-```txt {10-11}
-.
-├── conf
-├── database
-├── runtime
-├── sun-panel
-├── uploads
-└── web
-    ├── assets
-    ├── custom
-    │   ├── index.css // [!code focus]
-    │   └── index.js // [!code focus]
-    ├── favicon-black.svg
-    ├── favicon.ico
-    ├── favicon.svg
-    ├── index.html
-    ├── logo.png
-    └── static
+If you are doing a fresh installation, your custom directory for Docker version: `./conf/custom`, for binary version: `./custom`
+
+Specifically, reference, create related files if they don't exist
 ```
-
-You can then edit these two files and see the effects after refreshing the browser. If there is no effect, please clear the browser cache.
-
-:::danger 
-Do not add JavaScript code from unknown sources to avoid security risks!!!
-:::
+├── custom
+│   ├── ...
+│   ├── index.css // [!code focus]
+│   └── index.js // [!code focus]
+```

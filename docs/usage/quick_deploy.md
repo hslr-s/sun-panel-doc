@@ -14,7 +14,7 @@ Password: 12345678
 |---|---|
 | -h | View command instructions |
 | -cfgInit | Generate configuration file (conf/conf.ini) |
-| -cfgPath | Specify the directory of the program configuration file |
+| -cfgPath | Specify the directory of the program configuration file (default "./conf")|
 | -pwdReset | Reset the password of the first admin account |
 
 :::
