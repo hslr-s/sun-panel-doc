@@ -1,5 +1,9 @@
 # Compilation and Execution
 
+> [!IMPORTANT] Important Notice
+> Starting from `v1.4.0-beta24-02-20`, the project will be temporarily closed source, preparing for refactoring to support modular development before being open sourced again. The current version on GitHub is `v1.3.0` stable release.
+
+
 ## Frontend
 ```sh
 # Development run
