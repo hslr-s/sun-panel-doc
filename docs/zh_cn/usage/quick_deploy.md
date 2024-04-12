@@ -12,9 +12,9 @@
 |参数|说明|
 |---|---|
 |-h|查看命令说明|
-|-cfgInit|生成配置文件（conf/conf.ini）|
-|-cfgPath|指定程序配置文件的目录 (默认 "./conf")|
-|-pwdReset|重置第一个管理账号的密码|
+|-config-reset|生成或重置配置文件（conf/conf.ini）|
+|-config-path|指定程序配置文件的目录 (默认 "./conf")|
+|-password-reset|重置第一个管理账号的密码|
 
 :::
 

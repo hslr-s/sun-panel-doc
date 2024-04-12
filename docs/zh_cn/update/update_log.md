@@ -13,7 +13,7 @@ outline: [2,3]
 https://github.com/hslr-s/sun-panel/pull/xx
 
 -->
-### v1.4.0-beta24-04-11 <Badge type="warning" text="beta" />
+### v1.4.0-beta24-04-12 <Badge type="warning" text="beta" />
 
 > [!CAUTION] 升级说明
 > 从v1.3.0及之前升级到此版本前请 **认真备份** 数据❗❗❗docker版本务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)（文章下面有中文版本说明）

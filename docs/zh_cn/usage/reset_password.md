@@ -6,23 +6,20 @@
     ```sh
     docker exec -it sun-panel bash
     ```
+    
 2. 执行示例
-    ```sh
-    ./sun-panel -pwdReset
-    ```
-
-    ::: details 点此查看`v1.4.0-beta24-02-20` 及之前的版本
     ```sh
     ./sun-panel -password-reset
     ```
-    :::
 
-    输出结果:
-
+    ::: info 输出结果
     ```text
     The password has been successfully reset. Here is the account information
     Username  admin@sun.cc
     Password  12345678
     ```
+    :::
+
+   
 
 
