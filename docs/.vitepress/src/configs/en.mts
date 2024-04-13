@@ -35,7 +35,10 @@ function nav(): DefaultTheme.NavItem[] {
     { text: 'Home', link: '/' },
     { text: 'OpenAPI', link: '/openapi/v1/apis' },
     { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
-    { text: 'Sponsor', link: '/introduce/donate' },
+    {
+      text: '<span style="background-image: linear-gradient(to right,#ee0979,#ff6a00);-webkit-text-fill-color: transparent;-webkit-background-clip: text;background-clip: text;font-weight:800;">PRO</span>',
+      link: '//pro.sun-panel.top'
+    },
     { text: 'Discussions', link: 'https://github.com/hslr-s/sun-panel/discussions' },
   ]
 }

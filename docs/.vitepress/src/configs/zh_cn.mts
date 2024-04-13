@@ -15,7 +15,7 @@ export function getChineseThemeConfig(): DefaultTheme.Config {
 
     sidebar: {
       '/zh_cn/': sidebarRoot(),
-      '/zh_cn/openapi/':sidebarOpenapi(),
+      '/zh_cn/openapi/': sidebarOpenapi(),
     },
 
     socialLinks: [
@@ -64,7 +64,10 @@ function nav(): DefaultTheme.NavItem[] {
     { text: '首页', link: '/zh_cn/' },
     { text: 'OpenAPI', link: '/zh_cn/openapi/v1/apis' },
     { text: '更新日志', link: '/zh_cn/update/update_log' },
-    { text: '赞助', link: '/zh_cn/introduce/donate' },
+    {
+      text: '<span style="background-image: linear-gradient(to right,#ee0979,#ff6a00);-webkit-text-fill-color: transparent;-webkit-background-clip: text;background-clip: text;font-weight:800;">PRO</span>',
+      link: '//pro.sun-panel.top'
+    },
     { text: '社区', link: 'https://github.com/hslr-s/sun-panel/discussions' },
   ]
 }
