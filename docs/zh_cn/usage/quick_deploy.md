@@ -7,7 +7,7 @@
 
 ## 命令参数
 
-::: details `v1.4.0-beta24-04-11+` 请点此查看
+::: info `v1.4.0+` 
 
 |参数|说明|
 |---|---|
@@ -18,7 +18,7 @@
 
 :::
 
-::: info `v1.3.0` 及之前版本
+::: details `v1.3.0` 及之前版本，请点此查看
 |参数|说明|
 |---|---|
 |-h|查看命令说明|
@@ -32,7 +32,7 @@
 DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel) 
 :::
 
-::: details `v1.4.0-beta24-02-20+` 请点此查看
+::: info `v1.4.0+` 
 如果您是从`v1.3.0`及之前的版本升级到此版本，[请查看这个说明](https://github.com/hslr-s/sun-panel/discussions/98)
 
 目录挂载 `-v`，全部可选，根据自己的需求选择：
@@ -42,7 +42,7 @@ DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel)
 |/app/runtime|运行日志(不推荐挂载)|
 :::
 
-::: info **`v1.3.0` 及之前版本**
+::: details `v1.3.0` 及之前版本，请点此查看
 目录挂载 `-v`，全部可选，根据自己的需求选择：
 |容器目录|说明|
 |---|---|
@@ -50,28 +50,30 @@ DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel)
 |/app/uploads|上传的文件|
 |/app/database|数据库文件|
 |/app/runtime|运行日志(不推荐挂载)|
-|/app/web/custom|自定义（js,css等）`v1.3.0+`|
+|/app/web/custom|自定义（js,css等）仅限 `v1.3.0`|
 :::
 
-1. 拉取镜像
+1. 拉取最新镜像
 ```sh
-docker pull hslr/sun-panel
+docker pull hslr/sun-panel:latest
 ```
 
 2. 直接下载运行
 
-::: details `v1.4.0-beta24-02-20+` 请点此查看
+::: info `v1.4.0+` 
 
-请自行替换版本号：`1.4.0-beta24-02-20`
+`latest` 可以替换成其他版本号（[查看](https://hub.docker.com/r/hslr/sun-panel/tags)）
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
 --name sun-panel \
-hslr/sun-panel:1.4.0-beta24-02-20
+hslr/sun-panel:latest
 ```
+
+容器端口默认：3002，`--restart=always` 自动重启，`-d` 后台运行
 :::
 
-::: info **`v1.3.0` 及之前版本**
+::: details `v1.3.0` 及之前版本，请点此查看
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
@@ -89,7 +91,7 @@ hslr/sun-panel
 :::
 
 
-执行示例
+执行示例（使用命令行运行）
 
 ```sh
 ./sun-panel

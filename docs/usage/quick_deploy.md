@@ -8,7 +8,7 @@ Password: **12345678**
 
 ## Command Parameters
 
-::: details Click here to view `v1.4.0-beta24-04-11+`
+::: info  `v1.4.0+`
 
 | Parameter | Description |
 |---|---|
@@ -19,7 +19,7 @@ Password: **12345678**
 
 :::
 
-::: info Versions `v1.3.0` and earlier
+::: details Click here to view versions `v1.3.0` and earlier
 | Parameter | Description |
 |---|---|
 | -h | View command instructions |
@@ -33,7 +33,7 @@ Password: **12345678**
 DockerHub [Sun-Panel project homepage](https://hub.docker.com/r/hslr/sun-panel) 
 :::
 
-::: details Click here to view `v1.4.0-beta24-02-20+`
+::: info `v1.4.0+`
 If you are upgrading from version `v1.3.0` or earlier to this version, [please refer to this note](https://github.com/hslr-s/sun-panel/discussions/98)
 
 Directory mounts `-v`, all optional, choose according to your needs:
@@ -43,7 +43,7 @@ Directory mounts `-v`, all optional, choose according to your needs:
 | /app/runtime | Runtime logs (not recommended to mount) |
 :::
 
-::: info **Versions `v1.3.0` and earlier**
+::: details Click here to view versions `v1.3.0` and earlier
 Directory mounts `-v`, all optional, choose according to your needs:
 | Container Directory | Description |
 |---|---|
@@ -51,27 +51,29 @@ Directory mounts `-v`, all optional, choose according to your needs:
 | /app/uploads | Uploaded files |
 | /app/database | Database files |
 | /app/runtime | Runtime logs (not recommended to mount) |
-| /app/web/custom | Custom (js, css, etc.) `v1.3.0+` |
+| /app/web/custom | Custom (js, css, etc.) only `v1.3.0` |
 :::
 
-1. Pull the image
+1. Pull the latest image
 ```sh
-docker pull hslr/sun-panel
+docker pull hslr/sun-panel:latest
 ```
 
 2. Run directly
 
-::: details Click here to view `v1.4.0-beta24-02-20+`
-Please replace the version number: `1.4.0-beta24-02-20`
+::: info `v1.4.0+`
+Replace `latest` with other version numbers ([View](https://hub.docker.com/r/hslr/sun-panel/tags))
+
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
 --name sun-panel \
-hslr/sun-panel:1.4.0-beta24-02-20
+hslr/sun-panel:latest
 ```
+Container port default: 3002, `--restart=always` for automatic restart, `-d` for running in the background.
 :::
 
-::: info **Versions `v1.3.0` and earlier**
+::: details Click here to view versions `v1.3.0` and earlier
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
@@ -88,7 +90,7 @@ hslr/sun-panel
 Go to GitHub [Releases](https://github.com/hslr-s/sun-panel/releases) to download binary files.
 :::
 
-Example execution
+Example execution (Use the command line to run)
 
 ```sh
 ./sun-panel
