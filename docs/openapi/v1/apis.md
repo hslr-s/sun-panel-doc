@@ -2,20 +2,20 @@
 outline: [2,3]
 ---
 
-# Open API `V1` <Badge type="warning" text="beta" />
+# Open API `V1`  <Badge type="warning" text="beta" />
 
-> Newly added in `v1.4.0-beta24-04-11+`, if you are a developer, you can implement Sun-Panel functionalities by calling the API.
+> Added in `v1.4.0-beta24-04-11+`, if you are a developer, you can implement the corresponding functions of Sun-Panel by calling the API.
 
 > [!IMPORTANT]
-> All interfaces adopt the POST request method. API requests require token authentication. Please use the `admin account` to obtain the token in the `OpenAPI` application in `Sun-Panel`.
+> All interfaces adopt the POST request method. API requests require token authentication. Please use the `management account` to find the `OpenAPI` application in `Sun-Panel` to obtain the token.
 
 ## Header Parameters
-Parameter | Example | Description
+Parameter | Example Value | Description
 --- | --- | ---
-token |  ieyqw0x9nngzukrrmivx84hj7l2xkr1t| -
-
+token | ieyqw0x9nngzukrrmivx84hj7l2xkr1t | -
 
 ## API Interfaces
+
 ### Create Project
 
 #### URL
@@ -23,12 +23,12 @@ token |  ieyqw0x9nngzukrrmivx84hj7l2xkr1t| -
 
 #### Request Content
 
-::: info Parameter Description
-Parameter | Example | Type | Required | Description
+::: info Parameter Explanation
+Parameter | Example Value | Parameter Type | Required | Description
 --- | --- | --- | --- | ---
-iconUrl |https://baidu.com/favicon.ico | String | Yes | Image URL
+iconUrl | https://baidu.com/favicon.ico | String | Yes | Image URL
 title | Baidu | String | Yes | Title
-onlyName | test_baidu | String | No | Unique identifier
+onlyName | test_baidu | String | No | Unique Identifier
 url | https://baidu.com | String | Yes | URL
 lanUrl | - | String | No | Intranet URL
 description | - | String | No | Description
@@ -47,34 +47,41 @@ description | - | String | No | Description
 ```
 :::
 
-#### Successful Response Example
+#### Success Response
 
 ::: details Content Example
 ```javascript
 {
-	"code": 0,
-	"msg": "OK"
+    "code": 0,
+    "msg": "OK"
 }
 ```
 :::
 
-#### Possible Error Codes
+#### Error Response
 
-| code |      msg        | Description|
-|--------|----------------------|---|
-| 1202   |     only name existed       |  Only name already exists |
+Possible error codes: `1202`. For the specific meanings of error codes, [click here](./error_code.md).
 
-### Query Project Information by Unique Identifier
+::: details Content Example
+```javascript
+{
+    "code": 1202,
+    "msg": "..."
+}
+```
+:::
+
+### Retrieve Project Information by Unique Identifier
 
 #### URL
 > /openapi/v1/item/getInfoByOnlyName
 
 #### Request Content
 
-::: info Parameter Description
-Parameter | Example | Type | Required | Description
+::: info Parameter Explanation
+Parameter | Example Value | Parameter Type | Required | Description
 --- | --- | --- | --- | ---
-onlyName | test_baidu | String | Yes | Unique identifier
+onlyName | test_baidu | String | Yes | Unique Identifier
 :::
 
 ::: details Content Example
@@ -85,43 +92,119 @@ onlyName | test_baidu | String | Yes | Unique identifier
 ```
 :::
 
+#### Success Response
 
-#### Successful Response Example
-
-::: info Parameter Description
-Parameter | Example | Type | Description
+::: info Parameter Explanation
+Parameter | Example Value | Parameter Type | Description
 --- | --- | --- | ---
 iconUrl | - | String | Image URL
 title | Baidu | String | Title
-onlyName | test_baidu | String | Unique identifier
+onlyName | test_baidu | String | Unique Identifier
 url | https://baidu.com | String | URL
 lanUrl | - | String | Intranet URL
 description | - | String | Description
 :::
 
-
 ::: details Content Example
 ```javascript
 {
-	"code": 0,
-	"data": {
-		"iconUrl": "",
-		"title": "Baidu",
-		"onlyName": "test_baidu",
-		"url": "https://baidu.com",
-		"lanUrl": "",
-		"description": ""
-	},
-	"msg": "OK"
+    "code": 0,
+    "data": {
+        "iconUrl": "",
+        "title": "Baidu",
+        "onlyName": "test_baidu",
+        "url": "https://baidu.com",
+        "lanUrl": "",
+        "description": ""
+    },
+    "msg": "OK"
 }
 ```
 :::
 
+#### Error Response
 
-#### Possible Error Codes
+Possible error codes: `1203`. For the specific meanings of error codes, [click here](./error_code.md).
 
-| code |      msg        | Description|
-|--------|----------------------|---|
-| 1203   |     no record           |  No record |
+::: details Content Example
+```javascript
+{
+    "code": 1203,
+    "msg": "..."
+}
+```
+:::
 
-<!-- <Badge type="info" text="1202" /> -->
+### Update Project
+
+#### URL
+> /openapi/v1/item/update
+
+#### Request Content
+
+::: info Parameter Explanation
+Parameter | Example Value | Parameter Type | Required | Description
+--- | --- | --- | --- | ---
+onlyName | test_baidu | String | Yes | Unique Identifier
+iconUrl | https://baidu.com/favicon.ico | String | Yes | Image URL
+title | Baidu | String | Yes | Title
+url | https://baidu.com | String | Yes | URL
+lanUrl | - | String | No | Intranet URL
+description | - | String | No | Description
+:::
+
+::: details Content Example
+```json
+{
+    "iconUrl":"",
+    "title": "Baidu",
+    "onlyName": "test_baidu",
+    "url": "https://baidu.com",
+    "lanUrl": "",
+    "description": ""
+}
+```
+:::
+
+#### Success Response
+
+::: info Parameter Explanation
+Parameter | Example Value | Parameter Type | Description
+--- | --- | --- | ---
+iconUrl | - | String | Image URL
+title | Baidu | String | Title
+onlyName | test_baidu | String | Unique Identifier
+url | https://baidu.com | String | URL
+lanUrl | - | String | Intranet URL
+description | - | String | Description
+:::
+
+::: details Content Example
+```javascript
+{
+    "code": 0,
+    "data": {
+        "iconUrl": "",
+        "title": "Baidu",
+        "onlyName": "test_baidu",
+        "url": "https://baidu.com",
+        "lanUrl": "",
+        "description": ""
+    },
+    "msg": "OK"
+}
+```
+:::
+
+#### Error Response
+
+Possible error codes: `1202`, `1203`. For the specific meanings of error codes, [click here](./error_code.md).
+
+::: details Content Example
+```javascript
+{
+    "code": 1202,
+    "msg": "..."
+}
+```
+:::

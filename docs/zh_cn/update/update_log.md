@@ -13,6 +13,25 @@ outline: [2,3]
 https://github.com/hslr-s/sun-panel/pull/xx
 
 -->
+
+## v1.4.0 <Badge type="tip" text="2024-04-26" />
+
+> [!CAUTION] 重要说明
+> 从v1.3.0及之前升级到此版本前请 **认真备份** 数据❗❗❗此版本简化了docker挂载目录，但是仍然兼容旧版本的路径挂载方式。如果您是docker用户想尝试最新的挂载方式，请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)（文章下面有中文版本说明）
+
+- [新增] OpenAPI开放接口`beta功能`，开发者可以通过调用API接口来实现一些功能 ([文档说明](/zh_cn/openapi/v1/apis.html))
+- [新增] 全局站点设置：自定义站点标题 `PRO`、自定义站点图标 `PRO`、自定义登录页面背景图
+- [新增] 在线编辑全局自定义 index.js 和 index.css 文件 `PRO`（非PRO用户依旧可以从程序安装目录中修改）
+- [新增] 背景图支持heic、avif格式上传 [ [#77](https://github.com/hslr-s/sun-panel/issues/77) ]（仅对avif进行测试了）
+- [修复] `v1.4.0-beta24-04-12` 旧版用户升级不兼容在线编辑js、css的问题
+- [优化] 禁用referrer 。解决部分网站跳转后（例：qBittorrent）无法打开 [[#64](https://github.com/hslr-s/sun-panel/issues/64), [#127](https://github.com/hslr-s/sun-panel/issues/127)]
+- [优化] 获取三方网站图标
+- [优化] 编辑项目时网址检测未以 `http/https` 开头并进行提醒
+- [优化] 修改系统状态[详情图标]显示格式，包含硬盘和内存的信息格式[已使用量/总量]
+- [其他] docker版本精简挂载目录为一个 `./conf` 具体参考（[说明](https://github.com/hslr-s/sun-panel/discussions/98)） [ [#45](https://github.com/hslr-s/sun-panel/issues/45) ]
+- [其他] 更多可以参考之前 **v1.4.0-beta\*** 版本更新日志
+
+
 ### v1.4.0-beta24-04-12 <Badge type="warning" text="beta" />
 
 > [!CAUTION] 升级说明
