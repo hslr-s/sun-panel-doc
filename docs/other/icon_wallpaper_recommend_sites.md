@@ -12,3 +12,5 @@ Wallpapers:
 - [Wallhaven](https://wallhaven.cc/)
 - [Wallpaperscraft](https://wallpaperscraft.com/)
 - [Wallpaper Abyss](https://wall.alphacoders.com/)
+- Random wallpaper API aggregation station built by partners
+    - [By YM](https://img-api.yumo.icu/)
