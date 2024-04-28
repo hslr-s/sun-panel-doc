@@ -14,3 +14,5 @@
 - [Wallhaven](https://wallhaven.cc/)
 - [Wallpaperscraft](https://wallpaperscraft.com/)
 - [Wallpaper Abyss](https://wall.alphacoders.com/)
+- 小伙伴搭建的随机壁纸API聚合站
+    - [By YM](https://img-api.yumo.icu/)
