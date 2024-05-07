@@ -1,11 +1,10 @@
+# 作者&交流群&社区
 
-# Author & Community
+## 关于作者
 
-## About the Author
+博客：**[红烧猎人](https://blog.enianteam.com/u/sun/content/11)**
 
-Blog: **[红烧猎人 (Braised Hunter)](https://blog.enianteam.com/u/sun/content/11)**
-
-Email: 95302870@qq.com
+邮箱：95302870@qq.com
 
 <div class="badge-box">
 
@@ -20,17 +19,16 @@ Email: 95302870@qq.com
 </div>
 
 
-## GitHub Discussions
+
+## GitHub 社区板块
 
 [Discussions](https://github.com/hslr-s/sun-panel/discussions)
 
 ## Telegram
 
-[TG Group](https://t.me/+bwOFXt6zXf43Njk1)
+[TG交流群](https://t.me/+bwOFXt6zXf43Njk1)
 
-## QQ Community Group
-Please scan the QR code or click [this link](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=yWCyKgcs2ybPwx-SyVWRX3bQgSEw9Sll&authKey=yMgOqKG9jao5KHmbrjaccXeLewSTBP%2BBPJBcxymjIMGc6H5dq7H9EMnMXtJXugr4&noverify=0&group_code=831615449). If you can't join, use the link above to contact the author.
+## QQ交流群
+请扫码或者点击[此连接](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=yWCyKgcs2ybPwx-SyVWRX3bQgSEw9Sll&authKey=yMgOqKG9jao5KHmbrjaccXeLewSTBP%2BBPJBcxymjIMGc6H5dq7H9EMnMXtJXugr4&noverify=0&group_code=831615449)。进不去可以点上方连接联系作者
 
 <img src="/images/qq_group_qr2.png"  style="height:300px"/>
-
-

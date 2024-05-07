@@ -1,16 +1,18 @@
-# Recommended Icon and Wallpaper Websites
+# 图标、壁纸网站推荐
 
-Icons:
-- [Alibaba Vector Icon Library](https://www.iconfont.cn/)
+图标：
+
+
+- [阿里巴巴矢量图标](https://www.iconfont.cn/)
 - [Icons8](https://icons8.com/)
 - [Vectorjunky](https://www.iconfinder.com/)
-- Little partner's icon library
+- 小伙伴搭建的
     - [By Pipu](https://pipuwong.com/en/free-icons-for-self-hosted)
     - [By Siriling](https://siriling.github.io/my-icons/dist)
 
-Wallpapers:
+壁纸：
 - [Wallhaven](https://wallhaven.cc/)
 - [Wallpaperscraft](https://wallpaperscraft.com/)
 - [Wallpaper Abyss](https://wall.alphacoders.com/)
-- Random wallpaper API aggregation station built by partners
+- 小伙伴搭建的随机壁纸API聚合站
     - [By YM](https://img-api.yumo.icu/)

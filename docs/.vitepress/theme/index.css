@@ -6,3 +6,16 @@
 .medium-zoom-image {
     z-index: 9999 !important;/* 给的值是21，但是实测盖不住，直接999 */
 }
+
+.badge-box a{
+    display: inline-block;
+}
+
+.badge-box a:nth-child(n+2) {
+    margin-left: 5px;
+}
+
+.badge-box img{
+    /* margin-right:10px; */
+    cursor:pointer
+}

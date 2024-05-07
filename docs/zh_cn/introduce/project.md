@@ -22,47 +22,49 @@
 
 </div>
 
-A server, NAS navigation panel, Homepage, Browser homepage.
+一个服务器、NAS导航面板、Homepage、浏览器首页。
 
 </div>
 
 ![](/images/introduce/main-dark.png)
 
-## Features
+## 特点
 
-- 🍉 Clean interface, powerful functionality, low resource consumption
-- 🍊 Easy to use, visual operation, zero-code usage
-- 🍠 One-click switch between internal and external network modes
-- 🍵 Supports Docker deployment (compatible with Arm systems)
-- 🎪 Supports multi-account isolation
-- 🎏 Supports viewing system status
-- 🫙 Supports custom JS, CSS
-- 🍻 Simple usage without the need to connect to an external database
-- 🍾 Rich icon styles for free combination, supports [Iconify icon library](https://icon-sets.iconify.design/)
-- 🚁 Supports opening small windows in the webpage (some third-party websites may block this feature)
+- 🍉界面简洁，功能强大，资源占用少
+- 🍊上手简单，可视化操作，可0代码使用
+- 🍠一键切换内、外网模式链接
+- 🍵支持docker部署（支持Arm系统）
+- 🎪支持多账号隔离使用
+- 🎏支持查看系统状态
+- 🫙支持自定义js、css
+- 🍻简单使用可以无需连接外部数据库
+- 🍾丰富图标风格自由搭配，支持[iconify图标库](https://icon-sets.iconify.design/)
+- 🚁支持网页内置小窗口打开（部分三方网站屏蔽此功能）
 
 
 ## TODO
 
-- [x] Drag-and-drop sorting
-- [x] Import and export functionality
-- [x] Add guest accounts
-- [x] File management for uploaded files (enhances reuse for accounts, saves space)
-- [x] Multi-language support
-- [x] Server monitoring
-- [x] Custom JS, CSS
-- [x] Custom footer
-- [ ] User-customized search box search engine
-- [ ] Customization of search box style (background color, text color)
-- [ ] Scheduled tasks
-- [ ] Integration of Docker container status, management
-- [ ] Integration of third-party application APIs
+- [x] 拖拽排序
+- [x] 导入导出功能
+- [x] 增加访客账号
+- [x] 对上传的文件管理（针对账户增强重复利用，节省空间）
+- [x] 多国语言支持
+- [x] 服务器监控
+- [x] 自定义js、css
+- [x] 自定义页脚
+- [ ] 用户自定义搜索框搜索引擎
+- [ ] 搜索框样式自定义（背景颜色，文字颜色）
+- [ ] 计划任务
+- [ ] 接入docker容器状态，管理
+- [ ] 接入三方应用API
 
 
 
-## Preview Screenshots
 
-**Various styles, freely combined**
+
+## 预览截图
+
+**各种风格，自由搭配**
 
 ![](/images/icon-small-new.png)
 ![](/images/transparent-info.png)
@@ -70,7 +72,7 @@ A server, NAS navigation panel, Homepage, Browser homepage.
 ![](/images/solid-color-info.png)
 ![](/images/full-color-small.jpg)
 
-**Built-in small windows**
+**内置小窗口**
 
 ![](/images/window-ssh.png)
 ![](/images/window-xunlei.png)

@@ -1,6 +1,6 @@
-# Configuration file
+# 配置文件
 
-> [!note] The default configuration directory is ./conf
+> [!note] 默认的配置目录为 ./conf
 > ```
 > .
 > ├── conf
@@ -8,10 +8,9 @@
 > |   └── conf.example.ini
 > └── ...
 > ```
-> Where `./conf/conf.example.ini` is the complete configuration for the current software version. It will be overwritten and updated every time you start. If the configuration file is damaged, you can directly rename it to `conf.ini`.
+> 其中`./conf/conf.example.ini` 为当前软件版本完整的配置，每次启动都会覆盖更新，如果配置文件有损坏，可以将它直接重命名为 `conf.ini`
 
-Each version's configuration file may have slight differences. Please refer to the `conf.ini` in your program. The following content is for reference only:
-
+每个版本的配置文件可能略有差异，请以您的程序中`conf.ini`为准，下面内容仅供参考：
 ```ini
 # ======================
 # Basic configuration

@@ -1,16 +1,15 @@
+# Demo Site
 
-# 演示站
-
-::: danger 演示站说明：
-- 服务器资源有限请不要上传特大图片文件
-- 为了方便他人访问，请不要修改主账号密码
-- 数据定期清理，请不要作为主力导航页使用
-- 请不要放违规内容
+::: danger Demo Site Guidelines:
+- Due to limited server resources, please refrain from uploading excessively large image files.
+- For the convenience of others, please avoid modifying the main account password.
+- Data is regularly cleared, so please do not use it as a primary navigation page.
+- Do not upload content that violates rules or regulations.
 :::
 
-## 演示地址：
-[演示地址点此跳转](http://sunpaneldemo.enianteam.com/#/)
+## Demo Address:
+[Click here to visit the demo site](http://sunpaneldemo.enianteam.com/#/)
 
-## 账号信息：
-- 账号：admin@sun.cc 
-- 密码：12345678
+## Account Information:
+- Username: admin@sun.cc 
+- Password: 12345678

@@ -5,7 +5,7 @@
 > 为了简化部署和减少出错的几率，将前端文件打包到可执行文件中，最终程序发布之后只有一个可执行文件
 
 ### 1. 安装
-** 注意：`...`必须带上 **
+**注意：`...`必须带上**
 ```sh
 go get github.com/go-bindata/go-bindata/...
 go get github.com/elazarl/go-bindata-assetfs/...

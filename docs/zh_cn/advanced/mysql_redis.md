@@ -1,14 +1,15 @@
-# Using MySQL/Redis
+# 使用mysql/redis
 
 ::: danger
-The project defaults to using `Sqlite3` as the database and `Memory` as the cache. The program supports `mysql` and `redis`, but the author has not tested them. Please use them with caution.
+项目默认使用的数据库是`Sqlite3`，缓存是`Memory`。程序本身是支持`mysql`和`redis`的，但是作者并未测试，请谨慎使用。
 
-If you choose to proceed, the author encourages you to provide feedback on your experience, and please make sure to backup your data beforehand.
+如果英雄你继续选择使用，还希望你可以将使用结果反馈给作者，最后请英雄提前备份好数据。
 :::
 
-Locate the project's [configuration file](./config.md).
+找到项目的[配置文件](./config.md)
 
-Modify the key parts as follows:
+
+修改下面重点部分
 
 ```ini{8,10,12,23-28,40-43}
 # ======================

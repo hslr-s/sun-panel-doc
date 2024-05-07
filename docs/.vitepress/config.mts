@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import markdownItTaskList from 'markdown-it-task-lists'
 import { getChineseThemeConfig } from "./src/configs/zh_cn.mts";
+import { getEnglishThemeConfig } from "./src/configs/en.mts";
 import timeline from "vitepress-markdown-timeline"; 
 
 // https://vitepress.dev/reference/site-config
@@ -10,16 +11,15 @@ export default defineConfig({
   lang:"zh-CN",
   lastUpdated: true,
   locales: {
-    root: {
+    zh_cn: {
       label: '简体中文',
-      lang: 'zh_cn',
+      lang: '/zh_cn/',
       themeConfig:getChineseThemeConfig()
     },
-    en: {
+    root: {
       label: 'English',
       lang: 'en',
-      link: '/en/',
-      // themeConfig:getEnglishThemeConfig()
+      themeConfig:getEnglishThemeConfig()
     },
   },
   markdown:{
@@ -30,6 +30,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
+    logo: { src: '/favicon.ico', width: 24, height: 24 },
     // https://vitepress.dev/reference/default-theme-config
     socialLinks: [
       { icon: 'github', link: 'https://github.com/hslr-s/sun-panel' },
