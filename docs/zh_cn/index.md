@@ -17,7 +17,7 @@ hero:
       text: Github
       link: https://github.com/hslr-s/sun-panel
   image:
-    src: /favicon.ico
+    src: /images/introduce/main-dark.png
     alt: ico
 
 features:
