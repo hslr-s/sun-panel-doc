@@ -2,7 +2,7 @@
 outline: [2,3]
 ---
 ::: tip
-版本号带有`beta`+`日期`的为测试版本，测试版本更新请先看[beta说明](./update_beta.md)，并且务必提前备份❗❗❗
+版本号(`beta`)或带有(`beta`+`日期`)的为测试版本，测试版本更新请先看[beta说明](./update_beta.md)，并且务必提前备份❗❗❗
 :::
 
 [Github Releases](https://github.com/hslr-s/sun-panel/releases)
