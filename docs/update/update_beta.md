@@ -1,38 +1,52 @@
+
 ::: danger Proceed with Caution
-The beta version is a testing version before the official release and may contain serious bugs. Please upgrade with caution!
+Beta versions are testing versions before the official release and may contain serious bugs. **Always back up before upgrading!!!**
 
-Currently, the beta version is only released as a Docker version, and binary files are not separately released. The `latest` tag inside the Docker image represents the official version or a stable beta version and will not be updated with unstable beta versions.
+In Docker, the `latest` tag represents the official version or a stable beta version and does not update to unstable beta versions.
 
-The beta tag is named `[major version]-beta[date]`, for example, `1.4.0-beta24-02-20`.
+Examples of `beta` or `[major version]-beta date` are like `1.4.0-beta24-02-20`, all indicating beta versions.
 
-After updating, if you see no changes, remember to [clear your browser cache](https://blog.csdn.net/m0_46156566/article/details/108519629).
-
+After updating, if there are no changes, remember to [clear your browser cache](https://blog.csdn.net/m0_46156566/article/details/108519629).
 :::
 
-## Docker Version
+## Docker Versions
 
-### 1. Visit the [Sun-Panel project page on DockerHub](https://hub.docker.com/r/hslr/sun-panel/tags), and beta versions will have the beta label + date in the tags section.
+### 1. Visit the [Sun-Panel project page](https://hub.docker.com/r/hslr/sun-panel/tags) on DockerHub. Beta versions are indicated with a beta tag + date in the tags row.
 
 ![](/images/update_log/docker_hub_beta.png)
 
-### 2. Copy the command to download (ensure it's not the latest version)
+### 2. Copy the command to download (make sure it's not `latest`).
 
 Example:
-```sh
+```
+# Latest beta version
+docker pull hslr/sun-panel:beta
+
+# Replace beta24-02-20 with the specific version number
 docker pull hslr/sun-panel:1.4.0-beta24-02-20
 ```
 
-### 3. For Synology NAS or other graphical interfaces
-Select the tag with `beta + date` directly for pulling. Create a new container and run it. If you cannot filter tags, use the command-line method below.
+### 3. For Synology NAS or other visual operations
+Select the tag with `beta` or `beta+date` to pull. Create a new container to run. If filtering tags is not supported, follow the command line method below.
 
-### 4. Run via Command Line (Mount directories same as the official version)
-It is recommended to create a new container for running. In case of issues, you can quickly revert.
+### 4. Command Line Execution (mount directories same as official version)
+It's recommended to create a new container to run. If there are issues, you can revert quickly.
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
 --name sun-panel \
-hslr/sun-panel:1.4.0-beta24-02-20
+hslr/sun-panel:beta
 ```
-Replace `hslr/sun-panel:1.4.0-beta24-02-20` in the above command with the latest beta version tag. Modify other parameters according to your requirements.
+Replace `hslr/sun-panel:beta` in the above command with the latest beta version tag. Modify other parameters as needed.
 
-For a complete deployment guide, refer to: <a href="/deploy/quick_deploy">Deployment Tutorial</a> | <a href="https://www.bilibili.com/video/BV1ke411y7B5" target="_blank">Bilibili Beta Update Video Tutorial</a>
+
+## Binary Versions
+
+::: tip
+Go to Github [Releases](https://github.com/hslr-s/sun-panel/releases) to download the binary files.
+:::
+
+After downloading, extract the `web` folder and the `executable binary file`, overwrite, and then run again.
+
+----
+For complete deployment, refer to: [Deployment Tutorial](/deploy/quick_deploy) | [Bilibili Beta Update Video Tutorial](https://www.bilibili.com/video/BV1ke411y7B5)
