@@ -14,6 +14,19 @@ https://github.com/hslr-s/sun-panel/pull/xx
 
 -->
 
+### v1.5.0-beta24-05-10 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+
+> 如果要在容器中查看docker状态，需挂载：`-v /var/run/docker.sock:/var/run/docker.sock`
+
+- [新增] 简单的docker管理器（非PRO可查看状态，不支持开启和关闭容器）
+- [新增] 重构图标卡片，增加docker应用和内置应用图标卡片
+- [优化] 分组风格支持独立设置，并可以设置公开模式隐藏
+- [优化] 增加可配置的登录过期时长，并将原72小时过期改为168小时，仍延续自动续期机制
+- [优化] 内置应用启动器按钮移至右上角
+
 ## v1.4.0 <Badge type="tip" text="2024-04-26" />
 
 > [!CAUTION] 重要说明
