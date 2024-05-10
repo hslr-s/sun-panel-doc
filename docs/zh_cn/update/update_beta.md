@@ -49,4 +49,4 @@ hslr/sun-panel:beta
 下载后，将压缩包中的 `web` 文件夹和 `可执行二进制文件`，直接覆盖后再次运行即可。
 
 ----
-完整运行参考：<a href="/deploy/quick_deploy">部署教程</a> | <a href="https://www.bilibili.com/video/BV1ke411y7B5" target="_blank">B站Beta更新视频教程</a>
+完整运行参考：<a href="../usage/quick_deploy">部署教程</a> | <a href="https://www.bilibili.com/video/BV1ke411y7B5" target="_blank">B站Beta更新视频教程</a>

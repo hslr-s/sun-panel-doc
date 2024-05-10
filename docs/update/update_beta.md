@@ -49,4 +49,4 @@ Go to Github [Releases](https://github.com/hslr-s/sun-panel/releases) to downloa
 After downloading, extract the `web` folder and the `executable binary file`, overwrite, and then run again.
 
 ----
-For complete deployment, refer to: [Deployment Tutorial](/deploy/quick_deploy) | [Bilibili Beta Update Video Tutorial](https://www.bilibili.com/video/BV1ke411y7B5)
+For complete deployment, refer to: [Deployment Tutorial](../usage/quick_deploy) | [Bilibili Beta Update Video Tutorial](https://www.bilibili.com/video/BV1ke411y7B5)
