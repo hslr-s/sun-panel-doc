@@ -36,10 +36,11 @@ DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel)
 如果您是从`v1.3.0`及之前的版本升级到此版本，[请查看这个说明](https://github.com/hslr-s/sun-panel/discussions/98)
 
 目录挂载 `-v`，全部可选，根据自己的需求选择：
-|容器目录|说明|
-|---|---|
-|/app/conf|配置文件（多合一目录）|
-|/app/runtime|运行日志(不推荐挂载)|
+|本地目录|容器目录|说明|
+|---|---|---|
+|~/sun-panel/conf|/app/conf|配置文件（多合一目录）|
+|/var/run/docker.sock|/var/run/docker.sock|若在容器中使用docker，请挂载此目录 `1.5.0+` `Beta`|
+|~/sun-panel/runtime|/app/runtime|运行日志（不推荐挂载）|
 :::
 
 ::: details `v1.3.0` 及之前版本，请点此查看
@@ -62,10 +63,11 @@ docker pull hslr/sun-panel:latest
 
 ::: info `v1.4.0+` 
 
-`latest` 可以替换成其他版本号（[查看](https://hub.docker.com/r/hslr/sun-panel/tags)）
+`latest` 可以替换成其他版本号（[查看](https://hub.docker.com/r/hslr/sun-panel/tags)），示例已经挂载了docker目录，可在容器中使用docker
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
+-v /var/run/docker.sock:/var/run/docker.sock \
 --name sun-panel \
 hslr/sun-panel:latest
 ```

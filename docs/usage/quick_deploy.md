@@ -36,11 +36,12 @@ DockerHub [Sun-Panel project homepage](https://hub.docker.com/r/hslr/sun-panel)
 ::: info `v1.4.0+`
 If you are upgrading from version `v1.3.0` or earlier to this version, [please refer to this note](https://github.com/hslr-s/sun-panel/discussions/98)
 
-Directory mounts `-v`, all optional, choose according to your needs:
-| Container Directory | Description |
-|---|---|
-| /app/conf | Configuration file (all-in-one directory) |
-| /app/runtime | Runtime logs (not recommended to mount) |
+Directory mounting `-v`, all optional, choose according to your needs:
+| Local Directory | Container Directory | Description |
+| --- | --- | --- |
+| ~/sun-panel/conf | /app/conf | Configuration files (multi-directory) |
+| /var/run/docker.sock | /var/run/docker.sock |  If using Docker within the container, mount this directory `1.5.0+` `Beta` |
+| ~/sun-panel/runtime | /app/runtime | Runtime logs (not recommended to mount) |
 :::
 
 ::: details Click here to view versions `v1.3.0` and earlier
@@ -62,11 +63,12 @@ docker pull hslr/sun-panel:latest
 2. Run directly
 
 ::: info `v1.4.0+`
-Replace `latest` with other version numbers ([View](https://hub.docker.com/r/hslr/sun-panel/tags))
+Replace `latest` with other version numbers ([View](https://hub.docker.com/r/hslr/sun-panel/tags)),An example has been provided for mounting the Docker directory, allowing the use of Docker within the container.
 
 ```sh
 docker run -d --restart=always -p 3002:3002 \
 -v ~/docker_data/sun-panel/conf:/app/conf \
+-v /var/run/docker.sock:/var/run/docker.sock \
 --name sun-panel \
 hslr/sun-panel:latest
 ```
