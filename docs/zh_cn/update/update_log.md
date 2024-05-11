@@ -14,6 +14,15 @@ https://github.com/hslr-s/sun-panel/pull/xx
 
 -->
 
+### v1.5.0-beta24-05-11 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+
+> 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock`
+
+- [修复] `v1.5.0-beta24-05-10` 系统状态添加磁盘项无效的问题
+
 ### v1.5.0-beta24-05-10 <Badge type="warning" text="beta" />
 
 
