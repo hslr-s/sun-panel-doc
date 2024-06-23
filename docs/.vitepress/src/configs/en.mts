@@ -69,6 +69,13 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
     },
 
     {
+      text: 'FAQ',
+      collapsed: false,
+      link: '/faq/faq'
+    },
+
+
+    {
       text: 'Advanced',
       collapsed: false,
       items: [

@@ -99,6 +99,13 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
     },
 
     {
+      text: '常见问题',
+      collapsed: false,
+      link: '/zh_cn/faq/faq'
+    },
+
+
+    {
       text: '高级',
       collapsed: false,
       items: [
