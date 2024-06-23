@@ -1,8 +1,12 @@
-Here are some common questions:
+# Here are some common questions:
+
+::: info 
+If the following issues still do not solve your problem, you can seek help through the [community](/introduce/author_groups.html).
+:::
 
 ## Is Import and Export a Backup Feature?
 
-Import and export are not backup features. They can only export the configuration files of the icon cards, not the icon files themselves. Currently, the project does not have a built-in backup feature, but it will be considered in the future.
+Import and export are not backup features. They can only export the basic configuration of the icon cards in JSON format, not the image files. Currently, the project does not have a built-in backup feature, but it will be considered in the future.
 
 ## Data Loss After Docker Version Upgrade
 
