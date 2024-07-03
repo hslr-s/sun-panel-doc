@@ -113,6 +113,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: '使用mysql/redis', link: '/zh_cn/advanced/mysql_redis' },
         { text: '使用反向代理+外网访问', link: '/zh_cn/advanced/use_reverse_proxy' },
         { text: '自定义js、css', link: '/zh_cn/advanced/custom_js_css' },
+        { text: '美化（beta）', link: '/zh_cn/advanced/landscap' },
 
       ]
     },

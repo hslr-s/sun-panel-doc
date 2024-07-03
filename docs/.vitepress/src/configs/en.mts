@@ -83,6 +83,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Using MySQL/Redis', link: '/advanced/mysql_redis' },
         { text: 'Using Reverse Proxy + External Access', link: '/advanced/use_reverse_proxy' },
         { text: 'Custom CSS and JS', link: '/advanced/custom_js_css' },
+        { text: 'Beautification Instructions (beta)', link: '/advanced/landscap' },
       ]
     },
 
