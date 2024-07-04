@@ -62,6 +62,7 @@ export function getChineseThemeConfig(): DefaultTheme.Config {
 function nav(): DefaultTheme.NavItem[] {
   return [
     { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
+    { text: '常见问题', link: '/zh_cn/faq/faq.html' },
     { text: 'OpenAPI', link: '/zh_cn/openapi/v1/apis' },
     { text: '更新日志', link: '/zh_cn/update/update_log' },
     {

@@ -4,6 +4,10 @@
 If the following issues still do not solve your problem, you can seek help through the [community](/introduce/author_groups.html).
 :::
 
+## How long does the login session last? It always makes me log in frequently.
+
+In versions `v1.4.0` and earlier, the login session lasts for 72 hours. If you access the system within these 72 hours, the session will renew for another 72 hours. Starting from version `v1.4.0`, the default duration has been changed to 168 hours (7 days). The renewal mechanism is still in place, and you can also configure the expiration duration yourself in the [configuration file](../advanced/config.md). Open the configuration file and find `token_expires=168` under the `base` section. Change `168` to the number of hours you want to set. Save the file and restart the project for the changes to take effect.
+
 ## Is Import and Export a Backup Feature?
 
 Import and export are not backup features. They can only export the basic configuration of the icon cards in JSON format, not the image files. Currently, the project does not have a built-in backup feature, but it will be considered in the future.
@@ -32,3 +36,11 @@ Based on the above understanding and considering that in the intranet environmen
 ## Custom Footer Cannot Execute JavaScript (script tag) Code
 
 Due to framework security restrictions, this feature is not supported for now. It will be addressed in the future. Currently, you can achieve this functionality through [custom JS](../advanced/custom_js_css.md).
+
+## Docker version system monitoring cannot find the host's disk
+
+Mount the disk to the container's directory by using the mount option, for example: `-v /mnt/usb2-2:/sata1`. Here, `/mnt/usb2-2` is the host path, and `/sata1` is the mapped path, which can be named as you like.
+
+## Set as the browser homepage
+
+To set the project as the homepage when opening a new window, you can use a browser extension since the project currently doesn't have a browser plugin version. You can install an extension from the browser's extension market, such as `custom New Tab` or a similar one, and then set your navigation page address as the default homepage within the extension. Additionally, you can install the project address as an application in the browser, allowing you to place the website icon on the start bar and desktop for quick access.
