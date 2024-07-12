@@ -18,6 +18,17 @@ https://github.com/hslr-s/sun-panel/pull/xx
 
 离线镜像：[夸克网盘](https://pan.quark.cn/s/f65648177d81#/list/share) （不保证实时更新和长期维护）
 
+## v1.5.1 <Badge type="tip" text="2024-07-12" />
+
+> [!CAUTION] 重要说明
+> 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+> 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
+
+- `v1.5.0` 所有功能
+- [修复] 普通图片卡片因鼠标中键新窗打开地址导致无法拖动排序；
+- [修复] 搜索栏组件默认文字颜色为空的问题
+
+
 ## v1.5.0 <Badge type="tip" text="2024-07-11" />
 
 > [!CAUTION] 重要说明
@@ -39,7 +50,7 @@ https://github.com/hslr-s/sun-panel/pull/xx
 - [优化] 启动器等部分窗口支持拖拽移动
 - [优化] 可在配置文件配置登录过期时长（并将原72小时过期改为168小时，仍延续自动续期机制）[参考说明](../faq/faq.html)
 - [修复] `v1.5.0-beta24-07-03` 系统状态磁盘小图卡片不显示自定义标题 
-- [修复] 上传文件文件管理删除文件失败的问题
+- [修复] 上传文件管理删除文件失败的问题
 - [其他] 项目卡片分组新增唯一标识，并在导航页分组样式的class类体现，配合自定义页脚、css、js可以实现更灵活的功能和丰富的样式 [更多说明](../advanced/landscap.md)
 - [其他] 更多可以参考之前 **v1.5.0-beta\*** 版本更新日志
 
