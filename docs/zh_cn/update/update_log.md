@@ -16,7 +16,9 @@ https://github.com/hslr-s/sun-panel/pull/xx
 
 ----
 
-离线镜像：[夸克网盘](https://pan.quark.cn/s/f65648177d81#/list/share) （不保证实时更新和长期维护）
+离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不保证实时更新和长期维护）
+二进制下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护）
+
 
 ## v1.5.1 <Badge type="tip" text="2024-07-12" />
 
