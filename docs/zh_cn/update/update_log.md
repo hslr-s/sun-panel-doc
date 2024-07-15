@@ -17,10 +17,23 @@ https://github.com/hslr-s/sun-panel/pull/xx
 ----
 
 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不保证实时更新和长期维护）
+
 二进制下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护）
 
 
 ## v1.5.1 <Badge type="tip" text="2024-07-12" />
+
+
+
+<div class="badge-box">
+
+视频说明：
+
+[![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1A6421f7Gy/)
+[![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/74GcQ7Z9mZM?si=3qKYE418vi_MoiVP)
+
+</div>
+
 
 > [!CAUTION] 重要说明
 > 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
@@ -32,6 +45,14 @@ https://github.com/hslr-s/sun-panel/pull/xx
 
 
 ## v1.5.0 <Badge type="tip" text="2024-07-11" />
+
+<div class="badge-box">
+
+视频说明：
+[![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1A6421f7Gy/)
+[![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/74GcQ7Z9mZM?si=3qKYE418vi_MoiVP)
+
+</div>
 
 > [!CAUTION] 重要说明
 > 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
@@ -270,3 +291,21 @@ https://github.com/hslr-s/sun-panel/pull/xx
 - 手机版文字logo过大
 - 回到顶部
 - 回车登录
+
+
+
+<style>
+
+.badge-box {
+    display: flex;
+    align-items: center;
+}
+
+
+.badge-box p{
+    margin:0;
+    display: flex;
+    align-items: center;
+}
+
+</style>
