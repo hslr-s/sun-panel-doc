@@ -92,7 +92,6 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
-        { text: '浏览器扩展', link: '/zh_cn/browser_extension' },
         { text: '编译运行', link: '/zh_cn/usage/compile' },
         { text: '重置密码', link: '/zh_cn/usage/reset_password' },
         { text: '公开访问（访客模式）', link: '/zh_cn/usage/public_visit' },
@@ -101,10 +100,16 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
     },
 
     {
-      text: '常见问题',
+      text: '浏览器扩展',
       collapsed: false,
-      link: '/zh_cn/faq/faq'
+      items: [
+        { text: '使用说明', link: '/zh_cn/browser_extension/index' },
+        { text: '更新日志', link: '/zh_cn/browser_extension/update_log' },
+
+      ]
     },
+
+
 
 
     {
@@ -136,6 +141,12 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: '壁纸-图标网站推荐', link: '/zh_cn/other/icon_wallpaper_recommend_sites' },
         { text: '浏览器书签转换', link: 'https://hslr-s.github.io/sun-panel-tool-page/' },
       ]
+    },
+
+    {
+      text: '常见问题',
+      collapsed: false,
+      link: '/zh_cn/faq/faq'
     },
 
 

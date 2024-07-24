@@ -14,7 +14,7 @@ Sun-Panel BE (Sun-Panel For Browser Extension)是一款辅助 [Sun-Panel](http:/
 
 若使用量多，后续会提交申请上架至各浏览器的扩展商店，方便大家下载。
 
-[zip包 网盘下载]() 请参考安装说明
+[zip包 网盘下载](https://links.sun-panel.top/browser_plugin_kuake) 请参考安装说明
 
 ## 安装说明
 

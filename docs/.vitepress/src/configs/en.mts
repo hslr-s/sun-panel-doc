@@ -69,12 +69,17 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Custom footer', link: '/usage/custom_footer' },
       ]
     },
-
+    
     {
-      text: 'FAQ',
+      text: 'Browser Extension',
       collapsed: false,
-      link: '/faq/faq'
+      items: [
+        { text: 'Usage', link: '/zh_cn/browser_extension/index' },
+        { text: 'Update Log', link: '/zh_cn/browser_extension/update_log' },
+
+      ]
     },
+
 
 
     {
@@ -105,6 +110,12 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Recommended Wallpaper and Icon Websites', link: '/other/icon_wallpaper_recommend_sites' },
         { text: 'Browser Bookmark Conversion', link: 'https://hslr-s.github.io/sun-panel-tool-page/' },
       ]
+    },
+
+    {
+      text: 'FAQ',
+      collapsed: false,
+      link: '/faq/faq'
     },
   ]
 }
