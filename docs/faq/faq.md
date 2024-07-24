@@ -1,4 +1,4 @@
-# Here are some common questions:
+# FAQ
 
 ::: info 
 If the following issues still do not solve your problem, you can seek help through the [community](/introduce/author_groups.html).
@@ -37,7 +37,7 @@ Based on the above understanding and considering that in the intranet environmen
 
 Due to framework security restrictions, this feature is not supported for now. It will be addressed in the future. Currently, you can achieve this functionality through [custom JS](../advanced/custom_js_css.md).
 
-## Docker version system monitoring cannot find the host's disk
+## Docker version system monitoring hanging housing host disk tutorial
 
 Mount the disk to the container's directory by using the mount option, for example: `-v /mnt/usb2-2:/sata1`. Here, `/mnt/usb2-2` is the host path, and `/sata1` is the mapped path, which can be named as you like.
 
