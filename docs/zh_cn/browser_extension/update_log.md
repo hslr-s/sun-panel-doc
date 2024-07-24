@@ -4,8 +4,11 @@ outline: [2,3]
 
 # Sun-Panel BE 更新日志
 
-### v0.1.2-beta <Badge type="tip" text="2024-07-24" />
+### v0.1.3-beta <Badge type="tip" text="2024-07-24" />
 
+- 修复火狐浏览器配置无法保存的问题
+
+### v0.1.2-beta <Badge type="tip" text="2024-07-24" />
 
 - 修复chrome浏览器下跳转导航页灰屏的的问题
 
