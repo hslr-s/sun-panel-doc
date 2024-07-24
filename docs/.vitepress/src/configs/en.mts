@@ -62,6 +62,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Quick Deployment', link: '/usage/quick_deploy' },
+        { text: 'Browser Extension', link: '/browser_extension' },
         { text: 'Compile and Run', link: '/usage/compile' },
         { text: 'Reset Password', link: '/usage/reset_password' },
         { text: 'Public visit (visitor mode)', link: '/usage/public_visit' },

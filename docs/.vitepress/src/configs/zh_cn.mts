@@ -92,6 +92,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
+        { text: '浏览器扩展', link: '/zh_cn/browser_extension' },
         { text: '编译运行', link: '/zh_cn/usage/compile' },
         { text: '重置密码', link: '/zh_cn/usage/reset_password' },
         { text: '公开访问（访客模式）', link: '/zh_cn/usage/public_visit' },
