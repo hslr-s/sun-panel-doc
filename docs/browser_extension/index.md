@@ -1,54 +1,51 @@
-# 浏览器扩展- Sun-Panel BE <Badge type="warning" text="beta" />
+# Browser Extension - Sun-Panel BE <Badge type="warning" text="beta" />
 
-::: tip Sun-Panel BE 是什么
-Sun-Panel BE (Sun-Panel For Browser Extension)是一款辅助 [Sun-Panel](http://sun-panel.top) 的浏览器扩展插件。可以运行在主流的浏览器上。本浏览器扩展需要搭配您自托管的 [Sun-Panel](http://sun-panel.top) 使用。
+::: tip What is Sun-Panel BE
+Sun-Panel BE (Sun-Panel For Browser Extension) is an auxiliary browser extension for [Sun-Panel](http://sun-panel.top). It can run on mainstream browsers. This browser extension needs to be used with your self-hosted [Sun-Panel](http://sun-panel.top).
 :::
 
-## 功能
+## Video Introduction
 
-- 🚅 将您自己托管的 Sun-Panel 设置为浏览器的新标签页面。
-- 🍰 快速将当前浏览器所访问的页面快速添加到您自己托管的 Sun-Panel 分组卡片中。
+[Bilibili](https://www.bilibili.com/video/BV12b421E7cF/)
 
+## Features
 
-## 下载
+- 🚅 Set your self-hosted Sun-Panel as the browser's new tab page, supporting automatic detection and switching between LAN and public network addresses.
+- 🍰 Quickly add the currently visited page to your self-hosted Sun-Panel group cards.
 
-若使用量多，后续会提交申请上架至各浏览器的扩展商店，方便大家下载。
+## Download
 
-[zip包 网盘下载](https://links.sun-panel.top/browser_plugin_kuake) 请参考安装说明
+If the usage increases, we will apply to list it in various browser extension stores for easier download.
 
-## 安装说明
+[Download](https://github.com/hslr-s/sun-panel-be/releases) 
+| [Alternative Download](https://links.sun-panel.top/browser_plugin_kuake) Please refer to the installation instructions
 
-### zip 包
+## Installation Instructions
 
-zip包时开发包，首先到您的 **`浏览器中找到扩展`** - **`并进入到扩展管理页面`** - **`然后开启开发者模式`** - **`刷新页面`** - **`将zip包拖拽到浏览器窗口中`**，此时您已经成功安装完成了。
+### zip Package
 
+The zip package is a development package. First, go to **`Extensions`** in your **`browser`** - **`enter the extension management page`** - **`enable developer mode`** - **`refresh the page`** - **`drag the zip package into the browser window`**, and you will have successfully installed it.
 
-## 使用说明
+## Usage Instructions
 
-### 设置为浏览器新标签页面
+### Set as Browser New Tab Page
 
-安装扩展后，默认替换了原有的浏览器新标签页面，首次使用需要配置首页地址，按照设置页面说明配置
+After installing the extension, it will replace the original browser new tab page by default. For the first use, you need to configure the homepage address according to the instructions on the settings page.
 
 ![](/images/browser_extension/new_tab_setting_cn.png)
 
+### Quickly Add Icon Cards
 
-### 快速添加图标卡片
-
-安装扩展后，可以将此扩展设置为显示在工具栏中，如图（图为Edge）:
+After installing the extension, you can set it to display in the toolbar, as shown in the picture (Edge browser example):
 
 ![](/images/browser_extension/display_on_toolbar.png)
 
-在您自己托管的 Sun-Panel ，开启OpenAPI功能后
+On your self-hosted Sun-Panel, enable the OpenAPI feature:
 
 ![](/images/browser_extension/sun_panel_openapi_cn.png)
 
-并配置好扩展的配置信息
+And configure the extension settings properly:
+
 ![](/images/browser_extension/openapi_setting_cn.png)
 
-
-在访问其他站点的时候，点击浏览器扩展的图标，可以识别到您当前访问网站的地址、图标、标题。**点击保存会将该站点的图标卡片添加到您自托管Sun-Panel上排序最前的分组中**，未来的Sun-Panel版本会增加分组的选择，请期待。
-![](/images/browser_extension/popup_cn.png)
-
-## 作者想说
-
-希望这个扩展能帮助更多的小伙伴可以更愉快的使用Sun-Panel。如果使用中有任何BUG或者建议，可以到社区或者交流群中 `@` 作者，在此也感谢各位小伙伴的支持。
+When visiting other sites, click the browser extension icon to identify the address, icon, and title of the site you are currently visiting. **Click save to add the site's icon card to the top group of your self-hosted Sun-Panel.** Future versions

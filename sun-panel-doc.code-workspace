@@ -22,6 +22,9 @@
 		}
 	],
 	"settings": {
-		"i18n-ally.localesPaths": []
+		"i18n-ally.localesPaths": [],
+		"github-actions.workflows.pinned.workflows": [
+			"root/.github/workflows/deploy.yml"
+		]
 	}
 }
