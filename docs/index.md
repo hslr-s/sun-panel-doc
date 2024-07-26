@@ -4,35 +4,48 @@ layout: home
 
 hero:
   name: "Sun-Panel"
-  text: "Simple, easy to use, and aesthetically pleasing"
-  tagline: Server, NAS navigation panel, Homepage, Browser homepage
+  text: "Simple, Easy to Use, Attractive"
+  tagline: "A NAS, server navigation panel, easy Docker manager, Homepage, and browser start page"
   actions:
-    - theme: brand
-      text: Quick Deployment
-      link: /usage/quick_deploy
     - theme: alt
       text: Project Introduction
       link: /introduce/project
+
+    - theme: brand
+      text: Quick Deployment
+      link: /usage/quick_deploy
+
     - theme: alt
-      text: Github
+      text: Download
+      link: https://github.com/hslr-s/sun-panel/releases
+
+    - theme: alt
+      text: GitHub
       link: https://github.com/hslr-s/sun-panel
   image:
     src: /images/introduce/main-dark.png
     alt: ico
 
 features:
-  - title: Concise
-    details: Small resource footprint, no need to connect to an external database
+
+  - icon:
+     src: /images/index_home/f_concise.png
+    title: Concise
+    details: No code modification required, easy to operate, powerful, minimal resource usage, supports switching between LAN and public network environments.
   - title: Docker Deployment
-    details: Easy to get started, no code modification required, switch between LAN and WAN connections
-  - title: Supports opening in-page pop-up windows
-    details: Rich icon options, some websites may block this feature
+    icon:
+     src: /images/index_home/f_docker.png
+    details: Supports easy Docker deployment, simplifies the operation process.
+  - title: Browser Extension
+    icon:
+     src: /images/index_home/f_extension.png
+    details: Combine extension functionality to create a new tab page that rivals native experiences.
+
 ---
 
 
-
 <div class="tip custom-block" style="max-width:1152px;margin:20px auto">
-The author's native language is Chinese. Translations in other languages in the documentation are provided by ChatGPT. 
+Translations in other languages in the documentation are provided by ChatGPT. 
 
 If there are any inaccuracies, please forgive.If you are willing, you can click on the edit this page below the document to modify this page.
 </div>
@@ -60,3 +73,19 @@ If there are any inaccuracies, please forgive.If you are willing, you can click 
   }
 }
 </style>
+
+
+<script setup>
+
+(function() {
+  const userLang = navigator.language || navigator.userLanguage;
+  const isChinese = userLang.startsWith('zh');
+
+  if (isChinese) {
+    const userConsent = confirm('检测到您的浏览器语言为中文，是否跳转到中文站点？');
+    if (userConsent) {
+      window.location.href = '/zh_cn/';
+    }
+  }
+})();
+</script>
