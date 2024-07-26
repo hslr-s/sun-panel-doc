@@ -22,7 +22,7 @@
 
 </div>
 
-A server, NAS navigation panel, Homepage, Browser homepage.
+A NAS, server navigation panel, easy Docker manager, Homepage, and browser start page.
 
 </div>
 
@@ -40,6 +40,7 @@ A server, NAS navigation panel, Homepage, Browser homepage.
 - 🍻 Simple usage without the need to connect to an external database
 - 🍾 Rich icon styles for free combination, supports [Iconify icon library](https://icon-sets.iconify.design/)
 - 🚁 Supports opening small windows in the webpage (some third-party websites may block this feature)
+- 🐳 Simple Docker manager, support the opening and shutdown of the container, control the container;
 
 
 ## TODO
@@ -52,10 +53,9 @@ A server, NAS navigation panel, Homepage, Browser homepage.
 - [x] Server monitoring
 - [x] Custom JS, CSS
 - [x] Custom footer
-- [ ] User-customized search box search engine
-- [ ] Customization of search box style (background color, text color)
-- [ ] Scheduled tasks
-- [ ] Integration of Docker container status, management
+- [x] User-customized search box search engine
+- [x] Customization of search box style (background color, text color)
+- [x] Integration of Docker container status, management
 - [ ] Integration of third-party application APIs
 
 
