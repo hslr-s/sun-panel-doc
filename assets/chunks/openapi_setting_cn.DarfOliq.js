@@ -1,0 +1,1 @@
+const s="/images/browser_extension/new_tab_setting_cn.png",n="/images/browser_extension/display_on_toolbar.png",e="/images/browser_extension/sun_panel_openapi_cn.png",_="/images/browser_extension/openapi_setting_cn.png";export{s as _,n as a,e as b,_ as c};
