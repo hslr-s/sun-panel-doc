@@ -74,18 +74,9 @@ If there are any inaccuracies, please forgive.If you are willing, you can click 
 }
 </style>
 
+<LangChange/>
 
 <script setup>
 
-(function() {
-  const userLang = navigator.language || navigator.userLanguage;
-  const isChinese = userLang.startsWith('zh');
-
-  if (isChinese) {
-    const userConsent = confirm('检测到您的浏览器语言为中文，是否跳转到中文站点？');
-    if (userConsent) {
-      window.location.href = '/zh_cn/';
-    }
-  }
-})();
+import LangChange from '../docs/.vitepress/src/components/langChange.vue';
 </script>
