@@ -36,7 +36,7 @@ features:
     icon:
      src: /images/index_home/f_docker.png
     details: Supports easy Docker deployment, simplifies the operation process.
-  - title: Browser Extension
+  - title: <a href="/browser_extension/index">Browser Extension</a>
     icon:
      src: /images/index_home/f_extension.png
     details: Combine extension functionality to create a new tab page that rivals native experiences.

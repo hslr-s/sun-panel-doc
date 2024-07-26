@@ -36,7 +36,7 @@ features:
     icon:
      src: /images/index_home/f_docker.png
     details: 支持 Docker 轻松部署，简化操作流程。
-  - title: 浏览器辅助插件
+  - title: <a href="/zh_cn/browser_extension/index">浏览器辅助插件</a>
     icon:
      src: /images/index_home/f_extension.png
     details: 结合插件功能，打造媲美原生体验的新标签页
