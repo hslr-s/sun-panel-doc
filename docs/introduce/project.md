@@ -4,7 +4,7 @@
 
 # Sun-Panel
 
-<div class="badge-box">
+<div class="badge-box-center">
 
 [![Github](https://img.shields.io/badge/Github-123456?logo=github&labelColor=242424)](https://github.com/hslr-s/sun-panel) 
 [![Gitee](https://img.shields.io/badge/Gitee-123456?logo=gitee&labelColor=c71d23)](https://gitee.com/hslr/sun-panel) 
@@ -13,7 +13,7 @@
 [![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://www.youtube.com/channel/UCKwbFmKU25R602z6P2fgPYg)
 
 </div>
-<div class="badge-box">
+<div class="badge-box-center">
 
 [![GitHub Release](https://img.shields.io/github/v/release/hslr-s/sun-panel?color=4fb3bb)](https://github.com/hslr-s/sun-panel/releases)
 [![GitHub User's stars](https://img.shields.io/github/stars/hslr-s%2Fsun-panel?style=flat&logo=github)](https://github.com/hslr-s/sun-panel)
