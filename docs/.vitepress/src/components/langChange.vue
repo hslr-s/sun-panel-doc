@@ -10,7 +10,11 @@ if (isChinese) {
         icon: 'question',
         showCancelButton: true,
         confirmButtonText: '是',
-        cancelButtonText: '否'
+        cancelButtonText: '否',
+        customClass: {
+            container:'swal-z-index',
+            popup: 'swal-z-index'
+        }
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.href = '/zh_cn/';
@@ -21,3 +25,8 @@ if (isChinese) {
 <template>
     <div />
 </template>
+<style>
+.swal-z-index{
+    z-index: 99999;
+}
+</style>
