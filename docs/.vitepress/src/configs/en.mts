@@ -74,8 +74,8 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       text: 'Browser Extension',
       collapsed: false,
       items: [
-        { text: 'Usage', link: '/zh_cn/browser_extension/index' },
-        { text: 'Update Log', link: '/zh_cn/browser_extension/update_log' },
+        { text: 'Usage', link: '/browser_extension/index' },
+        { text: 'Update Log', link: '/browser_extension/update_log' },
 
       ]
     },
