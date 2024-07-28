@@ -14,12 +14,15 @@ Sun-Panel BE (Sun-Panel For Browser Extension)是一款辅助 [Sun-Panel](http:/
 - 🍰 快速将当前浏览器所访问的页面快速添加到您自己托管的 Sun-Panel 分组卡片中。
 
 
-## 下载
+## 下载/安装
 
-若使用量多，后续会提交申请上架至各浏览器的扩展商店，方便大家下载。
+[Firefox（火狐）](https://addons.mozilla.org/firefox/addon/sun-panel-be/)
 
+zip:
 [下载](https://github.com/hslr-s/sun-panel-be/releases) 
 | [备用网盘下载](https://links.sun-panel.top/browser_plugin_kuake) 请参考安装说明
+
+若使用量多，后续会提交申请上架至各浏览器的扩展商店
 
 ## 安装说明
 

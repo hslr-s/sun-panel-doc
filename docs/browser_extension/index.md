@@ -13,12 +13,14 @@ Sun-Panel BE (Sun-Panel For Browser Extension) is an auxiliary browser extension
 - 🚅 Set your self-hosted Sun-Panel as the browser's new tab page, supporting automatic detection and switching between LAN and public network addresses.
 - 🍰 Quickly add the currently visited page to your self-hosted Sun-Panel group cards.
 
-## Download
+## Download/Install
+[Firefox](https://addons.mozilla.org/firefox/addon/sun-panel-be/)
 
-If the usage increases, we will apply to list it in various browser extension stores for easier download.
-
+zip:
 [Download](https://github.com/hslr-s/sun-panel-be/releases) 
 | [Alternative Download](https://links.sun-panel.top/browser_plugin_kuake) Please refer to the installation instructions
+
+If the usage increases, we will apply to list it in various browser extension stores for easier download.
 
 ## Installation Instructions
 
