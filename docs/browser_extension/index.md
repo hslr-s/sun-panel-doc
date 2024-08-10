@@ -14,7 +14,7 @@ Sun-Panel BE (Sun-Panel For Browser Extension) is an auxiliary browser extension
 - 🍰 Quickly add the currently visited page to your self-hosted Sun-Panel group cards.
 
 ## Download/Install
-[Firefox](https://addons.mozilla.org/firefox/addon/sun-panel-be/)
+[chrome](https://chromewebstore.google.com/detail/sun-panel-be/gchnnoadbmdgoimlemmdacmkocngjonm/privacy) | [Edge](https://microsoftedge.microsoft.com/addons/detail/sunpanel-be/peklhgoidjpnojdpcnohhncgpblbnhoi) | [Firefox](https://addons.mozilla.org/firefox/addon/sun-panel-be/) 
 
 zip:
 [Download](https://github.com/hslr-s/sun-panel-be/releases) 

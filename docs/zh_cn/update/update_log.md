@@ -16,9 +16,24 @@ https://github.com/hslr-s/sun-panel/pull/xx
 
 ----
 
-离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不保证实时更新和长期维护）
+Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不保证实时更新和长期维护）
 
-二进制下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护）
+二进制可运行文件下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护）
+
+
+### v1.5.2-beta24-08-09 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+
+- [增强] 自定义页脚支持 `<script>` js的代码和引用外部js文件
+- [增强] 项目卡片数据支持本地缓存，减短加载过程
+- [优化] 搜索栏在Mac safari浏览器中文输入兼容性问题
+- [优化] 移动端docker管理显示效果
+
+---
+
+- [JS插件] [侧栏目录插件](https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc) （需自行安装）
 
 
 ## v1.5.1 <Badge type="tip" text="2024-07-12" />

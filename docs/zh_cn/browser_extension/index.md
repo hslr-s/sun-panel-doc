@@ -16,7 +16,7 @@ Sun-Panel BE (Sun-Panel For Browser Extension)是一款辅助 [Sun-Panel](http:/
 
 ## 下载/安装
 
-[Firefox（火狐）](https://addons.mozilla.org/firefox/addon/sun-panel-be/)
+[chrome](https://chromewebstore.google.com/detail/sun-panel-be/gchnnoadbmdgoimlemmdacmkocngjonm/privacy) | [Edge](https://microsoftedge.microsoft.com/addons/detail/sunpanel-be/peklhgoidjpnojdpcnohhncgpblbnhoi) | [Firefox（火狐）](https://addons.mozilla.org/firefox/addon/sun-panel-be/) 
 
 zip:
 [下载](https://github.com/hslr-s/sun-panel-be/releases) 
