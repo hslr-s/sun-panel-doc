@@ -21,7 +21,7 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 二进制可运行文件下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护）
 
 
-### v1.5.2-beta24-08-09 <Badge type="warning" text="beta" />
+### v1.5.2-beta24-08-10 <Badge type="warning" text="beta" />
 
 
 > docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
