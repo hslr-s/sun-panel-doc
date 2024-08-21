@@ -26,7 +26,7 @@
 |-password-reset|重置第一个管理账号的密码|
 :::
 
-## docker 运行
+## docker 运行 {#docker_run}
 
 ::: tip
 DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel) 
@@ -39,7 +39,7 @@ DockerHub [Sun-Panel项目首页](https://hub.docker.com/r/hslr/sun-panel)
 |本地目录|容器目录|说明|
 |---|---|---|
 |~/sun-panel/conf|/app/conf|配置文件（多合一目录）|
-|/var/run/docker.sock|/var/run/docker.sock|若在容器中使用docker，请挂载此目录 `1.5.0+` `Beta`|
+|/var/run/docker.sock|/var/run/docker.sock|若想在容器中使用docker功能，请挂载此目录（非特殊情况下，**请原样挂载**）`1.5.0+`|
 |~/sun-panel/runtime|/app/runtime|运行日志（不推荐挂载）|
 :::
 
@@ -86,7 +86,34 @@ hslr/sun-panel
 ```
 :::
 
-## 二进制文件运行
+## docker-compose 运行 {#docker_compose}
+
+仅供参考，请根据自己的需求修改 `v1.4.0及以上版本`
+
+```yaml
+version: "3.2"
+
+services:
+  sun-panel:
+    image: "hslr/sun-panel:latest"
+    container_name: sun-panel
+    volumes:
+      - ./conf:/app/conf
+      - /var/run/docker.sock:/var/run/docker.sock # 挂载docker.sock
+      # - ./runtime:/app/runtime # 挂载日志目录
+      # - /mnt/sata1-1:/os # 硬盘挂载点（根据自己需求修改）
+    ports:
+      - 3002:3002
+    restart: always
+```
+
+运行
+```sh
+docker-compose up -d
+```
+
+
+## 可执行（二进制）文件运行
 
 ::: tip
 前往Github  [Releases](https://github.com/hslr-s/sun-panel/releases) 下载二进制文件

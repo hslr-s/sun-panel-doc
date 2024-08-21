@@ -25,7 +25,7 @@ Please use the `docker` management tool to check whether the card-bound containe
 
 ## Docker Functionality May Not Be Enabled Correctly, Possible Causes {#docker_run_error}
 
-1. When the container is running, please confirm whether `docker.sock` has been mounted. For details, please refer to the [Deployment Guide](../usage/quick_deploy.md). If the visualization tool does not support mounting, please run it using the command line (ssh).
+1. When the container is running, please confirm whether `docker.sock` has been mounted. For details, please refer to the [Deployment Guide](../usage/quick_deploy#docker_run). If the visualization tool does not support mounting, please run it using the command line (ssh).
 2. Please check whether the project has the permission to use `docker`.
 3. Specific solutions can be found based on the error messages.
 

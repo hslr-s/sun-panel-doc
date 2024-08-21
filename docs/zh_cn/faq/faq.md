@@ -27,7 +27,7 @@
 
 ## Docker 功能不能正确的启用，可能会出现的原因 {#docker_run_error}
 
-1. 容器运行请确认是否挂载了`docker.sock`，具体请参考[部署教程](../usage/quick_deploy.md)，如果可视化工具不支持挂载，请使用命令行（ssh）的方式运行。
+1. 容器运行请确认是否挂载了`docker.sock`，具体请参考[部署教程](../usage/quick_deploy#docker_run)，如果可视化工具不支持挂载，请使用命令行（ssh）的方式运行。
 2. 请检查项目是否有使用`docker`的权限。
 3. 具体可以根据错误提示寻找相关解决方案。
 
