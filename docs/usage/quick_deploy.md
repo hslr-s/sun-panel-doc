@@ -113,7 +113,7 @@ docker-compose up -d
 ```
 
 
-## Binary File Run
+## Executable file to run (binary)
 
 ::: tip
 Go to GitHub [Releases](https://github.com/hslr-s/sun-panel/releases) to download binary files.
