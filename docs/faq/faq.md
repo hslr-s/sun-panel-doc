@@ -17,9 +17,18 @@ Import and export are not backup features. They can only export the basic config
 1. In version v1.4.0, the Docker mounting directory was streamlined. Please strictly follow the tutorial to upgrade.
 2. Incorrect mounting directory. Please check the path and distinguish between uppercase and lowercase letters.
 
-## Docker Card Display Issues in the Project
 
-Please use a Docker management tool to check if the container has been deleted or upgraded. If the container has been upgraded, the old container ID bound to the card will become unusable. You can edit the card to reselect the container.
+## Docker Card Display Issues in the Project {#docker_card_abnormal}
+
+Please use the `docker` management tool to check whether the card-bound container has been deleted, or whether the container has been upgraded. If the container has been upgraded, the old container ID for card binding will no longer be available. In versions `v1.5.2` and above (for security reasons, login is required), it will attempt to automatically re-bind. If it does not automatically bind, you can manually edit the card to reselect the container.
+
+
+## Docker Functionality May Not Be Enabled Correctly, Possible Causes {#docker_run_error}
+
+1. When the container is running, please confirm whether `docker.sock` has been mounted. For details, please refer to the [Deployment Guide](../usage/quick_deploy.md). If the visualization tool does not support mounting, please run it using the command line (ssh).
+2. Please check whether the project has the permission to use `docker`.
+3. Specific solutions can be found based on the error messages.
+
 
 ## Linux Binary Version Fails to Run
 
