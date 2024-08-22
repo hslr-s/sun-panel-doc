@@ -8,8 +8,6 @@
 :::
 
 ## Demo Address:
-[Click here to visit the demo site](http://sunpaneldemo.enianteam.com/#/)
-
-## Account Information:
+- [Click here to visit the demo site](http://sunpaneldemo.enianteam.com/#/)
 - Username: admin@sun.cc 
 - Password: 12345678

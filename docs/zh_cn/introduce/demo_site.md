@@ -8,9 +8,12 @@
 - 请不要放违规内容
 :::
 
-## 演示地址：
-[演示地址点此跳转](http://sunpaneldemo.enianteam.com/#/)
-
-## 账号信息：
+## 官方演示：
+- [演示地址点此跳转](http://sunpaneldemo.enianteam.com/#/)
 - 账号：admin@sun.cc 
 - 密码：12345678
+
+## 其他
+
+- [IT人必备工具箱](https://666666.dev/)
+- [YM-NAV](https://nav.ymz.icu/)
