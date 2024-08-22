@@ -27,6 +27,8 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 - [增强] docker 容器列表在部分设备上加载速度
 - [优化] 导航页在 `iframe` 框架中本页打开时，将使用父窗口打开
 - [优化] docker 管理器样式
+- [优化] docker 卡片绑定的容器在更新后（在登录状态下）会自动匹配同名容器
+
 
 ### v1.5.2-beta24-08-10 <Badge type="warning" text="beta" />
 
