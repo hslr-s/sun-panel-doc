@@ -24,7 +24,7 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 
 > docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
 
-- [修复] 减少 docker 容器卡片状态因缓存原因导致同一个请求，请求多次的问题 `[由QQ群Fly提出以及帮助测试]`
+- [修复] docker 容器卡片状态因缓存原因导致同一个请求，请求多次的问题 `[由QQ群Fly提出以及帮助测试]`
 
 
 
