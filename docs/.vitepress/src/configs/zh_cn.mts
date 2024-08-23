@@ -129,8 +129,9 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       text: '更新',
       collapsed: false,
       items: [
+        { text: '更新说明', link: '/zh_cn/update/update' },
         { text: '更新日志', link: '/zh_cn/update/update_log' },
-        { text: 'Beta更新教程', link: '/zh_cn/update/update_beta' },
+        // { text: 'Beta更新教程', link: '/zh_cn/update/update_beta' },
       ]
     },
 

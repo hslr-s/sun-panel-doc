@@ -98,8 +98,9 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       text: 'Updates',
       collapsed: false,
       items: [
+        { text: 'Update instructions', link: '/update/update' },
         { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
-        { text: 'Beta Update Tutorial', link: '/update/update_beta' },
+        // { text: 'Beta Update Tutorial', link: '/update/update_beta' },
       ]
     },
 
