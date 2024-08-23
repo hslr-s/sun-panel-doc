@@ -17,3 +17,4 @@
 
 - [IT人必备工具箱](https://666666.dev/)
 - [YM-NAV](https://nav.ymz.icu/)
+- [鑫仔](https://dh.xinz.fun:5244)
