@@ -1,8 +1,11 @@
 ---
 outline: [2,3]
 ---
-::: tip
-版本号(`beta`)或带有(`beta`+`日期`)的为测试版本，测试版本更新请先看[beta说明](./update_beta.md)，并且务必提前备份❗❗❗
+
+# 更新日志
+
+::: tip 说明
+更新前请自行备份，[**更新教程及版本说明**](./update.md)
 :::
 
 [Github Releases](https://github.com/hslr-s/sun-panel/releases)
@@ -14,35 +17,72 @@ https://github.com/hslr-s/sun-panel/pull/xx
 
 -->
 
-----
+<!-- ----
 
 Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不保证实时更新和长期维护）
 
-二进制可运行文件下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护）
+二进制可运行文件下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护） -->
+
+## v1.5.2 <Badge type="tip" text="2024-08-28" />
+
+<!-- <div class="badge-box">
+
+视频说明：
+
+[![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1A6421f7Gy/)
+[![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/74GcQ7Z9mZM?si=3qKYE418vi_MoiVP)
+
+</div> -->
+
+> [!CAUTION] 重要说明
+> 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+> 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
+
+- [增强] docker 容器列表在部分设备上加载速度
+- [增强] 项目卡片数据支持本地缓存，提升加载过程
+- [优化] 在 `iframe` 框架中本页打开时，将使用父窗口打开
+- [优化] docker 管理器样式
+- [优化] docker 卡片绑定的容器在更新后会自动匹配更新同名容器（为安全考虑，仅在登录状态下生效）
+- [优化] 一些细节更新
+- [修复] 搜索栏在 Mac OS 下 Safari 浏览器中文输入兼容性问题
+
+---
+
+- [JS插件] [侧栏目录插件](https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc) （需自行安装）
+
 
 ### v1.5.2-beta24-08-23 <Badge type="warning" text="beta" />
 
 > docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
 
+::: details 更新详情
+
 - [增加] 项目加载loading显示
 - [优化] 卡片数据缓存
 - [修复] docker 容器卡片状态因缓存原因导致同一个请求，请求多次的问题 `[由QQ群Fly提出以及帮助测试]`
+
+:::
 
 
 ### v1.5.2-beta24-08-22 <Badge type="warning" text="beta" />
 
 > docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
 
+::: details 更新详情
+
 - [增强] docker 容器列表在部分设备上加载速度
 - [优化] 导航页在 `iframe` 框架中本页打开时，将使用父窗口打开
 - [优化] docker 管理器样式
 - [优化] docker 卡片绑定的容器在更新后（在登录状态下）会自动匹配同名容器
 
+:::
 
 ### v1.5.2-beta24-08-10 <Badge type="warning" text="beta" />
 
 
 > docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+
+::: details 更新详情
 
 - [增强] 自定义页脚支持 `<script>` js的代码和引用外部js文件
 - [增强] 项目卡片数据支持本地缓存，减短加载过程
@@ -53,7 +93,7 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 ---
 
 - [JS插件] [侧栏目录插件](https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc) （需自行安装）
-
+:::
 
 ## v1.5.1 <Badge type="tip" text="2024-07-12" />
 
