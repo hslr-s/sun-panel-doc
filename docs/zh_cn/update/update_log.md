@@ -38,10 +38,12 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 > 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
 > 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
 
+- [增强] 自定义页脚支持 `<script>` js的代码和引用外部js文件
 - [增强] docker 容器列表在部分设备上加载速度
 - [增强] 项目卡片数据支持本地缓存，提升加载过程
+- [增强] 公开模式下可以切换搜索引擎（仅限当次访问有效，页面刷新后恢复原搜索引擎）
 - [优化] 在 `iframe` 框架中本页打开时，将使用父窗口打开
-- [优化] docker 管理器样式
+- [优化] docker 管理器样式、移动端显示效果
 - [优化] docker 卡片绑定的容器在更新后会自动匹配更新同名容器（为安全考虑，仅在登录状态下生效）
 - [优化] 一些细节更新
 - [修复] 搜索栏在 Mac OS 下 Safari 浏览器中文输入兼容性问题
