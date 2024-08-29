@@ -22,8 +22,6 @@ zip:
 [下载](https://github.com/hslr-s/sun-panel-be/releases) 
 | [备用网盘下载](https://links.sun-panel.top/browser_plugin_kuake) 请参考安装说明
 
-若使用量多，后续会提交申请上架至各浏览器的扩展商店
-
 ## 安装说明
 
 ### zip 包

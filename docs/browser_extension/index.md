@@ -20,8 +20,6 @@ zip:
 [Download](https://github.com/hslr-s/sun-panel-be/releases) 
 | [Alternative Download](https://links.sun-panel.top/browser_plugin_kuake) Please refer to the installation instructions
 
-If the usage increases, we will apply to list it in various browser extension stores for easier download.
-
 ## Installation Instructions
 
 ### zip Package

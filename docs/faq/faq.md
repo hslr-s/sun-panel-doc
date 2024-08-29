@@ -51,4 +51,4 @@ Mount the disk to the container's directory by using the mount option, for examp
 
 ## Set as the browser homepage
 
-To set the project as the homepage when opening a new window, you can use a browser extension since the project currently doesn't have a browser plugin version. You can install an extension from the browser's extension market, such as `custom New Tab` or a similar one, and then set your navigation page address as the default homepage within the extension. Additionally, you can install the project address as an application in the browser, allowing you to place the website icon on the start bar and desktop for quick access.
+Refer to [Sun-Panel BE](../browser_extension/index.md)
