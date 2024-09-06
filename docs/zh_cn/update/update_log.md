@@ -23,16 +23,30 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 
 二进制可运行文件下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护） -->
 
+### v1.6.0-beta24-09-06 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+
+::: details 更新详情
+
+- [增加] 多账号切换功能 (`应用启动器` - `我的信息` - `已登录账号` - `添加其他账号`，当已登录账号大于一个的时候，右上角会显示切换按钮)
+- [增加] 重构内置弹窗页面-支持拖拽移动、改变尺寸，多窗口显示
+- [优化] 应用启动器-应用加载失败页面增加返回到登录页面按钮
+
+:::
+
+
 ## v1.5.2 <Badge type="tip" text="2024-08-28" />
 
-<!-- <div class="badge-box">
+<div class="badge-box">
 
 视频说明：
 
-[![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1A6421f7Gy/)
-[![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/74GcQ7Z9mZM?si=3qKYE418vi_MoiVP)
+[![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1bpHYeXEx1/)
+[![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/ioB0YvQUyz4?si=xsTFpkDnNuhiPX0f)
 
-</div> -->
+</div>
 
 > [!CAUTION] 重要说明
 > 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
