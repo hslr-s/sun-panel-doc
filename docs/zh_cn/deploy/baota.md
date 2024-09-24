@@ -2,9 +2,35 @@
 
 ## 安装宝塔面板
 
+### 方式 1
 前往 [**宝塔面板**](https://www.bt.cn/u/Z5ODNb) 官网，选择对应系统的脚本下载安装。
 
-## 部署
+### 方式 2
+Centos安装脚本
+```sh
+yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh bd93a986
+```
+
+Ubuntu/Deepin安装脚本
+```sh
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh bd93a986
+```
+
+Debian安装脚本
+```sh
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && bash install.sh bd93a986
+```
+
+Fedora安装脚本
+```sh
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh && bash install.sh bd93a986
+```
+
+升级脚本
+```sh
+wget -O update.sh http://download.bt.cn/install/update6.sh && sh update.sh bd93a986
+```
+## 开始部署
 
 1. 宝塔面板安装成功后，如果首次安装需要进入Docker页面中，安装docker环境
     ![](/images/deploy/baota/installDocker.png)

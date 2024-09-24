@@ -2,7 +2,38 @@
 
 ## Install Baota Panel
 
+### Method 1
+
 Go to the official website of [**Baota Panel**](https://www.bt.cn/u/Z5ODNb) and select the script corresponding to your system to download and install.
+
+### Method 2
+
+Centos
+```sh
+yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh bd93a986
+```
+
+Ubuntu/Deepin
+```sh
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh bd93a986
+```
+
+Debian
+```sh
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && bash install.sh bd93a986
+```
+
+Fedora
+```sh
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh && bash install.sh bd93a986
+```
+
+Upgrade
+```sh
+wget -O update.sh http://download.bt.cn/install/update6.sh && sh update.sh bd93a986
+```
+
+
 
 ## Deployment
 

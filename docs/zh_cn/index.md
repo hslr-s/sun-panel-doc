@@ -42,7 +42,19 @@ features:
     details: 结合插件功能，打造媲美原生体验的新标签页
 ---
 
+----
 
+#### 合作伙伴
+
+<div style="display:flex;gap:5px;">
+
+<!-- 宝塔 -->
+<div class="info custom-block" style="max-width:100px">
+
+[![](/images/index_home/partners/baota.png)](/zh_cn/deploy/baota)
+</div>
+
+</div>
 
 <style>
 :root {
