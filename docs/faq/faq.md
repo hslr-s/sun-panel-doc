@@ -52,3 +52,15 @@ Mount the disk to the container's directory by using the mount option, for examp
 ## Set as the browser homepage
 
 Refer to [Sun-Panel BE](../browser_extension/index.md)
+
+## PRO authorized account login invalid {#proAccountInvalid}
+
+- Authorized accounts fail during normal use, possible reasons:
+
+   1. The password of the authorized account has been modified
+   2. The version has been updated, and the authorization policy may be updated with the new version, which may cause this problem
+   3. The maximum number of simultaneously logged-in clients has been exceeded, and the previously logged-in clients will be squeezed offline by the later logged-in clients
+
+- Solution:
+
+   Log in to the authorized account manually again
