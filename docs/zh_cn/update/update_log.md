@@ -38,7 +38,8 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 
 ## v1.5.3 <Badge type="tip" text="2024-09-30" />
 
-
+> [!CAUTION] 版本说明
+> 此版本为 `v1.5.2` 的修复Bug版本，不包含 `v1.6.0-betaXX` 的新功能。如果已经升级到了 `v1.6.0-betaXX` ，避免出现未知的问题，不推荐降级到此版本。
 
 > [!CAUTION] 重要说明
 > 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
