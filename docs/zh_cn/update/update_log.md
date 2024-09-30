@@ -36,6 +36,18 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 
 :::
 
+## v1.5.3 <Badge type="tip" text="2024-09-30" />
+
+
+
+> [!CAUTION] 重要说明
+> 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+> 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
+
+- [修复] Docker管理器 分页下开启关闭容器控制串页、异常的问题
+- [优化] Docker管理器 容器启动失败错误原因提醒
+- [优化] Docker管理器 取消分页并支持按容器名称排序
+- [优化] Docker管理器 页面优化
 
 ## v1.5.2 <Badge type="tip" text="2024-08-28" />
 
