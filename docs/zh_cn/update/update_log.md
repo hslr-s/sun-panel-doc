@@ -23,6 +23,30 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 
 二进制可运行文件下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护） -->
 
+### v1.6.0-beta24-10-12 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+>
+> 如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
+
+::: details 更新详情
+
+> 包含 v1.5.3 更新内容
+
+- [增加] 导航页面按下键盘 “/” 键可以快速聚焦到搜索栏
+- [增加] docker管理器支持按状态排序
+- [增加] 登录验证码功能 `PRO`
+- **账号切换器** 
+    - [优化] 点击登录状态已经失效的账号可直接跳转登录页免去再次输入账号
+- **docker卡片**
+    - [优化] 原loading层仅在操作（启动、关闭）容器的时候显示
+    - [修复] 编辑卡片之后所有的修改未及时生效
+- **开发相关**
+    - [优化] 项目卡片 增加唯一id属性 命名规则为 `item-card-name-xx`
+
+:::
+
 ### v1.6.0-beta24-09-06 <Badge type="warning" text="beta" />
 
 
