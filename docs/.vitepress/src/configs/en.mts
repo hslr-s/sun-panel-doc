@@ -70,6 +70,17 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Custom footer', link: '/usage/custom_footer' },
       ]
     },
+
+    {
+      text: 'Updates',
+      collapsed: false,
+      items: [
+        { text: 'Update instructions', link: '/update/update' },
+        { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
+        // { text: 'Beta Update Tutorial', link: '/update/update_beta' },
+      ]
+    },
+
     
     {
       text: 'Browser Extension',
@@ -95,16 +106,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       ]
     },
 
-    {
-      text: 'Updates',
-      collapsed: false,
-      items: [
-        { text: 'Update instructions', link: '/update/update' },
-        { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
-        // { text: 'Beta Update Tutorial', link: '/update/update_beta' },
-      ]
-    },
-
+  
     {
       text: 'Other',
       collapsed: false,
