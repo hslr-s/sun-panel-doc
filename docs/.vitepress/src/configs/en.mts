@@ -103,6 +103,8 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Using Reverse Proxy + External Access', link: '/advanced/use_reverse_proxy' },
         { text: 'Custom CSS and JS', link: '/advanced/custom_js_css' },
         { text: 'Beautification Instructions (beta)', link: '/advanced/landscap' },
+        { text: 'JS Plug-in', link: 'https://github.com/hslr-s/sun-panel-js-plugins' },
+        { text: 'TOC（JS Plug-in）', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
       ]
     },
 
