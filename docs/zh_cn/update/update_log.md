@@ -23,6 +23,21 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 
 二进制可运行文件下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护） -->
 
+### v1.6.0-beta24-10-18 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+>
+> 如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
+
+::: details 更新详情
+
+- [优化] 公开模式下隐藏搜索引擎设置按钮
+- [修复] 重置配置文件异常的问题
+- [修复] 账号切换器个别情况下出现多个相同账号的情况
+- [修复] 按下编辑卡片信息的时候，无法正常输入 "/" 的问题
+:::
+
 ### v1.6.0-beta24-10-12 <Badge type="warning" text="beta" />
 
 
