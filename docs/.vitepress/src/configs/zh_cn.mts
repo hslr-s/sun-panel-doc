@@ -132,13 +132,18 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: '使用反向代理+外网访问', link: '/zh_cn/advanced/use_reverse_proxy' },
         { text: '自定义js、css', link: '/zh_cn/advanced/custom_js_css' },
         { text: '美化（beta）', link: '/zh_cn/advanced/landscap' },
-        { text: 'JS 插件', link: 'https://github.com/hslr-s/sun-panel-js-plugins' },
-        { text: '分组侧边栏（js插件）', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
-
+        {
+          text: 'JS 插件',
+          collapsed: false,
+          items: [
+            { text: '插件说明', link: 'https://github.com/hslr-s/sun-panel-js-plugins' },
+            { text: '分组侧边栏', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
+          ]
+        }
       ]
     },
 
-  
+
 
     {
       text: '其他',

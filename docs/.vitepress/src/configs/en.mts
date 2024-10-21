@@ -6,7 +6,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
 
     sidebar: {
       '/': sidebarRoot(),
-      '/openapi/':sidebarOpenapi(),
+      '/openapi/': sidebarOpenapi(),
     },
 
     socialLinks: [
@@ -81,7 +81,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       ]
     },
 
-    
+
     {
       text: 'Browser Extension',
       collapsed: false,
@@ -103,12 +103,19 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Using Reverse Proxy + External Access', link: '/advanced/use_reverse_proxy' },
         { text: 'Custom CSS and JS', link: '/advanced/custom_js_css' },
         { text: 'Beautification Instructions (beta)', link: '/advanced/landscap' },
-        { text: 'JS Plug-in', link: 'https://github.com/hslr-s/sun-panel-js-plugins' },
-        { text: 'TOC（JS Plug-in）', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
+        {
+          text: 'JS PlugIn',
+          collapsed: false,
+          items: [
+            { text: 'Introduction', link: 'https://github.com/hslr-s/sun-panel-js-plugins' },
+            { text: 'TOC', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
+
+          ]
+        }
       ]
     },
 
-  
+
     {
       text: 'Other',
       collapsed: false,
