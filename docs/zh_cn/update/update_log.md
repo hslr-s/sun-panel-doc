@@ -23,6 +23,19 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 
 二进制可运行文件下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护） -->
 
+### v1.6.0-beta24-11-06 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+>
+> 如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
+
+::: details 更新详情
+
+- [优化] 账号管理页面 美化列表显示当前和公开账号样式
+- [修复] 多账号切换器 修复登录会话过期后，再次登录同一账号切换器中出现两个账号的问题
+:::
+
 ### v1.6.0-beta24-10-18 <Badge type="warning" text="beta" />
 
 
