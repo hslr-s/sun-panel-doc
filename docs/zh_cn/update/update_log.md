@@ -25,11 +25,14 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 
 ## v1.6.0 <Badge type="tip" text="2024-11-10" />
 
+<div class="badge-box">
+
 视频说明：
 
 [![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1Xem6YZEmz/)
 [![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/lhnZvxGosVI)
 
+</div>
 
 > [!CAUTION] 重要说明
 > 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)

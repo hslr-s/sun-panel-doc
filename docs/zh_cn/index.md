@@ -43,6 +43,35 @@ features:
 ---
 
 ----
+<div style="text-align:center;font-size:20px">
+
+\- **各种风格，自由搭配** - 
+</div>
+
+
+
+![](/images/icon-small-new.png)
+
+![](/images/transparent-info.png)
+
+![](/images/transparent-small.png)
+
+![](/images/solid-color-info.png)
+
+![](/images/full-color-small.jpg)
+
+<div style="text-align:center;font-size:20px">
+
+\- **内置小窗口** -
+</div>
+
+
+![](/images/window-ssh.png)
+
+![](/images/window-xunlei.png)
+
+----
+
 
 #### 合作伙伴
 

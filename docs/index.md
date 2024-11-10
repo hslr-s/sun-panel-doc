@@ -51,6 +51,34 @@ If there are any inaccuracies, please forgive.If you are willing, you can click 
 </div>
 
 
+----
+<div style="text-align:center;font-size:20px">
+
+\- **Various styles, freely combined** -
+</div>
+
+
+![](/images/icon-small-new.png)
+
+![](/images/transparent-info.png)
+
+![](/images/transparent-small.png)
+
+![](/images/solid-color-info.png)
+
+![](/images/full-color-small.jpg)
+
+<div style="text-align:center;font-size:20px">
+
+\- **Built-in small windows** -
+</div>
+
+![](/images/window-ssh.png)
+
+![](/images/window-xunlei.png)
+
+
+
 
 <style>
 :root {
