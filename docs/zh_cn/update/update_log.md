@@ -28,6 +28,7 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 > [!CAUTION] 重要说明
 > 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
 > 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
+> 3. 如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
 
 - [增加] 多账号切换功能 (`应用启动器` - `我的信息` - `已登录账号` - `添加其他账号`，当已登录账号大于一个的时候，导航页右上角会显示 ‘切换按钮’ )
 - [增加] 重构内置弹窗页面-支持拖拽移动、改变尺寸，多窗口显示，移动端全屏显示
