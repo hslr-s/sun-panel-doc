@@ -27,7 +27,7 @@ Password: **12345678**
 | -password-reset | Reset the password of the first admin account |
 :::
 
-## Docker Run
+## Docker Run {#docker_run}
 
 ::: tip
 DockerHub [Sun-Panel project homepage](https://hub.docker.com/r/hslr/sun-panel) 
@@ -40,7 +40,7 @@ Directory mounting `-v`, all optional, choose according to your needs:
 | Local Directory | Container Directory | Description |
 | --- | --- | --- |
 | ~/sun-panel/conf | /app/conf | Configuration files (multi-directory) |
-| /var/run/docker.sock | /var/run/docker.sock |  If using Docker within the container, mount this directory `1.5.0+` `Beta` |
+| /var/run/docker.sock | /var/run/docker.sock |  If you want to use Docker functionality within a container, mount this directory (Under normal circumstances, **please mount as is**) `1.5.0+` |
 | ~/sun-panel/runtime | /app/runtime | Runtime logs (not recommended to mount) |
 :::
 
@@ -86,7 +86,34 @@ hslr/sun-panel
 :::
 
 
-## Binary File Run
+## docker-compose Run {#docker_compose}
+
+For reference only, please modify according to your own needs. `v1.4.0 and above`
+
+```yaml
+version: "3.2"
+
+services:
+  sun-panel:
+    image: "hslr/sun-panel:latest"
+    container_name: sun-panel
+    volumes:
+      - ./conf:/app/conf
+      - /var/run/docker.sock:/var/run/docker.sock # Mount the Docker socket
+      # - ./runtime:/app/runtime # Mount the log directory
+      # - /mnt/sata1-1:/os # Mount the hard drive (modify according to your needs)
+    ports:
+      - 3002:3002
+    restart: always
+```
+
+Run 
+```sh
+docker-compose up -d
+```
+
+
+## Executable file to run (binary)
 
 ::: tip
 Go to GitHub [Releases](https://github.com/hslr-s/sun-panel/releases) to download binary files.

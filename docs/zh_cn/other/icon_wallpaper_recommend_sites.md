@@ -14,5 +14,11 @@
 - [Wallhaven](https://wallhaven.cc/)
 - [Wallpaperscraft](https://wallpaperscraft.com/)
 - [Wallpaper Abyss](https://wall.alphacoders.com/)
+
+API:
 - 小伙伴搭建的随机壁纸API聚合站
     - [By YM](https://img-api.ymz.icu/)
+- [By 波波星](https://github.com/szboboxing) ([来源](https://github.com/hslr-s/sun-panel/pull/175/commits/61274b4cf492d6f82134d59713791f4dbd5613a9))
+    - bing 随机壁纸：https://bing.img.run/rand.php
+    - bing 每日壁纸：https://myhkw.cn/open/img/bing
+

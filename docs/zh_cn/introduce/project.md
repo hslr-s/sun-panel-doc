@@ -4,7 +4,7 @@
 
 # Sun-Panel
 
-<div class="badge-box">
+<div class="badge-box-center">
 
 [![Github](https://img.shields.io/badge/Github-123456?logo=github&labelColor=242424)](https://github.com/hslr-s/sun-panel) 
 [![Gitee](https://img.shields.io/badge/Gitee-123456?logo=gitee&labelColor=c71d23)](https://gitee.com/hslr/sun-panel) 
@@ -13,7 +13,7 @@
 [![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://www.youtube.com/channel/UCKwbFmKU25R602z6P2fgPYg)
 
 </div>
-<div class="badge-box">
+<div class="badge-box-center">
 
 [![GitHub Release](https://img.shields.io/github/v/release/hslr-s/sun-panel?color=4fb3bb)](https://github.com/hslr-s/sun-panel/releases)
 [![GitHub User's stars](https://img.shields.io/github/stars/hslr-s%2Fsun-panel?style=flat&logo=github)](https://github.com/hslr-s/sun-panel)
@@ -22,7 +22,7 @@
 
 </div>
 
-一个服务器、NAS导航面板、Homepage、浏览器首页。
+一个NAS、服务器导航面板、简易docker管理器、Homepage、浏览器首页。
 
 </div>
 
@@ -30,16 +30,17 @@
 
 ## 特点
 
-- 🍉界面简洁，功能强大，资源占用少
-- 🍊上手简单，可视化操作，可0代码使用
-- 🍠一键切换内、外网模式链接
-- 🍵支持docker部署（支持Arm系统）
-- 🎪支持多账号隔离使用
-- 🎏支持查看系统状态
-- 🫙支持自定义js、css
-- 🍻简单使用可以无需连接外部数据库
-- 🍾丰富图标风格自由搭配，支持[iconify图标库](https://icon-sets.iconify.design/)
-- 🚁支持网页内置小窗口打开（部分三方网站屏蔽此功能）
+- 🍉 界面简洁，功能强大，资源占用少
+- 🍊 上手简单，可视化操作，可0代码使用
+- 🍠 一键切换内、外网模式链接
+- 🍵 支持docker部署（支持Arm系统）
+- 🎪 支持多账号隔离使用
+- 🎏 支持查看系统状态
+- 🫙 支持自定义js、css
+- 🍻 简单使用可以无需连接外部数据库
+- 🍾 丰富图标风格自由搭配，支持[iconify图标库](https://icon-sets.iconify.design/)
+- 🚁 支持网页内置小窗口打开（部分三方网站屏蔽此功能）
+- 🐳 简单的docker管理器，支持查看容器状态、控制容器的开启和关闭
 
 
 ## TODO
@@ -52,10 +53,9 @@
 - [x] 服务器监控
 - [x] 自定义js、css
 - [x] 自定义页脚
-- [ ] 用户自定义搜索框搜索引擎
-- [ ] 搜索框样式自定义（背景颜色，文字颜色）
-- [ ] 计划任务
-- [ ] 接入docker容器状态，管理
+- [x] 用户自定义搜索框搜索引擎
+- [x] 搜索框样式自定义（背景颜色，文字颜色）
+- [x] 接入docker容器状态，管理
 - [ ] 接入三方应用API
 
 

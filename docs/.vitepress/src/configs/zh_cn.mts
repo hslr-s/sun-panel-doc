@@ -62,6 +62,7 @@ export function getChineseThemeConfig(): DefaultTheme.Config {
 function nav(): DefaultTheme.NavItem[] {
   return [
     { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
+    { text: '常见问题', link: '/zh_cn/faq/faq.html' },
     { text: 'OpenAPI', link: '/zh_cn/openapi/v1/apis' },
     { text: '更新日志', link: '/zh_cn/update/update_log' },
     {
@@ -91,6 +92,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
+        { text: '宝塔面板部署', link: '/zh_cn/deploy/baota' },
         { text: '编译运行', link: '/zh_cn/usage/compile' },
         { text: '重置密码', link: '/zh_cn/usage/reset_password' },
         { text: '公开访问（访客模式）', link: '/zh_cn/usage/public_visit' },
@@ -99,10 +101,26 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
     },
 
     {
-      text: '常见问题',
+      text: '更新',
       collapsed: false,
-      link: '/zh_cn/faq/faq'
+      items: [
+        { text: '更新说明', link: '/zh_cn/update/update' },
+        { text: '更新日志', link: '/zh_cn/update/update_log' },
+        // { text: 'Beta更新教程', link: '/zh_cn/update/update_beta' },
+      ]
     },
+
+    {
+      text: '浏览器扩展',
+      collapsed: false,
+      items: [
+        { text: '使用说明', link: '/zh_cn/browser_extension/index' },
+        { text: '更新日志', link: '/zh_cn/browser_extension/update_log' },
+
+      ]
+    },
+
+
 
 
     {
@@ -114,18 +132,18 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: '使用反向代理+外网访问', link: '/zh_cn/advanced/use_reverse_proxy' },
         { text: '自定义js、css', link: '/zh_cn/advanced/custom_js_css' },
         { text: '美化（beta）', link: '/zh_cn/advanced/landscap' },
-
+        {
+          text: 'JS 插件',
+          collapsed: false,
+          items: [
+            { text: '插件说明', link: 'https://github.com/hslr-s/sun-panel-js-plugins' },
+            { text: '分组侧边栏', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
+          ]
+        }
       ]
     },
 
-    {
-      text: '更新',
-      collapsed: false,
-      items: [
-        { text: '更新日志', link: '/zh_cn/update/update_log' },
-        { text: 'Beta更新教程', link: '/zh_cn/update/update_beta' },
-      ]
-    },
+
 
     {
       text: '其他',
@@ -134,6 +152,12 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: '壁纸-图标网站推荐', link: '/zh_cn/other/icon_wallpaper_recommend_sites' },
         { text: '浏览器书签转换', link: 'https://hslr-s.github.io/sun-panel-tool-page/' },
       ]
+    },
+
+    {
+      text: '常见问题',
+      collapsed: false,
+      link: '/zh_cn/faq/faq'
     },
 
 

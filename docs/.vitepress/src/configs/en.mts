@@ -6,7 +6,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
 
     sidebar: {
       '/': sidebarRoot(),
-      '/openapi/':sidebarOpenapi(),
+      '/openapi/': sidebarOpenapi(),
     },
 
     socialLinks: [
@@ -33,6 +33,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
 function nav(): DefaultTheme.NavItem[] {
   return [
     { text: 'Deploy', link: '/usage/quick_deploy' },
+    { text: 'FAQ', link: '/faq/faq.html' },
     { text: 'OpenAPI', link: '/openapi/v1/apis' },
     { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
     {
@@ -61,6 +62,8 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Quick Deployment', link: '/usage/quick_deploy' },
+        { text: 'Baota Panel Deploy', link: '/deploy/baota' },
+        { text: 'Browser Extension', link: '/browser_extension' },
         { text: 'Compile and Run', link: '/usage/compile' },
         { text: 'Reset Password', link: '/usage/reset_password' },
         { text: 'Public visit (visitor mode)', link: '/usage/public_visit' },
@@ -69,10 +72,26 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
     },
 
     {
-      text: 'FAQ',
+      text: 'Updates',
       collapsed: false,
-      link: '/faq/faq'
+      items: [
+        { text: 'Update instructions', link: '/update/update' },
+        { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
+        // { text: 'Beta Update Tutorial', link: '/update/update_beta' },
+      ]
     },
+
+
+    {
+      text: 'Browser Extension',
+      collapsed: false,
+      items: [
+        { text: 'Usage', link: '/browser_extension/index' },
+        { text: 'Update Log', link: '/browser_extension/update_log' },
+
+      ]
+    },
+
 
 
     {
@@ -84,17 +103,18 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Using Reverse Proxy + External Access', link: '/advanced/use_reverse_proxy' },
         { text: 'Custom CSS and JS', link: '/advanced/custom_js_css' },
         { text: 'Beautification Instructions (beta)', link: '/advanced/landscap' },
+        {
+          text: 'JS PlugIn',
+          collapsed: false,
+          items: [
+            { text: 'Introduction', link: 'https://github.com/hslr-s/sun-panel-js-plugins' },
+            { text: 'TOC', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
+
+          ]
+        }
       ]
     },
 
-    {
-      text: 'Updates',
-      collapsed: false,
-      items: [
-        { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
-        { text: 'Beta Update Tutorial', link: '/update/update_beta' },
-      ]
-    },
 
     {
       text: 'Other',
@@ -103,6 +123,12 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Recommended Wallpaper and Icon Websites', link: '/other/icon_wallpaper_recommend_sites' },
         { text: 'Browser Bookmark Conversion', link: 'https://hslr-s.github.io/sun-panel-tool-page/' },
       ]
+    },
+
+    {
+      text: 'FAQ',
+      collapsed: false,
+      link: '/faq/faq'
     },
   ]
 }

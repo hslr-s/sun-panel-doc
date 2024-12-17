@@ -1,8 +1,12 @@
-# Here are some common questions:
+# FAQ
 
 ::: info 
 If the following issues still do not solve your problem, you can seek help through the [community](/introduce/author_groups.html).
 :::
+
+## How long does the login session last? It always makes me log in frequently.
+
+In versions `v1.4.0` and earlier, the login session lasts for 72 hours. If you access the system within these 72 hours, the session will renew for another 72 hours. Starting from version `v1.4.0`, the default duration has been changed to 168 hours (7 days). The renewal mechanism is still in place, and you can also configure the expiration duration yourself in the [configuration file](../advanced/config.md). Open the configuration file and find `token_expires=168` under the `base` section. Change `168` to the number of hours you want to set. Save the file and restart the project for the changes to take effect.
 
 ## Is Import and Export a Backup Feature?
 
@@ -13,9 +17,17 @@ Import and export are not backup features. They can only export the basic config
 1. In version v1.4.0, the Docker mounting directory was streamlined. Please strictly follow the tutorial to upgrade.
 2. Incorrect mounting directory. Please check the path and distinguish between uppercase and lowercase letters.
 
-## Docker Card Display Issues in the Project
 
-Please use a Docker management tool to check if the container has been deleted or upgraded. If the container has been upgraded, the old container ID bound to the card will become unusable. You can edit the card to reselect the container.
+## Docker Card Display Issues in the Project {#docker_card_abnormal}
+
+Please use the `docker` management tool to check if the container bound to the card has been deleted, or if the container has been upgraded. If the container has been upgraded, the old container ID bound to the card will no longer be available. In versions `v1.5.2` and above (for security reasons, login is required), it will attempt to automatically rebind. If it does not rebind automatically, you can manually edit the card and reselect the container.
+
+## Reasons that may cause the docker function to not work properly {#docker_run_error}
+
+1. In the container running environment, please confirm whether `docker.sock` has been mounted. For details, refer to the [Deployment Guide](../usage/quick_deploy#docker_run). If the visual tool does not support mounting, please use the command line (ssh) to run it.
+2. Please check if the system has granted permission to use docker for this project.
+3. Specific solutions can be found based on the error messages.
+
 
 ## Linux Binary Version Fails to Run
 
@@ -32,3 +44,23 @@ Based on the above understanding and considering that in the intranet environmen
 ## Custom Footer Cannot Execute JavaScript (script tag) Code
 
 Due to framework security restrictions, this feature is not supported for now. It will be addressed in the future. Currently, you can achieve this functionality through [custom JS](../advanced/custom_js_css.md).
+
+## Docker version system monitoring hanging housing host disk tutorial
+
+Mount the disk to the container's directory by using the mount option, for example: `-v /mnt/usb2-2:/sata1`. Here, `/mnt/usb2-2` is the host path, and `/sata1` is the mapped path, which can be named as you like.
+
+## Set as the browser homepage
+
+Refer to [Sun-Panel BE](../browser_extension/index.md)
+
+## PRO authorized account login invalid {#proAccountInvalid}
+
+- Authorized accounts fail during normal use, possible reasons:
+
+   1. The password of the authorized account has been modified
+   2. The version has been updated, and the authorization policy may be updated with the new version, which may cause this problem
+   3. The maximum number of simultaneously logged-in clients has been exceeded, and the previously logged-in clients will be squeezed offline by the later logged-in clients
+
+- Solution:
+
+   Log in to the authorized account manually again

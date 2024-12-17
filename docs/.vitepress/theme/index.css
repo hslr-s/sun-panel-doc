@@ -11,11 +11,17 @@
     display: inline-block;
 }
 
-.badge-box a:nth-child(n+2) {
+.badge-box a:nth-child(n+2) ,.badge-box-center a:nth-child(n+2){
     margin-left: 5px;
 }
 
-.badge-box img{
+.badge-box img .badge-box-center img{
     /* margin-right:10px; */
     cursor:pointer
+}
+
+.badge-box-center p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -4,7 +4,7 @@
 
 # Sun-Panel
 
-<div class="badge-box">
+<div class="badge-box-center">
 
 [![Github](https://img.shields.io/badge/Github-123456?logo=github&labelColor=242424)](https://github.com/hslr-s/sun-panel) 
 [![Gitee](https://img.shields.io/badge/Gitee-123456?logo=gitee&labelColor=c71d23)](https://gitee.com/hslr/sun-panel) 
@@ -13,7 +13,7 @@
 [![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://www.youtube.com/channel/UCKwbFmKU25R602z6P2fgPYg)
 
 </div>
-<div class="badge-box">
+<div class="badge-box-center">
 
 [![GitHub Release](https://img.shields.io/github/v/release/hslr-s/sun-panel?color=4fb3bb)](https://github.com/hslr-s/sun-panel/releases)
 [![GitHub User's stars](https://img.shields.io/github/stars/hslr-s%2Fsun-panel?style=flat&logo=github)](https://github.com/hslr-s/sun-panel)
@@ -22,7 +22,7 @@
 
 </div>
 
-A server, NAS navigation panel, Homepage, Browser homepage.
+A NAS, server navigation panel, easy Docker manager, Homepage, and browser start page.
 
 </div>
 
@@ -40,6 +40,7 @@ A server, NAS navigation panel, Homepage, Browser homepage.
 - 🍻 Simple usage without the need to connect to an external database
 - 🍾 Rich icon styles for free combination, supports [Iconify icon library](https://icon-sets.iconify.design/)
 - 🚁 Supports opening small windows in the webpage (some third-party websites may block this feature)
+- 🐳 Simple Docker manager, support the opening and shutdown of the container, control the container;
 
 
 ## TODO
@@ -52,10 +53,9 @@ A server, NAS navigation panel, Homepage, Browser homepage.
 - [x] Server monitoring
 - [x] Custom JS, CSS
 - [x] Custom footer
-- [ ] User-customized search box search engine
-- [ ] Customization of search box style (background color, text color)
-- [ ] Scheduled tasks
-- [ ] Integration of Docker container status, management
+- [x] User-customized search box search engine
+- [x] Customization of search box style (background color, text color)
+- [x] Integration of Docker container status, management
 - [ ] Integration of third-party application APIs
 
 

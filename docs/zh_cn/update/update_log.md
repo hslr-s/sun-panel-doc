@@ -1,8 +1,11 @@
 ---
 outline: [2,3]
 ---
-::: tip
-版本号(`beta`)或带有(`beta`+`日期`)的为测试版本，测试版本更新请先看[beta说明](./update_beta.md)，并且务必提前备份❗❗❗
+
+# 更新日志
+
+::: tip 说明
+更新前请自行备份，[**更新教程及版本说明**](./update.md)
 :::
 
 [Github Releases](https://github.com/hslr-s/sun-panel/releases)
@@ -13,6 +16,252 @@ outline: [2,3]
 https://github.com/hslr-s/sun-panel/pull/xx
 
 -->
+
+<!-- ----
+
+Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不保证实时更新和长期维护）
+
+二进制可运行文件下载包：[夸克网盘](https://pan.quark.cn/s/854bb164adfc) （不保证实时更新和长期维护） -->
+
+## v1.6.0 <Badge type="tip" text="2024-11-10" />
+
+<div class="badge-box">
+
+视频说明：
+
+[![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1Xem6YZEmz/)
+[![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/lhnZvxGosVI)
+
+</div>
+
+> [!CAUTION] 重要说明
+> 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+> 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
+> 3. 如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
+
+- [增加] 多账号切换功能 (`应用启动器` - `我的信息` - `已登录账号` - `添加其他账号`，当已登录账号大于一个的时候，导航页右上角会显示 ‘切换按钮’ )
+- [增加] 重构内置弹窗页面-支持拖拽移动、改变尺寸，多窗口显示，移动端全屏显示
+- [增加] 登录验证码功能 `PRO`
+- [增加] 导航页面按下键盘 “/” 键可以快速聚焦到搜索栏
+- [增加] docker管理器支持按'状态'列排序
+- [优化] 应用启动器-应用加载失败页面增加 '返回到登录页面' 按钮
+- [优化] 公开模式下隐藏搜索引擎的 '设置' 按钮
+- [修复] 重置配置文件异常的问题
+- **docker卡片**
+    - [优化] 原loading层仅在操作（启动、关闭）容器的时候显示
+    - [修复] 编辑卡片之后所有的修改未及时生效
+- **开发相关**
+    - [优化] 项目卡片 增加唯一id属性 命名规则为 `item-card-name-xx` （xx 为卡片设置中的唯一标识）
+
+### v1.6.0-beta24-11-06 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+>
+> 如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
+
+::: details 更新详情
+
+- [优化] 账号管理页面 美化列表显示当前和公开账号样式
+- [修复] 多账号切换器 修复登录会话过期后，再次登录同一账号切换器中出现两个账号的问题
+:::
+
+### v1.6.0-beta24-10-18 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+>
+> 如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
+
+::: details 更新详情
+
+- [优化] 公开模式下隐藏搜索引擎设置按钮
+- [修复] 重置配置文件异常的问题
+- [修复] 账号切换器个别情况下出现多个相同账号的情况
+- [修复] 按下编辑卡片信息的时候，无法正常输入 "/" 的问题
+:::
+
+### v1.6.0-beta24-10-12 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+>
+> 如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
+
+::: details 更新详情
+
+> 包含 v1.5.3 更新内容
+
+- [增加] 导航页面按下键盘 “/” 键可以快速聚焦到搜索栏
+- [增加] docker管理器支持按状态排序
+- [增加] 登录验证码功能 `PRO`
+- **账号切换器** 
+    - [优化] 点击登录状态已经失效的账号可直接跳转登录页免去再次输入账号
+- **docker卡片**
+    - [优化] 原loading层仅在操作（启动、关闭）容器的时候显示
+    - [修复] 编辑卡片之后所有的修改未及时生效
+- **开发相关**
+    - [优化] 项目卡片 增加唯一id属性 命名规则为 `item-card-name-xx`
+
+:::
+
+### v1.6.0-beta24-09-06 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+
+::: details 更新详情
+
+- [增加] 多账号切换功能 (`应用启动器` - `我的信息` - `已登录账号` - `添加其他账号`，当已登录账号大于一个的时候，右上角会显示切换按钮)
+- [增加] 重构内置弹窗页面-支持拖拽移动、改变尺寸，多窗口显示，移动端全屏显示
+- [优化] 应用启动器-应用加载失败页面增加返回到登录页面按钮
+
+:::
+
+## v1.5.3 <Badge type="tip" text="2024-09-30" />
+
+> [!CAUTION] 版本说明
+> 此版本为 `v1.5.2` 的修复Bug版本，不包含 `v1.6.0-betaXX` 的新功能。如果已经升级到了 `v1.6.0-betaXX` ，避免出现未知的问题，不推荐降级到此版本。
+
+> [!CAUTION] 重要说明
+> 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+> 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
+
+- [修复] Docker管理器 分页下开启关闭容器控制串页、异常的问题
+- [优化] Docker管理器 容器启动失败错误原因提醒
+- [优化] Docker管理器 取消分页并支持按容器名称排序
+- [优化] Docker管理器 页面优化
+
+## v1.5.2 <Badge type="tip" text="2024-08-28" />
+
+<div class="badge-box">
+
+视频说明：
+
+[![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1bpHYeXEx1/)
+[![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/ioB0YvQUyz4?si=xsTFpkDnNuhiPX0f)
+
+</div>
+
+> [!CAUTION] 重要说明
+> 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+> 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
+
+- [增强] 自定义页脚支持 `<script>` js的代码和引用外部js文件
+- [增强] docker 容器列表在部分设备上加载速度
+- [增强] 项目卡片数据支持本地缓存，提升加载过程
+- [增强] 公开模式下可以切换搜索引擎（仅限当次访问有效，页面刷新后恢复原搜索引擎）
+- [优化] 在 `iframe` 框架中本页打开时，将使用父窗口打开
+- [优化] docker 管理器样式、移动端显示效果
+- [优化] docker 卡片绑定的容器在更新后会自动匹配更新同名容器（为安全考虑，仅在登录状态下生效）
+- [优化] 一些细节更新
+- [修复] 搜索栏在 Mac OS 下 Safari 浏览器中文输入兼容性问题
+
+---
+
+- [JS插件] [侧栏目录插件](https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc) （需自行安装）
+
+
+### v1.5.2-beta24-08-23 <Badge type="warning" text="beta" />
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+
+::: details 更新详情
+
+- [增加] 项目加载loading显示
+- [优化] 卡片数据缓存
+- [修复] docker 容器卡片状态因缓存原因导致同一个请求，请求多次的问题 `[由QQ群Fly提出以及帮助测试]`
+
+:::
+
+
+### v1.5.2-beta24-08-22 <Badge type="warning" text="beta" />
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+
+::: details 更新详情
+
+- [增强] docker 容器列表在部分设备上加载速度
+- [优化] 导航页在 `iframe` 框架中本页打开时，将使用父窗口打开
+- [优化] docker 管理器样式
+- [优化] docker 卡片绑定的容器在更新后（在登录状态下）会自动匹配同名容器
+
+:::
+
+### v1.5.2-beta24-08-10 <Badge type="warning" text="beta" />
+
+
+> docker版本从v1.3.0及之前升级到此版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+
+::: details 更新详情
+
+- [增强] 自定义页脚支持 `<script>` js的代码和引用外部js文件
+- [增强] 项目卡片数据支持本地缓存，减短加载过程
+- [增强] 公开模式下可以切换搜索引擎
+- [优化] 搜索栏在Mac safari浏览器中文输入兼容性问题
+- [优化] 移动端docker管理显示效果
+
+---
+
+- [JS插件] [侧栏目录插件](https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc) （需自行安装）
+:::
+
+## v1.5.1 <Badge type="tip" text="2024-07-12" />
+
+
+
+<div class="badge-box">
+
+视频说明：
+
+[![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1A6421f7Gy/)
+[![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/74GcQ7Z9mZM?si=3qKYE418vi_MoiVP)
+
+</div>
+
+
+> [!CAUTION] 重要说明
+> 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+> 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
+
+- `v1.5.0` 所有功能
+- [修复] 普通图标卡片因鼠标中键新窗打开地址导致无法拖动排序
+- [修复] 风格设置搜索栏组件默认文字颜色为空的问题
+
+
+## v1.5.0 <Badge type="tip" text="2024-07-11" />
+
+<div class="badge-box">
+
+视频说明：
+[![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1A6421f7Gy/)
+[![YouTube](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/74GcQ7Z9mZM?si=3qKYE418vi_MoiVP)
+
+</div>
+
+> [!CAUTION] 重要说明
+> 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
+> 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
+
+- [新增] 简单的 docker 管理器（非 `PRO` 可查看状态，不可控制开启和关闭容器）
+- [新增] 重构图标卡片，增加 docker 应用和内置应用图标卡片
+- [新增] 搜索框组件 
+    - 样式自定义
+    - 支持增加自定义搜索引擎（非 `PRO` 支持额外创建两个）([常用搜索引擎及图标](https://pan.quark.cn/s/fab31d6b6274))
+- [新增] 在线检查新版本（不支持在线升级）
+- [新增] 卡片编辑窗口支持删除卡片
+- [新增] 隐藏所有的 PRO 功能徽章以及说明的开关 `PRO`
+- [新增] 系统状态->磁盘卡片 自定义显示标题
+- [新增] 鼠标中键新窗口打开项目卡片的地址
+- [美化] 鼠标悬浮在图标卡片上，跟随背景色模拟发光效果
+- [优化] 分组风格支持独立设置，并可以设置公开模式隐藏
+- [优化] 启动器等部分窗口支持拖拽移动
+- [优化] 可在配置文件配置登录过期时长（并将原72小时过期改为168小时，仍延续自动续期机制）[参考说明](../faq/faq.html)
+- [修复] `v1.5.0-beta24-07-03` 系统状态磁盘小图卡片不显示自定义标题 
+- [修复] 上传文件管理删除文件失败的问题
+- [其他] 项目卡片分组新增唯一标识，并在导航页分组样式的class类体现，配合自定义页脚、css、js可以实现更灵活的功能和丰富的样式 [更多说明](../advanced/landscap.md)
+- [其他] 更多可以参考之前 **v1.5.0-beta\*** 版本更新日志
+
 
 ### v1.5.0-beta24-07-03 <Badge type="warning" text="beta" />
 
@@ -227,3 +476,21 @@ https://github.com/hslr-s/sun-panel/pull/xx
 - 手机版文字logo过大
 - 回到顶部
 - 回车登录
+
+
+
+<style>
+
+.badge-box {
+    display: flex;
+    align-items: center;
+}
+
+
+.badge-box p{
+    margin:0;
+    display: flex;
+    align-items: center;
+}
+
+</style>
