@@ -141,8 +141,16 @@ function sidebarOpenapi(): DefaultTheme.SidebarItem[] {
       text: 'OpenAPI v1',
       collapsed: false,
       items: [
-        { text: 'API Description', link: '/openapi/v1/apis' },
-        { text: 'Error Code Description', link: '/openapi/v1/error_code' },
+        { text: 'Global description', link: '/openapi/v1/' },
+        { text: 'Error code description', link: '/openapi/v1/error_code' },
+        {
+          text: 'APIs',
+          items: [
+            { text: 'Icon item group', link: '/openapi/v1/apis_item_group' },
+            { text: 'Icon item', link: '/openapi/v1/apis_item' },
+            { text: 'other', link: '/openapi/v1/other' },
+          ]
+        },
       ]
     },
   ]

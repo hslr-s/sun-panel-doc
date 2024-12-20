@@ -171,8 +171,15 @@ function sidebarOpenapi(): DefaultTheme.SidebarItem[] {
       text: 'OpenAPI v1',
       collapsed: false,
       items: [
-        { text: '接口说明', link: '/zh_cn/openapi/v1/apis' },
+        { text: '全局说明', link: '/zh_cn/openapi/v1/' },
         { text: '错误码说明', link: '/zh_cn/openapi/v1/error_code' },
+        { text: '接口', 
+          items: [
+            { text: '图标卡片组', link: '/zh_cn/openapi/v1/apis_item_group' },
+            { text: '图标卡片', link: '/zh_cn/openapi/v1/apis_item' },
+            { text: '其他', link: '/zh_cn/openapi/v1/other' },
+          ]
+        },
       ]
     },
   ]
