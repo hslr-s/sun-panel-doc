@@ -78,6 +78,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Update instructions', link: '/update/update' },
         { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
         // { text: 'Beta Update Tutorial', link: '/update/update_beta' },
+        // { text: '更新日志-BETA版', link: '/zh_cn/update/update_log_beta' },// 英文版本直接只想github
       ]
     },
 
