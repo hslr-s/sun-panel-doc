@@ -105,7 +105,8 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '更新说明', link: '/zh_cn/update/update' },
-        { text: '更新日志', link: '/zh_cn/update/update_log' },
+        { text: '正式版更新日志', link: '/zh_cn/update/update_log' },
+        { text: '测试版更新日志', link: '/zh_cn/update/update_log_beta' },
         // { text: 'Beta更新教程', link: '/zh_cn/update/update_beta' },
       ]
     },
