@@ -9,7 +9,7 @@ outline: [2,3]
 
 测试版本（BETA）是正式版本发布前的测试版本，会首次尝试加入一些新的功能，不排除可能会有一些致命性的BUG（概率很小），不建议在生产环境中使用。安装方式与正式版相同，任何人都可以更新使用。但是为了防止数据丢失，**请先自行备份重要数据再进行升级**。
 
-如果您在使用过程中遇到任何问题，请及时反馈到任意[交流群](zh_cn/introduce/author_groups.html)@我或者提[Issues](https://github.com/hslr-s/sun-panel/issues)。
+如果您在使用过程中遇到任何问题，请及时反馈到任意[交流群](/zh_cn/introduce/author_groups.html)@我或者提[Issues](https://github.com/hslr-s/sun-panel/issues)。
 :::
 
 [Github Releases](https://github.com/hslr-s/sun-panel/releases)
