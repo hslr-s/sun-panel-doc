@@ -25,6 +25,14 @@
 		"i18n-ally.localesPaths": [],
 		"github-actions.workflows.pinned.workflows": [
 			"root/.github/workflows/deploy.yml"
-		]
+		],
+		"[markdown]": {
+			"editor.quickSuggestions": {
+				"other": "on",
+				"comments": "on",
+				"strings": "on"
+			},
+			"editor.acceptSuggestionOnEnter": "on"
+		},
 	}
 }
