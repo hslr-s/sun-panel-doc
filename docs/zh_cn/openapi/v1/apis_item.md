@@ -5,7 +5,7 @@ outline: [1,2]
 # 图标卡片相关
 通过此页接口可以实现，添加、修改 图标卡片。 
 
-## 创建项目
+## 创建一个新的项目卡片
 
 ### URL
 > /openapi/v1/item/create
@@ -140,7 +140,8 @@ itemGroupOnlyName | group1 | String | 分组唯一标识 `v1.7.*` 开始支持
 
 
 
-## 修改项目
+## 修改项目卡片
+不需要修改的参数，无需传输。 `v1.7.*` 开始支持
 
 ### URL
 > /openapi/v1/item/update
