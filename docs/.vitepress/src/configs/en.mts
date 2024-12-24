@@ -34,7 +34,7 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     { text: 'Deploy', link: '/usage/quick_deploy' },
     { text: 'FAQ', link: '/faq/faq.html' },
-    { text: 'OpenAPI', link: '/openapi/v1/apis' },
+    { text: 'OpenAPI', link: '/openapi/v1/' },
     { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
     {
       text: '<span style="background-image: linear-gradient(to right,#ee0979,#ff6a00);-webkit-text-fill-color: transparent;-webkit-background-clip: text;background-clip: text;font-weight:800;">PRO</span>',
