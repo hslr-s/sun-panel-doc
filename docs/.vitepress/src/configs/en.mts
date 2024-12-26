@@ -100,6 +100,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Configuration File', link: '/advanced/config' },
+        { text: 'Enable HTTPS', link: '/advanced/https' },
         { text: 'Using MySQL/Redis', link: '/advanced/mysql_redis' },
         { text: 'Using Reverse Proxy + External Access', link: '/advanced/use_reverse_proxy' },
         { text: 'Custom CSS and JS', link: '/advanced/custom_js_css' },
