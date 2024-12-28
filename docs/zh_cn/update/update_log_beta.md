@@ -50,23 +50,8 @@ docker版本从v1.3.0及之前升级到最新版本前请务必先阅读[更新�
     - [优化] 卡片编辑整体样式调整
 - **原生`https`支持**
     
-    默认端口为：3003，如需修改在项目配置文件(`conf/conf.ini`) 中配置，证书配置项`[cert]`，旧版本升级到此版本，参考如下：
-    ::: details 升级说明
-    在`conf/conf.example.ini`找到 `base`组代码块下的 `https_port=3003`,添加到`conf/conf.ini`代码块`base`下并修改端口
+    默认端口为：3003，如需修改在项目配置文件(`conf/conf.ini`) 中配置，证书配置项`[cert]`，旧版本升级到此版本，参考 [启用HTTPS](/zh_cn/advanced/https)
 
-    证书配置 证书文件路径，需在配置文件中最下面添加以下代码，然后根据自己的情况将证书文件放置在对应的目录并正确填入：
-    
-    ```ini
-        # ==============================
-        # SSL certificate configuration
-        # ==============================
-        [cert]
-        # Certificate file path
-        cert_path=
-        # Certificate private key file path
-        key_path=
-    ```
-    :::
 - **页面版本缓存**（需要使用 `https` 访问才有效）
     - [新增] 页面缓存技术（Cache Storage），支持图片、页面等版本缓存，提高页面加载速度离线可加载并使用部分功能
     - [优化] 因升级后无版本化缓存导致各种奇怪的问题，当升级后，再次访问页面会提示更新缓存，点击 `是` 即可(需在下次升级后看到效果)

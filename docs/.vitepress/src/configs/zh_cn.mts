@@ -63,7 +63,7 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
     { text: '常见问题', link: '/zh_cn/faq/faq.html' },
-    { text: 'OpenAPI', link: '/zh_cn/openapi/v1/apis' },
+    { text: 'OpenAPI', link: '/zh_cn/openapi/v1/' },
     { text: '更新日志', link: '/zh_cn/update/update_log' },
     {
       text: '<span style="background-image: linear-gradient(to right,#ee0979,#ff6a00);-webkit-text-fill-color: transparent;-webkit-background-clip: text;background-clip: text;font-weight:800;">PRO</span>',
@@ -129,6 +129,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '配置文件', link: '/zh_cn/advanced/config' },
+        { text: '启用HTTPS', link: '/zh_cn/advanced/https' },
         { text: '使用mysql/redis', link: '/zh_cn/advanced/mysql_redis' },
         { text: '使用反向代理+外网访问', link: '/zh_cn/advanced/use_reverse_proxy' },
         { text: '自定义js、css', link: '/zh_cn/advanced/custom_js_css' },
