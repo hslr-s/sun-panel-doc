@@ -1,12 +1,12 @@
 # Browser Extension - Sun-Panel BE <Badge type="warning" text="beta" />
 
 ::: tip What is Sun-Panel BE
-Sun-Panel BE (Sun-Panel For Browser Extension) is an auxiliary browser extension for [Sun-Panel](http://sun-panel.top). It can run on mainstream browsers. This browser extension needs to be used with your self-hosted [Sun-Panel](http://sun-panel.top).
+[Sun-Panel BE](https://github.com/hslr-s/sun-panel-browser-extension) (Sun-Panel For Browser Extension) is an auxiliary browser extension for [Sun-Panel](http://sun-panel.top). It can run on mainstream browsers. This browser extension needs to be used with your self-hosted [Sun-Panel](http://sun-panel.top).
 :::
 
 ## Video Introduction
 
-[Bilibili](https://www.bilibili.com/video/BV12b421E7cF/)
+[Bilibili](https://www.bilibili.com/video/BV12b421E7cF/) | [YouTube](https://youtu.be/_cggRyQnfBY)
 
 ## Features
 
@@ -14,17 +14,17 @@ Sun-Panel BE (Sun-Panel For Browser Extension) is an auxiliary browser extension
 - 🍰 Quickly add the currently visited page to your self-hosted Sun-Panel group cards.
 
 ## Download/Install
-[chrome](https://chromewebstore.google.com/detail/sun-panel-be/gchnnoadbmdgoimlemmdacmkocngjonm/privacy) | [Edge](https://microsoftedge.microsoft.com/addons/detail/sunpanel-be/peklhgoidjpnojdpcnohhncgpblbnhoi) | [Firefox](https://addons.mozilla.org/firefox/addon/sun-panel-be/) 
+[chrome](https://chromewebstore.google.com/detail/sun-panel-be/gchnnoadbmdgoimlemmdacmkocngjonm/privacy) | [Edge](https://microsoftedge.microsoft.com/addons/detail/sunpanel-be/peklhgoidjpnojdpcnohhncgpblbnhoi) 
 
-zip:
-[Download](https://github.com/hslr-s/sun-panel-be/releases) 
-| [Alternative Download](https://links.sun-panel.top/browser_plugin_kuake) Please refer to the installation instructions
+[Firefox and offline version](https://github.com/hslr-s/sun-panel-browser-extension/releases) 
+For browsers based on chrome, please download the file with the extension `.crx`,
+For Firefox browser, please download the file with extension `.xpi`
 
-## Installation Instructions
+<!-- ## Installation Instructions
 
 ### zip Package
 
-The zip package is a development package. First, go to **`Extensions`** in your **`browser`** - **`enter the extension management page`** - **`enable developer mode`** - **`refresh the page`** - **`drag the zip package into the browser window`**, and you will have successfully installed it.
+The zip package is a development package. First, go to **`Extensions`** in your **`browser`** - **`enter the extension management page`** - **`enable developer mode`** - **`refresh the page`** - **`drag the zip package into the browser window`**, and you will have successfully installed it. -->
 
 ## Usage Instructions
 

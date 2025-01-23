@@ -1,12 +1,12 @@
 # 浏览器扩展- Sun-Panel BE <Badge type="warning" text="beta" />
 
 ::: tip Sun-Panel BE 是什么
-Sun-Panel BE (Sun-Panel For Browser Extension)是一款辅助 [Sun-Panel](http://sun-panel.top) 的浏览器扩展插件。可以运行在主流的浏览器上。本浏览器扩展需要搭配您自托管的 [Sun-Panel](http://sun-panel.top) 使用。
+[Sun-Panel BE](https://github.com/hslr-s/sun-panel-browser-extension) (Sun-Panel For Browser Extension)是一款辅助 [Sun-Panel](http://sun-panel.top) 的浏览器扩展插件。可以运行在主流的浏览器上。本浏览器扩展需要搭配您自托管的 [Sun-Panel](http://sun-panel.top) 使用。
 :::
 
 ## 视频介绍
 
-[Bilibili](https://www.bilibili.com/video/BV12b421E7cF/)
+[哔哩哔哩](https://www.bilibili.com/video/BV12b421E7cF/) | [YouTube](https://youtu.be/_cggRyQnfBY)
 
 ## 功能
 
@@ -16,17 +16,16 @@ Sun-Panel BE (Sun-Panel For Browser Extension)是一款辅助 [Sun-Panel](http:/
 
 ## 下载/安装
 
-[chrome](https://chromewebstore.google.com/detail/sun-panel-be/gchnnoadbmdgoimlemmdacmkocngjonm/privacy) | [Edge](https://microsoftedge.microsoft.com/addons/detail/sunpanel-be/peklhgoidjpnojdpcnohhncgpblbnhoi) | [Firefox（火狐）](https://addons.mozilla.org/firefox/addon/sun-panel-be/) 
+[Chrome](https://chromewebstore.google.com/detail/sun-panel-be/gchnnoadbmdgoimlemmdacmkocngjonm/privacy) | [Edge](https://microsoftedge.microsoft.com/addons/detail/sunpanel-be/peklhgoidjpnojdpcnohhncgpblbnhoi) 
 
-zip:
-[下载](https://github.com/hslr-s/sun-panel-be/releases) 
-| [备用网盘下载](https://links.sun-panel.top/browser_plugin_kuake) 请参考安装说明
-
-## 安装说明
+[Firefox（火狐）以及离线版](https://github.com/hslr-s/sun-panel-browser-extension/releases) 
+以 Chrome 为内核的浏览器请下载扩展名为 `.crx` 的文件，
+Firefox 浏览器请下载扩展名为 `.xpi` 的文件
+<!-- ## 安装说明
 
 ### zip 包
 
-zip包时开发包，首先到您的 **`浏览器中找到扩展`** - **`并进入到扩展管理页面`** - **`然后开启开发者模式`** - **`刷新页面`** - **`将zip包拖拽到浏览器窗口中`**，此时您已经成功安装完成了。
+zip包时开发包，首先到您的 **`浏览器中找到扩展`** - **`并进入到扩展管理页面`** - **`然后开启开发者模式`** - **`刷新页面`** - **`将zip包拖拽到浏览器窗口中`**，此时您已经成功安装完成了。 -->
 
 
 ## 使用说明
