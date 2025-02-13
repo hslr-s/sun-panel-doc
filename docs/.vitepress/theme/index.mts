@@ -1,6 +1,7 @@
 // .vitepress/theme/index.ts
 import DefaultTheme from "vitepress/theme"
 import googleAnalytics from 'vitepress-plugin-google-analytics'
+import sunAdvertisingPosition ,{deleteAll as deleteAllAd}from './components/sun-ad'
 
 // 只需添加以下一行代码，引入时间线样式
 import "vitepress-markdown-timeline/dist/theme/index.css";
@@ -10,31 +11,63 @@ import { onMounted, watch, nextTick } from 'vue';
 import { useRoute } from 'vitepress';
 import './index.css';
 
-function pictureZoom(){
+function pictureZoom() {
   const route = useRoute();
-    const initZoom = () => {
-      // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
-      // mediumZoom('.main img', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
-      // 除a标签以下的所有图像都进行缩放
-      mediumZoom(':not(a) > img', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
-    };
-    onMounted(() => {
-      initZoom();
-    });
-    watch(
-      () => route.path,
-      () => nextTick(() => initZoom())
-    );
+  const initZoom = () => {
+    // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
+    // mediumZoom('.main img', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
+    // 除a标签以下的所有图像都进行缩放
+    mediumZoom(':not(a) > img', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
+  };
+  onMounted(() => {
+    initZoom();
+  });
+  watch(
+    () => route.path,
+    () => nextTick(() => initZoom())
+  );
+}
+
+function initAd() {
+  const route = useRoute();
+  const init = () => {
+    deleteAllAd()
+    // 中文广告：判断路由是否带有/zh_cn
+    if (route.path.includes('/zh_cn')) {
+      sunAdvertisingPosition({
+        className: '.aside-content',
+        positionId: 'irzsczqqhdxnsg9u91',
+        first: true,
+        height: "100px",
+      })
+    }else{
+      sunAdvertisingPosition({
+        className: '.aside-content',
+        positionId: 'sun-pandl-ad-container',
+        first: true,
+        height: "100px",
+      })
+    }
+  };
+  onMounted(() => {
+    init();
+  });
+  // 会出现每次路由更新的问题
+  watch(
+    () => route.path,
+    () => nextTick(() => init())
+  );
 }
 
 export default {
   extends: DefaultTheme,
-  enhanceApp({app}) {
+  enhanceApp({ app }) {
     googleAnalytics({
       id: 'G-SD85FK6KMM', //跟踪ID，在analytics.google.com注册即可
     })
   },
   setup() {
     pictureZoom()
+    initAd()
   },
 }
