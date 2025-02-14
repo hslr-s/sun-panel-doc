@@ -63,6 +63,17 @@ async function getPositionInfo(apiDomain:string,positionId: string,uid: string|n
     .then((response) => response.json())
 }
 
+function appendQueryParam(url: string, key: string, value: string): string {
+  // 解析 URL
+  const urlObj = new URL(url);
+
+  // 追加或更新参数
+  urlObj.searchParams.set(key, value);
+
+  // 返回完整的 URL 字符串
+  return urlObj.toString();
+}
+
 export function deleteByClassName(className: string) {
   const existElement = document.querySelectorAll("." + className)
   if (existElement) {
@@ -111,7 +122,7 @@ export default async function sunAdvertisingPosition(options: AdvertisingPositio
       alt: ad.description,
       title: ad.description,
       onclick: () => {
-        window.open(ad.clickUrl);
+        window.open(appendQueryParam(ad.clickUrl, "uid", s.uid));
       },
       style: {
         width: optionsCfg.width || "100%",
