@@ -21,7 +21,12 @@ interface AdvertisingPositionOptions {
   height?: string;
 }
 
+interface Storage {
+  uid:string
+}
+
 const className = "SunAdvertisingPosition"
+const storageName = className
 
 const defaultOptions: AdvertisingPositionOptions = {
   className,
@@ -30,6 +35,32 @@ const defaultOptions: AdvertisingPositionOptions = {
   first: true,
   width: "100%",
   height: "100%",
+}
+
+function getStorage(): Storage {
+  const storage = localStorage.getItem(storageName);
+  if (storage) {
+    return JSON.parse(storage);
+  }
+  return {
+    uid: ""
+  }
+}
+
+function setStorage(storage: Storage){
+  localStorage.setItem(storageName, JSON.stringify(storage))
+}
+
+async function getPositionInfo(apiDomain:string,positionId: string,uid: string|null) {
+
+  return await fetch(getPositionInfoAplUrl(apiDomain,positionId), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: uid!==""?JSON.stringify({ uid }):""
+  })
+    .then((response) => response.json())
 }
 
 export function deleteByClassName(className: string) {
@@ -41,16 +72,6 @@ export function deleteByClassName(className: string) {
   }
 }
 
-async function getPositionInfo(apiDomain:string,positionId: string) {
-  return await fetch(getPositionInfoAplUrl(apiDomain,positionId), {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-}
-
 export default async function sunAdvertisingPosition(options: AdvertisingPositionOptions) {
 
   let adList: AdItem[] = []
@@ -60,10 +81,16 @@ export default async function sunAdvertisingPosition(options: AdvertisingPositio
     ...options
   }
 
-  await getPositionInfo(optionsCfg.apiDomain,optionsCfg.positionId).then((data) => {
+  const s = getStorage();
+
+  await getPositionInfo(optionsCfg.apiDomain || "",optionsCfg.positionId,s.uid).then((data) => {
     if (data.code === 0) {
-      adList = data.data.list as AdItem[]; // 明确指定类型为 AdItem[]
-      console.log(adList);
+      adList = data.data.list as AdItem[]; 
+      // 保存用户id
+      if(s.uid===""){
+        s.uid = data.data.uid;
+        setStorage(s);
+      }
     } else {
       // console.error("Failed to fetch position info:", data.msg);
     }
