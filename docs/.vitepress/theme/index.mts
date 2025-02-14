@@ -1,7 +1,7 @@
 // .vitepress/theme/index.ts
 import DefaultTheme from "vitepress/theme"
 import googleAnalytics from 'vitepress-plugin-google-analytics'
-import sunAdvertisingPosition ,{deleteAll as deleteAllAd}from './components/sun-ad'
+import sunAdvertisingPosition from './components/sun-ad'
 
 // 只需添加以下一行代码，引入时间线样式
 import "vitepress-markdown-timeline/dist/theme/index.css";
@@ -31,15 +31,20 @@ function pictureZoom() {
 function initAd() {
   const route = useRoute();
   const init = () => {
-    deleteAllAd()
     // 中文广告：判断路由是否带有/zh_cn
     if (route.path.includes('/zh_cn')) {
       sunAdvertisingPosition({
         className: '.aside-content',
         positionId: 'irzsczqqhdxnsg9u91',
         first: true,
-        height: "100px",
+        height: "80px",
       })
+      // sunAdvertisingPosition({
+      //   className: '.aside-content',
+      //   positionId: 'vzl9fhyjnrttbw9bx8',
+      //   first: true,
+      //   height: "100px",
+      // })
     }else{
       sunAdvertisingPosition({
         className: '.aside-content',
