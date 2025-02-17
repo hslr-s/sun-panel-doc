@@ -35,22 +35,16 @@ function initAd() {
     if (route.path.includes('/zh_cn')) {
       sunAdvertisingPosition({
         className: '.aside-content',
-        positionId: 'irzsczqqhdxnsg9u91',
+        positionId: 'p1kocz9wewayoi93kr',
         first: true,
         height: "80px",
       })
-      // sunAdvertisingPosition({
-      //   className: '.aside-content',
-      //   positionId: 'vzl9fhyjnrttbw9bx8',
-      //   first: true,
-      //   height: "100px",
-      // })
     }else{
       sunAdvertisingPosition({
         className: '.aside-content',
-        positionId: 'sun-pandl-ad-container',
+        positionId: 'p1kocz9wewayoi93kr',
         first: true,
-        height: "100px",
+        height: "80px",
       })
     }
   };
