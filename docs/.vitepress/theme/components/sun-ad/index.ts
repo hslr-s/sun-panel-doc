@@ -31,7 +31,7 @@ const storageName = className
 const defaultOptions: AdvertisingPositionOptions = {
   className,
   positionId: "",
-  apiDomain: "http://127.0.0.1:3005",
+  apiDomain: "https://goad.enianteam.com",
   first: true,
   width: "100%",
   height: "100%",
@@ -58,7 +58,8 @@ async function getPositionInfo(apiDomain:string,positionId: string,uid: string|n
     headers: {
       "Content-Type": "application/json",
     },
-    body: uid!==""?JSON.stringify({ uid }):""
+    credentials: "include",
+    // body: uid!==""?JSON.stringify({ uid }):""
   })
     .then((response) => response.json())
 }
@@ -122,7 +123,7 @@ export default async function sunAdvertisingPosition(options: AdvertisingPositio
       alt: ad.description,
       title: ad.description,
       onclick: () => {
-        window.open(appendQueryParam(ad.clickUrl, "uid", s.uid));
+        window.open(ad.clickUrl);
       },
       style: {
         width: optionsCfg.width || "100%",
