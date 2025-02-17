@@ -62,7 +62,7 @@ export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
     googleAnalytics({
-      id: 'G-SD85FK6KMM', //跟踪ID，在analytics.google.com注册即可
+      id: 'G-Y2L8MHCNCV', //跟踪ID，在analytics.google.com注册即可
     })
   },
   setup() {
