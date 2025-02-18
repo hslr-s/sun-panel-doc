@@ -37,14 +37,14 @@ function initAd() {
         className: '.aside-content',
         positionId: 'p1kocz9wewayoi93kr',
         first: true,
-        height: "80px",
+        // height: "80px",
       })
     }else{
       sunAdvertisingPosition({
         className: '.aside-content',
-        positionId: 'p1kocz9wewayoi93kr',
+        positionId: '0hso9rx6tc6dhkg6i5',
         first: true,
-        height: "80px",
+        // height: "80px",
       })
     }
   };
