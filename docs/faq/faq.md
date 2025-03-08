@@ -61,9 +61,8 @@ Refer to [Sun-Panel BE](../browser_extension/index.md)
    2. The version has been updated, and the authorization policy may be updated with the new version, which may cause this problem
    3. The maximum number of simultaneously logged-in clients has been exceeded, and the previously logged-in clients will be squeezed offline by the later logged-in clients
 
-- Solution:
-
-   Log in to the authorized account manually again
+  Solution:
+  Log in to the authorized account manually again
 
 
 ## FAQ for v1.7.0-beta Version Upgrade {#v1_7_0_beta_abnormal_faq}
