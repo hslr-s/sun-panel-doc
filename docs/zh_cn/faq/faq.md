@@ -67,3 +67,31 @@
 - 解决方案：
 
     重新手动登录一下授权账号即可
+
+## v1.7.0-beta 版本升级后异常解决方案 {#v1_7_0_beta_abnormal_faq}
+
+因为新版本已经移除了 Service Worker 和 Cache Storage 的支持，所以需要手动解决一下异常问题。
+
+::: details 请点此展开查看解决方案
+
+#### 步骤1. **强制更新Service Worker**
+Service Worker 可能会在后台重新注册并恢复缓存。你可以强制更新它：
+- 打开开发者工具（F12）。
+- 进入 **Application** 标签。
+- 在 **Service Workers** 部分：
+  <!-- - 勾选 **"Update on reload"**（每次刷新时更新）。 -->
+  - 点击 **"Unregister"**（注销）以移除现有的Service Worker。
+  - 刷新页面
+
+---
+
+#### 步骤2. **手动清除Cache Storage**
+PWA 使用 Cache API 存储资源，这些缓存可能需要手动清除：
+- 打开开发者工具（F12）。
+- 进入 **Application** 标签。
+- 在 **Cache Storage** 部分：
+  - 找到与你的PWA相关的缓存（通常以域名或Service Worker名称命名）。
+  - 右键点击缓存并选择 **Delete**（删除）。
+- 刷新页面，检查是否仍有缓存。
+
+:::

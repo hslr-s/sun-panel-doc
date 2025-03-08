@@ -64,3 +64,32 @@ Refer to [Sun-Panel BE](../browser_extension/index.md)
 - Solution:
 
    Log in to the authorized account manually again
+
+
+## FAQ for v1.7.0-beta Version Upgrade {#v1_7_0_beta_abnormal_faq}
+
+Since the new version has removed support for Service Worker and Cache Storage, you need to manually resolve any issues that arise.
+
+::: details Please click here to expand the solution
+
+#### Step 1. **Force Update Service Worker**
+The Service Worker might re-register in the background and restore caches. You can force an update:
+- Open Developer Tools (F12).
+- Go to the **Application** tab.
+- In the **Service Workers** section:
+  <!-- - Check **"Update on reload"** (update on each refresh). -->
+  - Click **"Unregister"** (unregister) to remove the existing Service Worker.
+  - Refresh the page.
+
+---
+
+#### Step 2. **Manually Clear Cache Storage**
+PWA uses the Cache API to store resources, and these caches may need to be cleared manually:
+- Open Developer Tools (F12).
+- Go to the **Application** tab.
+- In the **Cache Storage** section:
+  - Find the cache related to your PWA (usually named after the domain or Service Worker name).
+  - Right-click the cache and select **Delete** (delete).
+- Refresh the page and check if there are still caches.
+
+:::
