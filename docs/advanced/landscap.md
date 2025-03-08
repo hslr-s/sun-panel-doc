@@ -20,7 +20,7 @@ If your unique group identifier is `test`, the class name should be: `item-group
 ## Card style classes
 
 Supported starting from `v1.6.0`
-Project card adds a unique id attribute. The naming rule is `item-card-name-xx` (`xx` is the unique identifier in the project card settings)
+Project card adds a unique "class" attribute. The naming rule is `item-card-name-xx` (`xx` is the unique identifier in the project card settings)
 
 
 ## Other instructions
