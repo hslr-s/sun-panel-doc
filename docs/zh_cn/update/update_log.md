@@ -5,7 +5,7 @@ outline: [2,3]
 # 更新日志 - 正式版本
 
 ::: tip 说明
-更新前请自行备份，[**更新教程及版本说明**](./update.md)，**beta版本更新日志请[点此查看beta版本更新日志](./update_log_beta.md)**
+更新前请自行备份，务必查看[**更新教程及版本说明**](./update.md)，**beta版本更新日志请[点此查看beta版本更新日志](./update_log_beta.md)**
 :::
 
 [Github Releases](https://github.com/hslr-s/sun-panel/releases)
