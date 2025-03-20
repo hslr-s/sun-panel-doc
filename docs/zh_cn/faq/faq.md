@@ -59,7 +59,7 @@
 ## PRO 授权账号登录失效 {#proAccountInvalid}
 
 - 国内（中国）部分地区可能导致连接慢或者连接超时
-::: details 请点此展开查看解决方案
+::: details 请点此展开查看解决方案（需要 v1.7.0-beta* 及以后得版本）
 找到项目的配置文件，一般在“conf/conf.ini”，找到最后添加一下内容：
 ```ini
 [pro_auth]
