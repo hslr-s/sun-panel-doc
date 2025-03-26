@@ -20,3 +20,7 @@
 │   ├── index.css // [!code focus]
 │   └── index.js // [!code focus]
 ```
+
+## Sun-Panel-Helper 美化工具
+
+此项目（[Sun-Panel-Helper](https://github.com/madrays/sun-panel-helper)）是由小伙伴（madrays）开发和整理收集的一些样式和JS插件，可以帮您快速定制样式。

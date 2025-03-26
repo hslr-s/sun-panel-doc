@@ -20,3 +20,6 @@ Specifically, reference, create related files if they don't exist
 │   ├── index.css // [!code focus]
 │   └── index.js // [!code focus]
 ```
+
+## Sun-Panel-Helper Beautification Tool
+This project ([Sun-Panel-Helper](https://github.com/madrays/sun-panel-helper)) is developed and curated by a contributor (madrays). It includes a collection of styles and JS plugins that can help you quickly customize your styles.
