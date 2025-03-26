@@ -29,7 +29,7 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 > 2. 如果要在容器中查看docker状态，挂载时需加：`-v /var/run/docker.sock:/var/run/docker.sock` （部分设备可能不支持）
 > 3. 如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
 
-## v1.7.0 <Badge type="tip" text="2025-03-26" /> {#1.7.0}
+## v1.7.0 <Badge type="tip" text="2025-03-26" /> {#v1.7.0}
 
 - **系统状态组件**
 
@@ -84,7 +84,7 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
     - [修复] 某些情况下页面超出可视范围 `(感谢Q群：Mr.Huang提出并帮助调试)`
 
 
-## v1.6.1 <Badge type="tip" text="2024-12-23" /> {#1.6.1}
+## v1.6.1 <Badge type="tip" text="2024-12-23" /> {#v1.6.1}
 
 > [!CAUTION] 重要说明
 > 1. docker版本从 `v1.3.0` 及之前升级到此版本前请务必先阅读 [更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
