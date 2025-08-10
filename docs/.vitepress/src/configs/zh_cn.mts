@@ -88,7 +88,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
     },
 
     {
-      text: '使用教程',
+      text: '使用说明',
       collapsed: false,
       items: [
         { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
@@ -97,6 +97,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: '重置密码', link: '/zh_cn/usage/reset_password' },
         { text: '公开访问（访客模式）', link: '/zh_cn/usage/public_visit' },
         { text: '自定义页脚', link: '/zh_cn/usage/custom_footer' },
+        { text: '迁移、备份', link: '/zh_cn/usage/backup' },
       ]
     },
 

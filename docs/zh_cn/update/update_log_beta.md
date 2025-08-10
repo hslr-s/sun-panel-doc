@@ -31,8 +31,23 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 ::: tip 重要说明
 docker版本从v1.3.0及之前升级到最新版本前请务必先阅读[更新说明](https://github.com/hslr-s/sun-panel/discussions/98)
 
-如果更新后出现任何异常请尝试强制刷新页面（ctrl+shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
+如果更新后出现任何异常请尝试强制刷新页面（Ctrl+Shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
 :::
+
+## v1.8.0-beta25-08-10 <Badge type="warning" text="beta" /> {#v1.8.0-beta25-08-10}
+
+- **迁移、备份** `此功能BETA版本限免PRO`
+  - 管理账号可以备份整个项目的重要数据包含所有账号上传的图标与壁纸、账号配置、数据库、自定义样式目录（不含单独使用了mysql数据库的数据） [更多及重要说明](/zh_cn/usage/backup.md)
+- **图库、公共图库**
+  - [新增] 图片详细信息内可以修改图片类型（图标、壁纸）
+- **其他**
+  - [优化] 部分系统内置应用及功能的提示
+  - [优化] 账号长度限制改为至少两个字符
+  - [优化] 账号密码长度限制改为至少6个字符
+  - [修复] 删除唯一管理账号拦截失败的BUG
+
+
+  
 
 ## v1.8.0-beta25-05-27 <Badge type="warning" text="beta" /> {#v1.8.0-beta25-05-27}
 
