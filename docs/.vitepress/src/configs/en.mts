@@ -68,6 +68,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
         { text: 'Reset Password', link: '/usage/reset_password' },
         { text: 'Public visit (visitor mode)', link: '/usage/public_visit' },
         { text: 'Custom footer', link: '/usage/custom_footer' },
+        { text: 'Migration, backup', link: '/zh_cn/usage/backup' },
       ]
     },
 
