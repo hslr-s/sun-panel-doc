@@ -11,6 +11,6 @@ The following directories are primarily backed up:
 
 ```
 custom: Custom styles directory
-database.base: SQLite3 database files
+database.db: SQLite3 database files
 uploads: Upload directory
 ```

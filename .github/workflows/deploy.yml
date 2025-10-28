@@ -13,10 +13,17 @@ jobs:
       contents: write  # To push a branch 
       pull-requests: write  # To create a PR from that branch
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - name: Checkout code
+        # 更新到v4版本，并正确设置fetch-depth
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
+
       - run: npm i pnpm -g
       - run: pnpm install --frozen-lockfile
 

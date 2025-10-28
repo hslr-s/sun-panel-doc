@@ -10,6 +10,6 @@
 以下是备份功能主要备份的目录
 ```
 custom: 自定义样式目录
-database.base: sqlite3 数据库文件
+database.db: sqlite3 数据库文件
 uploads: 上传目录
 ```
