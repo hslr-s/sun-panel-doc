@@ -7,7 +7,7 @@
 - [Icons8](https://icons8.com/)
 - [Vectorjunky](https://www.iconfinder.com/)
 - 小伙伴搭建的
-    - [By Pipu](https://pipuwong.com/en/free-icons-for-self-hosted)
+    - [By Pipu](https://tabboard.com/icons)
     - [By Siriling](https://siriling.github.io/my-icons/dist)
 
 壁纸：
