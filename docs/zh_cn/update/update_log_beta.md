@@ -34,6 +34,10 @@ docker版本从v1.3.0及之前升级到最新版本前请务必先阅读[更新�
 如果更新后出现任何异常请尝试强制刷新页面（Ctrl+Shift+R），如果无法解决可以尝试清除浏览器缓存（ctrl+shift+del）
 :::
 
+## v1.8.1-beta251225 <Badge type="warning" text="beta" /> {#v1.8.1-beta251225}
+- [修复] 新建账号、无分组情况下未新建分组的问题
+- [修复] docker卡片，容器在docker未启动时，一直显示加载状态
+
 ## v1.8.1-beta251213 <Badge type="warning" text="beta" /> {#v1.8.1-beta251213}
 > 注意：从此版本开始， BETA 版本号的命名规则将改为 `v1.8.1-beta251213` 的形式
 
