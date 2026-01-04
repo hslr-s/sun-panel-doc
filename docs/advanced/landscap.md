@@ -26,6 +26,4 @@ Project card adds a unique "class" attribute. The naming rule is `item-card-name
 ## Other instructions
 Since the author is quite busy and does not have time to actually implement the function, there is no relevant tutorial effect. If I have time to do it later or if there are friends who are willing to share it, I will post it here.
 
-## Sun-Panel-Helper Beautification Tool
-This project ([Sun-Panel-Helper](https://github.com/madrays/sun-panel-helper)) is developed and curated by a contributor (madrays). It includes a collection of styles and JS plugins that can help you quickly customize your styles.
 

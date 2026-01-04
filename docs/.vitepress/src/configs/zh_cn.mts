@@ -142,7 +142,19 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
             { text: '插件说明', link: 'https://github.com/hslr-s/sun-panel-js-plugins' },
             { text: '分组侧边栏', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
           ]
-        }
+        },
+        
+        { text: 'Sun-Panel-Helper 美化工具', link: '/zh_cn/advanced/sun_panel_helper' },
+        {
+          text: '三方开发主题',
+          collapsed: false,
+          items: [
+            { text: '主题说明', link: '/zh_cn/advanced/third_theme' },
+            { text: '与末大佬主题', link: '/zh_cn/advanced/third_theme/yumo_theme' },
+            { text: '香水大佬主题', link: '/zh_cn/advanced/third_theme/xshui_theme' },
+          ]
+        },
+
       ]
     },
 

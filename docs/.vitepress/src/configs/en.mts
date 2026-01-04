@@ -114,7 +114,17 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
             { text: 'TOC', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
 
           ]
-        }
+        },
+        { text: 'Sun-Panel-Helper', link: '/zh_cn/advanced/sun_panel_helper' },
+        {
+          text: 'Third-party Themes',
+          collapsed: false,
+          items: [
+            { text: 'Theme Description', link: '/zh_cn/advanced/third_theme' },
+            { text: 'Yumo Theme', link: '/zh_cn/advanced/third_theme/yumo_theme' },
+            { text: 'Xshui Theme', link: '/zh_cn/advanced/third_theme/xshui_theme' },
+          ]
+        },
       ]
     },
 

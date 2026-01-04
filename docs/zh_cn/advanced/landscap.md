@@ -25,7 +25,3 @@
 
 ## 其他说明
 由于作者比较忙，没有实际实现功能的时间，所以没有相关教程效果，后续如果有时间搞或者如果有小伙伴愿意分享，会贴在这里。
-
-## Sun-Panel-Helper 美化工具
-
-此项目（[Sun-Panel-Helper](https://github.com/madrays/sun-panel-helper)）是由小伙伴（madrays）开发和整理收集的一些样式和JS插件，可以帮您快速定制样式。

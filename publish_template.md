@@ -59,7 +59,6 @@ https://github.com/hslr-s/sun-panel/releases
 
 > [!CAUTION] 
 > 
-> **This version is a repair version of v1.5.2 and does not contain the new features of v1.6.0-beta-xx**
 > 1. Before upgrading from the Docker version `v1.3.0` or earlier to this version, please read the [Update Instructions](https://github.com/hslr-s/sun-panel/discussions/98) first.
 > 2. If you want to view the Docker status in the container, add the following when mounting: `-v /var/run/docker.sock:/var/run/docker.sock` (Some devices may not support this.)
 > 3. If any exception occurs after updating, please try to force refresh the page (ctrl+shift+R). If it cannot be solved, you can try clearing the browser cache (ctrl+shift+del).
