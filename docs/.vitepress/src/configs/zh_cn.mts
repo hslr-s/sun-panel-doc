@@ -14,8 +14,12 @@ export function getChineseThemeConfig(): DefaultTheme.Config {
     nav: nav(),
 
     sidebar: {
+      // v1
       '/zh_cn/': sidebarRoot(),
       '/zh_cn/openapi/': sidebarOpenapi(),
+
+      // v2
+      '/v2/zh_cn': sidebarRootV2(),
     },
 
     socialLinks: [
@@ -174,6 +178,47 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       link: '/zh_cn/faq/faq'
     },
+
+
+  ]
+}
+function sidebarRootV2(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'v2开发板介绍',
+      collapsed: false,
+      items: [
+        { text: 'V2 介绍', link: '/v2/zh_cn/index' },
+        // { text: '演示站点', link: '/zh_cn/introduce/demo_site' },
+        // { text: '作者&交流群&社区', link: '/zh_cn/introduce/author_groups' },
+        // { text: '打赏🧧', link: '/zh_cn/introduce/donate' },
+
+      ]
+    },
+
+    {
+      text: '微应用开发',
+      collapsed: false,
+      items: [
+        { text: '介绍', link: '/v2/zh_cn/micro_app_dev/index' },
+        { text: '快速开发（Hello World）', link: '/v2/zh_cn/micro_app_dev/quick_start' },
+        { text: '配置文件说明', link: '/v2/zh_cn/micro_app_dev/config' },
+        { text: '数据节点', link: '/v2/zh_cn/micro_app_dev/data_node' },
+        { text: '权限声明', link: '/v2/zh_cn/micro_app_dev/permission' },
+
+        { text: 'API', link: '/v2/zh_cn/micro_app_dev/api' },
+       
+      ]
+    },
+
+   
+
+
+
+
+
+
+
 
 
   ]
