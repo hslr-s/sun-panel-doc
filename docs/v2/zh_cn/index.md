@@ -71,18 +71,18 @@ outline: [2,3]
 
 ## V2 效果预览图
 
-![](http://cdn.enianteam.com/sun-panel/v2-dev/pc_1_micro_app.png)
+![](/images/v2-dev/pc_1_micro_app.png)
 
-![](http://cdn.enianteam.com/sun-panel/v2-dev/pc_2_v1_style.png)
+![](/images/v2-dev/pc_2_v1_style.png)
 
-![](http://cdn.enianteam.com/sun-panel/v2-dev/docker.png)
+![](/images/v2-dev/docker.png)
 
-![](http://cdn.enianteam.com/sun-panel/v2-dev/add_widget.png)
+![](/images/v2-dev/add_widget.png)
 
 
-![](http://cdn.enianteam.com/sun-panel/v2-dev/m2.jpg){style="max-width: 500px"}
+![](/images/v2-dev/m2.jpg){style="max-width: 500px"}
 
-![](http://cdn.enianteam.com/sun-panel/v2-dev/m1.jpg){style="max-width: 500px"}
+![](/images/v2-dev/m1.jpg){style="max-width: 500px"}
 
 
 
