@@ -29,7 +29,7 @@ outline: [2,3]
 :::tip
 以下列出相比v1现已完成的功能项，图标卡片在保留v1版本样式的同时，同组支持更多尺寸的卡片，当然远不止这些，简单挑了一些，有新的建议可以提！
 :::
-
+ 
 - ✅ 增加 微应用/小部件卡片框架，在有限的屏幕里，提升无限的可玩性，灵活安装和卸载。喜爱开发的小伙伴可以按照规范自由开发。
 - ✅ 全新的网络环境检测方案，可根据当前访问页面地址，匹配到合适的内网地址、自定义地址内的同网段地址。
 - ✅ 增加 卡片自定义地址，可以参与网络环境识别智能打开或右键菜单打开。
@@ -70,4 +70,20 @@ outline: [2,3]
 
 
 ## V2 效果预览图
+
+![](http://cdn.enianteam.com/sun-panel/v2-dev/pc_1_micro_app.png)
+
+![](http://cdn.enianteam.com/sun-panel/v2-dev/pc_2_v1_style.png)
+
+![](http://cdn.enianteam.com/sun-panel/v2-dev/docker.png)
+
+![](http://cdn.enianteam.com/sun-panel/v2-dev/add_widget.png)
+
+
+![](http://cdn.enianteam.com/sun-panel/v2-dev/m2.jpg){style="max-width: 500px"}
+
+![](http://cdn.enianteam.com/sun-panel/v2-dev/m1.jpg){style="max-width: 500px"}
+
+
+
 
