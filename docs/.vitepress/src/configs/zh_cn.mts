@@ -205,6 +205,7 @@ function sidebarRootV2(): DefaultTheme.SidebarItem[] {
         { text: '配置文件说明', link: '/v2/zh_cn/micro_app_dev/config' },
         { text: '数据节点', link: '/v2/zh_cn/micro_app_dev/data_node' },
         { text: '权限声明', link: '/v2/zh_cn/micro_app_dev/permission' },
+        { text: '生命周期', link: '/v2/zh_cn/micro_app_dev/life_cycle' },
 
         { text: 'API', link: '/v2/zh_cn/micro_app_dev/api' },
        

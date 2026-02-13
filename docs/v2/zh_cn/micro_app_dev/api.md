@@ -34,7 +34,7 @@ open(options: [OpenWindowOptions](#openwindowoptions)): string
 **示例：**
 
 ```typescript
-const windowId = spCtx.window.open({
+const windowId = this.spCtx.api.window.open({
   componentName: 'MyComponent',
   title: '我的窗口',
   windowConfig: {
@@ -44,46 +44,6 @@ const windowId = spCtx.window.open({
   },
   customParam: { userId: 123 }
 });
-```
-
-#### window.close
-
-关闭指定窗口。
-
-```typescript
-close(windowId: string): boolean
-```
-
-**参数：**
-
-- `windowId`: 窗口 ID
-
-**返回值：** 是否成功关闭（boolean 类型）
-
-**示例：**
-
-```typescript
-const success = spCtx.window.close(windowId);
-```
-
-#### window.toggle
-
-切换窗口的显示/隐藏状态。
-
-```typescript
-toggle(windowId: string): boolean
-```
-
-**参数：**
-
-- `windowId`: 窗口 ID
-
-**返回值：** 是否成功切换（boolean 类型）
-
-**示例：**
-
-```typescript
-const success = spCtx.window.toggle(windowId);
 ```
 
 ### 缓存管理
@@ -109,7 +69,7 @@ get(key: string): Promise<any>
 **示例：**
 
 ```typescript
-const value = await spCtx.localCache.user.get('userInfo');
+const value = await this.spCtx.api.localCache.user.get('userInfo');
 ```
 
 ##### localCache.user.set
@@ -131,7 +91,7 @@ set(key: string, value: any, expireTimestamp?: number): Promise<void>
 **示例：**
 
 ```typescript
-await spCtx.localCache.user.set('userInfo', { name: '张三' }, 3600); // 1小时后过期
+await this.spCtx.api.localCache.user.set('userInfo', { name: '张三' }, 3600); // 1小时后过期
 ```
 
 ##### localCache.user.del
@@ -151,7 +111,7 @@ del(key: string): Promise<void>
 **示例：**
 
 ```typescript
-await spCtx.localCache.user.del('userInfo');
+await this.spCtx.api.localCache.user.del('userInfo');
 ```
 
 ##### localCache.user.clear
@@ -167,7 +127,7 @@ clear(): Promise<void>
 **示例：**
 
 ```typescript
-await spCtx.localCache.user.clear();
+await this.spCtx.api.localCache.user.clear();
 ```
 
 ##### localCache.user.getKeys
@@ -183,33 +143,7 @@ getKeys(): Promise<string[]>
 **示例：**
 
 ```typescript
-const keys = await spCtx.localCache.user.getKeys();
-```
-
-##### localCache.user.getWithCache
-
-获取数据并缓存（如果缓存不存在则调用 API）。
-
-```typescript
-getWithCache<T>(key: string, apiCall: () => Promise<T>, expireTimestamp?: number): Promise<T>
-```
-
-**参数：**
-
-- `key`: 缓存键
-- `apiCall`: API 调用函数
-- `expireTimestamp`: 过期时间（秒）
-
-**返回值：** 数据值（Promise\<T\>）
-
-**示例：**
-
-```typescript
-const data = await spCtx.localCache.user.getWithCache(
-  'userData',
-  () => fetchUserData(),
-  1800 // 30分钟
-);
+const keys = await this.spCtx.api.localCache.user.getKeys();
 ```
 
 #### 应用级缓存 (localCache.app)
@@ -223,16 +157,15 @@ const data = await spCtx.localCache.user.getWithCache(
 - `del(key: string): Promise<void>`
 - `clear(): Promise<void>`
 - `getKeys(): Promise<string[]>`
-- `getWithCache<T>(key: string, apiCall: () => Promise<T>, expireTimestamp?: number): Promise<T>`
 
 **示例：**
 
 ```typescript
 // 设置应用级缓存
-await spCtx.localCache.app.set('appConfig', { theme: 'dark' }, 86400);
+await this.spCtx.api.localCache.app.set('appConfig', { theme: 'dark' }, 86400);
 
 // 获取应用级缓存
-const config = await spCtx.localCache.app.get('appConfig');
+const config = await this.spCtx.api.localCache.app.get('appConfig');
 ```
 
 ### 数据节点 {#data_node}
@@ -259,7 +192,7 @@ getByKey<T = any>(node: string, key: string): Promise<T>
 **示例：**
 
 ```typescript
-const userData = await spCtx.dataNode.user.getByKey('preferences', 'theme');
+const userData = await this.spCtx.api.dataNode.user.getByKey('preferences', 'theme');
 ```
 
 ##### dataNode.user.getByKeys
@@ -280,7 +213,7 @@ getByKeys<T = any>(node: string, keys: string[]): Promise<T>
 **示例：**
 
 ```typescript
-const userData = await spCtx.dataNode.user.getByKeys('preferences', ['theme', 'language']);
+const userData = await this.spCtx.api.dataNode.user.getByKeys('preferences', ['theme', 'language']);
 ```
 
 ##### dataNode.user.setByKey
@@ -302,7 +235,7 @@ setByKey<T = any>(node: string, key: string, value: Record<string, any>): Promis
 **示例：**
 
 ```typescript
-const result = await spCtx.dataNode.user.setByKey('preferences', 'theme', { mode: 'dark' });
+const result = await this.spCtx.api.dataNode.user.setByKey('preferences', 'theme', { mode: 'dark' });
 ```
 
 ##### dataNode.user.delByKey
@@ -323,7 +256,7 @@ delByKey<T = any>(node: string, key: string): Promise<T>
 **示例：**
 
 ```typescript
-const deleted = await spCtx.dataNode.user.delByKey('preferences', 'theme');
+const deleted = await this.spCtx.api.dataNode.user.delByKey('preferences', 'theme');
 ```
 
 #### 应用级数据节点 (dataNode.app)
@@ -341,10 +274,10 @@ const deleted = await spCtx.dataNode.user.delByKey('preferences', 'theme');
 
 ```typescript
 // 设置应用级数据
-await spCtx.dataNode.app.setByKey('config', 'globalSettings', { maxUsers: 100 });
+await this.spCtx.api.dataNode.app.setByKey('config', 'globalSettings', { maxUsers: 100 });
 
 // 获取应用级数据
-const settings = await spCtx.dataNode.app.getByKey('config', 'globalSettings');
+const settings = await this.spCtx.api.dataNode.app.getByKey('config', 'globalSettings');
 ```
 
 ### 网络透传
@@ -373,68 +306,13 @@ request<T = any>(params: [AdvancedProxyRequest](#advancedproxyrequest)): Promise
 **示例：**
 
 ```typescript
-const response = await spCtx.network.request({
+const response = await this.spCtx.api.network.request({
   targetUrl: 'https://api.example.com/users',
   method: 'GET',
   headers: {
     'Authorization': 'Bearer token123'
   }
 });
-```
-
-#### network.batchRequest
-
-批量发送网络请求。
-
-```typescript
-batchRequest<T = any>(params: [AdvancedBatchProxyRequest](#advancedbatchproxyrequest)): Promise<T>
-```
-
-**参数：**
-
-- `params`: 批量请求参数，类型为 [`AdvancedBatchProxyRequest`](#advancedbatchproxyrequest)，包含：
-  - `requests`（必需）：请求列表（[`AdvancedProxyItem`](#advancedproxyitem)[]）
-  - `parallel`（可选）：是否并行执行
-
-**返回值：** 响应数据（Promise\<T\>）
-
-**示例：**
-
-```typescript
-const response = await spCtx.network.batchRequest({
-  requests: [
-    { url: 'https://api.example.com/users', method: 'GET' },
-    { url: 'https://api.example.com/posts', method: 'GET' },
-    { url: 'https://api.example.com/comments', method: 'GET' }
-  ],
-  parallel: true
-});
-```
-
-#### network.smartBatchRequest
-
-智能批量请求（自动分批）。
-
-```typescript
-smartBatchRequest<T = any>(requests: [AdvancedProxyItem](#advancedproxyitem)[], batchSize?: number): Promise<T[]>
-```
-
-**参数：**
-
-- `requests`: 请求列表，类型为 [`AdvancedProxyItem`](#advancedproxyitem)[]
-- `batchSize`: 每批数量（可选）
-
-**返回值：** 响应数据数组（Promise\<T[]\>）
-
-**示例：**
-
-```typescript
-const responses = await spCtx.network.smartBatchRequest([
-  { url: 'https://api.example.com/data/1', method: 'GET' },
-  { url: 'https://api.example.com/data/2', method: 'GET' },
-  { url: 'https://api.example.com/data/3', method: 'GET' },
-  // ... 更多请求
-], 10); // 每批 10 个请求
 ```
 
 ### Widget 管理
@@ -446,23 +324,24 @@ const responses = await spCtx.network.smartBatchRequest([
 保存 Widget 信息。
 
 ```typescript
-save<T = any>(data: WidgetInfo): Promise<T>
+save<T = any>(data: WidgetInfo, closeWindowAfterSuccess?: boolean): Promise<T>
 ```
 
 **参数：**
 
 - `data`: Widget 信息对象，类型为 WidgetInfo
+- `closeWindowAfterSuccess`: 成功后是否关闭窗口（可选）
 
 **返回值：** 保存结果（Promise\<T\>）
 
 **示例：**
 
 ```typescript
-const result = await spCtx.widget.save({
+const result = await this.spCtx.api.widget.save({
   id: 'widget-123',
   name: 'My Widget',
   config: { /* 配置项 */ }
-});
+}, true); // 成功后关闭窗口
 ```
 
 ---
@@ -554,47 +433,9 @@ constructor(message: string, code: string | number, response?: any)
 | `body` | any | 否 | 请求体 |
 | `timeout` | number | 否 | 超时时间（毫秒） |
 
-### AdvancedProxyItem
-
-高级代理请求项。
-
-| 属性 | 类型 | 必需 | 说明 |
-|------|------|------|------|
-| `url` | string | 是 | 请求 URL |
-| `method` | string | 否 | 请求方法 |
-| `headers` | Record\<string, string\> | 否 | 请求头 |
-| `body` | any | 否 | 请求体 |
-
-### AdvancedBatchProxyRequest
-
-批量代理请求参数。
-
-| 属性 | 类型 | 必需 | 说明 |
-|------|------|------|------|
-| `requests` | [`AdvancedProxyItem`](#advancedproxyitem)[] | 是 | 请求列表 |
-| `parallel` | boolean | 否 | 是否并行执行 |
-
-### SaveDataNodeRequest
-
-保存数据节点请求。
-
-| 属性 | 类型 | 必需 | 说明 |
-|------|------|------|------|
-| `node` | string | 是 | 节点名称 |
-| `data` | any | 是 | 数据内容 |
-
-### GetDataNodeRequest
-
-获取数据节点请求。
-
-| 属性 | 类型 | 必需 | 说明 |
-|------|------|------|------|
-| `node` | string | 是 | 节点名称 |
-
 ## 注意事项
 
 1. **异步操作**：大部分 API 都是异步的，返回 Promise，建议使用 `async/await` 或 `.then()` 处理
 2. **错误处理**：建议使用 try-catch 捕获异常，并区分错误类型
 3. **缓存过期**：设置缓存时，注意合理设置过期时间，避免数据过期
-4. **批量请求**：使用批量请求时，注意控制并发数量，避免服务器压力过大
-5. **用户级与应用级**：用户级数据仅对当前用户可见，应用级数据对所有用户共享，根据场景选择合适的存储级别
+4. **用户级与应用级**：用户级数据仅对当前用户可见，应用级数据对所有用户共享，根据场景选择合适的存储级别

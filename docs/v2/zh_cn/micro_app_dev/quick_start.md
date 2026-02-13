@@ -9,7 +9,7 @@
 ## 开始
 
 我们这里以 `Hello World` 项目展开演示。
-首先我们要先克隆我们的项目模板 [项目地址](#) ，克隆到本地后，我们进入项目的执行目录
+首先要先克隆项目模板 [项目地址](https://github.com/Sun-Panel/microapp-hello-world) ，克隆到本地后，进入项目的目录，执行一下命令
 
 ### 1. 安装依赖
 
@@ -80,7 +80,7 @@ microapp-hello-world/
 export default {
   // 应用基础信息
   author: 'hslr',                          // 作者标识
-  microAppId: 'hslr-hello-world-jjjjk',    // 应用唯一标识
+  microAppId: 'hslr-hello-world',          // 应用唯一标识
   version: '1.0.0',                        // 版本号
   entry: 'main.js',                        // 入口文件
   icon: 'logo.png',                        // 应用图标
@@ -252,7 +252,7 @@ const platformAPI = this.spCtx.platformAPI;
 ```
 
 ## 生命周期
-
+参考 [生命周期说明](./life_cycle.md)
 
 
 ## 📦 构建和打包
@@ -277,7 +277,7 @@ const platformAPI = this.spCtx.platformAPI;
 
 ```
 packages/
-└── hslr-hello-world-jjjjk-dev-1.0.0.zip
+└── hslr-hello-world-dev-1.0.0.zip
     ├── app.json              # 应用配置
     ├── main.js               # 组件入口
     ├── logo.png             # 应用图标
@@ -286,67 +286,23 @@ packages/
 
 
 
-## 🔌 主平台集成
+## 🔌 主平台使用
 
-### 导入微应用包
+在线开发环境：
+输入开发环境的入口文件地址，运行之后可以在打开的页面上查看（例如：`http://localhost:3000/src/main.js`）
 
-```javascript
-import MicroAppPackage from './main.js';
-
-// 获取应用信息
-const { appConfig, components } = MicroAppPackage;
-console.log(appConfig.microAppId);  // "hslr-hello-world-jjjjk-dev"
-
-// 获取组件
-const { pages, widgets } = components;
-const Widget = widgets['hello-world-widget'].component;
-const Config = pages['hello-world-config'].component;
-```
-
-### 注册自定义元素
-
-```javascript
-// 生成标签名
-function generateTagName(author, microId, type, name) {
-  const cleanName = name.toLowerCase().replace(/[^a-z0-9]/g, '-');
-  return `${author}-${microId}-${type}-${cleanName}`;
-}
-
-// 注册页面组件
-for (const [name, config] of Object.entries(pages)) {
-  const tagName = generateTagName(author, microAppId, 'page', name);
-  customElements.define(tagName, config.component);
-}
-
-// 注册小部件组件
-for (const [name, config] of Object.entries(widgets)) {
-  const tagName = generateTagName(author, microAppId, 'widget', name);
-  customElements.define(tagName, config.component);
-}
-```
-
-### 在 HTML 中使用
-
-```html
-<!-- 直接使用标签名 -->
-<hslr-hello-world-jjjjk-dev-widget-hello-world-widget></hslr-hello-world-jjjjk-dev-widget-hello-world-widget>
-
-<!-- 动态创建 -->
-<script>
-  const widget = document.createElement('hslr-hello-world-jjjjk-dev-widget-hello-world-widget');
-  document.body.appendChild(widget);
-</script>
-```
-
+正式环境：
+打包后，离线安装，上传
 
 
 ## 🎯 MicroAppPackage 结构
+此项开发者无需过度关注，已经封装好的。
 
 ```javascript
 {
   appConfig: {
     author: 'hslr',
-    microAppId: 'hslr-hello-world-jjjjk-dev',  // 开发模式自动添加 -dev
+    microAppId: 'hslr-hello-world-dev',  // 开发模式自动添加 -dev
     version: '1.0.0',
     entry: 'main.js',
     icon: 'logo.png',
@@ -418,7 +374,7 @@ render() {
 }
 ```
 
-## ❓ 常见问题
+## ❓ 常见问题（开发者交流群）
 
 ### Q: 如何判断是否为开发版本？
 
@@ -427,36 +383,9 @@ const isDev = MicroAppPackage.appConfig.dev;
 console.log(isDev);  // true 或 false
 ```
 
-### Q: 标签名是如何生成的？
+### Q: 开发遇到任何问题都可以添加我的微信/QQ(95302870)
 
-格式：`{author}-{microAppId}-{type}-{cleanName}`
-
-例如：`hslr-hello-world-jjjjk-dev-widget-hello-world-widget`
-
-开发模式会自动添加 `-dev` 后缀。
-
-### Q: 如何动态传递数据给组件？
-
-```javascript
-const widget = document.createElement('hslr-hello-world-jjjjk-dev-widget-hello-world-widget');
-// 通过属性传递（需要组件支持）
-widget.data = { key: 'value' };
-document.body.appendChild(widget);
-```
-
-### Q: 如何处理不同尺寸的渲染？
-
-组件中实现对应的 `render{Size}()` 方法，主渲染方法中根据 `this.spCtx.gridSize` 动态调用。
-
-### Q: 如何获取组件的所有配置？
-
-```javascript
-const config = MicroAppPackage.components.widgets['hello-world-widget'];
-console.log(config.size);              // 支持的尺寸
-console.log(config.configComponentName);  // 配置页面名
-console.log(config.background);           // 背景配置
-console.log(config.isModifyBackground);    // 是否可修改背景
-```
+文档还在不断完善，部分功能还没有提到，有任何问题加作者微信
 
 
 
