@@ -147,7 +147,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
             { text: '分组侧边栏', link: 'https://github.com/hslr-s/sun-panel-js-plugins/tree/master/toc' },
           ]
         },
-        
+
         { text: 'Sun-Panel-Helper 美化工具', link: '/zh_cn/advanced/sun_panel_helper' },
         {
           text: '三方开发主题',
@@ -201,18 +201,18 @@ function sidebarRootV2(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '介绍', link: '/v2/zh_cn/micro_app_dev/index' },
-        { text: '快速开发（Hello World）', link: '/v2/zh_cn/micro_app_dev/quick_start' },
-        { text: '配置文件说明', link: '/v2/zh_cn/micro_app_dev/config' },
+        { text: '快速开始', link: '/v2/zh_cn/micro_app_dev/quick_start' },
+        { text: '项目结构', link: '/v2/zh_cn/micro_app_dev/project_structure' },
+        { text: '配置说明', link: '/v2/zh_cn/micro_app_dev/config' },
+        { text: '组件开发', link: '/v2/zh_cn/micro_app_dev/dev_guide' },
+        { text: '平台 API', link: '/v2/zh_cn/micro_app_dev/api' },
         { text: '数据节点', link: '/v2/zh_cn/micro_app_dev/data_node' },
         { text: '权限声明', link: '/v2/zh_cn/micro_app_dev/permission' },
-        { text: '生命周期', link: '/v2/zh_cn/micro_app_dev/life_cycle' },
-
-        { text: 'API', link: '/v2/zh_cn/micro_app_dev/api' },
-       
+        { text: '打包发布', link: '/v2/zh_cn/micro_app_dev/publish' },
       ]
     },
 
-   
+
 
 
 
@@ -234,7 +234,8 @@ function sidebarOpenapi(): DefaultTheme.SidebarItem[] {
       items: [
         { text: '全局说明', link: '/zh_cn/openapi/v1/' },
         { text: '错误码说明', link: '/zh_cn/openapi/v1/error_code' },
-        { text: '接口', 
+        {
+          text: '接口',
           items: [
             { text: '图标卡片组', link: '/zh_cn/openapi/v1/apis_item_group' },
             { text: '图标卡片', link: '/zh_cn/openapi/v1/apis_item' },
