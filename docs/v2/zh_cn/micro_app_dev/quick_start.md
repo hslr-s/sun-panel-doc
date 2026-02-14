@@ -326,7 +326,6 @@ packages/
         configComponentName: 'hello-world-config',
         size: ['1x1', '1x2', '2x1', '2x2', '2x4', '1xfull'],
         background: '',
-        isModifyBackground: false
       }
     }
   }

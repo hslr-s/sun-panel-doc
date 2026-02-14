@@ -24,7 +24,7 @@ open(options: [OpenWindowOptions](#openwindowoptions)): string
 **参数：**
 
 - `options`: 窗口配置参数，类型为 [`OpenWindowOptions`](#openwindowoptions)，包含：
-  - `componentName`（必需）：组件名称
+  - `componentName`（必需）：组件名称，(组件配置下 pages 的 key 名)
   - `windowConfig`（可选）：窗口配置，类型为 [`WindowConfig`](#windowconfig)
   - `customParam`（可选）：自定义参数
   - `title`（可选）：窗口标题
@@ -35,20 +35,20 @@ open(options: [OpenWindowOptions](#openwindowoptions)): string
 
 ```typescript
 const windowId = this.spCtx.api.window.open({
-  componentName: 'MyComponent',
-  title: '我的窗口',
+  componentName: 'my-component',
+  title: '天气详情',
   windowConfig: {
     width: 800,
     height: 600,
     isFullScreen: false
   },
-  customParam: { userId: 123 }
+  customParam: { cityId:1001 }
 });
 ```
 
 ### 缓存管理
 
-提供用户级和应用级的缓存功能，支持数据的存储、获取、删除等操作。
+基于`IndexedDB`。提供用户级和应用级的缓存功能，支持数据的存储、获取、删除等操作。可在浏览器调试窗口中 IndexedDB 菜单中查看。
 
 #### 用户级缓存 (localCache.user)
 
@@ -191,8 +191,13 @@ getByKey<T = any>(node: string, key: string): Promise<T>
 
 **示例：**
 
-```typescript
-const userData = await this.spCtx.api.dataNode.user.getByKey('preferences', 'theme');
+```js
+try {
+  const userData = await this.spCtx.api.dataNode.user.getByKey('preferences', 'theme');
+  console.log('userData:', userData)
+} catch (error) {
+  console.error('[Card] Failed to get userData:', error.code, error.message)
+}
 ```
 
 ##### dataNode.user.getByKeys
@@ -212,8 +217,13 @@ getByKeys<T = any>(node: string, keys: string[]): Promise<T>
 
 **示例：**
 
-```typescript
-const userData = await this.spCtx.api.dataNode.user.getByKeys('preferences', ['theme', 'language']);
+```js
+try {
+  const config = await this.spCtx.api.dataNode.user.getByKeys('config', ['token', 'location', 'domain']);
+  console.log('config:', config)
+} catch (error) {
+  console.error('[Card] Failed to get config:', error.code, error.message)
+}
 ```
 
 ##### dataNode.user.setByKey
@@ -234,8 +244,13 @@ setByKey<T = any>(node: string, key: string, value: Record<string, any>): Promis
 
 **示例：**
 
-```typescript
-const result = await this.spCtx.api.dataNode.user.setByKey('preferences', 'theme', { mode: 'dark' });
+```js
+try {
+  const result = await this.spCtx.api.dataNode.user.setByKey('preferences', 'theme', { mode: 'dark' });
+  console.log('result:', result)
+} catch (error) {
+  console.error('[Card] Failed to set data:', error.code, error.message)
+}
 ```
 
 ##### dataNode.user.delByKey
@@ -255,8 +270,13 @@ delByKey<T = any>(node: string, key: string): Promise<T>
 
 **示例：**
 
-```typescript
-const deleted = await this.spCtx.api.dataNode.user.delByKey('preferences', 'theme');
+```js
+try {
+  const deleted = await this.spCtx.api.dataNode.user.delByKey('preferences', 'theme');
+  console.log('deleted:', deleted)
+} catch (error) {
+  console.error('[Card] Failed to delete data:', error.code, error.message)
+}
 ```
 
 #### 应用级数据节点 (dataNode.app)
@@ -272,47 +292,87 @@ const deleted = await this.spCtx.api.dataNode.user.delByKey('preferences', 'them
 
 **示例：**
 
-```typescript
+```js
 // 设置应用级数据
-await this.spCtx.api.dataNode.app.setByKey('config', 'globalSettings', { maxUsers: 100 });
+try {
+  await this.spCtx.api.dataNode.app.setByKey('config', 'globalSettings', { maxUsers: 100 });
+  console.log('App data set successfully')
+} catch (error) {
+  console.error('[Card] Failed to set app data:', error.code, error.message)
+}
 
 // 获取应用级数据
-const settings = await this.spCtx.api.dataNode.app.getByKey('config', 'globalSettings');
+try {
+  const settings = await this.spCtx.api.dataNode.app.getByKey('config', 'globalSettings');
+  console.log('settings:', settings)
+} catch (error) {
+  console.error('[Card] Failed to get app data:', error.code, error.message)
+}
 ```
 
 ### 网络透传
 
-提供网络请求功能，支持单个请求、批量请求和智能批量请求。
+提供网络请求功能，支持单个请求和模板替换功能。
 
 #### network.request
 
-发送单个网络请求。
+发送单个网络请求，支持模板变量替换。
 
 ```typescript
-request<T = any>(params: [AdvancedProxyRequest](#advancedproxyrequest)): Promise<T>
+request<T = any>(params: any): Promise<T>
 ```
 
 **参数：**
 
-- `params`: 请求参数，类型为 [`AdvancedProxyRequest`](#advancedproxyrequest)，包含：
-  - `targetUrl`（必需）：目标 URL
-  - `method`（可选）：请求方法（GET/POST/PUT/DELETE/PATCH）
-  - `headers`（可选）：请求头
-  - `body`（可选）：请求体
-  - `timeout`（可选）：超时时间
+- `params`: 请求参数对象
 
 **返回值：** 响应数据（Promise\<T\>）
 
 **示例：**
-
-```typescript
-const response = await this.spCtx.api.network.request({
-  targetUrl: 'https://api.example.com/users',
+```js
+// 定义请求参数对象
+const requestOptions = {
+  targetUrl: 'https://{{domain}}/v7/weather/now?location={{location}}',
   method: 'GET',
   headers: {
-    'Authorization': 'Bearer token123'
+    "X-QW-Api-Key": "{{token}}"
+  },
+  templateReplacements: [
+    {
+      placeholder: '{{token}}',
+      fields: ['headers'],
+      dataNode: 'config.token'
+    },
+    {
+      placeholder: '{{location}}',
+      fields: ['targetUrl'],
+      dataNode: 'config.location'
+    },
+    {
+      placeholder: '{{domain}}',
+      fields: ['targetUrl'],
+      dataNode: 'config.domain'
+    }
+  ],
+};
+
+await this.spCtx.api.network.request(requestOptions).then((response) => {
+  console.log('request AxiosResponse:', response)
+}).catch((error) => {
+  console.log("返回的 AxiosResponse 原始对象", error.response)
+  // 判断错误类型
+  switch (error.type) {
+    case 'microApp':
+      // 微应用错误权限不足等...还没有请求到三方站点
+      break;
+    case 'targetUrl':
+      // 三方目标站点返回的错误
+      break;
+    default:
+      console.error('AxiosResponse:', error);
+      break;
   }
-});
+})
 ```
 
 ### Widget 管理
@@ -324,27 +384,29 @@ const response = await this.spCtx.api.network.request({
 保存 Widget 信息。
 
 ```typescript
-save<T = any>(data: WidgetInfo, closeWindowAfterSuccess?: boolean): Promise<T>
+save<T = any>(data: WidgetInfo): Promise<T>
 ```
 
 **参数：**
 
-- `data`: Widget 信息对象，类型为 WidgetInfo
-- `closeWindowAfterSuccess`: 成功后是否关闭窗口（可选）
+- `data`: Widget 信息对象，类型为 [`WidgetInfo`](#widgetinfo)
 
 **返回值：** 保存结果（Promise\<T\>）
 
 **示例：**
-
-```typescript
-const result = await this.spCtx.api.widget.save({
-  id: 'widget-123',
-  name: 'My Widget',
-  config: { /* 配置项 */ }
-}, true); // 成功后关闭窗口
+```js
+this.spCtx.api.widget.save({
+  ...this.widgetInfo,
+  config: {
+    ...this.widgetInfo.config,
+    showLogo: this.showLogo,
+    textOption: this.textOption,
+    customText: this.customText,
+    useSystemBgColor: this.useSystemBgColor
+  },
+});
 ```
 
----
 
 ## 错误类型
 
@@ -360,11 +422,11 @@ const result = await this.spCtx.api.widget.save({
 | `type` | `'microApp' \| 'targetUrl' \| 'unknown'` | 错误类型 |
 | `response` | AxiosResponse \| undefined | 响应对象（可选） |
 
-**构造函数：**
+<!-- **构造函数：** -->
 
-```typescript
+<!-- ```typescript
 constructor(message: string, type: 'microApp' | 'targetUrl' | 'unknown' = 'unknown', response?: any)
-```
+``` -->
 
 ### MicroDataNodeError
 
@@ -375,16 +437,14 @@ constructor(message: string, type: 'microApp' | 'targetUrl' | 'unknown' = 'unkno
 | 属性 | 类型 | 说明 |
 |------|------|------|
 | `name` | string | 错误名称，固定为 `'MicroDataNodeError'` |
-| `code` | string \| number | 错误码 |
+| `code` | string \| number | 错误码 `NO_PERMISSION`,`UNKNOWN` |
 | `response` | AxiosResponse \| undefined | 响应对象（可选） |
 
-**构造函数：**
+<!-- **构造函数：** -->
 
-```typescript
+<!-- ```typescript
 constructor(message: string, code: string | number, response?: any)
-```
-
----
+``` -->
 
 ## 数据类型
 
@@ -412,26 +472,52 @@ constructor(message: string, code: string | number, response?: any)
 | `customParam` | any | 否 | 自定义参数 |
 | `title` | string | 否 | 窗口标题 |
 
-### PageInitializedParam
+### TemplateReplacementRule
 
-页面初始化参数。
-
-| 属性 | 类型 | 必需 | 说明 |
-|------|------|------|------|
-| `widgetInfo` | WidgetInfo | 否 | 组件信息 |
-| `customParam` | any | 是 | 自定义参数 |
-
-### AdvancedProxyRequest
-
-高级代理请求参数。
+模板替换规则，用于将占位符替换为实际数据。
 
 | 属性 | 类型 | 必需 | 说明 |
 |------|------|------|------|
-| `targetUrl` | string | 是 | 目标 URL |
-| `method` | 'GET' \| 'POST' \| 'PUT' \| 'DELETE' \| 'PATCH' | 否 | 请求方法 |
-| `headers` | Record\<string, string\> | 否 | 请求头 |
-| `body` | any | 否 | 请求体 |
-| `timeout` | number | 否 | 超时时间（毫秒） |
+| `placeholder` | string | 是 | 要替换的占位符，如 `{{token}}` |
+| `fields` | string[] | 是 | 替换参数的目标字段，可选：`targetUrl`、`method`、`headers`、`body` |
+| `dataNode` | string | 是 | 数据节点路径，如 `"config.token"` |
+
+**示例：**
+
+```typescript
+{
+  placeholder: '{{token}}',
+  fields: ['headers'],
+  dataNode: 'config.accessToken'
+}
+```
+
+### WidgetInfo
+
+Widget 信息对象。
+
+| 属性 | 类型 | 必需 | 说明 |
+|------|------|------|------|
+| `widgetId` | string | 是 | Widget ID |
+| `background` | string | 否 | 背景颜色 |
+| `config` | Record\<string, any\> | 是 | 配置对象 |
+| `gridSize` | string | 是 | 网格大小 |
+| `title` | string | 是 | 标题 |
+
+**示例：**
+
+```typescript
+{
+  widgetId: 'widget-123',
+  background: '#ffffff',
+  config: {
+    refreshInterval: 60,
+    showHeader: true
+  },
+  gridSize: '1x1',
+  title: 'My Widget'
+}
+```
 
 ## 注意事项
 
