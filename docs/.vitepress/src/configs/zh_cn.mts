@@ -185,10 +185,10 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
 function sidebarRootV2(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: 'v2开发板介绍',
+      text: 'V2开发版',
       collapsed: false,
       items: [
-        { text: 'V2 介绍', link: '/v2/zh_cn/index' },
+        { text: '介绍', link: '/v2/zh_cn/index' },
         // { text: '演示站点', link: '/zh_cn/introduce/demo_site' },
         // { text: '作者&交流群&社区', link: '/zh_cn/introduce/author_groups' },
         // { text: '打赏🧧', link: '/zh_cn/introduce/donate' },

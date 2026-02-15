@@ -224,9 +224,8 @@ this.requestUpdate();
 const logoUrl = this.getAssetPath('/logo.png');
 ```
 
-为兼容微应用开发和生产环境都能正确的访问到静态资源文件，如果你的微应用有一些图片等静态资源，你可以这样做：
+为兼容微应用开发和生产环境都能正确的访问到静态资源文件，如果你的微应用有一些图片等静态资源文件，可以将其放在 `public` 目录下，你可以这样做：
 ```js
-
 // 从工具目录中导入方法
 import { getAssetPath } from '../utils/assetPath.js';
 
