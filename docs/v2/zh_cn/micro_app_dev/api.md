@@ -412,24 +412,37 @@ await this.spCtx.api.widget.save({
 
 ## 错误类型
 
-### MicroAppNetworkRequestError
+### SpNetworkRequestError
 
 网络请求错误。
 
 | 属性 | 类型 | 说明 |
 |------|------|------|
-| `name` | string | 固定为 `'MicroAppNetworkRequestError'` |
+| `name` | string | 固定为 `'SpNetworkRequestError'` |
 | `type` | `'microApp' \| 'targetUrl' \| 'unknown'` | 错误类型 |
-| `response` | AxiosResponse | 响应对象 |
+| `response` | [`HttpResponse`](#HttpResponse) \| `AxiosResponse` | 响应对象 |
 
-### MicroDataNodeError
+### SpDataNodeError
 
 数据节点错误。
 
 | 属性 | 类型 | 说明 |
 |------|------|------|
-| `name` | string | 固定为 `'MicroDataNodeError'` |
+| `name` | string | 固定为 `'SpDataNodeError'` |
 | `code` | `string \| number` | 错误码：`NO_PERMISSION`, `UNKNOWN` |
+
+### HttpResponse {#HttpResponse}
+
+HTTP 响应类型，兼容 AxiosResponse 结构。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `data` | any | 响应数据 |
+| `status` | number | HTTP 状态码 |
+| `statusText` | string | 状态文本 |
+| `headers` | Record<string, any> | 响应头 |
+| `config` | any | 请求配置（可选） |
+| `request` | any | 原始请求对象（可选） |
 
 
 
