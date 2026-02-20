@@ -74,6 +74,10 @@ function nav(): DefaultTheme.NavItem[] {
       link: '//pro.sun-panel.top'
     },
     { text: '社区', link: 'https://github.com/hslr-s/sun-panel/discussions' },
+    {
+      text: 'V2 开发版',
+      link: '/v2/zh_cn/index'
+    },
   ]
 }
 
@@ -189,6 +193,7 @@ function sidebarRootV2(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '介绍', link: '/v2/zh_cn/index' },
+        { text: 'v2 更新日志', link: '/v2/zh_cn/update_log' },
         // { text: '演示站点', link: '/zh_cn/introduce/demo_site' },
         // { text: '作者&交流群&社区', link: '/zh_cn/introduce/author_groups' },
         // { text: '打赏🧧', link: '/zh_cn/introduce/donate' },
