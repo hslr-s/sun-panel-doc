@@ -21,6 +21,41 @@ outline: [2,3]
 | `entry` | string | ✅ | 入口文件路径，如 `'main.js'` |
 | `icon` | string | ✅ | 应用图标文件名（位于 public 目录） |
 
+### 应用信息 (appInfo)
+
+用于配置应用的国际化信息，支持多语言显示。
+
+#### 国际化信息
+语言标识符遵循 [IETF BCP 47](https://www.rfc-editor.org/info/bcp47) 标准：
+
+- `zh-CN` - 简体中文
+- `en-US` - 英语
+- `zh-TW` - 繁体中文
+- `ja-JP` - 日语
+- `ko-KR` - 韩语
+
+
+#### 语言标识对应的参数：
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `appName` | string | ✅ | 应用名称 |
+| `description` | string | - | 应用描述 |
+| `networkDescription` | string | - | 网络请求说明 |
+
+
+
+### 权限配置 (permissions)
+
+声明应用所需的权限，如网络请求、数据节点等。详见 [权限声明](./permission)。
+
+### 网络域名白名单 (networkDomains)
+
+当声明 `network` 权限时，必须配置允许访问的域名白名单。详见 [权限声明](./permission)。
+
+### 数据节点配置 (dataNodes)
+
+配置应用的持久化数据存储节点。详见 [数据节点](./data_node)。
+
 ### 完整示例
 
 ```javascript
@@ -59,6 +94,7 @@ export default {
 
   // 数据节点配置
   dataNodes: {
+    // 节点名
     config: {
       scope: 'app',
       isPublic: true
@@ -66,17 +102,6 @@ export default {
   }
 };
 ```
-
-### 国际化支持
-
-语言标识符遵循 [IETF BCP 47](https://www.rfc-editor.org/info/bcp47) 标准：
-
-- `zh-CN` - 简体中文
-- `en-US` - 英语
-- `zh-TW` - 繁体中文
-- `ja-JP` - 日语
-- `ko-KR` - 韩语
-
 
 ## 组件配置 (components.config.js)
 

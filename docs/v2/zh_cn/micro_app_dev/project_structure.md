@@ -32,8 +32,6 @@ microapp-hello-world/
 ├── app.json                        # 自动生成的应用配置
 ├── package.json                    # 项目依赖配置
 ├── vite.config.js                  # Vite 配置
-├── demo.html                      # 开发调试页面
-├── demo-usage.html                 # 使用示例页面
 └── README.md                       # 项目说明
 ```
 

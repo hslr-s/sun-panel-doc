@@ -281,7 +281,7 @@ request<T = any>(options: RequestOptions): Promise<T>
 | `targetUrl` | string | ✅ | 目标 URL，支持模板变量 |
 | `method` | string | - | 请求方法，默认 GET |
 | `headers` | object | - | 请求头 |
-| `body` | any | - | 请求体 |
+| `body` | string | - | 请求体，如果传对象请 `JSON.stringify(xxx)` 转换为字符串 |
 | `templateReplacements` | [TemplateReplacementRule](#templatereplacementrule)[] | - | 模板替换规则 |
 
 **示例：**
