@@ -17,14 +17,14 @@ cd microapp-hello-world
 ```
 
 
-## 步骤 2：安装依赖
+## 步骤 2：安装依赖 {#bundle_install}
 
 ```bash
 npm install
 ```
 
 
-## 步骤 3：启动开发服务器
+## 步骤 3：启动开发服务器 {#start_dev_server}
 
 ```bash
 npm run dev

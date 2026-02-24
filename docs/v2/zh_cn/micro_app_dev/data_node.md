@@ -86,18 +86,4 @@ export default {
 
 ## 使用方法
 
-详细 API 调用方式请参阅 [平台 API](./api)。
-
-```javascript
-// 获取用户数据
-const userCity = await this.spCtx.api.dataNode.user.getByKey('userCity', 'selected');
-
-// 设置用户数据
-await this.spCtx.api.dataNode.user.setByKey('userCity', 'selected', { city: '北京' });
-
-// 获取应用数据
-const apiKey = await this.spCtx.api.dataNode.app.getByKey('config', 'apiKey');
-
-// 设置应用数据
-await this.spCtx.api.dataNode.app.setByKey('config', 'apiKey', { key: 'xxx' });
-```
+详细 API 调用方式请参阅 [平台 API - 数据节点](./api?#dataNode)。

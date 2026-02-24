@@ -1,5 +1,5 @@
 ---
-outline: [2,3]
+outline: [2,4]
 ---
 
 # 平台 API
@@ -80,14 +80,14 @@ const value = await this.spCtx.api.localCache.user.get('userInfo');
 设置用户缓存值。
 
 ```typescript
-set(key: string, value: any, expireTimestamp?: number): Promise<void>
+set(key: string, value: any, expireSeconds?: number): Promise<void>
 ```
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `key` | string | ✅ | 缓存键 |
 | `value` | any | ✅ | 缓存值 |
-| `expireTimestamp` | number | - | 过期时间（秒），0 表示不过期 |
+| `expireSeconds` | number | - | 过期时间（秒），0 表示不过期 |
 
 **示例：**
 
@@ -147,13 +147,7 @@ const keys = await this.spCtx.api.localCache.user.getKeys();
 
 应用级缓存提供与用户级缓存相同的接口，但数据范围为应用级别，所有用户共享。
 
-接口方法与 `localCache.user` 完全一致：
-
-- `get(key: string): Promise<any>`
-- `set(key: string, value: any, expireTimestamp?: number): Promise<void>`
-- `del(key: string): Promise<void>`
-- `clear(): Promise<void>`
-- `getKeys(): Promise<string[]>`
+接口方法与 `localCache.user` 完全一致，调用时将 `localCache.user` 改为 `localCache.app`。
 
 **示例：**
 
@@ -164,15 +158,15 @@ const config = await this.spCtx.api.localCache.app.get('appConfig');
 
 
 
-## 数据节点
+## 数据节点 {#dataNode}
 
-提供用户级和应用级的数据节点管理功能。
+提供用户级和应用级的数据节点管理功能。详细的权限说明请参阅 [数据节点](./data_node)，本文档仅说明API的使用方法。
 
 ### 用户数据节点 (dataNode.user)
 
 #### dataNode.user.getByKey
 
-根据键获取用户数据节点中的数据。
+根据键获取用户数据节点中 `指定key` 的数据。
 
 ```typescript
 getByKey<T = any>(node: string, key: string): Promise<T>
@@ -186,15 +180,20 @@ getByKey<T = any>(node: string, key: string): Promise<T>
 **示例：**
 
 ```javascript
-const userData = await this.spCtx.api.dataNode.user.getByKey('preferences', 'theme');
+try {
+  const theme = await this.spCtx.api.dataNode.user.getByKey('preferences', 'theme');
+  console.log(theme) // "dark"
+} catch (e) {
+  console.error(e.message);
+}
 ```
 
 #### dataNode.user.getByKeys
 
-根据多个键获取用户数据节点中的数据。
+根据多个键获取用户数据节点中 `填入所有的key` 的数据。
 
 ```typescript
-getByKeys<T = any>(node: string, keys: string[]): Promise<T>
+getByKeys<T = Record<string, any>>(node: string, keys: string[]): Promise<T>
 ```
 
 | 参数 | 类型 | 必填 | 说明 |
@@ -205,7 +204,20 @@ getByKeys<T = any>(node: string, keys: string[]): Promise<T>
 **示例：**
 
 ```javascript
-const config = await this.spCtx.api.dataNode.user.getByKeys('config', ['token', 'location']);
+try {
+  const config = await this.spCtx.api.dataNode.user.getByKeys('config', ['token', 'location']);
+  console.log(config)
+  // 示例打印内容：
+  // {
+  //   "location": {
+  //     "city": "北京"
+  //   },
+  //   "token": 12345678
+  // }
+} catch (e) {
+  console.error('批量获取失败: ' , e.message);
+}
+
 ```
 
 #### dataNode.user.setByKey
@@ -213,14 +225,14 @@ const config = await this.spCtx.api.dataNode.user.getByKeys('config', ['token', 
 在用户数据节点中设置数据。
 
 ```typescript
-setByKey<T = any>(node: string, key: string, value: Record<string, any>): Promise<T>
+setByKey(node: string, key: string, value: any): Promise<void>
 ```
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `node` | string | ✅ | 节点名称 |
 | `key` | string | ✅ | 数据键 |
-| `value` | Record<string, any> | ✅ | 数据值 |
+| `value` | any | ✅ | 数据值 |
 
 **示例：**
 
@@ -228,12 +240,34 @@ setByKey<T = any>(node: string, key: string, value: Record<string, any>): Promis
 await this.spCtx.api.dataNode.user.setByKey('preferences', 'theme', { mode: 'dark' });
 ```
 
+#### dataNode.user.setByKeys
+
+批量设置用户数据节点中的数据。
+
+```typescript
+setByKeys(node: string, items: Record<string, any>): Promise<void>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `node` | string | ✅ | 节点名称 |
+| `items` | Record<string, any> | ✅ | 数据键值对对象，键为数据键，值为对应数据 |
+
+**示例：**
+
+```javascript
+await this.spCtx.api.dataNode.user.setByKeys('config', {
+  token: 'abc123',
+  location: { city: '北京' }
+});
+```
+
 #### dataNode.user.delByKey
 
 删除用户数据节点中的数据。
 
 ```typescript
-delByKey<T = any>(node: string, key: string): Promise<T>
+delByKey(node: string, key: string): Promise<void>
 ```
 
 | 参数 | 类型 | 必填 | 说明 |
@@ -249,18 +283,26 @@ await this.spCtx.api.dataNode.user.delByKey('preferences', 'theme');
 
 ### 应用数据节点 (dataNode.app)
 
-应用级数据节点提供与用户级数据节点相同的接口，但数据范围为应用级别，所有用户共享。
-
-接口方法与 `dataNode.user` 完全一致：
-
-- `getByKey<T = any>(node: string, key: string): Promise<T>`
-- `getByKeys<T = any>(node: string, keys: string[]): Promise<T>`
-- `setByKey<T = any>(node: string, key: string, value: Record<string, any>): Promise<T>`
-- `delByKey<T = any>(node: string, key: string): Promise<T>`
-
-详细说明请参阅 [数据节点](./data_node)。
+应用级数据节点提供与用户级数据节点相同的接口，但数据范围为应用级别，所有用户共享。接口方法与 `dataNode.user` 完全一致，调用时将 `dataNode.user` 改为 `dataNode.app`。
 
 
+### 错误处理
+错误需要使用 `try{...}catch{...}` 进行捕获，所有的数据节点API都支持，错误类型参考：[`SpDataNodeError`](#spdatanodeerror)
+
+示例：
+```javascript
+try {
+  const exampleData = {
+    token: 'abc123',
+    location: { city: '北京' }
+  };
+  await this.spCtx.api.dataNode.user.setByKeys("userConfig", exampleData);
+  // this._showMessage('批量储存示例数据成功');
+} catch (e) {
+  console.error(e.code); // 错误代码 
+  // this._showMessage('批量储存失败: ' + e.message, true);
+}
+```
 
 ## 网络透传
 
@@ -283,6 +325,7 @@ request<T = any>(options: RequestOptions): Promise<T>
 | `headers` | object | - | 请求头 |
 | `body` | string | - | 请求体，如果传对象请 `JSON.stringify(xxx)` 转换为字符串 |
 | `templateReplacements` | [TemplateReplacementRule](#templatereplacementrule)[] | - | 模板替换规则 |
+<!-- | `cookieDataNodeKey` | string | - | 示例：`config.cookie` 用户储存和使用的 cookie 的数据节点 key，配置此参数，会自动保存三方接口设置的cookie到数据节点并携带请求 | -->
 
 **示例：**
 
@@ -403,10 +446,10 @@ await this.spCtx.api.widget.save({
 | 属性 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `widgetId` | string | ✅ | 小部件 ID |
-| `background` | string | - | 背景颜色 |
-| `config` | Record<string, any> | ✅ | 配置对象 |
-| `gridSize` | string | ✅ | 网格大小 |
-| `title` | string | ✅ | 标题 |
+| `background` | string | - | 卡片背景颜色，为空跟随系统默认颜色 |
+| `config` | Record<string, any> | ✅ | 小部件配置对象 |
+| `gridSize` | string | - | 卡片网格尺寸，此项微应用只可读取不可设置 |
+| `title` | string | ✅ | 卡片底部标题 |
 
 
 
