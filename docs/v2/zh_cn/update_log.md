@@ -8,8 +8,15 @@ outline: [2,3]
 V2 开发版本暂时**不支持** **V1** 以升级的方式**覆盖更新**，数据暂时不兼容。请等待后续版本更新适配。
 :::
 
+## v2.0.0-dev-6 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-6}
+> 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)，（网络透传以及窗口管理暂未开发完成，其他功能均已完成）
 
-## v2.0.0-dev-3 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-2}
+- [新增] 微应用 新增用户级别和应用级别的按key删除数据节点功能，并调整相关API路由和前端调用方式
+- [修复] 微应用 修复批量获取数据节点key数据格式错误的问题 [数据节点API使用文档](/v2/zh_cn/micro_app_dev/api.html#dataNode)
+- [修复] 微应用 用户级别和应用级别的按key删除数据节点key功能导致删除整个数据节点的bug
+- [修复] 微应用 缓存管理器不能储存的用户级别的数据bug
+
+## v2.0.0-dev-3 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-3}
 - [修复] 添加微应用时，引导页面编辑框不能输入的BUG
 - [修复] 卡片点击添加自定义地址导致页面卡死的BUG
 - [修复] 离线安装方式更新某个微应用导致其他微应用全部丢失的BUG
