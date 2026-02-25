@@ -304,7 +304,7 @@ try {
 }
 ```
 
-## 网络透传
+## 网络透传 {#network}
 
 发送网络请求，支持模板变量替换（用于安全地传递敏感信息）。
 
@@ -435,7 +435,7 @@ await this.spCtx.api.widget.save({
 
 | 属性 | 类型 | 必填 | 说明 |
 |------|------|------|------|
-| `placeholder` | string | ✅ | 要替换的占位符，如 `{{token}}` |
+| `placeholder` | string | ✅ | 要替换的占位符，如 <code v-pre>{{token}}</code> |
 | `fields` | string[] | ✅ | 替换参数的目标字段，可选：`targetUrl`、`method`、`headers`、`body` |
 | `dataNode` | string | ✅ | 数据节点路径，如 `"config.token"` |
 
