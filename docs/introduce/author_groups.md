@@ -20,17 +20,20 @@ Email: 95302870@qq.com
 </div>
 
 
-## GitHub Discussions
-
-[Discussions](https://github.com/hslr-s/sun-panel/discussions)
-
 ## Telegram
 
 [TG Group](https://t.me/+bwOFXt6zXf43Njk1)
 
 ## QQ Community Group
-Please scan the QR code or click [this link](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=yWCyKgcs2ybPwx-SyVWRX3bQgSEw9Sll&authKey=yMgOqKG9jao5KHmbrjaccXeLewSTBP%2BBPJBcxymjIMGc6H5dq7H9EMnMXtJXugr4&noverify=0&group_code=831615449). If you can't join, use the link above to contact the author.
+<!-- Please scan the QR code or click [this link](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=yWCyKgcs2ybPwx-SyVWRX3bQgSEw9Sll&authKey=yMgOqKG9jao5KHmbrjaccXeLewSTBP%2BBPJBcxymjIMGc6H5dq7H9EMnMXtJXugr4&noverify=0&group_code=831615449). If you can't join, use the link above to contact the author.
 
-<img src="/images/qq_group_qr3.png"  style="height:300px"/>
+<img src="/images/qq_group_qr3.png"  style="height:300px"/> -->
+
+- 【Sun-Panel交流群-1群:`276594668`】：https://qm.qq.com/q/xx3ngYubfy
+- 【Sun-Panel交流群-2群:`831615449`】：https://qm.qq.com/q/PAiFkNhii
+- 【Sun-Panel交流群-3群:`534110388`】：https://qm.qq.com/q/hnPBNO5dJK
 
 
+## GitHub Discussions
+
+[Discussions](https://github.com/hslr-s/sun-panel/discussions)

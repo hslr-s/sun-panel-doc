@@ -144,9 +144,9 @@ static styles = css`
 | `api` | MicroAppAPI | 参考[平台 API](./api) |
 | `darkMode` | boolean | 深色模式 |
 | `language` | string | 语言，如 `'zh-CN'` |
-| `networkMode` | `'wan' \| 'lan' \| 'auto'` | 网络模式 |
+| `networkMode` | `'WAN' \| 'LAN' \| 'AUTO'` | 网络模式 (互联网、局域网、自动)|
 | `staticPath` | string | 静态资源路径 |
-| `role` | `0 \| 1 \| 2` | 角色：0=公开, 1=私有, 2=管理员 |
+| `role` | `0 \| 1 \| 2` | 权限角色：0=公开, 1=普通, 2=管理 |
 
 ### 小部件组件额外属性
 
@@ -211,7 +211,7 @@ constructor → connectedCallback → initializeMicroApp
 | `onLanguageChanged()` | 语言切换 | `(language, oldLanguage)` |
 | `onNetworkModeChanged()` | 网络模式变化 | `(networkMode, oldNetworkMode)` |
 
-其中 `networkMode` 可选值：`'wan'` | `'lan'` | `'auto'`
+其中 `networkMode` 可选值：`'WAN'` | `'LAN'` | `'AUTO'`
 
 
 ## 常用方法

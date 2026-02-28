@@ -146,14 +146,19 @@ export default {
 
 可通过 `type` 字段指定页面类型，默认为 `config`。
 
-### 页面配置参数
+### 页面配置参数 {#page_config_param}
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `component` | class | ✅ | 页面组件类 |
-| `background` | string | - | 背景样式（CSS background 属性） |
-| `headerTextColor` | string | - | 头部文字颜色 |
-| `type` | string | - | 页面类型，可选值：`main`（主页面）、`config`（小部件配置页面），默认为 `config` |
+| `background` | string | - | 背景样式（CSS background 属性），默认：`#ffffff`（白色）|
+| `headerTextColor` | string | - | 头部文字颜色，默认：`#000000`（黑色） |
+| `width` | number \| string | - | 窗口宽度，数字时单位为 `px`，默认：`800` |
+| `height` | number \| string | - | 窗口高度，数字时单位为 `px`，默认：`600` |
+| `showFullscreenBtn` | boolean | - | 是否显示全屏按钮，默认：`false` |
+| `resize` | boolean | - | 是否允许调整窗口大小，默认：`false` |
+| `move` | boolean | - | 是否允许移动窗口，默认：`false` |
+| `type` | string | - | 页面类型，可选值：`main`（主页面）、`config`（小部件配置页面），默认： `config` |
 
 ### 小部件配置参数
 

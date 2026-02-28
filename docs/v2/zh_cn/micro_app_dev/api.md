@@ -28,7 +28,7 @@ open(options: OpenWindowOptions): string
 | 属性 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `componentName` | string | ✅ | 组件名称（组件配置下 pages 的 key 名） |
-| `windowConfig` | [WindowConfig](#windowconfig) | - | 窗口配置 |
+| `windowConfig` | [WindowConfig](#windowconfig) | - | 窗口配置，不填使用 [默认配置](v2/zh_cn/micro_app_dev/config.html#page_config_param) |
 | `customParam` | any | - | 自定义参数 |
 | `title` | string | - | 窗口标题 |
 
@@ -405,18 +405,21 @@ await this.spCtx.api.widget.save({
 
 > 以下类型定义均来自 `@sun-panel/micro-app` SDK，可在 IDE 中自动补全。
 
-### WindowConfig
+### WindowConfig {#windowConfig}
 
 窗口配置选项。
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| `height` | number | 窗口高度 |
-| `width` | number | 窗口宽度 |
-| `left` | number | 窗口左侧位置 |
-| `top` | number | 窗口顶部位置 |
-| `isFullScreen` | boolean | 是否全屏 |
-| `background` | string | 背景颜色 |
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `width` | number \| string | `800` | 窗口宽度，数字时单位为 `px` |
+| `height` | number \| string | `600` | 窗口高度，数字时单位为 `px` |
+| `background` | string | [页面配置的 background](/v2/zh_cn/micro_app_dev/config.html#page_config_param) | 背景颜色 |
+| `headerTextColor` | string | [页面配置的 headerTextColor](/v2/zh_cn/micro_app_dev/config.html#page_config_param) | 标题栏文字颜色 |
+| `showFullscreenBtn` | boolean | `false` | 是否显示全屏按钮 |
+| `resize` | boolean | `false` | 是否允许调整窗口大小 |
+| `move` | boolean | `false` | 是否允许移动窗口 |
+<!-- | `showMask` | boolean | `true` | 是否显示遮罩层 |
+| `closeOnMask` | boolean | `true` | 点击遮罩层是否关闭窗口 | -->
 
 ### OpenWindowOptions
 
@@ -425,7 +428,7 @@ await this.spCtx.api.widget.save({
 | 属性 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `componentName` | string | ✅ | 组件名称 |
-| `windowConfig` | WindowConfig | - | 窗口配置 |
+| `windowConfig` | [WindowConfig](#windowConfig) | - | 窗口配置 |
 | `customParam` | any | - | 自定义参数 |
 | `title` | string | - | 窗口标题 |
 
