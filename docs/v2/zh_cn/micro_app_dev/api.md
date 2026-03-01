@@ -28,7 +28,7 @@ open(options: OpenWindowOptions): string
 | 属性 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `componentName` | string | ✅ | 组件名称（组件配置下 pages 的 key 名） |
-| `windowConfig` | [WindowConfig](#windowconfig) | - | 窗口配置，不填使用 [默认配置](v2/zh_cn/micro_app_dev/config.html#page_config_param) |
+| `windowConfig` | [WindowConfig](#windowconfig) | - | 窗口配置，不填使用 [默认配置](/v2/zh_cn/micro_app_dev/config.html#page_config_param) |
 | `customParam` | any | - | 自定义参数 |
 | `title` | string | - | 窗口标题 |
 
