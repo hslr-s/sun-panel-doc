@@ -320,34 +320,77 @@ request<T = any>(options: RequestOptions): Promise<T>
 
 | 属性 | 类型 | 必填 | 说明 |
 |------|------|------|------|
-| `targetUrl` | string | ✅ | 目标 URL，支持模板变量 |
-| `method` | string | - | 请求方法，默认 GET |
-| `headers` | object | - | 请求头 |
-| `body` | string | - | 请求体，如果传对象请 `JSON.stringify(xxx)` 转换为字符串 |
+| `request` | [RequestParams](#requestparams) | ✅ | 请求参数对象 |
 | `templateReplacements` | [TemplateReplacementRule](#templatereplacementrule)[] | - | 模板替换规则 |
-<!-- | `cookieDataNodeKey` | string | - | 示例：`config.cookie` 用户储存和使用的 cookie 的数据节点 key，配置此参数，会自动保存三方接口设置的cookie到数据节点并携带请求 | -->
+| `cookieDataNodeKey` | string | - | Cookie 数据节点键，格式 `"nodeName.key"`，详见下方说明 |
+
+::: warning 旧版(v2.0.0-dev-6及之前版本)兼容说明
+旧版参数 `targetUrl`、`method`、`headers`、`body` 已移入 `request` 属性，虽做了兼容处理，但新开发请直接使用 `request` 传值。
+:::
+{#cookie_manage}
+::: tip Cookie 自动管理 
+因安全考虑和受浏览器限制，可设置 `cookieDataNodeKey` 用于自动管理第三方站点的 Cookie，每个请求接口/域名单独分配一个数据节点的key来储存不同站点的cookie
+- 配置后会自动保存目标站点设置的 Cookie 到指定数据节点
+- 后续请求会自动携带保存的 Cookie
+- 可通过 [数据节点 API](#dataNode) 读取或修改
+- **注意：不管理过期时间、路径等，仅储存和传递**
+
+命名建议：以域名为基础，并添加 `cookie` 后缀，如 `exampleComCookie`，最终： `config.exampleComCookie`
+
+
+::: details  cookie 数据节点键的内容
+使用标准api调用
+`this.spCtx.api.dataNode.user.getByKey('config','example_com_cookie')`
+
+打印内容：
+```json
+{
+  // 之后请求读取此参数传递给请求站
+  "cookies": "debug_session=session_88881; debug_token=test123456", 
+  "meta": {
+    "debug_session": {
+      "path": "/"
+    },
+    "debug_token": {
+      "httpOnly": true,
+      "path": "/"
+    }
+  },
+  "updatedAt": "2026-03-01T11:16:32+08:00"
+}
+```
+:::
 
 **示例：**
 
 ```typescript
 const response = await this.spCtx.api.network.request({
-  targetUrl: 'https://{{domain}}/api/data',
-  method: 'GET',
-  headers: {
-    "Authorization": "Bearer {{token}}"
+  // 实际请求参数
+  request: {
+    targetUrl: 'https://{{domain}}/api/data',
+    method: 'GET',
+    headers: {
+      "Authorization": "Bearer {{token}}"
+    }
   },
+
+  // 模版参数替换
   templateReplacements: [
     {
       placeholder: '{{token}}',
       fields: ['headers'],
-      dataNode: 'config.token'
+      dataNodeKey: 'config.token'
     },
     {
       placeholder: '{{domain}}',
       fields: ['targetUrl'],
-      dataNode: 'config.domain'
+      dataNodeKey: 'config.domain'
     }
   ],
+
+  // 用于储存和读取本站cookie的数据节点键名
+  // 命名建议:以域名作为内容（需自行将域名中的.改为下划线），cookie作为后缀
+  cookieDataNodeKey:'config.example_com_cookie' 
 });
 ```
 
@@ -418,8 +461,6 @@ await this.spCtx.api.widget.save({
 | `showFullscreenBtn` | boolean | `false` | 是否显示全屏按钮 |
 | `resize` | boolean | `false` | 是否允许调整窗口大小 |
 | `move` | boolean | `false` | 是否允许移动窗口 |
-<!-- | `showMask` | boolean | `true` | 是否显示遮罩层 |
-| `closeOnMask` | boolean | `true` | 点击遮罩层是否关闭窗口 | -->
 
 ### OpenWindowOptions
 
@@ -432,6 +473,17 @@ await this.spCtx.api.widget.save({
 | `customParam` | any | - | 自定义参数 |
 | `title` | string | - | 窗口标题 |
 
+### RequestParams {#requestparams}
+
+请求参数对象。
+
+| 属性 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `targetUrl` | string | ✅ | 目标 URL，支持模板变量 |
+| `method` | string | - | 请求方法，默认 GET |
+| `headers` | object | - | 请求头 |
+| `body` | string | - | 请求体，如果传对象请 `JSON.stringify(xxx)` 转换为字符串 |
+
 ### TemplateReplacementRule
 
 模板替换规则，用于将占位符替换为实际数据。
@@ -440,7 +492,11 @@ await this.spCtx.api.widget.save({
 |------|------|------|------|
 | `placeholder` | string | ✅ | 要替换的占位符，如 <code v-pre>{{token}}</code> |
 | `fields` | string[] | ✅ | 替换参数的目标字段，可选：`targetUrl`、`method`、`headers`、`body` |
-| `dataNode` | string | ✅ | 数据节点路径，如 `"config.token"` |
+| `dataNodeKey` | string | ✅ | 数据节点键，如 `"config.token"` |
+::: warning 旧版(v2.0.0-dev-6及之前版本)兼容说明
+旧版参数 `dataNode` 已删除，虽做了兼容处理，但新开发请直接使用 `dataNodeKey`。
+:::
+
 
 ### WidgetInfo
 
@@ -450,7 +506,7 @@ await this.spCtx.api.widget.save({
 |------|------|------|------|
 | `widgetId` | string | ✅ | 小部件 ID |
 | `background` | string | - | 卡片背景颜色，为空跟随系统默认颜色 |
-| `config` | Record<string, any> | ✅ | 小部件配置对象 |
+| `config` | Record<string, any> | ✅ | 小部件配置对象，自定义配置数据，不可填写敏感数据，敏感数据可以储存在数据节点。 |
 | `gridSize` | string | - | 卡片网格尺寸，此项微应用只可读取不可设置 |
 | `title` | string | ✅ | 卡片底部标题 |
 

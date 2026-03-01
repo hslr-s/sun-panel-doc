@@ -8,6 +8,22 @@ outline: [2,3]
 V2 开发版本暂时**不支持** **V1** 以升级的方式**覆盖更新**，数据暂时不兼容。请等待后续版本更新适配。
 :::
 
+
+
+## v2.0.0-dev-7 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-7}
+::: tip
+- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。
+- 新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)
+:::
+
+- [新增] 内置窗口打开网站窗口支持全屏
+- [优化] 窗口基础组件功能
+- [优化] 微应用 页面窗口标题显示 及卡片标题显示
+- [优化] 微应用 `app.json/app.config.js` 增加 [调试模式](/v2/zh_cn/micro_app_dev/config) 参数
+- [优化] 微应用 后端相应网络透传、数据节点 日志调试（需要开启调试模式）
+- [优化] 微应用 重写网络透传方法，调整参数格式（兼容旧格式），支持 cookie 管理 [网络透传](/v2/zh_cn/micro_app_dev/api#network)
+- [优化] 其他细节
+
 ## v2.0.0-dev-6 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-6}
 > 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)，（网络透传以及窗口管理暂未开发完成，其他功能均已完成）
 

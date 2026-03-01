@@ -19,7 +19,8 @@ outline: [2,3]
 | `microAppId` | string | ✅ | 应用唯一标识，格式为 `作者-应用名` |
 | `version` | string | ✅ | 版本号，遵循语义化版本规范 |
 | `entry` | string | ✅ | 入口文件路径，如 `'main.js'` |
-| `icon` | string | ✅ | 应用图标文件名（位于 public 目录） |
+| `icon` | string | ✅ | 应用图标文件名（位于 `public` 目录） |
+| `debug` | boolean |  | 调试模式，后端可以通过命令行查看接口请求和数据节点的调试数据，前端通过控制台查看其他调试数据。默认：`false` 。|
 
 ### 应用信息 (appInfo)
 
@@ -66,6 +67,7 @@ export default {
   version: '1.0.0',
   entry: 'main.js',
   icon: 'logo.png',
+  debug: false,
 
   // 国际化信息
   appInfo: {
