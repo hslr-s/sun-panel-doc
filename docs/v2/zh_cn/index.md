@@ -58,7 +58,7 @@ outline: [2,3]
 与 [v1安装方式](/zh_cn/usage/quick_deploy) 一致。**此为开发版本，目前与v1版本数据不兼容，请勿覆盖更新和应用在正式环境内**
 :::
 
-- 首个开发版本拉取命令 `docker pull hslr/sun-panel:2.0.0-dev-1`
+- 开发版本拉取命令 `docker pull hslr/sun-panel:2.0.0-dev-7`
     此处文档更新可能不及时，docker 标签名可在v2测试群里公告看到。或参考docker官网：https://hub.docker.com/r/hslr/sun-panel/tags
 - 二进制文件下载地址：[夸克盘](https://pan.quark.cn/s/68492917cc31)
 
