@@ -9,11 +9,16 @@ outline: [2,3]
 - 开发板 **底部有开发版说明** 请勿直接应用在公开的正式环境中。
 :::
 
-## v2.0.0-dev-9 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-9}
+## v2.0.0-dev-10 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-10}
 ::: tip
 - 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。
 - 新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)
 :::
+
+- **[修复] `v2.0.0-dev-v9` 恢复备份功能不能正常使用的BUG**
+
+## v2.0.0-dev-9 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-9}
+
 
 - [新增] 微应用 前端调试模式，[微应用管理]->开启[开发者模式]，正在开发的微应用，配置文件中`config/app.config.js`加一个debug:true。升级安装或者重新导入微应用则开启
 - [新增] 备份/恢复功能，支持使用v1备份包文件进行恢复，支持覆盖v1版本覆盖更新，但是强烈建议在v1上进行一次备份再升级。
