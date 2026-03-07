@@ -4,10 +4,10 @@ outline: [2, 3]
 # 📦 微应用商店
 
 ::: tip 📣 温馨提示
-当前页面为临时下载页面，正式版微应用商店正在开发中。您可以通过下方列表直接下载，或 [:simple-baiduwangpan: 前往网盘下载](https://pan.quark.cn/s/68492917cc31) 获取完整资源。
+当前页面为临时下载页面，正式版微应用商店正在开发中。您可以通过下方列表直接下载，或 [前往网盘下载](https://pan.quark.cn/s/68492917cc31) 获取完整资源。
 :::
 
-如果您对微应用开发感兴趣，欢迎参考 [:book: 微应用开发文档](./micro_app_dev/index.md) 开始创作！
+如果您对微应用开发感兴趣，欢迎参考 [微应用开发文档](./micro_app_dev/index.md) 开始创作！
 
 ::: details 📖 使用教程
 1. **下载微应用压缩包**
@@ -44,7 +44,7 @@ outline: [2, 3]
 | **版本** | v1.0.0 |
 | **简介** | 基于和风天气 API 的天气小部件，支持实时天气、小时预报、多日预报 |
 
-[:material-download: 下载微应用](http://cdn.enianteam.com/sun-panel/micro_app_store/madrays-weather-1.0.0.zip)
+[下载微应用](https://d-cdn.yumo.cc/hslr/sun-panel-v2-microapp/madrays-weather-1.0.0%283%29.zip)
 
 ---
 
@@ -53,10 +53,10 @@ outline: [2, 3]
 | 信息 | 详情 |
 |:---:|:---|
 | **作者** | 与末 |
-| **版本** | v2.0.0 |
+| **版本** | v2.1.0 |
 | **简介** | 基于明月浩空 API 的播放器小部件 |
 
-[:material-download: 下载微应用](http://cdn.enianteam.com/sun-panel/micro_app_store/YM-music-player-2.0.0.zip)
+[下载微应用](https://d-cdn.yumo.cc/hslr/sun-panel-v2-microapp/YM-music-player-free-2.1.0.zip)
 
 ---
 
@@ -68,7 +68,7 @@ outline: [2, 3]
 | **版本** | v1.2.3 |
 | **简介** | 功能强大的便签应用，支持富文本编辑、多便签管理 |
 
-[:material-download: 下载微应用](http://cdn.enianteam.com/sun-panel/micro_app_store/chacha-notepad-1.2.3.zip)
+[下载微应用](https://d-cdn.yumo.cc/hslr/sun-panel-v2-microapp/chacha-notepad-1.2.3%20%283%29.zip)
 
 ---
 
@@ -80,7 +80,7 @@ outline: [2, 3]
 | **版本** | v1.0.0 |
 | **简介** | 自动计算当前日期到中国节假日的倒计时，并按节日主题展示漫画 SVG |
 
-[:material-download: 下载微应用](http://cdn.enianteam.com/sun-panel/micro_app_store/madrays-holiday-countdown-1.0.0%282%29.zip)
+[下载微应用](https://d-cdn.yumo.cc/hslr/sun-panel-v2-microapp/madrays-holiday-countdown-1.0.0%282%29.zip)
 
 ---
 
@@ -89,10 +89,10 @@ outline: [2, 3]
 | 信息 | 详情 |
 |:---:|:---|
 | **作者** | 与末 |
-| **版本** | v2.0.0 |
+| **版本** | v2.1.0 |
 | **简介** | 一言 API 集成，显示随机一言的小部件 |
 
-[:material-download: 下载微应用](http://cdn.enianteam.com/sun-panel/micro_app_store/YM-hitokoto-2.0.0.zip)
+[下载微应用](https://d-cdn.yumo.cc/hslr/sun-panel-v2-microapp/YM-hitokoto-2.1.0.zip)
 
 ---
 
@@ -104,10 +104,10 @@ outline: [2, 3]
 | **版本** | v1.0.0 |
 | **简介** | 最简单的微应用演示示例，适合入门学习 |
 
-[:material-download: 下载微应用](http://cdn.enianteam.com/sun-panel/micro_app_store/hslr-hello-world-1.0.0.zip)
+[下载微应用](https://d-cdn.yumo.cc/hslr/sun-panel-v2-microapp/hslr-hello-world-1.0.0.zip)
 
 ---
 
 ::: info 🚀 更多微应用
-如果您已开发出有趣的微应用，欢迎分享给更多用户！请关注 [:book: 微应用开发文档](./micro_app_dev/index) 了解如何发布您的作品。
+感谢各位小伙伴的开发，如果您已开发出有趣的微应用，欢迎分享给更多用户！请关注 [微应用开发文档](./micro_app_dev/index) 了解如何发布您的作品。特别感谢**与末**为临时微应用商店提供CDN服务。
 :::
