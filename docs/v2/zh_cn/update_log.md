@@ -9,6 +9,20 @@ outline: [2,3]
 - 开发板 **底部有开发版说明** 请勿直接应用在公开的正式环境中。
 :::
 
+
+## v2.0.0-dev-11 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-11}
+::: tip
+- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。
+- 新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)
+:::
+
+- [新增] 微应用小部件的支持 4x4 布局
+- [修复] 微应用小部件标题的Bug
+
+- [新增] 微应用模版（Hello World）ESLint 配置和代码格式化规则,支持代码错误标注，提醒等。
+- [移除] 保存小部件API标题的设置。标题不再允许修改，自动使用微应用的名字。
+
+
 ## v2.0.0-dev-10 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-10}
 ::: tip
 - 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。
