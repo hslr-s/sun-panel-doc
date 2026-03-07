@@ -12,10 +12,14 @@
 从 GitHub 克隆项目模板：
 
 ```bash
+# 最简单的案例，开发请基于此模板
 git clone https://github.com/Sun-Panel/microapp-hello-world.git
 cd microapp-hello-world
-```
 
+# 最完整的功能案例及所有代码示例 适用于学习、查阅相关功能代码
+git clone https://github.com/Sun-Panel/All-In-One-demo.git
+cd All-In-One-demo
+```
 
 ## 步骤 2：安装依赖 {#bundle_install}
 
