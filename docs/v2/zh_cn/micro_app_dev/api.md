@@ -508,7 +508,7 @@ await this.spCtx.api.widget.save({
 | `config` | Record<string, any> | ✅ | 小部件配置对象，自定义配置数据，不可填写敏感数据，敏感数据可以储存在数据节点。 |
 | `background` | string | - | 卡片背景颜色，为空跟随系统默认颜色 |
 | `gridSize` | string | - | 卡片网格尺寸，此项微应用只可读取不可设置 |
-| `title` | string | - | 卡片底部标题，默认在此标题后加上微应用名（appInfo[local].appName）eg: `北京 - XXX天气`。无特殊意义可留空，仅显示微应用名 |
+| `title` | string | - | 卡片底部标题，只读不可设置 |
 
 
 
