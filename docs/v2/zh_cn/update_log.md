@@ -12,7 +12,7 @@ outline: [2,3]
 
 ## v2.0.0-dev-11 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-11}
 ::: tip
-- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。
+- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm install`。
 - 新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)
 :::
 
@@ -25,7 +25,7 @@ outline: [2,3]
 
 ## v2.0.0-dev-10 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-10}
 ::: tip
-- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。
+- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm install`。
 - 新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)
 :::
 
@@ -47,7 +47,7 @@ outline: [2,3]
 
 ## v2.0.0-dev-7 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-7}
 ::: tip
-- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。
+- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm install`。
 - 新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)
 :::
 
@@ -60,7 +60,7 @@ outline: [2,3]
 - [优化] 其他细节
 
 ## v2.0.0-dev-6 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-6}
-> 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm intall`。新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)，（网络透传以及窗口管理暂未开发完成，其他功能均已完成）
+> 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm install`。新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)，（网络透传以及窗口管理暂未开发完成，其他功能均已完成）
 
 - [新增] 微应用 新增用户级别和应用级别的按key删除数据节点功能，并调整相关API路由和前端调用方式
 - [修复] 微应用 修复批量获取数据节点key数据格式错误的问题 [数据节点API使用文档](/v2/zh_cn/micro_app_dev/api.html#dataNode)
