@@ -321,7 +321,7 @@ request<T = any>(options: RequestOptions): Promise<T>
 | 属性 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `request` | [RequestParams](#requestparams) | ✅ | 请求参数对象 |
-| `templateReplacements` | [TemplateReplacementRule](#templatereplacementrule)[] | - | 模板替换规则 |
+| `templateReplacements` | [TemplateReplacementRule](#templatereplacementrule)[] | - | 数据节点模板替换规则（替换敏感数据） |
 | `cookieDataNodeKey` | string | - | Cookie 数据节点键，格式 `"nodeName.key"`，详见下方说明 |
 
 ::: warning 旧版(v2.0.0-dev-6及之前版本)兼容说明
@@ -486,7 +486,7 @@ await this.spCtx.api.widget.save({
 
 ### TemplateReplacementRule
 
-模板替换规则，用于将占位符替换为实际数据。
+模板替换规则，用于将占位符替换为数据节点中的数据，避免敏感数据泄漏在前端。
 
 | 属性 | 类型 | 必填 | 说明 |
 |------|------|------|------|
