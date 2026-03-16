@@ -8,6 +8,16 @@ outline: [2,3]
 - V2 开发版本已经支持V1以升级的方式**覆盖更新**，但是功能还在测试中，❗️⚠️**请勿按此操作**⚠️❗️，请使用 v1 导出备份包在 新创建的 v2 容器中恢复体验。
 - 开发板 **底部有开发版说明** 请勿直接应用在公开的正式环境中。
 :::
+## v2.0.0-dev-12 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-12}
+::: tip
+- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm install`。
+- 新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)
+:::
+
+- 微应用
+  - [修复] 因微应用配置appInfo中缺少zh-CN语言导致列表卡死问题
+  - [修复] 公开模式，网络透传无法使用数据节点中的数据的问题
+  - [修复] 其他细节
 
 
 ## v2.0.0-dev-11 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-11}
