@@ -101,6 +101,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       items: [
         { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
         { text: '宝塔面板部署', link: '/zh_cn/deploy/baota' },
+        { text: '1Panel部署', link: '/zh_cn/deploy/1panel' },
         { text: '编译运行', link: '/zh_cn/usage/compile' },
         { text: '重置密码', link: '/zh_cn/usage/reset_password' },
         { text: '公开访问（访客模式）', link: '/zh_cn/usage/public_visit' },

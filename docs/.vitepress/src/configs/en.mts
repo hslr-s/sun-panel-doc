@@ -63,6 +63,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'Quick Deployment', link: '/usage/quick_deploy' },
         { text: 'Baota Panel Deploy', link: '/deploy/baota' },
+        { text: '1Panel Deploy', link: '/deploy/1panel' },
         { text: 'Browser Extension', link: '/browser_extension' },
         { text: 'Compile and Run', link: '/usage/compile' },
         { text: 'Reset Password', link: '/usage/reset_password' },
