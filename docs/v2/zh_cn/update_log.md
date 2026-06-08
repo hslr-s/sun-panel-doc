@@ -8,6 +8,35 @@ outline: [2,3]
 - V2 开发版本已经支持V1以升级的方式**覆盖更新**，但是功能还在测试中，❗️⚠️**请勿按此操作**⚠️❗️，请使用 v1 导出备份包在 新创建的 v2 容器中恢复体验。
 - 开发板 **底部有开发版说明** 请勿直接应用在公开的正式环境中。
 :::
+
+## v2.0.0-dev-13 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-13}
+::: tip
+- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm install`。
+- 新增一个完整功能的的演示项目[All-In-One-demo](https://github.com/Sun-Panel/All-In-One-demo)
+:::
+
+- **微应用商店**
+  - [新增] 适配微应用商店，可直接安装微应用
+
+- **UI/UX 优化**
+  - [优化] 右键菜单圆角与布局样式 `[感谢 @liteyais 大佬设计]`
+  - [新增] 卡片编辑/微应用预览支持透明模糊跟随壁纸背景预览
+  - [优化] URL按钮组样式 `[感谢 @liteyais 大佬设计]`
+  - [优化] 卡片尺寸选择器与布局样式 `[感谢 @liteyais 大佬设计]`
+
+- **OpenAPI**
+  - [新增] OpenAPI 适配v1后重新启用
+  - [新增] 批量修改卡片接口，具体参考 [文档](/zh_cn/openapi/v1/apis_item.html#批量修改项目卡片)
+
+- **其他**
+  - [新增] 设置模块，整合导入导出与OpenAPI功能
+  - [新增] 快速跳转登录授权账号
+  - [优化] 编辑模板布局滚动问题
+  - [修复] 卡片尺寸与分组默认值逻辑错误
+  - [修复] 导航页最大宽度限制为 1200px 的问题，已经改为 2000px
+  - [修复] 无效卡片参数导致的异常不可删除的bug
+
+
 ## v2.0.0-dev-12 <Badge type="warning" text="DEV" /> {#v2.0.0-dev-12}
 ::: tip
 - 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm install`。

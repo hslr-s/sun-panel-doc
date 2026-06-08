@@ -10,7 +10,7 @@ outline: [2, 3]
 :::
 
 
-- 新版微应用商店地址：[微应用商店](https://microapp-store.sun-panel.top/)
+- 新版微应用商店地址：[微应用商店](https://appstore.sun-panel.top/)
 
 
 
