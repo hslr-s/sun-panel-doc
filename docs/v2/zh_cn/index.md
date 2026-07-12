@@ -61,11 +61,7 @@ outline: [2,3]
 
 - 开发版本拉取命令 `docker pull hslr/sun-panel:2.0.0-dev-9`
     此处文档更新可能不及时，docker 标签名可在v2测试群里公告看到。或参考docker官网：https://hub.docker.com/r/hslr/sun-panel/tags
-- 二进制文件下载地址：[夸克盘](https://pan.quark.cn/s/68492917cc31)
-
-
-## 微应用下载地址
-- [前往](/v2/zh_cn/micro_app_store.html)
+- 二进制文件下载地址：[夸克盘](https://pan.quark.cn/s/74ece0eb087b)
 
 
 

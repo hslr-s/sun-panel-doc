@@ -444,6 +444,177 @@ await this.spCtx.api.widget.save({
 
 
 
+## 系统监控 {#systemMonitor}
+
+`此API目前仅限官方微应用可用` 获取服务器系统资源监控数据（CPU、内存、磁盘、网络）。支持两种使用方式：**轮询订阅**和**主动获取**。
+
+### systemMonitor.register
+
+注册监控数据订阅，系统会按照指定间隔自动获取数据并通过回调函数返回。
+
+```typescript
+register(config: MonitorRegistrationConfig): string
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `config` | [MonitorRegistrationConfig](#monitorregistrationconfig) | ✅ | 注册配置 |
+
+**返回值：** 订阅 ID（string），用于后续取消订阅。
+
+**示例：**
+
+```javascript
+// 注册监控，每 5 秒获取一次，同时监控 CPU、内存、磁盘、网络
+const subscriptionId = this.spCtx.api.systemMonitor.register({
+  types: ['cpu', 'memory', 'disk', 'network'],
+  interval: 5000,
+  diskPaths: ['/'],  // 磁盘监控需要指定挂载路径数组
+  callback: (data) => {
+    // CPU 信息
+    if (data.cpu) {
+      console.log('CPU 使用率:', data.cpu.usages);
+    }
+    // 内存信息
+    if (data.memory) {
+      console.log('内存使用率:', data.memory.usedPercent + '%');
+    }
+    // 磁盘信息（可能有多个分区）
+    if (data.disk) {
+      data.disk.forEach(disk => {
+        console.log(`磁盘 ${disk.mountpoint}: ${disk.usedPercent.toFixed(1)}%`);
+      });
+    }
+    // 网络信息（可能有多个接口）
+    if (data.network) {
+      data.network.forEach(net => {
+        console.log(`网络 ${net.name}: 发送 ${net.bytesSent}, 接收 ${net.bytesRecv}`);
+      });
+    }
+  }
+});
+```
+
+### systemMonitor.unregister
+
+取消监控数据订阅。
+
+```typescript
+unregister(id: string): void
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `id` | string | ✅ | 订阅 ID（register 返回的值） |
+
+**示例：**
+
+```javascript
+// 取消订阅
+this.spCtx.api.systemMonitor.unregister(subscriptionId);
+```
+
+### systemMonitor.fetchData
+
+主动获取指定类型的监控数据（一次性请求，不创建订阅）。
+
+```typescript
+fetchData(config: { types?: MonitorType[], type?: MonitorType, diskPaths?: string[] }): Promise<MonitorDataResp | null>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `config.types` | [MonitorType](#monitortype)[] | - | 监控类型数组 |
+| `config.type` | [MonitorType](#monitortype) | - | 单个监控类型（与 types 二选一） |
+| `config.diskPaths` | string[] | - | 磁盘挂载路径数组（仅查询 disk 类型时需要） |
+
+**返回值：** [`MonitorDataResp`](#monitordataresp) 或 `null`
+
+**示例：**
+
+```javascript
+// 主动获取 CPU 和网络数据
+const data = await this.spCtx.api.systemMonitor.fetchData({
+  types: ['cpu', 'network']
+});
+
+if (data) {
+  console.log('CPU:', data.cpu);
+  console.log('网络:', data.network);
+}
+
+// 获取磁盘数据（需要指定挂载路径数组）
+const diskData = await this.spCtx.api.systemMonitor.fetchData({
+  type: 'disk',
+  diskPaths: ['/']
+});
+
+if (diskData && diskData.disk) {
+  diskData.disk.forEach(disk => {
+    console.log(`磁盘 ${disk.mountpoint}:`);
+    console.log(`  总容量: ${(disk.total / 1024 / 1024 / 1024).toFixed(2)} GB`);
+    console.log(`  已使用: ${(disk.used / 1024 / 1024 / 1024).toFixed(2)} GB`);
+    console.log(`  使用率: ${disk.usedPercent.toFixed(1)}%`);
+  });
+}
+
+// 通过订阅方式监控磁盘（每 10 秒更新）
+const diskSubId = this.spCtx.api.systemMonitor.register({
+  types: ['disk'],
+  interval: 10000,
+  diskPaths: ['/'],
+  callback: (data) => {
+    if (data.disk) {
+      data.disk.forEach(disk => {
+        console.log(`[${disk.mountpoint}] 使用率: ${disk.usedPercent.toFixed(1)}%`);
+      });
+    }
+  }
+});
+
+// 同时监控多个磁盘分区
+const multiDiskSubId = this.spCtx.api.systemMonitor.register({
+  types: ['disk'],
+  interval: 5000,
+  diskPaths: ['/', '/home', '/data'],  // 监控多个挂载点
+  callback: (data) => {
+    if (data.disk) {
+      data.disk.forEach(disk => {
+        console.log(`磁盘 ${disk.mountpoint}: ${disk.usedPercent.toFixed(1)}%`);
+      });
+    }
+  }
+});
+```
+
+### systemMonitor.getSystemInfo
+
+获取系统基础信息（主机名、操作系统、架构、运行时长、系统负载）。此接口为一次性获取，不创建订阅。
+
+```typescript
+getSystemInfo(): Promise<SystemInfo | null>
+```
+
+**返回值：** [`SystemInfo`](#systeminfo) 或 `null`
+
+**示例：**
+
+```javascript
+// 获取系统信息
+const sysInfo = await this.spCtx.api.systemMonitor.getSystemInfo();
+
+if (sysInfo) {
+  console.log('主机名:', sysInfo.hostname);
+  console.log('操作系统:', sysInfo.os);
+  console.log('平台:', sysInfo.platform, sysInfo.platformVer);
+  console.log('架构:', sysInfo.arch);
+  console.log('运行时长:', Math.floor(sysInfo.uptime / 86400), '天');
+  console.log('系统负载:', sysInfo.load1, sysInfo.load5, sysInfo.load15);
+}
+```
+
+
+
 ## 数据类型
 
 > 以下类型定义均来自 `@sun-panel/micro-app` SDK，可在 IDE 中自动补全。
@@ -509,6 +680,94 @@ await this.spCtx.api.widget.save({
 | `background` | string | - | 卡片背景颜色，为空跟随系统默认颜色 |
 | `gridSize` | string | - | 卡片网格尺寸，此项微应用只可读取不可设置 |
 | `title` | string | - | 卡片底部标题，只读不可设置 |
+
+### MonitorType {#monitortype}
+
+监控数据类型。
+
+| 值 | 说明 |
+|------|------|
+| `'cpu'` | CPU 使用率 |
+| `'memory'` | 内存使用情况 |
+| `'disk'` | 磁盘使用情况 |
+| `'network'` | 网络流量统计 |
+
+### MonitorRegistrationConfig {#monitorregistrationconfig}
+
+监控订阅配置。
+
+| 属性 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `types` | [MonitorType](#monitortype)[] | ✅ | 监控类型数组 |
+| `callback` | (data: [MonitorDataResp](#monitordataresp)) => void | ✅ | 数据回调函数 |
+| `interval` | number | ✅ | 更新间隔（毫秒），最小 1000 |
+| `diskPaths` | string[] | - | 磁盘挂载路径数组（仅查询 disk 类型时需要） |
+
+### MonitorDataResp {#monitordataresp}
+
+监控数据响应。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `cpu` | CPUInfo | CPU 信息（请求包含 cpu 时返回） |
+| `memory` | MemoryInfo | 内存信息（请求包含 memory 时返回） |
+| `disk` | DiskInfo[] | 磁盘信息数组（请求包含 disk 时返回） |
+| `network` | NetIOCountersInfo[] | 网络流量数组（请求包含 network 时返回） |
+
+### CPUInfo
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `coreCount` | number | CPU 核心数 |
+| `cpuNum` | number | CPU 逻辑处理器数 |
+| `model` | string | CPU 型号 |
+| `usages` | number[] | 各核心使用率（百分比） |
+
+### MemoryInfo
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `total` | number | 总内存（字节） |
+| `used` | number | 已使用内存（字节） |
+| `free` | number | 空闲内存（字节） |
+| `usedPercent` | number | 使用率（百分比） |
+
+### DiskInfo
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `title` | string | 磁盘标题 |
+| `mountpoint` | string | 挂载路径 |
+| `total` | number | 总容量（字节） |
+| `used` | number | 已使用（字节） |
+| `free` | number | 空闲（字节） |
+| `usedPercent` | number | 使用率（百分比） |
+
+### NetIOCountersInfo
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `name` | string | 网络接口名称 |
+| `bytesSent` | number | 发送字节数 |
+| `bytesRecv` | number | 接收字节数 |
+
+### SystemInfo {#systeminfo}
+
+系统基础信息。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `hostname` | string | 主机名 |
+| `os` | string | 操作系统 |
+| `platform` | string | 平台 (ubuntu, centos 等) |
+| `platformVer` | string | 平台版本 |
+| `arch` | string | 架构 (amd64, arm64 等) |
+| `uptime` | number | 运行时长（秒） |
+| `bootTime` | number | 启动时间（Unix 时间戳） |
+| `load1` | number | 1分钟负载 |
+| `load5` | number | 5分钟负载 |
+| `load15` | number | 15分钟负载 |
+| `fetchedAt` | number | 数据获取时间（Unix 时间戳） |
 
 
 
