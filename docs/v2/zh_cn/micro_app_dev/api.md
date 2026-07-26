@@ -259,7 +259,7 @@ const config = await this.spCtx.api.localCache.app.get('appConfig');
 
 ## 数据节点 {#dataNode}
 
-提供用户级和应用级的数据节点管理功能。详细的权限说明请参阅 [数据节点](./data_node)，本文档仅说明API的使用方法。
+提供用户级和应用级的数据节点管理功能。详细的权限说明请参阅 [数据节点](./data_node)，本文档仅说明API的使用方法。需要在 [权限配置](/v2/zh_cn/micro_app_dev/permission) 中声明 `dataNode` 权限。
 
 ### 用户数据节点 (dataNode.user)
 
@@ -405,7 +405,7 @@ try {
 
 ## 网络透传 {#network}
 
-发送网络请求，支持模板变量替换（用于安全地传递敏感信息）。
+发送网络请求，支持模板变量替换（用于安全地传递敏感信息）。需要在 [权限配置](/v2/zh_cn/micro_app_dev/permission) 中声明 `network` 权限。
 
 ### network.request
 
