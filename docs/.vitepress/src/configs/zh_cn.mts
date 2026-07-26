@@ -212,6 +212,7 @@ function sidebarRootV2(): DefaultTheme.SidebarItem[] {
         { text: '项目结构', link: '/v2/zh_cn/micro_app_dev/project_structure' },
         { text: '配置说明', link: '/v2/zh_cn/micro_app_dev/config' },
         { text: '组件开发', link: '/v2/zh_cn/micro_app_dev/dev_guide' },
+        { text: '国际化', link: '/v2/zh_cn/micro_app_dev/i18n' },
         { text: '平台 API', link: '/v2/zh_cn/micro_app_dev/api' },
         { text: '数据节点', link: '/v2/zh_cn/micro_app_dev/data_node' },
         { text: '权限声明', link: '/v2/zh_cn/micro_app_dev/permission' },

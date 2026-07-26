@@ -1,17 +1,13 @@
 # 项目结构
 
-本文档介绍 Hello World 项目的目录结构，帮助你快速了解每个文件的作用。
-
-::: tip
-开发时，仅需关注 `config`、`src`、`public` 这三个目录即可。
-:::
+本文档介绍官方微应用开发模板 [Hello World](https://github.com/Sun-Panel/microapp-hello-world) 的目录结构，帮助你快速了解每个文件的作用。
 
 
 ## 目录概览
 
-我们开发时，仅需关注`config`和`src`这两个目录即可，静态资源存放在`public`目录下，自动构建。其他都归属于模版，无需修改，也不推荐修改。
+我们开发时，仅需关注`config`、`src`、`locales`和`public` 目录即可，静态资源存放在`public`目录下，自动构建。其他都归属于模版，无需修改，也不推荐修改。
 
-```txt {2-8,13}
+```txt {2-8,13,19}
 microapp-hello-world/
 ├── config/                          # 配置文件目录 // [!code focus]
 │   ├── app.config.js               # 应用主配置（应用信息、权限、数据节点等）// [!code focus]
@@ -20,10 +16,16 @@ microapp-hello-world/
 │   ├── components/                 # 组件文件 // [!code focus]
 │   │   ├── widget.js              # 小部件组件（卡片主体） // [!code focus]
 │   │   └── widgetConfig.js        # 配置页面组件 // [!code focus]
+│   ├── builtins/                  # 框架内置工具函数
 │   ├── utils/                      # 工具函数
 │   │   └── assetPath.js           # 资源路径处理
-│   └── main.js                     # 入口文件（打包成单个对象）
+│   └── main.js                     # 入口文件
+├── locales/                        # 国际化资源目录（非必须） // [!code focus]
+│   ├── en-US.js                   # 英文语言包
+│   ├── zh-CN.js                   # 中文语言包
+│   └── ...
 ├── build/                          # 构建脚本目录
+├── scripts/                        # 工具脚本目录
 ├── public/                         # 静态资源（直接打包到根目录）// [!code focus]
 │   ├── logo.png                   # 应用图标
 │   └── sun-panel-logo.png         # Sun Panel Logo
@@ -39,59 +41,12 @@ microapp-hello-world/
 
 
 ### config/app.config.js
-
-应用主配置文件，定义应用基础信息：
-
-```javascript
-export default {
-  author: 'hslr',                    // 作者标识
-  microAppId: 'hslr-hello-world',   // 应用唯一标识
-  version: '1.0.0',                  // 版本号
-  entry: 'main.js',                 // 入口文件
-  icon: 'logo.png',                 // 应用图标
-
-  appInfo: {
-    'zh-CN': {
-      appName: 'Hello World',
-      description: 'Sun-Panel 演示微应用'
-    }
-  },
-
-  permissions: [],       // 权限配置
-  networkDomains: [],   // 网络域名白名单
-  dataNodes: {}         // 数据节点配置
-};
-```
-
-详细配置说明请参阅 [配置说明](./config)。
+参考[应用配置](/v2/zh_cn/micro_app_dev/config.html#app_config)
 
 
 ### config/components.config.js
 
-组件注册配置文件，定义页面和小部件：
-
-```javascript
-export default {
-  // 页面注册
-  pages: {
-    'hello-world-config': {
-      component: HelloWorldConfig,   // 配置页面组件
-      background: 'linear-gradient(...)',
-      headerTextColor: '#1890ff'
-    }
-  },
-
-  // 小部件注册
-  widgets: {
-    'hello-world-widget': {
-      component: HelloWorldWidget,           // 小部件组件
-      configComponentName: 'hello-world-config', // 配置页面名称
-      size: ['1x1', '1x2', '2x1', '2x2', '2x4', '1xfull'],
-      background: '',
-    },
-  },
-};
-```
+参考[组件配置](/v2/zh_cn/micro_app_dev/config.html#components_config)
 
 
 ### src/components/widget.js

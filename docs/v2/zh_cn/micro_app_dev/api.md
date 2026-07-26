@@ -50,6 +50,105 @@ const windowId = this.spCtx.api.window.open({
 ```
 
 
+## 主应用信息 {#mainAppInfo}
+
+获取主应用的基本信息，如版本号、PRO 状态等。后期可能扩展更多字段（如当前用户账号等）。
+
+### mainAppInfo.get
+
+获取主应用基本信息。
+
+```typescript
+get(): Promise<MainAppInfo>
+```
+
+**返回值：** [`MainAppInfo`](#mainappinfo) 对象
+
+**示例：**
+
+```typescript
+const info = await this.spCtx.api.mainAppInfo.get();
+console.log('主应用版本:', info.version);      // 例如: "1.1.0"
+console.log('是否为 PRO:', info.isPro);        // true 或 false
+```
+
+
+
+## 定时器 {#timer}
+
+主应用提供的定时器接口，直接调用原生 `setTimeout` / `setInterval`。在微应用场景中，推荐使用此接口代替直接调用 `setTimeout`，以确保定时器运行在主应用的上下文中。
+
+### timer.setTimeout
+
+创建一个定时器，在指定延迟后执行回调函数。
+
+```typescript
+setTimeout(handler: TimerHandler, timeout?: number, ...args: any[]): number
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `handler` | TimerHandler | ✅ | 定时器到期时执行的函数 |
+| `timeout` | number | - | 延迟时间（毫秒），默认 0 |
+| `...args` | any[] | - | 传递给回调函数的附加参数 |
+
+**返回值：** 定时器 ID（number），用于 `clearTimeout`
+
+**示例：**
+
+```typescript
+const timerId = this.spCtx.api.timer.setTimeout(() => {
+  console.log('2 秒后执行');
+}, 2000);
+
+// 取消定时器
+this.spCtx.api.timer.clearTimeout(timerId);
+```
+
+### timer.setInterval
+
+创建一个定时器，每隔指定时间重复执行回调函数。
+
+```typescript
+setInterval(handler: TimerHandler, timeout?: number, ...args: any[]): number
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `handler` | TimerHandler | ✅ | 每次定时器到期时执行的函数 |
+| `timeout` | number | - | 间隔时间（毫秒），默认 0 |
+| `...args` | any[] | - | 传递给回调函数的附加参数 |
+
+**返回值：** 定时器 ID（number），用于 `clearInterval`
+
+**示例：**
+
+```typescript
+const intervalId = this.spCtx.api.timer.setInterval(() => {
+  console.log('每 5 秒轮询一次');
+}, 5000);
+
+// 停止轮询
+this.spCtx.api.timer.clearInterval(intervalId);
+```
+
+### timer.clearTimeout
+
+取消由 `setTimeout` 创建的定时器。
+
+```typescript
+this.spCtx.api.timer.clearTimeout(id: number): void
+```
+
+### timer.clearInterval
+
+取消由 `setInterval` 创建的定时器。
+
+```typescript
+this.spCtx.api.timer.clearInterval(id: number): void
+```
+
+
 
 ## 本地缓存
 
@@ -618,6 +717,15 @@ if (sysInfo) {
 ## 数据类型
 
 > 以下类型定义均来自 `@sun-panel/micro-app` SDK，可在 IDE 中自动补全。
+
+### MainAppInfo {#mainappinfo}
+
+主应用基本信息。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `version` | string | 主应用版本号（后端版本） |
+| `isPro` | boolean | 主应用是否为 PRO 状态 |
 
 ### WindowConfig {#windowConfig}
 

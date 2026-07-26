@@ -7,14 +7,15 @@ outline: [2,3]
 微应用包含两个主要配置文件：`app.config.js` 和 `components.config.js`。
 
 
-## 应用配置 (app.config.js)
+## 应用配置 (app.config.js) {#app_config}
 
-定义微应用的基础信息、权限和国际化支持。
+定义微应用的基础信息、权限、数据节点等。
 
 ### 基础配置
 
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
+| `appJsonVersion` | string | ✅ | 配置文件版本，当前最新为 `1.1` |
 | `author` | string | ✅ | 作者标识，用于生成组件标签名前缀，不能含特殊符号 |
 | `microAppId` | string | ✅ | 应用唯一标识，格式为 `作者-应用名` |
 | `version` | string | ✅ | 版本号，遵循语义化版本规范 |
@@ -24,26 +25,75 @@ outline: [2,3]
 
 ### 应用信息 (appInfo)
 
-用于配置应用的国际化信息，支持多语言显示。
+应用的基本信息，如果要支持多语言，参数支持[国际化](/v2/zh_cn/micro_app_dev/i18n)，如 `$t:APP_NAME`。
 
-#### 国际化信息
-语言标识符遵循 [IETF BCP 47](https://www.rfc-editor.org/info/bcp47) 标准：
-
-- `zh-CN` - 简体中文
-- `en-US` - 英语
-- `zh-TW` - 繁体中文
-- `ja-JP` - 日语
-- `ko-KR` - 韩语
-
-
-#### 语言标识对应的参数：
+#### 参数：
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `appName` | string | ✅ | 应用名称 |
 | `description` | string | - | 应用描述 |
 | `networkDescription` | string | - | 网络请求说明 |
 
+::: details `appJsonVersion:'1.1'` 与旧版本（1.0）格式更新说明
+::: code-group
 
+```js [1.1]
+// 1.1 不使用国际化支持：
+appInfo: {
+  appName: 'Hello World',
+  description: 'Micro App Hello World',
+  networkDescription: 'No need to link to any third-party websites',
+}
+
+// 1.1 国际化支持：
+appInfo: {
+  appName: '$t:APP_NAME',
+  description: '$t:APP_DESCRIPTION',
+  networkDescription: '$t:NETWORK_DESCRIPTION',
+}
+
+// 国际化文件：locales/en-US.json
+export default {
+  // App basic information
+  APP_NAME: 'Hello World',
+  APP_DESCRIPTION: 'Micro App Hello World',
+
+  // Network configuration
+  NETWORK_DESCRIPTION: 'No need to link to any third-party websites'
+
+  // ...
+}
+
+// 国际化文件：locales/zh-CN.json
+export default {
+  // 应用基本信息
+  APP_NAME: 'Hello World',
+  APP_DESCRIPTION: 'Sun-Panel 演示微应用',
+
+  // 网络配置
+  NETWORK_DESCRIPTION: '无需链接任何三方网站',
+
+  // ...
+}
+
+```
+
+```js [1.0]
+// 1.0 旧版本格式如下 (Sun-Panel 正式版发布之后将陆续不再支持，请尽快更新底层模板)：
+appInfo: {
+  'zh-CN': {
+    appName: '天气',
+    description: '查看各地天气数据',
+    networkDescription: '首次安装后下载必要的配置数据'
+  },
+  'en-US': {
+    appName: 'Weather',
+    description: 'View weather data worldwide',
+    networkDescription: 'Download necessary config data on first run'
+  }
+}
+```
+:::
 
 ### 权限配置 (permissions)
 
@@ -59,7 +109,56 @@ outline: [2,3]
 
 ### 完整示例
 
-```javascript
+<!-- ::: warning 版本说明
+当前支持 v1.0 和 v1.1 两种配置文件格式。推荐使用 v1.1 版本以获得更好的国际化支持。
+::: -->
+
+`./config/app.config.js` 文件内容：
+::: code-group
+```js [1.1]
+export default {
+  // 基础信息
+  appJsonVersion: '1.1',
+  author: 'hslr',
+  microAppId: 'hslr-weather',
+  version: '1.0.0',
+  entry: 'main.js',
+  icon: 'logo.png',
+  debug: false,
+
+  // 多语言翻译配置
+  i18n: translations,
+
+  // 应用信息
+  appInfo: {
+    appName: '天气',
+    description: '查看各地天气数据',
+    networkDescription: '对接三方天气接口',
+  },
+
+  // 权限配置
+  permissions: [
+    'network',     // 网络权限
+    'dataNode'     // 数据节点权限
+  ],
+
+  // 网络域名白名单
+  networkDomains: [
+    'api.example.com'
+  ],
+
+  // 数据节点配置
+  dataNodes: {
+    // 节点名
+    config: {
+      scope: 'app',
+      isPublic: true
+    }
+  }
+};
+```
+
+```js [1.0]
 export default {
   // 基础信息
   author: 'hslr',
@@ -102,14 +201,21 @@ export default {
       isPublic: true
     }
   }
-};
+}
+
 ```
+:::
 
-## 组件配置 (components.config.js)
 
-注册页面和小部件组件。
+## 组件配置 (components.config.js) {#components_config}
+
+定义微应用的页面组件和小部件组件的基本信息。
 
 ### 完整示例
+
+::: warning 版本说明
+`appJsonVersion:1.1` 新增了 `widgetName`、`widgetDescription` 和 `sort` 字段，支持国际化。
+:::
 
 ```javascript
 import HelloWorldConfig from '../src/components/widgetConfig.js';
@@ -130,6 +236,10 @@ export default {
     'hello-world-widget': {
       component: HelloWorldWidget,
       configComponentName: 'hello-world-config',
+      // appJsonVersion:1.1 新增字段
+      widgetName: 'Demo Widget',
+      widgetDescription: 'Demo Widget Description',
+      sort: 10, // 排序权重，数字越小越靠前
       size: ['1x1', '1x2', '2x1', '2x2', '2x4', '1xfull'],
       background: '',
     },
@@ -168,6 +278,9 @@ export default {
 |------|------|------|------|
 | `component` | class | ✅ | 小部件组件类 |
 | `configComponentName` | string | - | 对应的配置页面名称（配置后会在添加组件、小部件的右键菜单打开页面配置组件的窗口） |
+| `widgetName` | string | - | 小部件显示名称（1.1新增，支持 `$t:` 语法） |
+| `widgetDescription` | string | - | 小部件描述（1.1新增，支持 `$t:` 语法） |
+| `sort` | number | - | 排序权重，数字越小越靠前（1.1新增） |
 | `size` | string[] | ✅ | 支持的网格尺寸 |
 | `background` | string | - | 默认背景颜色 |
 

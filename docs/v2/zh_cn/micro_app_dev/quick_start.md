@@ -3,13 +3,23 @@
 本指南将帮助你在 5 分钟内跑通 Hello World 微应用。
 
 ::: tip 前置要求
-电脑上需要安装 Node.js >= 18.20
+- 电脑上需要安装 Node.js >= 18.20
+- 微应用项目必须基于 [Hello World](https://github.com/Sun-Panel/microapp-hello-world) 作为底层模板开发
 :::
 
 
 ## 步骤 1：克隆项目
 
-从 GitHub 克隆项目模板：
+**方式1（推荐）**. 在您的 GitHub 仓库中基于官方模版,
+[**「快速创建一个微应用项目」**](https://github.com/new?template_name=microapp-hello-world&template_owner=Sun-Panel)，
+然后拉取下来快速开发微应用。
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+**方式2**. 从 GitHub 克隆项目模板：
 
 ```bash
 # 最简单的案例，开发请基于此模板
@@ -20,6 +30,10 @@ cd microapp-hello-world
 git clone https://github.com/Sun-Panel/All-In-One-demo.git
 cd All-In-One-demo
 ```
+
+
+
+
 
 ## 步骤 2：安装依赖 {#bundle_install}
 
@@ -44,10 +58,10 @@ npm run build   # 构建生产版本
 npm run pack    # 打包组件包
 ```
 
-打包产物位于 `packages/` 目录，生成 `.zip` 文件可直接上传到 Sun-Panel。
+打包产物位于 `packages/` 目录，生成 `.zip` 文件可直接上传到 [Sun-Panel 应用商店](https://appstore.sun-panel.top/)。
 
 
-## 开发命令一览
+## 常用开发命令一览
 
 | 命令 | 说明 |
 |------|------|
@@ -56,6 +70,10 @@ npm run pack    # 打包组件包
 | `npm run pack` | 打包组件包（生产模式） |
 | `npm run pack:dev` | 打包组件包（开发模式） |
 | `npm run clean` | 清理构建产物 |
+| `npm run update` | 更新官方模板代码 |
+| `npm run update:force` | 强制更新官方模板代码 |
+
+更多命令请查看 [Hello World 官方模版](https://github.com/Sun-Panel/microapp-hello-world) 下的 [package.json](https://github.com/Sun-Panel/microapp-hello-world/blob/main/package.json) 
 
 
 ## 下一步
