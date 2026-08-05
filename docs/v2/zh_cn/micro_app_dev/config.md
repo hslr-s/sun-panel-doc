@@ -23,7 +23,7 @@ outline: [2,3]
 | `icon` | string | ✅ | 应用图标文件名（位于 `public` 目录） |
 | `debug` | boolean |  | 调试模式，后端可以通过命令行查看接口请求和数据节点的调试数据，前端通过控制台查看其他调试数据。默认：`false` 。|
 
-### 应用信息 (appInfo)
+### 应用信息 (appInfo) {#app_info}
 
 应用的基本信息，如果要支持多语言，参数支持[国际化](/v2/zh_cn/micro_app_dev/i18n)，如 `$t:APP_NAME`。
 

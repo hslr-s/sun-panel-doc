@@ -16,9 +16,6 @@ microapp-hello-world/
 │   ├── components/                 # 组件文件 // [!code focus]
 │   │   ├── widget.js              # 小部件组件（卡片主体） // [!code focus]
 │   │   └── widgetConfig.js        # 配置页面组件 // [!code focus]
-│   ├── builtins/                  # 框架内置工具函数
-│   ├── utils/                      # 工具函数
-│   │   └── assetPath.js           # 资源路径处理
 │   └── main.js                     # 入口文件
 ├── locales/                        # 国际化资源目录（非必须） // [!code focus]
 │   ├── en-US.js                   # 英文语言包

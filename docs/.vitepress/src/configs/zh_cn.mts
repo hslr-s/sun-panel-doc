@@ -209,6 +209,7 @@ function sidebarRootV2(): DefaultTheme.SidebarItem[] {
       items: [
         { text: '介绍', link: '/v2/zh_cn/micro_app_dev/index' },
         { text: '快速开始', link: '/v2/zh_cn/micro_app_dev/quick_start' },
+        { text: '模板升级', link: '/v2/zh_cn/micro_app_dev/upgrade_template' },
         { text: '项目结构', link: '/v2/zh_cn/micro_app_dev/project_structure' },
         { text: '配置说明', link: '/v2/zh_cn/micro_app_dev/config' },
         { text: '组件开发', link: '/v2/zh_cn/micro_app_dev/dev_guide' },
