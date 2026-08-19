@@ -227,7 +227,9 @@ export default {
     'hello-world-config': {
       component: HelloWorldConfig,
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      headerTextColor: '#ffffff'
+      backgroundDark: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
+      headerTextColor: '#ffffff',
+      headerTextColorDark: '#e0e0e0',
     }
   },
 
@@ -264,7 +266,9 @@ export default {
 |------|------|------|------|
 | `component` | class | ✅ | 页面组件类 |
 | `background` | string | - | 背景样式（CSS background 属性），默认：`#ffffff`（白色）|
+| `backgroundDark` | string | - | 暗色模式下的背景样式，为空时跟随 `background` |
 | `headerTextColor` | string | - | 头部文字颜色，默认：`#000000`（黑色） |
+| `headerTextColorDark` | string | - | 暗色模式下的头部文字颜色，为空时跟随 `headerTextColor` |
 | `width` | number \| string | - | 窗口宽度，数字时单位为 `px`，默认：`800` |
 | `height` | number \| string | - | 窗口高度，数字时单位为 `px`，默认：`600` |
 | `showFullscreenBtn` | boolean | - | 是否显示全屏按钮，默认：`false` |
@@ -288,6 +292,9 @@ export default {
 
 ## 支持的网格尺寸
 
+![size](https://doc-img.sun-panel.top/microapp-img/picgo-2026-07-6ecd8453d4b11346b6acb0785749d067.png)
+
+
 | 尺寸 | 说明（行x列） | 适用场景 |
 |------|------|----------|
 | `1x1` | 1格×1格 | 迷你组件 |
@@ -295,6 +302,7 @@ export default {
 | `2x1` | 2格×1格 | 横向窄卡片 |
 | `2x2` | 2格×2格 | 标准卡片 |
 | `2x4` | 2格×4格 | 大卡片 |
+| `4x4` | 4格×4格 | 大卡片 |
 | `1xfull` | 1格×全屏宽 | 全屏宽度展示 |
 
 

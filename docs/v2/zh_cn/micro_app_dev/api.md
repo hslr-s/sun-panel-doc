@@ -545,7 +545,7 @@ await this.spCtx.api.widget.save({
 
 ## 系统监控 {#systemMonitor}
 
-`此API目前仅限官方微应用可用` 获取服务器系统资源监控数据（CPU、内存、磁盘、网络）。支持两种使用方式：**轮询订阅**和**主动获取**。
+`此API目前仅限官方微应用可用` 获取服务器系统资源监控数据（CPU、内存、磁盘、网络）。支持两种使用方式：**轮询订阅**和**主动获取**。需要在 [权限配置](/v2/zh_cn/micro_app_dev/permission) 中声明 `systemMonitor` 权限。
 
 ### systemMonitor.register
 
@@ -736,7 +736,9 @@ if (sysInfo) {
 | `width` | number \| string | `800` | 窗口宽度，数字时单位为 `px` |
 | `height` | number \| string | `600` | 窗口高度，数字时单位为 `px` |
 | `background` | string | [页面配置的 background](/v2/zh_cn/micro_app_dev/config.html#page_config_param) | 背景颜色 |
+| `backgroundDark` | string | [页面配置的 backgroundDark](/v2/zh_cn/micro_app_dev/config.html#page_config_param) | 暗色模式下的背景颜色 |
 | `headerTextColor` | string | [页面配置的 headerTextColor](/v2/zh_cn/micro_app_dev/config.html#page_config_param) | 标题栏文字颜色 |
+| `headerTextColorDark` | string | [页面配置的 headerTextColorDark](/v2/zh_cn/micro_app_dev/config.html#page_config_param) | 暗色模式下的标题栏文字颜色 |
 | `showFullscreenBtn` | boolean | `false` | 是否显示全屏按钮 |
 | `resize` | boolean | `false` | 是否允许调整窗口大小 |
 | `move` | boolean | `false` | 是否允许移动窗口 |

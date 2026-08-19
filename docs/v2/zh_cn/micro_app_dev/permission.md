@@ -7,9 +7,11 @@
 
 | 权限 | 说明 |
 |------|------|
-| `network` | 允许应用访问网络资源 |
-| `dataNode` | 允许应用使用数据节点功能 |
-| `iframe` | 允许使用 iframe（需在微应用内嵌入 iframe 时声明） |
+| `network` | 使用 API 访问网络资源 |
+| `dataNode` | 使用数据节点功能 |
+| `iframe` | 使用 iframe（需在微应用内嵌入 iframe 时声明） |
+| `systemMonitor` | 使用系统监控相关API |
+
 
 
 ## 配置示例
