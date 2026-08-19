@@ -224,22 +224,23 @@ this.requestUpdate();
 const logoUrl = this.getAssetPath('/logo.png');
 ```
 
-为兼容微应用开发和生产环境都能正确的访问到静态资源文件，如果你的微应用有一些图片等静态资源文件，可以将其放在 `public` 目录下，你可以这样做：
+为兼容微应用开发和生产环境都能正确的访问到静态资源文件，如果你的微应用有一些图片等静态资源文件，可以将其放在 `public` 目录下。组件基类（`SunPanelWidgetElement` / `SunPanelPageElement`）已内置 `getAssetPath()` 方法，可直接使用：
+
 ```js
-// 从工具目录中导入方法
-import { getAssetPath } from '../utils/assetPath.js';
-
 export class Widget extends SunPanelWidgetElement {
-  // 省略部分代码...
-
-  // 定义一个方法，将上下文的静态路径传入给 getAssetPath 
-  // 之后每次使用仅这样写 this.getAssetPath("/images/abc.jpg") 即可同时兼容开发和生产环境了。
-  getAssetPath(relativePath) {
-    console.log('[getAssetPath] Called with:', { relativePath, staticPath: this.spCtx.staticPath });
-    return getAssetPath(relativePath, this.spCtx.staticPath);
+  // 直接使用基类提供的 this.getAssetPath() 方法
+  // 自动从 import.meta.url 检测微应用的静态资源基础 URL，dev 模式和生产模式都能正确解析
+  render() {
+    const logoUrl = this.getAssetPath('/logo.png');
+    const bgUrl = this.getAssetPath('/images/background.jpg');
+    
+    return html`
+      <div>
+        <img src="${logoUrl}" alt="Logo">
+        <div style="background-image: url('${bgUrl}')"></div>
+      </div>
+    `;
   }
-
-  // 省略部分代码...
 }
 ```
 

@@ -24,7 +24,10 @@ Sun-Panel V2 已全面支持微应用生态，构建开放、高效的插件化�
 | **页面** | 窗口形式，独立页面 | 完整功能的可视化工具或管理界面 |
 
 - **页面组件**：窗口形式，独立页面，可通过页面类型配置为小部件配置页面或首页面
+  ![](https://doc-img.sun-panel.top/microapp-img/picgo-2026-08-e20ed67d77977c544b96d7eab89e95a4.png)
 - **小部件组件**：通过分组工具栏中的「添加小部件」添加，显示在导航页内
+  ![size](https://doc-img.sun-panel.top/microapp-img/picgo-2026-07-6ecd8453d4b11346b6acb0785749d067.png)
+
 
 
 
