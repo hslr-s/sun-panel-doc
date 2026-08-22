@@ -49,3 +49,18 @@ And configure the extension settings properly:
 ![](/images/browser_extension/openapi_setting_cn.png)
 
 When visiting other sites, click the browser extension icon to identify the address, icon, and title of the site you are currently visiting. **Click save to add the site's icon card to the top group of your self-hosted Sun-Panel.** Future versions
+
+
+### Known Issue (Edge Android)
+
+In Edge Android, after installing this extension, clicking the **"+"** button on the right side of the tab bar will still open Edge's built-in default new tab page and will **NOT** be taken over by this extension. You can manually open it by visiting `edge://newtab`.
+
+Currently, clicking the "+" on the right side of the tab bar still invokes Edge's own new tab page. Android extension functionality is not yet fully consistent with the desktop version, so new tab extensions are temporarily unable to fully take over the "+" button behavior like they do on desktop. Microsoft's mobile documentation also explicitly defines "+" as opening Edge's new tab page.
+
+**Temporary Workarounds**:
+- Add `edge://newtab` as a bookmark or quick access and open it manually.
+- Or save your Sun-Panel address as a bookmark and access it directly.
+
+**How to "Protest" to the Edge Team**:
+
+If you would like the Edge team to improve this behavior, go to **"☰" → "Help and feedback"** in Edge Android and state: "I hope new tab extensions can take over the '+' button, consistent with the desktop version."
