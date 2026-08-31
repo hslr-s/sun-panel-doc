@@ -15,8 +15,9 @@
 
 从 `config/app.config.js` 读取配置，自动生成 `app.json` 文件：
 
-- **开发模式**：自动添加 `-dev` 后缀到 `microAppId`
-- **生产模式**：使用原始 `microAppId`
+- **在线运行**（`npm run dev`）：`microAppId` 添加 `-dev` 后缀
+- **测试模式**（`npm run pack:dev` / `npm run pack:test`）：自动添加 `-test` 后缀到 `microAppId`，并自动开启 `debug`
+- **生产模式**（`npm run pack`）：使用原始 `microAppId`，`debug` 透传配置值（由 `config/app.config.js` 控制，正式发布请设置为 `false`）
 
 ### 2. Vite 构建
 
@@ -41,25 +42,30 @@ packages/
 
 | 命令 | 说明 |
 |------|------|
-| `npm run build` | 生产模式构建 |
-| `npm run build:dev` | 开发模式构建 |
-| `npm run pack` | 打包组件包（生产模式） |
-| `npm run pack:dev` | 打包组件包（开发模式） |
+| `npm run pack` | 打包组件包（生产模式，无后缀） |
+| `npm run pack:dev` | 打包组件包（测试模式，`-test` 后缀） |
+| `npm run pack:test` | 打包组件包（测试模式，`-test` 后缀） |
 | `npm run gen` | 生成配置文件（生产模式） |
-| `npm run gen:dev` | 生成配置文件（开发模式） |
+| `npm run gen:test` | 生成配置文件（测试模式） |
 
 
-## 开发/生产环境区分
+## 测试/生产环境区分
 
 ```javascript
-const isDev = import.meta.env.DEV || import.meta.env.MODE === 'development';
-const microAppId = isDev ? `${config.microAppId}-dev` : config.microAppId;
+// 在线运行（npm run dev）→ -dev 后缀
+const isDevServer = import.meta.env.DEV && !import.meta.env.PROD;
+// 打包测试（pack:dev / pack:test）→ -test 后缀
+const isTestBuild = import.meta.env.PROD && import.meta.env.MODE === 'development';
+
+const microAppId = isDevServer ? `${config.microAppId}-dev`
+  : isTestBuild ? `${config.microAppId}-test`
+  : config.microAppId;
 ```
 
 也可以通过配置判断：
 
 ```javascript
-const isDev = MicroAppPackage.appConfig.dev;
+const isDevMode = MicroAppPackage.appConfig.dev;
 ```
 
 

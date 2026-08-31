@@ -54,8 +54,8 @@ npm run dev
 ## 步骤 4：打包发布
 
 ```bash
-npm run build   # 构建生产版本
-npm run pack    # 打包组件包
+npm run pack       # 打包组件包（生产模式）
+npm run pack:test  # 打包测试版本（微应用ID自动加 -test 后缀，debug 自动开启）
 ```
 
 打包产物位于 `packages/` 目录，生成 `.zip` 文件可直接上传到 [Sun-Panel 应用商店](https://appstore.sun-panel.top/)。
@@ -66,9 +66,8 @@ npm run pack    # 打包组件包
 | 命令 | 说明 |
 |------|------|
 | `npm run dev` | 启动开发服务器 |
-| `npm run build` | 生产模式构建 |
-| `npm run pack` | 打包组件包（生产模式） |
-| `npm run pack:dev` | 打包组件包（开发模式） |
+| `npm run pack` | 构建并打包组件包（生产模式） |
+| `npm run pack:test` | 构建并打包组件包（测试模式，微应用ID自动加 `-test` 后缀，debug 自动开启） |
 | `npm run clean` | 清理构建产物 |
 | `npm run update` | 更新官方模板代码 |
 | `npm run update:force` | 强制更新官方模板代码 |
