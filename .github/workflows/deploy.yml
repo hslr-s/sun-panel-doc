@@ -14,15 +14,17 @@ jobs:
       pull-requests: write  # To create a PR from that branch
     steps:
       - name: Checkout code
-        # 更新到v4版本，并正确设置fetch-depth
-        uses: actions/checkout@v4
+        # v5.0.0+ 使用 Node 24 运行时，消除 Node 20 弃用警告
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0  
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        # v5.0.0+ 使用 Node 24 运行时，消除 Node 20 弃用警告
+        uses: actions/setup-node@v6
         with:
-          node-version: 18
+          # Node 18 已停止维护，升级到 LTS 版本 22
+          node-version: 22
 
       - run: npm i pnpm -g
       - run: pnpm install --frozen-lockfile
