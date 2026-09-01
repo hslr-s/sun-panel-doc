@@ -9,6 +9,15 @@ outline: [2,3]
 - 开发板 **底部有开发版说明** 请勿直接应用在公开的正式环境中。
 :::
 
+
+## v2.0.1-dev-3 <Badge type="warning" text="DEV" /> {#v2.0.1-dev-3}
+::: tip
+- 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 
+:::
+#### 修复/优化
+- [修复] 在移动端小部件不能正常显示的问题
+- [优化] v1迁移备份目录
+
 ## v2.0.1-dev-2 <Badge type="warning" text="DEV" /> {#v2.0.1-dev-2}
 ::: tip
 - 微应用开发请拉取最新版本的 [Hello World演示项目](https://github.com/Sun-Panel/microapp-hello-world)。已有项目需要重新 `npm install`。
