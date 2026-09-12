@@ -26,7 +26,7 @@ jobs:
           # Node 18 已停止维护，升级到 LTS 版本 22
           node-version: 22
 
-      - run: npm i pnpm -g
+      - run: npm i pnpm@9 -g
       - run: pnpm install --frozen-lockfile
 
       - name: Build
