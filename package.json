@@ -13,5 +13,11 @@
   "dependencies": {
     "markdown-it-task-lists": "^2.1.1",
     "sweetalert2": "^11.12.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "vue-demi"
+    ]
   }
 }
