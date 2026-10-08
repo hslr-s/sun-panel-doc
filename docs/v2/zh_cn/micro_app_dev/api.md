@@ -76,7 +76,13 @@ console.log('是否为 PRO:', info.isPro);        // true 或 false
 
 ## 定时器 {#timer}
 
-主应用提供的定时器接口，直接调用原生 `setTimeout` / `setInterval`。在微应用场景中，推荐使用此接口代替直接调用 `setTimeout`，以确保定时器运行在主应用的上下文中。
+主应用提供的定时器接口。在微应用场景中，**必须**使用此接口创建定时器，**禁止**直接调用原生 `window.setTimeout` / `window.setInterval`。
+
+> ⚠️ **强制规范（内存泄漏相关）**
+>
+> - 主应用会对通过 `api.timer` 创建的定时器做**生命周期跟踪**：当微应用所在的卡片或窗口（如右键「编辑 / 配置 / 预览」窗口）关闭、组件卸载时，主应用会**强制 `clearTimeout` / `clearInterval` 掉该实例创建的所有定时器**，但是为开发规范，仍需要在组件的生命周期函数`onDisconnected()	`中对已创建的定时器进行销毁。
+> - 若直接调用原生 `window.setInterval` 等，主应用无法获取其句柄，**既无法跟踪、也无法在关闭时回收**，定时器会在后台无限运行。反复打开窗口后大量堆积，即表现为「后台有无数个组件在运行，尤其是用了定时函数时」的内存泄漏。
+> - 结论：**所有定时逻辑一律走 `api.timer`；已使用原生定时器的，请改为 `api.timer`。**
 
 ### timer.setTimeout
 
@@ -546,6 +552,11 @@ await this.spCtx.api.widget.save({
 ## 系统监控 {#systemMonitor}
 
 `此API目前仅限官方微应用可用` 获取服务器系统资源监控数据（CPU、内存、磁盘、网络）。支持两种使用方式：**轮询订阅**和**主动获取**。需要在 [权限配置](/v2/zh_cn/micro_app_dev/permission) 中声明 `systemMonitor` 权限。
+
+> ⚠️ **强制规范（内存泄漏相关）**
+>
+> - 通过 `systemMonitor.register` 创建的订阅会被主应用**生命周期跟踪**：微应用所在卡片 / 窗口关闭、组件卸载时，主应用会**强制 `unregister` 掉所有订阅**，避免后台持续轮询。
+> - 因此轮询监控**必须走 `api.systemMonitor.register`**，并在 `onDisconnected` 中主动 `unregister`；切勿用其他手段自行实现后台轮询（主应用无法回收，会造成内存泄漏）。
 
 ### systemMonitor.register
 

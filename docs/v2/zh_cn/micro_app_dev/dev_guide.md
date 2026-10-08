@@ -289,7 +289,10 @@ export class DemoWidget extends SunPanelWidgetElement {
   }
 
   onDisconnected() {
-    // 清理资源，如定时器
+    // 必须在此清理所有资源，尤其是：
+    // 1. 通过 api.timer 创建的定时器（若未手动 clear，主应用也会在卸载时强制回收，但主动清理更稳妥）
+    // 2. 通过 api.systemMonitor.register 创建的订阅（务必调用 unregister 注销）
+    // 3. 任何通过 window.addEventListener 等原生方式注册的全局监听（主应用无法跟踪，需自行移除）
   }
 
   static styles = css`
@@ -304,7 +307,7 @@ export class DemoWidget extends SunPanelWidgetElement {
 1. **不要在 constructor 中操作 DOM** - 此时 DOM 还不存在
 2. **在 onFirstRendered 中操作 DOM** - 此时 DOM 已渲染完成
 3. **修改属性后调用 requestUpdate()** - 触发重新渲染
-4. **在 onDisconnected 中清理资源** - 防止内存泄漏
+4. **在 onDisconnected 中清理资源** - 防止内存泄漏。定时器与监控订阅**必须走 `api.timer` / `api.systemMonitor`**（主应用可跟踪并在卸载时强制回收）；原生 `setInterval` / `addEventListener` 主应用无法回收，反复打开窗口会后台堆积导致内存泄漏
 5. **调用 super 方法** - 重写生命周期方法时记得调用父类方法
 
 
