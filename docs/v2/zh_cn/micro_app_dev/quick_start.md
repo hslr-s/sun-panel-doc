@@ -1,82 +1,15 @@
-# 快速开始
+---
+title: 页面已迁移
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0;url=/zh_cn/micro_app_dev/quick_start"
+---
 
-本指南将帮助你在 5 分钟内跑通 Hello World 微应用。
+# 页面已迁移
 
-::: tip 前置要求
-- 电脑上需要安装 Node.js >= 18.20
-- 微应用项目必须基于 [Hello World](https://github.com/Sun-Panel/microapp-hello-world) 作为底层模板开发
-:::
+本页面（微应用开发 - 快速开始）已迁移至新位置：
 
+👉 [快速开始](/zh_cn/micro_app_dev/quick_start)
 
-## 步骤 1：克隆项目
-
-**方式1（推荐）**. 在您的 GitHub 仓库中基于官方模版,
-[**「快速创建一个微应用项目」**](https://github.com/new?template_name=microapp-hello-world&template_owner=Sun-Panel)，
-然后拉取下来快速开发微应用。
-
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-```
-
-**方式2**. 从 GitHub 克隆项目模板：
-
-```bash
-# 最简单的案例，开发请基于此模板
-git clone https://github.com/Sun-Panel/microapp-hello-world.git
-cd microapp-hello-world
-
-# 最完整的功能案例及所有代码示例 适用于学习、查阅相关功能代码
-git clone https://github.com/Sun-Panel/All-In-One-demo.git
-cd All-In-One-demo
-```
-
-
-
-
-
-## 步骤 2：安装依赖 {#bundle_install}
-
-```bash
-npm install
-```
-
-
-## 步骤 3：启动开发服务器 {#start_dev_server}
-
-```bash
-npm run dev
-```
-
-启动成功后，会自动打开一个网页，按照提示复制入口文件地址，在 Sun-Panel 中导入，即预览微应用。
-
-
-## 步骤 4：打包发布
-
-```bash
-npm run pack       # 打包组件包（生产模式）
-npm run pack:test  # 打包测试版本（微应用ID自动加 -test 后缀，debug 自动开启）
-```
-
-打包产物位于 `packages/` 目录，生成 `.zip` 文件可直接上传到 [Sun-Panel 应用商店](https://appstore.sun-panel.top/)。
-
-
-## 常用开发命令一览
-
-| 命令 | 说明 |
-|------|------|
-| `npm run dev` | 启动开发服务器 |
-| `npm run pack` | 构建并打包组件包（生产模式） |
-| `npm run pack:test` | 构建并打包组件包（测试模式，微应用ID自动加 `-test` 后缀，debug 自动开启） |
-| `npm run clean` | 清理构建产物 |
-| `npm run update` | 更新官方模板代码 |
-| `npm run update:force` | 强制更新官方模板代码 |
-
-更多命令请查看 [Hello World 官方模版](https://github.com/Sun-Panel/microapp-hello-world) 下的 [package.json](https://github.com/Sun-Panel/microapp-hello-world/blob/main/package.json) 
-
-
-## 下一步
-
-- [项目结构](./project_structure) - 了解目录和文件
-- [配置说明](./config) - 修改应用信息
-- [组件开发](./dev_guide) - 开发你的第一个组件
+如果浏览器未自动跳转，请点击上面的链接。
