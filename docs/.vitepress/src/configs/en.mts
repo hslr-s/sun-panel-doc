@@ -6,6 +6,8 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
 
     sidebar: {
       '/': sidebarRoot(),
+      '/v2/': sidebarV2(),
+      '/micro_app_dev/': sidebarMicroAppDev(),
       '/openapi/': sidebarOpenapi(),
     },
 
@@ -33,6 +35,7 @@ export function getEnglishThemeConfig(): DefaultTheme.Config {
 function nav(): DefaultTheme.NavItem[] {
   return [
     { text: 'Deploy', link: '/usage/quick_deploy' },
+    { text: '<span class="micro-app-nav-gradient">Micro App Development</span>', link: '/micro_app_dev/' },
     { text: 'FAQ', link: '/faq/faq.html' },
     { text: 'OpenAPI', link: '/openapi/v1/' },
     { text: 'Release Notes', link: 'https://github.com/hslr-s/sun-panel/releases' },
@@ -51,6 +54,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: 'Project Introduction', link: '/introduce/project' },
+        { text: 'Project Introduction (v2.0)<span class="VPBadge danger small">new</span>', link: '/introduce/project_v2' },
         { text: 'Demo Site', link: '/introduce/demo_site' },
         { text: 'Author & Community', link: '/introduce/author_groups' },
         { text: 'Donate☕', link: '/introduce/donate' },
@@ -147,6 +151,42 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
   ]
 }
 
+
+function sidebarV2(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'Sun-Panel V2',
+      collapsed: false,
+      items: [
+        { text: 'V2 Overview', link: '/v2/' },
+        { text: 'Changelog', link: '/v2/update_log' },
+        { text: 'Micro App Store', link: '/v2/micro_app_store' },
+      ]
+    },
+  ]
+}
+
+function sidebarMicroAppDev(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'Micro App Development',
+      collapsed: false,
+      items: [
+        { text: 'Introduction', link: '/micro_app_dev/index' },
+        { text: 'Quick Start', link: '/micro_app_dev/quick_start' },
+        { text: 'Project Structure', link: '/micro_app_dev/project_structure' },
+        { text: 'Configuration', link: '/micro_app_dev/config' },
+        { text: 'Component Development', link: '/micro_app_dev/dev_guide' },
+        { text: 'Platform API', link: '/micro_app_dev/api' },
+        { text: 'Data Nodes', link: '/micro_app_dev/data_node' },
+        { text: 'Internationalization', link: '/micro_app_dev/i18n' },
+        { text: 'Permission Declaration', link: '/micro_app_dev/permission' },
+        { text: 'Build & Publish', link: '/micro_app_dev/publish' },
+        { text: 'Template Upgrade', link: '/micro_app_dev/upgrade_template' },
+      ]
+    },
+  ]
+}
 
 function sidebarOpenapi(): DefaultTheme.SidebarItem[] {
   // return []

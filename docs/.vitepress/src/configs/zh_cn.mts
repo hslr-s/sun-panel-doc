@@ -19,7 +19,8 @@ export function getChineseThemeConfig(): DefaultTheme.Config {
       '/zh_cn/openapi/': sidebarOpenapi(),
 
       // v2
-      '/v2/zh_cn': sidebarRootV2(),
+      '/zh_cn/v2/': sidebarRootV2(),
+      '/zh_cn/micro_app_dev/': sidebarMicroAppDev(),
     },
 
     socialLinks: [
@@ -66,6 +67,10 @@ export function getChineseThemeConfig(): DefaultTheme.Config {
 function nav(): DefaultTheme.NavItem[] {
   return [
     { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
+    {
+      text: '<span class="micro-app-nav-gradient">微应用开发</span>',
+      link: '/zh_cn/micro_app_dev/'
+    },
     { text: '常见问题', link: '/zh_cn/faq/faq.html' },
     { text: 'OpenAPI', link: '/zh_cn/openapi/v1/' },
     { text: '更新日志', link: '/zh_cn/update/update_log' },
@@ -74,10 +79,6 @@ function nav(): DefaultTheme.NavItem[] {
       link: '//pro.sun-panel.top'
     },
     { text: '社区', link: 'https://github.com/hslr-s/sun-panel/discussions' },
-    {
-      text: 'V2 开发版',
-      link: '/v2/zh_cn/index'
-    },
   ]
 }
 
@@ -88,6 +89,7 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       collapsed: false,
       items: [
         { text: '项目介绍', link: '/zh_cn/introduce/project' },
+        { text: '项目介绍（v2.0）<span class="VPBadge danger small">new</span>', link: '/zh_cn/introduce/project_v2' },
         { text: '演示站点', link: '/zh_cn/introduce/demo_site' },
         { text: '作者&交流群&社区', link: '/zh_cn/introduce/author_groups' },
         { text: '打赏🧧', link: '/zh_cn/introduce/donate' },
@@ -193,44 +195,33 @@ function sidebarRootV2(): DefaultTheme.SidebarItem[] {
       text: 'V2开发版',
       collapsed: false,
       items: [
-        { text: '介绍', link: '/v2/zh_cn/index' },
-        { text: 'v2 更新日志', link: '/v2/zh_cn/update_log' },
-        { text: '微应用下载', link: '/v2/zh_cn/micro_app_store' },
-        // { text: '演示站点', link: '/zh_cn/introduce/demo_site' },
-        // { text: '作者&交流群&社区', link: '/zh_cn/introduce/author_groups' },
-        // { text: '打赏🧧', link: '/zh_cn/introduce/donate' },
-
+        { text: '介绍', link: '/zh_cn/v2/index' },
+        { text: 'v2 更新日志', link: '/zh_cn/v2/update_log' },
+        { text: '微应用下载', link: '/zh_cn/v2/micro_app_store' },
       ]
     },
+  ]
+}
 
+function sidebarMicroAppDev(): DefaultTheme.SidebarItem[] {
+  return [
     {
       text: '微应用开发',
       collapsed: false,
       items: [
-        { text: '介绍', link: '/v2/zh_cn/micro_app_dev/index' },
-        { text: '快速开始', link: '/v2/zh_cn/micro_app_dev/quick_start' },
-        { text: '模板升级', link: '/v2/zh_cn/micro_app_dev/upgrade_template' },
-        { text: '项目结构', link: '/v2/zh_cn/micro_app_dev/project_structure' },
-        { text: '配置说明', link: '/v2/zh_cn/micro_app_dev/config' },
-        { text: '组件开发', link: '/v2/zh_cn/micro_app_dev/dev_guide' },
-        { text: '国际化', link: '/v2/zh_cn/micro_app_dev/i18n' },
-        { text: '平台 API', link: '/v2/zh_cn/micro_app_dev/api' },
-        { text: '数据节点', link: '/v2/zh_cn/micro_app_dev/data_node' },
-        { text: '权限声明', link: '/v2/zh_cn/micro_app_dev/permission' },
-        { text: '打包发布', link: '/v2/zh_cn/micro_app_dev/publish' },
+        { text: '介绍', link: '/zh_cn/micro_app_dev/index' },
+        { text: '快速开始', link: '/zh_cn/micro_app_dev/quick_start' },
+        { text: '模板升级', link: '/zh_cn/micro_app_dev/upgrade_template' },
+        { text: '项目结构', link: '/zh_cn/micro_app_dev/project_structure' },
+        { text: '配置说明', link: '/zh_cn/micro_app_dev/config' },
+        { text: '组件开发', link: '/zh_cn/micro_app_dev/dev_guide' },
+        { text: '国际化', link: '/zh_cn/micro_app_dev/i18n' },
+        { text: '平台 API', link: '/zh_cn/micro_app_dev/api' },
+        { text: '数据节点', link: '/zh_cn/micro_app_dev/data_node' },
+        { text: '权限声明', link: '/zh_cn/micro_app_dev/permission' },
+        { text: '打包发布', link: '/zh_cn/micro_app_dev/publish' },
       ]
     },
-
-
-
-
-
-
-
-
-
-
-
   ]
 }
 
