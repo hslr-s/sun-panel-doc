@@ -68,7 +68,7 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     { text: '快速部署', link: '/zh_cn/usage/quick_deploy' },
     {
-      text: '<span class="micro-app-nav-gradient">微应用开发</span>',
+      text: '微应用开发 <span class="VPBadge danger small">new</span>',
       link: '/zh_cn/micro_app_dev/'
     },
     { text: '常见问题', link: '/zh_cn/faq/faq.html' },
