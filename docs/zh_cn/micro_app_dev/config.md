@@ -25,7 +25,7 @@ outline: [2,3]
 
 ### 应用信息 (appInfo) {#app_info}
 
-应用的基本信息，如果要支持多语言，参数支持[国际化](/v2/zh_cn/micro_app_dev/i18n)，如 `$t:APP_NAME`。
+应用的基本信息，如果要支持多语言，参数支持[国际化](/zh_cn/micro_app_dev/i18n)，如 `$t:APP_NAME`。
 
 #### 参数：
 | 参数 | 类型 | 必填 | 说明 |

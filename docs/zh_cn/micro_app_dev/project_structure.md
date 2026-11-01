@@ -38,12 +38,12 @@ microapp-hello-world/
 
 
 ### config/app.config.js
-参考[应用配置](/v2/zh_cn/micro_app_dev/config.html#app_config)
+参考[应用配置](/zh_cn/micro_app_dev/config.html#app_config)
 
 
 ### config/components.config.js
 
-参考[组件配置](/v2/zh_cn/micro_app_dev/config.html#components_config)
+参考[组件配置](/zh_cn/micro_app_dev/config.html#components_config)
 
 
 ### src/components/widget.js

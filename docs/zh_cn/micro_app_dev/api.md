@@ -1,0 +1,936 @@
+---
+outline: [2,4]
+---
+
+# 平台 API
+
+微应用通过 `this.spCtx.api` 调用平台提供的各种能力。部分 API 是异步的（返回 Promise），部分 API 是同步的（直接返回值）。
+
+::: tip IDE 类型提示
+安装 `@sun-panel/micro-app` SDK 后，在 IDE 中输入 `this.spCtx.api.` 时会自动弹出类型提示和代码补全。
+:::
+
+
+## 窗口管理
+
+### window.open
+
+打开一个新窗口。
+
+```typescript
+open(options: OpenWindowOptions): string
+```
+
+**参数：**
+
+- `options`: 窗口配置参数，类型为 [`OpenWindowOptions`](#openwindowoptions)
+
+| 属性 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `componentName` | string | ✅ | 组件名称（组件配置下 pages 的 key 名） |
+| `windowConfig` | [WindowConfig](#windowconfig) | - | 窗口配置，不填使用 [默认配置](/zh_cn/micro_app_dev/config.html#page_config_param) |
+| `customParam` | any | - | 自定义参数 |
+| `title` | string | - | 窗口标题 |
+
+**返回值：** 窗口 ID（string 类型）
+
+**示例：**
+
+```typescript
+const windowId = this.spCtx.api.window.open({
+  componentName: 'my-component',
+  title: '天气详情',
+  windowConfig: {
+    width: 800,
+    height: 600,
+    isFullScreen: false
+  },
+  customParam: { cityId: 1001 }
+});
+```
+
+
+## 主应用信息 {#mainAppInfo}
+
+获取主应用的基本信息，如版本号、PRO 状态等。后期可能扩展更多字段（如当前用户账号等）。
+
+### mainAppInfo.get
+
+获取主应用基本信息。
+
+```typescript
+get(): Promise<MainAppInfo>
+```
+
+**返回值：** [`MainAppInfo`](#mainappinfo) 对象
+
+**示例：**
+
+```typescript
+const info = await this.spCtx.api.mainAppInfo.get();
+console.log('主应用版本:', info.version);      // 例如: "1.1.0"
+console.log('是否为 PRO:', info.isPro);        // true 或 false
+```
+
+
+
+## 定时器 {#timer}
+
+主应用提供的定时器接口。在微应用场景中，**必须**使用此接口创建定时器，**禁止**直接调用原生 `window.setTimeout` / `window.setInterval`。
+
+> ⚠️ **强制规范（内存泄漏相关）**
+>
+> - 主应用会对通过 `api.timer` 创建的定时器做**生命周期跟踪**：当微应用所在的卡片或窗口（如右键「编辑 / 配置 / 预览」窗口）关闭、组件卸载时，主应用会**强制 `clearTimeout` / `clearInterval` 掉该实例创建的所有定时器**，但是为开发规范，仍需要在组件的生命周期函数`onDisconnected()	`中对已创建的定时器进行销毁。
+> - 若直接调用原生 `window.setInterval` 等，主应用无法获取其句柄，**既无法跟踪、也无法在关闭时回收**，定时器会在后台无限运行。反复打开窗口后大量堆积，即表现为「后台有无数个组件在运行，尤其是用了定时函数时」的内存泄漏。
+> - 结论：**所有定时逻辑一律走 `api.timer`；已使用原生定时器的，请改为 `api.timer`。**
+
+### timer.setTimeout
+
+创建一个定时器，在指定延迟后执行回调函数。
+
+```typescript
+setTimeout(handler: TimerHandler, timeout?: number, ...args: any[]): number
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `handler` | TimerHandler | ✅ | 定时器到期时执行的函数 |
+| `timeout` | number | - | 延迟时间（毫秒），默认 0 |
+| `...args` | any[] | - | 传递给回调函数的附加参数 |
+
+**返回值：** 定时器 ID（number），用于 `clearTimeout`
+
+**示例：**
+
+```typescript
+const timerId = this.spCtx.api.timer.setTimeout(() => {
+  console.log('2 秒后执行');
+}, 2000);
+
+// 取消定时器
+this.spCtx.api.timer.clearTimeout(timerId);
+```
+
+### timer.setInterval
+
+创建一个定时器，每隔指定时间重复执行回调函数。
+
+```typescript
+setInterval(handler: TimerHandler, timeout?: number, ...args: any[]): number
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `handler` | TimerHandler | ✅ | 每次定时器到期时执行的函数 |
+| `timeout` | number | - | 间隔时间（毫秒），默认 0 |
+| `...args` | any[] | - | 传递给回调函数的附加参数 |
+
+**返回值：** 定时器 ID（number），用于 `clearInterval`
+
+**示例：**
+
+```typescript
+const intervalId = this.spCtx.api.timer.setInterval(() => {
+  console.log('每 5 秒轮询一次');
+}, 5000);
+
+// 停止轮询
+this.spCtx.api.timer.clearInterval(intervalId);
+```
+
+### timer.clearTimeout
+
+取消由 `setTimeout` 创建的定时器。
+
+```typescript
+this.spCtx.api.timer.clearTimeout(id: number): void
+```
+
+### timer.clearInterval
+
+取消由 `setInterval` 创建的定时器。
+
+```typescript
+this.spCtx.api.timer.clearInterval(id: number): void
+```
+
+
+
+## 本地缓存
+
+基于 IndexedDB，提供用户级和应用级的缓存功能。
+
+### 用户级缓存 (localCache.user)
+
+#### localCache.user.get
+
+获取用户缓存值。
+
+```typescript
+get(key: string): Promise<any>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `key` | string | ✅ | 缓存键 |
+
+**示例：**
+
+```typescript
+const value = await this.spCtx.api.localCache.user.get('userInfo');
+```
+
+#### localCache.user.set
+
+设置用户缓存值。
+
+```typescript
+set(key: string, value: any, expireSeconds?: number): Promise<void>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `key` | string | ✅ | 缓存键 |
+| `value` | any | ✅ | 缓存值 |
+| `expireSeconds` | number | - | 过期时间（秒），0 表示不过期 |
+
+**示例：**
+
+```typescript
+await this.spCtx.api.localCache.user.set('userInfo', { name: '张三' }, 3600);
+```
+
+#### localCache.user.del
+
+删除用户缓存。
+
+```typescript
+del(key: string): Promise<void>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `key` | string | ✅ | 缓存键 |
+
+**示例：**
+
+```typescript
+await this.spCtx.api.localCache.user.del('userInfo');
+```
+
+#### localCache.user.clear
+
+清空所有用户缓存。
+
+```typescript
+clear(): Promise<void>
+```
+
+**示例：**
+
+```typescript
+await this.spCtx.api.localCache.user.clear();
+```
+
+#### localCache.user.getKeys
+
+获取所有用户缓存的键。
+
+```typescript
+getKeys(): Promise<string[]>
+```
+
+**返回值：** 缓存键数组
+
+**示例：**
+
+```typescript
+const keys = await this.spCtx.api.localCache.user.getKeys();
+```
+
+### 应用级缓存 (localCache.app)
+
+应用级缓存提供与用户级缓存相同的接口，但数据范围为应用级别，所有用户共享。
+
+接口方法与 `localCache.user` 完全一致，调用时将 `localCache.user` 改为 `localCache.app`。
+
+**示例：**
+
+```typescript
+await this.spCtx.api.localCache.app.set('appConfig', { theme: 'dark' });
+const config = await this.spCtx.api.localCache.app.get('appConfig');
+```
+
+
+
+## 数据节点 {#dataNode}
+
+提供用户级和应用级的数据节点管理功能。详细的权限说明请参阅 [数据节点](./data_node)，本文档仅说明API的使用方法。需要在 [权限配置](/zh_cn/micro_app_dev/permission) 中声明 `dataNode` 权限。
+
+### 用户数据节点 (dataNode.user)
+
+#### dataNode.user.getByKey
+
+根据键获取用户数据节点中 `指定key` 的数据。
+
+```typescript
+getByKey<T = any>(node: string, key: string): Promise<T>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `node` | string | ✅ | 节点名称 |
+| `key` | string | ✅ | 数据键 |
+
+**示例：**
+
+```javascript
+try {
+  const theme = await this.spCtx.api.dataNode.user.getByKey('preferences', 'theme');
+  console.log(theme) // "dark"
+} catch (e) {
+  console.error(e.message);
+}
+```
+
+#### dataNode.user.getByKeys
+
+根据多个键获取用户数据节点中 `填入所有的key` 的数据。
+
+```typescript
+getByKeys<T = Record<string, any>>(node: string, keys: string[]): Promise<T>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `node` | string | ✅ | 节点名称 |
+| `keys` | string[] | ✅ | 数据键数组 |
+
+**示例：**
+
+```javascript
+try {
+  const config = await this.spCtx.api.dataNode.user.getByKeys('config', ['token', 'location']);
+  console.log(config)
+  // 示例打印内容：
+  // {
+  //   "location": {
+  //     "city": "北京"
+  //   },
+  //   "token": 12345678
+  // }
+} catch (e) {
+  console.error('批量获取失败: ' , e.message);
+}
+
+```
+
+#### dataNode.user.setByKey
+
+在用户数据节点中设置数据。
+
+```typescript
+setByKey(node: string, key: string, value: any): Promise<void>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `node` | string | ✅ | 节点名称 |
+| `key` | string | ✅ | 数据键 |
+| `value` | any | ✅ | 数据值 |
+
+**示例：**
+
+```javascript
+await this.spCtx.api.dataNode.user.setByKey('preferences', 'theme', { mode: 'dark' });
+```
+
+#### dataNode.user.setByKeys
+
+批量设置用户数据节点中的数据。
+
+```typescript
+setByKeys(node: string, items: Record<string, any>): Promise<void>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `node` | string | ✅ | 节点名称 |
+| `items` | Record<string, any> | ✅ | 数据键值对对象，键为数据键，值为对应数据 |
+
+**示例：**
+
+```javascript
+await this.spCtx.api.dataNode.user.setByKeys('config', {
+  token: 'abc123',
+  location: { city: '北京' }
+});
+```
+
+#### dataNode.user.delByKey
+
+删除用户数据节点中的数据。
+
+```typescript
+delByKey(node: string, key: string): Promise<void>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `node` | string | ✅ | 节点名称 |
+| `key` | string | ✅ | 数据键 |
+
+**示例：**
+
+```javascript
+await this.spCtx.api.dataNode.user.delByKey('preferences', 'theme');
+```
+
+### 应用数据节点 (dataNode.app)
+
+应用级数据节点提供与用户级数据节点相同的接口，但数据范围为应用级别，所有用户共享。接口方法与 `dataNode.user` 完全一致，调用时将 `dataNode.user` 改为 `dataNode.app`。
+
+
+### 错误处理
+错误需要使用 `try{...}catch{...}` 进行捕获，所有的数据节点API都支持，错误类型参考：[`SpDataNodeError`](#spdatanodeerror)
+
+示例：
+```javascript
+try {
+  const exampleData = {
+    token: 'abc123',
+    location: { city: '北京' }
+  };
+  await this.spCtx.api.dataNode.user.setByKeys("userConfig", exampleData);
+  // this._showMessage('批量储存示例数据成功');
+} catch (e) {
+  console.error(e.code); // 错误代码 
+  // this._showMessage('批量储存失败: ' + e.message, true);
+}
+```
+
+## 网络透传 {#network}
+
+发送网络请求，支持模板变量替换（用于安全地传递敏感信息）。需要在 [权限配置](/zh_cn/micro_app_dev/permission) 中声明 `network` 权限。
+
+### network.request
+
+```typescript
+request<T = any>(options: RequestOptions): Promise<T>
+```
+
+**参数：**
+
+- `options`: 请求参数对象，类型为 `RequestOptions`
+
+| 属性 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `request` | [RequestParams](#requestparams) | ✅ | 请求参数对象 |
+| `templateReplacements` | [TemplateReplacementRule](#templatereplacementrule)[] | - | 数据节点模板替换规则（替换敏感数据） |
+| `cookieDataNodeKey` | string | - | Cookie 数据节点键，格式 `"nodeName.key"`，详见下方说明 |
+
+::: warning 旧版(v2.0.0-dev-6及之前版本)兼容说明
+旧版参数 `targetUrl`、`method`、`headers`、`body` 已移入 `request` 属性，虽做了兼容处理，但新开发请直接使用 `request` 传值。
+:::
+{#cookie_manage}
+::: tip Cookie 自动管理 
+因安全考虑和受浏览器限制，可设置 `cookieDataNodeKey` 用于自动管理第三方站点的 Cookie，每个请求接口/域名单独分配一个数据节点的key来储存不同站点的cookie
+- 配置后会自动保存目标站点设置的 Cookie 到指定数据节点
+- 后续请求会自动携带保存的 Cookie
+- 可通过 [数据节点 API](#dataNode) 读取或修改
+- **注意：不管理过期时间、路径等，仅储存和传递**
+
+命名建议：以域名为基础，并添加 `cookie` 后缀，如 `exampleComCookie`，最终： `config.exampleComCookie`
+
+
+::: details  cookie 数据节点键的内容
+使用标准api调用
+`this.spCtx.api.dataNode.user.getByKey('config','example_com_cookie')`
+
+打印内容：
+```json
+{
+  // 之后请求读取此参数传递给请求站
+  "cookies": "debug_session=session_88881; debug_token=test123456", 
+  "meta": {
+    "debug_session": {
+      "path": "/"
+    },
+    "debug_token": {
+      "httpOnly": true,
+      "path": "/"
+    }
+  },
+  "updatedAt": "2026-03-01T11:16:32+08:00"
+}
+```
+:::
+
+**示例：**
+
+```typescript
+const response = await this.spCtx.api.network.request({
+  // 实际请求参数
+  request: {
+    targetUrl: 'https://{{domain}}/api/data',
+    method: 'GET',
+    headers: {
+      "Authorization": "Bearer {{token}}"
+    }
+  },
+
+  // 模版参数替换
+  templateReplacements: [
+    {
+      placeholder: '{{token}}',
+      fields: ['headers'],
+      dataNodeKey: 'config.token'
+    },
+    {
+      placeholder: '{{domain}}',
+      fields: ['targetUrl'],
+      dataNodeKey: 'config.domain'
+    }
+  ],
+
+  // 用于储存和读取本站cookie的数据节点键名
+  // 命名建议:以域名作为内容（需自行将域名中的.改为下划线），cookie作为后缀
+  cookieDataNodeKey:'config.example_com_cookie' 
+});
+```
+
+错误处理：
+
+```typescript
+try {
+  const response = await this.spCtx.api.network.request(options);
+  console.log(response);
+} catch (error) {
+  switch (error.type) {
+    case 'microApp':
+      // 微应用错误（权限不足等）
+      break;
+    case 'targetUrl':
+      // 目标站点返回的错误
+      break;
+    default:
+      console.error(error);
+  }
+}
+```
+
+
+
+## 小部件管理
+
+### widget.save
+
+保存小部件配置信息。
+
+```typescript
+save<T = any>(data: WidgetInfo): Promise<T>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `data` | [WidgetInfo](#widgetinfo) | ✅ | 小部件信息对象 |
+
+**示例：**
+
+```javascript
+await this.spCtx.api.widget.save({
+  ...this.spCtx.widgetInfo,
+  config: {
+    showLogo: this.showLogo,
+    customText: this.customText
+  },
+});
+```
+
+
+
+## 系统监控 {#systemMonitor}
+
+`此API目前仅限官方微应用可用` 获取服务器系统资源监控数据（CPU、内存、磁盘、网络）。支持两种使用方式：**轮询订阅**和**主动获取**。需要在 [权限配置](/zh_cn/micro_app_dev/permission) 中声明 `systemMonitor` 权限。
+
+> ⚠️ **强制规范（内存泄漏相关）**
+>
+> - 通过 `systemMonitor.register` 创建的订阅会被主应用**生命周期跟踪**：微应用所在卡片 / 窗口关闭、组件卸载时，主应用会**强制 `unregister` 掉所有订阅**，避免后台持续轮询。
+> - 因此轮询监控**必须走 `api.systemMonitor.register`**，并在 `onDisconnected` 中主动 `unregister`；切勿用其他手段自行实现后台轮询（主应用无法回收，会造成内存泄漏）。
+
+### systemMonitor.register
+
+注册监控数据订阅，系统会按照指定间隔自动获取数据并通过回调函数返回。
+
+```typescript
+register(config: MonitorRegistrationConfig): string
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `config` | [MonitorRegistrationConfig](#monitorregistrationconfig) | ✅ | 注册配置 |
+
+**返回值：** 订阅 ID（string），用于后续取消订阅。
+
+**示例：**
+
+```javascript
+// 注册监控，每 5 秒获取一次，同时监控 CPU、内存、磁盘、网络
+const subscriptionId = this.spCtx.api.systemMonitor.register({
+  types: ['cpu', 'memory', 'disk', 'network'],
+  interval: 5000,
+  diskPaths: ['/'],  // 磁盘监控需要指定挂载路径数组
+  callback: (data) => {
+    // CPU 信息
+    if (data.cpu) {
+      console.log('CPU 使用率:', data.cpu.usages);
+    }
+    // 内存信息
+    if (data.memory) {
+      console.log('内存使用率:', data.memory.usedPercent + '%');
+    }
+    // 磁盘信息（可能有多个分区）
+    if (data.disk) {
+      data.disk.forEach(disk => {
+        console.log(`磁盘 ${disk.mountpoint}: ${disk.usedPercent.toFixed(1)}%`);
+      });
+    }
+    // 网络信息（可能有多个接口）
+    if (data.network) {
+      data.network.forEach(net => {
+        console.log(`网络 ${net.name}: 发送 ${net.bytesSent}, 接收 ${net.bytesRecv}`);
+      });
+    }
+  }
+});
+```
+
+### systemMonitor.unregister
+
+取消监控数据订阅。
+
+```typescript
+unregister(id: string): void
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `id` | string | ✅ | 订阅 ID（register 返回的值） |
+
+**示例：**
+
+```javascript
+// 取消订阅
+this.spCtx.api.systemMonitor.unregister(subscriptionId);
+```
+
+### systemMonitor.fetchData
+
+主动获取指定类型的监控数据（一次性请求，不创建订阅）。
+
+```typescript
+fetchData(config: { types?: MonitorType[], type?: MonitorType, diskPaths?: string[] }): Promise<MonitorDataResp | null>
+```
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `config.types` | [MonitorType](#monitortype)[] | - | 监控类型数组 |
+| `config.type` | [MonitorType](#monitortype) | - | 单个监控类型（与 types 二选一） |
+| `config.diskPaths` | string[] | - | 磁盘挂载路径数组（仅查询 disk 类型时需要） |
+
+**返回值：** [`MonitorDataResp`](#monitordataresp) 或 `null`
+
+**示例：**
+
+```javascript
+// 主动获取 CPU 和网络数据
+const data = await this.spCtx.api.systemMonitor.fetchData({
+  types: ['cpu', 'network']
+});
+
+if (data) {
+  console.log('CPU:', data.cpu);
+  console.log('网络:', data.network);
+}
+
+// 获取磁盘数据（需要指定挂载路径数组）
+const diskData = await this.spCtx.api.systemMonitor.fetchData({
+  type: 'disk',
+  diskPaths: ['/']
+});
+
+if (diskData && diskData.disk) {
+  diskData.disk.forEach(disk => {
+    console.log(`磁盘 ${disk.mountpoint}:`);
+    console.log(`  总容量: ${(disk.total / 1024 / 1024 / 1024).toFixed(2)} GB`);
+    console.log(`  已使用: ${(disk.used / 1024 / 1024 / 1024).toFixed(2)} GB`);
+    console.log(`  使用率: ${disk.usedPercent.toFixed(1)}%`);
+  });
+}
+
+// 通过订阅方式监控磁盘（每 10 秒更新）
+const diskSubId = this.spCtx.api.systemMonitor.register({
+  types: ['disk'],
+  interval: 10000,
+  diskPaths: ['/'],
+  callback: (data) => {
+    if (data.disk) {
+      data.disk.forEach(disk => {
+        console.log(`[${disk.mountpoint}] 使用率: ${disk.usedPercent.toFixed(1)}%`);
+      });
+    }
+  }
+});
+
+// 同时监控多个磁盘分区
+const multiDiskSubId = this.spCtx.api.systemMonitor.register({
+  types: ['disk'],
+  interval: 5000,
+  diskPaths: ['/', '/home', '/data'],  // 监控多个挂载点
+  callback: (data) => {
+    if (data.disk) {
+      data.disk.forEach(disk => {
+        console.log(`磁盘 ${disk.mountpoint}: ${disk.usedPercent.toFixed(1)}%`);
+      });
+    }
+  }
+});
+```
+
+### systemMonitor.getSystemInfo
+
+获取系统基础信息（主机名、操作系统、架构、运行时长、系统负载）。此接口为一次性获取，不创建订阅。
+
+```typescript
+getSystemInfo(): Promise<SystemInfo | null>
+```
+
+**返回值：** [`SystemInfo`](#systeminfo) 或 `null`
+
+**示例：**
+
+```javascript
+// 获取系统信息
+const sysInfo = await this.spCtx.api.systemMonitor.getSystemInfo();
+
+if (sysInfo) {
+  console.log('主机名:', sysInfo.hostname);
+  console.log('操作系统:', sysInfo.os);
+  console.log('平台:', sysInfo.platform, sysInfo.platformVer);
+  console.log('架构:', sysInfo.arch);
+  console.log('运行时长:', Math.floor(sysInfo.uptime / 86400), '天');
+  console.log('系统负载:', sysInfo.load1, sysInfo.load5, sysInfo.load15);
+}
+```
+
+
+
+## 数据类型
+
+> 以下类型定义均来自 `@sun-panel/micro-app` SDK，可在 IDE 中自动补全。
+
+### MainAppInfo {#mainappinfo}
+
+主应用基本信息。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `version` | string | 主应用版本号（后端版本） |
+| `isPro` | boolean | 主应用是否为 PRO 状态 |
+
+### WindowConfig {#windowConfig}
+
+窗口配置选项。
+
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `width` | number \| string | `800` | 窗口宽度，数字时单位为 `px` |
+| `height` | number \| string | `600` | 窗口高度，数字时单位为 `px` |
+| `background` | string | [页面配置的 background](/zh_cn/micro_app_dev/config.html#page_config_param) | 背景颜色 |
+| `backgroundDark` | string | [页面配置的 backgroundDark](/zh_cn/micro_app_dev/config.html#page_config_param) | 暗色模式下的背景颜色 |
+| `headerTextColor` | string | [页面配置的 headerTextColor](/zh_cn/micro_app_dev/config.html#page_config_param) | 标题栏文字颜色 |
+| `headerTextColorDark` | string | [页面配置的 headerTextColorDark](/zh_cn/micro_app_dev/config.html#page_config_param) | 暗色模式下的标题栏文字颜色 |
+| `showFullscreenBtn` | boolean | `false` | 是否显示全屏按钮 |
+| `resize` | boolean | `false` | 是否允许调整窗口大小 |
+| `move` | boolean | `false` | 是否允许移动窗口 |
+
+### OpenWindowOptions
+
+打开窗口的参数。
+
+| 属性 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `componentName` | string | ✅ | 组件名称 |
+| `windowConfig` | [WindowConfig](#windowConfig) | - | 窗口配置 |
+| `customParam` | any | - | 自定义参数 |
+| `title` | string | - | 窗口标题 |
+
+### RequestParams {#requestparams}
+
+请求参数对象。
+
+| 属性 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `targetUrl` | string | ✅ | 目标 URL，支持模板变量 |
+| `method` | string | - | 请求方法，默认 GET |
+| `headers` | object | - | 请求头 |
+| `body` | string | - | 请求体，如果传对象请 `JSON.stringify(xxx)` 转换为字符串 |
+
+### TemplateReplacementRule
+
+模板替换规则，用于将占位符替换为数据节点中的数据，避免敏感数据泄漏在前端。
+
+| 属性 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `placeholder` | string | ✅ | 要替换的占位符，如 <code v-pre>{{token}}</code> |
+| `fields` | string[] | ✅ | 替换参数的目标字段，可选：`targetUrl`、`method`、`headers`、`body` |
+| `dataNodeKey` | string | ✅ | 数据节点键，如 `"config.token"` |
+::: warning 旧版(v2.0.0-dev-6及之前版本)兼容说明
+旧版参数 `dataNode` 已删除，虽做了兼容处理，但新开发请直接使用 `dataNodeKey`。
+:::
+
+
+### WidgetInfo
+
+小部件信息对象。
+
+| 属性 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `widgetId` | string | ✅ | 小部件 ID |
+| `config` | Record<string, any> | ✅ | 小部件配置对象，自定义配置数据，不可填写敏感数据，敏感数据可以储存在数据节点。 |
+| `background` | string | - | 卡片背景颜色，为空跟随系统默认颜色 |
+| `gridSize` | string | - | 卡片网格尺寸，此项微应用只可读取不可设置 |
+| `title` | string | - | 卡片底部标题，只读不可设置 |
+
+### MonitorType {#monitortype}
+
+监控数据类型。
+
+| 值 | 说明 |
+|------|------|
+| `'cpu'` | CPU 使用率 |
+| `'memory'` | 内存使用情况 |
+| `'disk'` | 磁盘使用情况 |
+| `'network'` | 网络流量统计 |
+
+### MonitorRegistrationConfig {#monitorregistrationconfig}
+
+监控订阅配置。
+
+| 属性 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `types` | [MonitorType](#monitortype)[] | ✅ | 监控类型数组 |
+| `callback` | (data: [MonitorDataResp](#monitordataresp)) => void | ✅ | 数据回调函数 |
+| `interval` | number | ✅ | 更新间隔（毫秒），最小 1000 |
+| `diskPaths` | string[] | - | 磁盘挂载路径数组（仅查询 disk 类型时需要） |
+
+### MonitorDataResp {#monitordataresp}
+
+监控数据响应。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `cpu` | CPUInfo | CPU 信息（请求包含 cpu 时返回） |
+| `memory` | MemoryInfo | 内存信息（请求包含 memory 时返回） |
+| `disk` | DiskInfo[] | 磁盘信息数组（请求包含 disk 时返回） |
+| `network` | NetIOCountersInfo[] | 网络流量数组（请求包含 network 时返回） |
+
+### CPUInfo
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `coreCount` | number | CPU 核心数 |
+| `cpuNum` | number | CPU 逻辑处理器数 |
+| `model` | string | CPU 型号 |
+| `usages` | number[] | 各核心使用率（百分比） |
+
+### MemoryInfo
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `total` | number | 总内存（字节） |
+| `used` | number | 已使用内存（字节） |
+| `free` | number | 空闲内存（字节） |
+| `usedPercent` | number | 使用率（百分比） |
+
+### DiskInfo
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `title` | string | 磁盘标题 |
+| `mountpoint` | string | 挂载路径 |
+| `total` | number | 总容量（字节） |
+| `used` | number | 已使用（字节） |
+| `free` | number | 空闲（字节） |
+| `usedPercent` | number | 使用率（百分比） |
+
+### NetIOCountersInfo
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `name` | string | 网络接口名称 |
+| `bytesSent` | number | 发送字节数 |
+| `bytesRecv` | number | 接收字节数 |
+
+### SystemInfo {#systeminfo}
+
+系统基础信息。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `hostname` | string | 主机名 |
+| `os` | string | 操作系统 |
+| `platform` | string | 平台 (ubuntu, centos 等) |
+| `platformVer` | string | 平台版本 |
+| `arch` | string | 架构 (amd64, arm64 等) |
+| `uptime` | number | 运行时长（秒） |
+| `bootTime` | number | 启动时间（Unix 时间戳） |
+| `load1` | number | 1分钟负载 |
+| `load5` | number | 5分钟负载 |
+| `load15` | number | 15分钟负载 |
+| `fetchedAt` | number | 数据获取时间（Unix 时间戳） |
+
+
+
+## 错误类型
+
+### SpNetworkRequestError
+
+网络请求错误。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `name` | string | 固定为 `'SpNetworkRequestError'` |
+| `type` | `'microApp' \| 'targetUrl' \| 'unknown'` | 错误类型 |
+| `response` | [`HttpResponse`](#HttpResponse) \| `AxiosResponse` | 响应对象 |
+
+### SpDataNodeError
+
+数据节点错误。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `name` | string | 固定为 `'SpDataNodeError'` |
+| `code` | `string \| number` | 错误码：`NO_PERMISSION`, `UNKNOWN` |
+
+### HttpResponse {#HttpResponse}
+
+HTTP 响应类型，兼容 AxiosResponse 结构。
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `data` | any | 响应数据 |
+| `status` | number | HTTP 状态码 |
+| `statusText` | string | 状态文本 |
+| `headers` | Record<string, any> | 响应头 |
+| `config` | any | 请求配置（可选） |
+| `request` | any | 原始请求对象（可选） |
+
+
+
+## 注意事项
+
+1. **异步操作**：大部分 API 都是异步的，建议使用 `async/await` 处理
+2. **错误处理**：使用 try-catch 捕获异常，并根据 `error.type` 区分错误来源
+3. **用户级与应用级**：用户级数据仅对当前用户可见，应用级数据对所有用户共享
+4. **权限要求**：使用网络和数据节点功能需在 `app.config.js` 中声明相应权限
