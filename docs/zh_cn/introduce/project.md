@@ -1,3 +1,6 @@
+::: tip
+V2.0 已经来袭，现在来 [了解一下 V2](/zh_cn/introduce/project_v2) 吧！
+:::
 <div align=center style="width:100%">
 
 <img src="/images/logo.png" width="100" height="100" />

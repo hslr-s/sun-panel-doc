@@ -1,3 +1,6 @@
+::: tip
+V2.0 has arrived. Let’s take a look at [more about V2](/introduce/project_v2)!
+:::
 <div align=center style="width:100%">
 
 <img src="/images/logo.png" width="100" height="100" />
