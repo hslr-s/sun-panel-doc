@@ -10,7 +10,7 @@ In versions `v1.4.0` and earlier, the login session lasts for 72 hours. If you a
 
 ## Is Import and Export a Backup Feature?
 
-Import and export are not backup features. They can only export the basic configuration of the icon cards in JSON format, not the image files. Currently, the project does not have a built-in backup feature, but it will be considered in the future.
+Import and export are not backup features. They can only export the basic configuration of the icon cards in JSON format, not the image files. Starting from v2.0.0, the project has a built-in backup/restore feature (see "V2 Rollback to V1 FAQ" below).
 
 ## Data Loss After Docker Version Upgrade
 
@@ -92,3 +92,20 @@ PWA uses the Cache API to store resources, and these caches may need to be clear
 - Refresh the page and check if there are still caches.
 
 :::
+
+## V2 Rollback to V1 {#v2_rollback_v1}
+
+Directly changing the image version or replacing the binary to roll back to V1 is not supported. When upgrading from V1 to V2, the system auto-exports a V1-compatible backup package (`Sun-Panel_backup_v1_*`):
+
+- Docker: `./conf/backup`
+- Binary: `./backup`
+
+Extract the V1 backup package and restore it using the V1 migration feature, or manually move the files inside the package to the runtime directory.
+
+## How to uninstall a micro-app if it fails and you cannot open the management page from the navigation?
+
+Go to the micro-app management page (`http://your-domain/microApp`) to access the standalone micro-app uninstall page. After logging in with an admin account, you can independently uninstall individual apps from the installed micro-app list.
+
+## How to clear the frontend local cache
+
+Visit the pure frontend cache clearing page (`http://your-domain/clear`) and click the button on the page to clear all local browser caches and data at once (such as login state, icon cache, etc.). This operation only affects the current browser locally and does not impact server-side data.
