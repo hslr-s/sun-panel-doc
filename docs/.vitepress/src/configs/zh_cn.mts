@@ -73,7 +73,12 @@ function nav(): DefaultTheme.NavItem[] {
     },
     { text: '常见问题', link: '/zh_cn/faq/faq.html' },
     { text: 'OpenAPI', link: '/zh_cn/openapi/v1/' },
-    { text: '更新日志', link: '/zh_cn/update/update_log' },
+    { text: '更新日志', 
+      items: [
+        { text: '正式版', link: '/zh_cn/update/update_log' },
+        { text: 'BETA版', link: '/zh_cn/update/update_log_beta' },
+      ]
+     },
     {
       text: '<span style="background-image: linear-gradient(to right,#ee0979,#ff6a00);-webkit-text-fill-color: transparent;-webkit-background-clip: text;background-clip: text;font-weight:800;">PRO</span>',
       link: '//pro.sun-panel.top'
