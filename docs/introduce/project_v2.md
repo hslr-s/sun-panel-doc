@@ -2,7 +2,7 @@
 
 <img src="/images/logo.png" width="100" height="100" />
 
-# Sun-Panel
+# Sun-Panel V2
 
 <div class="badge-box-center">
 
@@ -26,7 +26,7 @@ A NAS, server navigation panel, easy Docker manager, Homepage, and browser start
 
 </div>
 
-![](/images/v2-dev/pc_1_micro_app.png)
+![](/images/introduce/main-dark-v2.webp)
 
 ## Features
 
@@ -39,11 +39,12 @@ A NAS, server navigation panel, easy Docker manager, Homepage, and browser start
 - 🫙 Supports custom JS, CSS
 - 🍻 Simple usage without the need to connect to an external database
 - 🍾 Rich icon styles for free combination, supports [Iconify icon library](https://icon-sets.iconify.design/)
-- 🐳 Simple Docker manager, support the opening and shutdown of the container, control the container
+- 🐳 Simple Docker manager, supports viewing container status and controlling container start/stop
+- ✨ **Video dynamic wallpaper**
 - ✨ **Micro-App / Widget Card Framework**: unlimited playability in limited screen space, flexible install and uninstall, developers can freely build per the spec
 - ✨ **Brand-new Network Environment Detection**: automatically matches the appropriate LAN / custom same-subnet address based on the current access URL
 - ✨ **Custom Card Address**: participates in network environment detection for smart open or right-click menu open
-- ✨ **Redesigned Navigation Page**: cross-group card dragging, mixed card sizes (`1x1`/`1x2`/`2x1`/`2x2`/`2x4`/`1x screen width`), perfect mobile widget adaptation, streamlined card DOM
+- ✨ **Redesigned Navigation Page**: cross-group card dragging, mixed card sizes (`1x1`/`1x2`/`2x1`/`2x2`/`2x4`/`1x screen width`), perfect mobile widget adaptation
 - ✨ **Icon card supports remark text** (visible to logged-in users only)
 - ✨ **Cross-platform binaries**: added Mac (arm64/amd64) using a pure-Go SQLite library
 - ✨ **Smooth migration**: supports importing V1 icon config data, backup feature adapted
@@ -66,6 +67,7 @@ A NAS, server navigation panel, easy Docker manager, Homepage, and browser start
 - [x] Batch delete for image library
 - [x] Sidebar directory (TOC)
 - [x] V1 system status component adaptation
+- [x] More third-party adapted micro-apps/widgets
 - [ ] Integrate third-party self-hosted icon library
 - [ ] Batch modify icon cards
 
