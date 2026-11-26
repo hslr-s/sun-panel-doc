@@ -37,11 +37,11 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 - 更多可见 [更新教程及版本说明](/zh_cn/faq/faq.html)
 :::
 
-> 感谢v2**微应用初期参与开发测试**微应用的小伙伴 `@Madrays`,[`@YM与末`](https://appstore.sun-panel.top/author/3),[`@xx77xx`](https://appstore.sun-panel.top/author/17),[`@xiaodong`](https://appstore.sun-panel.top/author/5),[`@潘潘`](https://appstore.sun-panel.top/author/17),[`@liteyais`](https://appstore.sun-panel.top/author/6),[`@ddapan`](https://appstore.sun-panel.top/author/7)...
+> 感谢v2**微应用初期参与开发测试**微应用的小伙伴 `@Madrays`,[`@YM与末`](https://appstore.sun-panel.top/author/3),[`@xx77xx`](https://appstore.sun-panel.top/author/17),[`@xiaodong`](https://appstore.sun-panel.top/author/5),[`@潘潘`](https://appstore.sun-panel.top/author/17),[`@ddapan`](https://appstore.sun-panel.top/author/7)
 >
 > 感谢参与图标与布局设计以及开发了数款优质微应用的 [`@liteyais`](https://appstore.sun-panel.top/author/17)
 >
-> 感谢应用商店的 **[@每一位应用开发者](https://appstore.sun-panel.top/)** 的支持与奉献
+> 感谢应用商店的每一位开发者 [`@wm88990`](https://appstore.sun-panel.top/author/4),[`@浮生`](https://appstore.sun-panel.top/author/8),[`@Corelift`](https://appstore.sun-panel.top/author/10),[`@gjhlmy`](https://appstore.sun-panel.top/author/11),[`@trae-小茗同学`](https://appstore.sun-panel.top/author/16),[`@周三岁`](https://appstore.sun-panel.top/author/18),[`@Cheering`](https://appstore.sun-panel.top/author/19),[`@anyi`](https://appstore.sun-panel.top/author/22),[`@千羽凛`](https://appstore.sun-panel.top/author/23),[`@hehe9011`](https://appstore.sun-panel.top/author/25),[`@guzian`](https://appstore.sun-panel.top/author/26),[`@Neko`](https://appstore.sun-panel.top/author/27),[`@优淳`](https://appstore.sun-panel.top/author/29) 的支持与奉献
 > 
 > 感谢所有参与测试的小伙伴和提出建议和提出 BUG 的小伙伴
 
