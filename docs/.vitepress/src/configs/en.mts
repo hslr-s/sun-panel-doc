@@ -53,8 +53,8 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       text: 'Introduction',
       collapsed: false,
       items: [
-        { text: 'Project Introduction', link: '/introduce/project' },
-        { text: 'Project Introduction (v2.0)<span class="VPBadge danger small">new</span>', link: '/introduce/project_v2' },
+        { text: 'Project Introduction <span class="VPBadge danger small">new</span>', link: '/introduce/project_v2' },
+        { text: 'Project Introduction (v1)', link: '/introduce/project' },
         { text: 'Demo Site', link: '/introduce/demo_site' },
         { text: 'Author & Community', link: '/introduce/author_groups' },
         { text: 'Donate☕', link: '/introduce/donate' },

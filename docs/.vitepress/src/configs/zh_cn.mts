@@ -93,8 +93,8 @@ function sidebarRoot(): DefaultTheme.SidebarItem[] {
       text: '介绍',
       collapsed: false,
       items: [
-        { text: '项目介绍', link: '/zh_cn/introduce/project' },
-        { text: '项目介绍（v2.0）<span class="VPBadge danger small">new</span>', link: '/zh_cn/introduce/project_v2' },
+        { text: '项目介绍 <span class="VPBadge danger small">new</span>', link: '/zh_cn/introduce/project_v2' },
+        { text: '项目介绍（v1）', link: '/zh_cn/introduce/project' },
         { text: '演示站点', link: '/zh_cn/introduce/demo_site' },
         { text: '作者&交流群&社区', link: '/zh_cn/introduce/author_groups' },
         { text: '打赏🧧', link: '/zh_cn/introduce/donate' },
