@@ -37,7 +37,7 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 - 更多可见 [更新教程及版本说明](/zh_cn/faq/faq.html)
 :::
 
-> 感谢v2**微应用初期参与开发测试**微应用的小伙伴 `@Madrays`，`@yumo`,`@xx77xx`,`@xiaodong`,`@潘潘`,`@ddapan`...
+> 感谢v2**微应用初期参与开发测试**微应用的小伙伴 `@Madrays`,[`@YM与末`](https://appstore.sun-panel.top/author/3),[`@xx77xx`](https://appstore.sun-panel.top/author/17),[`@xiaodong`](https://appstore.sun-panel.top/author/5),[`@潘潘`](https://appstore.sun-panel.top/author/17),[`@liteyais`](https://appstore.sun-panel.top/author/6),[`@ddapan`](https://appstore.sun-panel.top/author/7)...
 >
 > 感谢参与图标与布局设计以及开发了数款优质微应用的 [`@liteyais`](https://appstore.sun-panel.top/author/17)
 >
