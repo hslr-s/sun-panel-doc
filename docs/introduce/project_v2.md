@@ -52,7 +52,7 @@ A NAS, server navigation panel, easy Docker manager, Homepage, and browser start
 - ✨ **Enhanced version custom code**
 - ✨ **Enhanced sharing feature**
 
-## TODO
+<!-- ## TODO
 
 - [x] Micro-app/widget card framework
 - [x] Brand-new network environment detection
@@ -69,20 +69,21 @@ A NAS, server navigation panel, easy Docker manager, Homepage, and browser start
 - [x] V1 system status component adaptation
 - [x] More third-party adapted micro-apps/widgets
 - [ ] Integrate third-party self-hosted icon library
-- [ ] Batch modify icon cards
+- [ ] Batch modify icon cards -->
 
 ## Preview Screenshots
 
 **Various styles, freely combined**
 
-![](/images/v2-dev/pc_1_micro_app.png)
+![](/images/v2_screenshot/glass_style_2.png)
 
-![](/images/v2-dev/pc_2_v1_style.png)
+![](/images/v2_screenshot/all_widget.png)
 
-![](/images/v2-dev/docker.png)
+![](/images/v2_screenshot/glass_style_1.png)
 
-![](/images/v2-dev/add_widget.png)
+![](/images/v2_screenshot/v2_appstore.png)
 
-![](/images/v2-dev/m2.jpg){style="max-width: 500px"}
-
-![](/images/v2-dev/m1.jpg){style="max-width: 500px"}
+<div style="display: flex; justify-content: center; gap: 16px;">
+  <img src="/images/v2_screenshot/v2_phone_1.png" alt="Mobile preview 1" style="width: calc(50% - 8px); max-width: 500px; height: auto;">
+  <img src="/images/v2_screenshot/v2_phone_2.png" alt="Mobile preview 2" style="width: calc(50% - 8px); max-width: 500px; height: auto;">
+</div>

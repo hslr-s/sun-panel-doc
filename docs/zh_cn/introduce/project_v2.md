@@ -52,7 +52,7 @@
 - ✨ **增强版本自定义代码**
 - ✨ **增强分享功能**
 
-
+<!-- 
 ## TODO
 
 - [x] 微应用/小部件卡片框架
@@ -70,21 +70,22 @@
 - [x] V1 版本的系统状态组件适配
 - [x] 更多三方适配微应用/小部件
 - [ ] 对接三方自托管图标库
-- [ ] 批量修改图标卡片
+- [ ] 批量修改图标卡片 -->
 
 
 ## 预览截图
 
 **各种风格，自由搭配**
 
-![](/images/v2-dev/pc_1_micro_app.png)
+![](/images/v2_screenshot/glass_style_2.png)
 
-![](/images/v2-dev/pc_2_v1_style.png)
+![](/images/v2_screenshot/all_widget.png)
 
-![](/images/v2-dev/docker.png)
+![](/images/v2_screenshot/glass_style_1.png)
 
-![](/images/v2-dev/add_widget.png)
+![](/images/v2_screenshot/v2_appstore.png)
 
-![](/images/v2-dev/m2.jpg){style="max-width: 500px"}
-
-![](/images/v2-dev/m1.jpg){style="max-width: 500px"}
+<div style="display: flex; justify-content: center; gap: 16px;">
+  <img src="/images/v2_screenshot/v2_phone_1.png" alt="手机端预览 1" style="width: calc(50% - 8px); max-width: 500px; height: auto;">
+  <img src="/images/v2_screenshot/v2_phone_2.png" alt="手机端预览 2" style="width: calc(50% - 8px); max-width: 500px; height: auto;">
+</div>
