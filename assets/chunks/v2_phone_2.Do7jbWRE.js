@@ -1,0 +1,1 @@
+const s="/images/v2_screenshot/glass_style_2.png",_="/images/v2_screenshot/all_widget.png",e="/images/v2_screenshot/glass_style_1.png",t="/images/v2_screenshot/v2_appstore.png",o="/images/v2_screenshot/v2_phone_1.png",n="/images/v2_screenshot/v2_phone_2.png";export{s as _,_ as a,e as b,t as c,o as d,n as e};
