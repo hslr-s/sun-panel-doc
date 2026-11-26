@@ -37,6 +37,14 @@ Docker 离线镜像：[夸克网盘](https://pan.quark.cn/s/bb1fb7c54d9a) （不
 - 更多可见 [更新教程及版本说明](/zh_cn/faq/faq.html)
 :::
 
+> 感谢v2**微应用初期参与开发测试**微应用的小伙伴 `@Madrays`，`@yumo`,`@xx77xx`,`@xiaodong`,`@潘潘`,`@ddapan`...
+>
+> 感谢参与图标与布局设计以及开发了数款优质微应用的 [`@liteyais`](https://appstore.sun-panel.top/author/17)
+>
+> 感谢应用商店的 **[@每一位应用开发者](https://appstore.sun-panel.top/)** 的支持与奉献
+> 
+> 感谢所有参与测试的小伙伴和提出建议和提出 BUG 的小伙伴
+
 ### 🏠 V2 全新架构 {#v2-architecture}
 
 - **[新增]** 重构导航页面布局：单支持不同尺寸卡片混用（1x1/1x2/2x1/2x2/2x4/1x屏宽）、跨分组拖拽。手机端布局完美适配
