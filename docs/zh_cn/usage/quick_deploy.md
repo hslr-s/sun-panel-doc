@@ -95,15 +95,18 @@ version: "3.2"
 
 services:
   sun-panel:
-    image: "hslr/sun-panel:latest"
+    image: 'hslr/sun-panel:latest'
     container_name: sun-panel
     volumes:
-      - ./conf:/app/conf
-      - /var/run/docker.sock:/var/run/docker.sock # 挂载docker.sock
-      # - ./runtime:/app/runtime # 挂载日志目录
-      # - /mnt/sata1-1:/os # 硬盘挂载点（根据自己需求修改）
+    - ./conf:/app/conf
+    - /var/run/docker.sock:/var/run/docker.sock # 挂载docker.sock
+    # - ./runtime:/app/runtime
+    # - /mnt/sata1-1:/os # 硬盘挂载点（根据自己需求修改）
     ports:
-      - 3002:3002
+    - 3002:3002
+    environment:
+      SUN_PANEL_ADMIN_USERNAME: admin@sun.cc # 可选，默认： admin@sun.cc
+      SUN_PANEL_ADMIN_PASSWORD: 12345678 # 可选，默认： 12345678
     restart: always
 ```
 

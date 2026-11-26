@@ -100,10 +100,13 @@ services:
     volumes:
       - ./conf:/app/conf
       - /var/run/docker.sock:/var/run/docker.sock # Mount the Docker socket
-      # - ./runtime:/app/runtime # Mount the log directory
+      # - ./runtime:/app/runtime
       # - /mnt/sata1-1:/os # Mount the hard drive (modify according to your needs)
     ports:
       - 3002:3002
+    environment:
+      SUN_PANEL_ADMIN_USERNAME: admin@sun.cc # Optional, default: admin@sun.cc
+      SUN_PANEL_ADMIN_PASSWORD: 12345678 # Optional, default: 12345678
     restart: always
 ```
 

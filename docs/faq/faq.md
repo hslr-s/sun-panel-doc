@@ -102,10 +102,10 @@ Directly changing the image version or replacing the binary to roll back to V1 i
 
 Extract the V1 backup package and restore it using the V1 migration feature, or manually move the files inside the package to the runtime directory.
 
-## How to uninstall a micro-app if it fails and you cannot open the management page from the navigation?
+## How to uninstall a micro-app if it fails and you cannot open the management page from the navigation? {#micro_app_abnormal}
 
 Go to the micro-app management page (`http://your-domain/microApp`) to access the standalone micro-app uninstall page. After logging in with an admin account, you can independently uninstall individual apps from the installed micro-app list.
 
-## How to clear the frontend local cache
+## How to clear the frontend local cache {#clear_local_cache}
 
 Visit the pure frontend cache clearing page (`http://your-domain/clear`) and click the button on the page to clear all local browser caches and data at once (such as login state, icon cache, etc.). This operation only affects the current browser locally and does not impact server-side data.
